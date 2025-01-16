@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Moore Electric LLC – Contact</title>
+  <meta name="description" content="Contact Moore Electric LLC in Gulfport MS to schedule your service, get a free inspection, or discuss residential electrical projects." />
+  <meta name="keywords" content="Moore Electric, Contact, Gulfport Electrician" />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Calendly Widget CSS -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <!-- Calendly Widget JS -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+  <style>
+    body {
+      margin: 0; 
+      font-family: 'Roboto', sans-serif;
+      background: #0e0e0e; 
+      color: #ffffff;
+    }
+    h1, h2 {
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 1px;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    header, footer {
+      background: rgba(15, 15, 15, 0.9);
+      backdrop-filter: blur(8px);
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.7);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #00ffc8;
+    }
+    nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    nav ul li a:hover {
+      color: #00ffc8;
+    }
+    .contact-hero {
+      margin-top: 80px;
+      padding: 3rem 2rem;
+      text-align: center;
+      background: url('YOUR_LARGE_LIGHTNING_IMAGE.jpg') no-repeat center center / cover;
+      position: relative;
+    }
+    .contact-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 8px rgba(0,0,0,0.7);
+    }
+    .contact-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .contact-container p {
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+    .calendly-popup-btn {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      color: #0e0e0e;
+      background: #00ffc8;
+      border-radius: 5px;
+      font-weight: 700;
+      margin-top: 2rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: box-shadow 0.3s;
+    }
+    .calendly-popup-btn:hover {
+      box-shadow: 0 0 15px #00ffc8;
+    }
+    footer {
+      padding: 2rem;
+      text-align: center;
+      color: #888888;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #00ffc8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="YOUR_SMALL_LOGO_LIGHTNING.jpg" alt="Moore Electric Logo" style="height:40px; width:auto;">
+      <div class="logo-text">Moore Electric</div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="contact.html" style="color:#00ffc8;">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- CONTACT HERO -->
+  <section class="contact-hero">
+    <h1>Contact Moore Electric</h1>
+    <p>Your Gulfport Partner for Residential Electrical Solutions.</p>
+  </section>
+
+  <!-- CONTACT INFO -->
+  <div class="contact-container">
+    <p>Phone: <a href="tel:2282249150" style="color:#00ffc8;">(228) 224-9150</a></p>
+    <p>Email: <a href="mailto:mooreelectric228@gmail.com" style="color:#00ffc8;">mooreelectric228@gmail.com</a></p>
+    <p>
+      Facebook Messenger: 
+      <a href="https://m.me/228MooreElectric?ref=Facebook%20messenger" target="_blank" style="color:#00ffc8;">
+        Message Us
+      </a>
+    </p>
+
+    <!-- Calendly Pop-Up Button with explanation -->
+    <p style="margin-top:2rem;">
+      Ready for a free inspection or to book a project? Use our scheduling link below:
+    </p>
+    <a href="#" class="calendly-popup-btn" id="calendly-btn">Book Now</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2025 Moore Electric LLC • 
+    <a href="index.html">Home</a> | 
+    <a href="services.html">Services</a> | 
+    <a href="team.html">Team</a>
+  </footer>
+
+  <!-- Calendly Pop-Up Script -->
+  <script>
+    document.getElementById('calendly-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' });
+      return false;
+    });
+  </script>
+
+</body>
+</html>

@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Moore Electric LLC – Services</title>
-  <meta name="description" content="Explore Moore Electric LLC's residential electrical services: TV mounting, surge protection, fixture installs, free inspections, Tesla charger setups, and more." />
-  <meta name="keywords" content="TV Mounting, Surge Protection, Fixture Installation, Free Inspection, Tesla Charger, Smart Switch" />
+  <title>Moore Electric LLC – Our Team</title>
+  <meta name="description" content="Meet the Moore Electric LLC Team, serving Gulfport, Biloxi, Ocean Springs, and surrounding areas. Skilled electricians committed to excellence." />
+  <meta name="keywords" content="Moore Electric, Gulfport Electricians, Electrical Team" />
 
   <link
     href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
@@ -19,7 +19,7 @@
       color: #ffffff;
       margin: 0;
     }
-    h1, h2, h3 {
+    h1, h2 {
       font-family: 'Orbitron', sans-serif;
       letter-spacing: 1px;
     }
@@ -60,51 +60,48 @@
     nav ul li a:hover {
       color: #00ffc8;
     }
-    .services-hero {
-      margin-top: 80px; /* to avoid header overlap */
+    .team-hero {
+      margin-top: 80px;
       padding: 3rem 2rem;
       text-align: center;
       background: url('YOUR_LARGE_LIGHTNING_IMAGE.jpg') no-repeat center center / cover;
       position: relative;
     }
-    .services-hero h1 {
+    .team-hero h1 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
       text-shadow: 0 0 8px rgba(0,0,0,0.7);
     }
-    .services-hero p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto;
-      line-height: 1.5;
-    }
-    .services-container {
+    .team-container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 3rem 2rem;
     }
-    .service-list {
+    .team-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
-      margin-top: 2rem;
     }
-    .service-item {
+    .member-card {
       background: linear-gradient(145deg, rgba(0,0,0,0.8), rgba(20,20,20,0.6));
-      border-radius: 10px;
       padding: 2rem;
+      border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
-      transition: transform 0.3s;
-      cursor: pointer;
+      text-align: center;
     }
-    .service-item:hover {
-      transform: translateY(-3px);
-    }
-    .service-item h3 {
-      color: #00ffc8;
+    .member-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
       margin-bottom: 1rem;
+      border: 2px solid #00ffc8;
     }
-    .service-item p {
+    .member-card h3 {
+      color: #00ffc8;
+      margin-bottom: 0.5rem;
+    }
+    .member-card p {
       font-weight: 300;
       line-height: 1.4;
     }
@@ -130,53 +127,39 @@
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="services.html" style="color:#00ffc8;">Services</a></li>
-        <li><a href="team.html">Team</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="team.html" style="color:#00ffc8;">Team</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="services-hero">
-    <h1>Our Services</h1>
-    <p>From TV mounting to advanced surge protection, Moore Electric LLC keeps your home powered safely and reliably.</p>
+  <!-- TEAM HERO -->
+  <section class="team-hero">
+    <h1>Meet the Team</h1>
+    <p>Skilled electricians dedicated to powering the Gulf Coast with excellence and care.</p>
   </section>
 
-  <!-- SERVICES LIST -->
-  <div class="services-container">
-    <div class="service-list">
+  <!-- TEAM MEMBERS -->
+  <div class="team-container">
+    <div class="team-grid">
 
-      <!-- Example Services -->
-      <div class="service-item">
-        <h3>TV Mounting & Wiring</h3>
-        <p>We professionally mount TVs and ensure hidden cables for a clutter-free setup.</p>
+      <!-- Example Team Member -->
+      <div class="member-card">
+        <!-- Replace with real photo if desired -->
+        <img src="YOUR_HEADSHOT.jpg" alt="Devin Moore Headshot">
+        <h3>Devin Moore</h3>
+        <p>Owner & Master Electrician. Specializing in residential projects, ensuring every home is safe, modern, and well-lit.</p>
       </div>
 
-      <div class="service-item">
-        <h3>Smart Switch Installation</h3>
-        <p>Upgrade your home with IoT-ready switches for energy management and voice control.</p>
+      <!-- Additional team members can go here -->
+      <!--
+      <div class="member-card">
+        <img src="TEAM_MEMBER_HEADSHOT.jpg" alt="John Doe Headshot">
+        <h3>John Doe</h3>
+        <p>Journeyman Electrician with 10+ years of experience in rewiring and panel upgrades.</p>
       </div>
-
-      <div class="service-item">
-        <h3>Tesla Charger Setup</h3>
-        <p>Charge your EV at home with our safe, code-compliant Tesla charger solutions.</p>
-      </div>
-
-      <div class="service-item">
-        <h3>Surge Protection</h3>
-        <p>Protect your electronics from power spikes with whole-house or panel-level surge devices.</p>
-      </div>
-
-      <div class="service-item">
-        <h3>Fixture Installation</h3>
-        <p>Lighting fixtures, fans, chandeliers—let us safely handle it and guarantee a top-notch finish.</p>
-      </div>
-
-      <div class="service-item">
-        <h3>Free Inspection</h3>
-        <p>Not sure if your wiring is up to code? We offer a free basic inspection to ensure safety.</p>
-      </div>
+      -->
     </div>
   </div>
 
@@ -184,9 +167,8 @@
   <footer>
     &copy; 2025 Moore Electric LLC • 
     <a href="index.html">Home</a> | 
-    <a href="team.html">Team</a> | 
+    <a href="services.html">Services</a> | 
     <a href="contact.html">Contact</a>
   </footer>
-
 </body>
 </html>

@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Moore Electric LLC - Residential Electrical, TV Mounting, Smart Switches, & Tesla Charger Installs</title>
+  <title>Moore Electric LLC - TV Mounting, Smart Switches, Tesla Charger Installs</title>
   
   <!-- ======================
        SEO META TAGS
   ====================== -->
-  <meta name="description" content="Moore Electric LLC specializes in residential electrical services: TV mounting, smart switch upgrades, Tesla charger installations, and more on the Gulf Coast. Call us today!" />
-  <meta name="keywords" content="Residential Electrical, TV Mounting, Smart Switches, Tesla Charger Installation, Electrical Repair, Gulf Coast Electrician, Moore Electric LLC" />
+  <meta name="description"
+        content="Moore Electric LLC: Residential electrical services in Gulfport, MS. Specializing in TV mounting, smart switches, Tesla charger installations, and more." />
+  <meta name="keywords"
+        content="Residential Electrical, TV Mounting, Smart Switch, Tesla Charger Installation, Electrical Repair, Gulfport MS, Biloxi, Ocean Springs, Moore Electric LLC" />
   <meta name="robots" content="index, follow" />
 
   <!-- AOS for Scroll Animations (Optional) -->
@@ -71,11 +73,25 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.7);
     }
     .logo {
-      font-size: 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-transform: uppercase;
+    }
+    .logo-text {
+      font-size: 1.6rem;
       font-weight: 700;
       color: #00ffc8;
-      text-transform: uppercase;
       text-shadow: 0 0 5px #00ffc8;
+    }
+    .logo svg {
+      width: 40px;
+      height: 40px;
+      fill: #00ffc8;
+      transition: fill 0.3s;
+    }
+    .logo svg:hover {
+      fill: #ffffff;
     }
     nav ul {
       list-style: none;
@@ -139,6 +155,7 @@
       border-radius: 5px;
       font-weight: 700;
       transition: box-shadow 0.3s;
+      text-decoration: none;
     }
     .btn-glow:hover {
       box-shadow: 0 0 15px #00ffc8;
@@ -271,7 +288,7 @@
     }
 
     /* ---------------------------------------
-       WEATHER SECTION
+       WEATHER SECTION (NWS)
     --------------------------------------- */
     #weather {
       padding: 5rem 2rem;
@@ -300,6 +317,7 @@
       padding: 1.5rem;
       width: 250px;
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      text-align: left;
     }
     .city-weather h3 {
       font-size: 1.2rem;
@@ -309,7 +327,8 @@
     .city-weather p {
       font-weight: 300;
       font-size: 0.95rem;
-      line-height: 1.5;
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
     }
 
     /* ---------------------------------------
@@ -431,7 +450,7 @@
       nav ul {
         gap: 1rem;
       }
-      .logo {
+      .logo-text {
         font-size: 1.4rem;
       }
       .parallax-text {
@@ -443,11 +462,17 @@
 <body>
   <!-- Header / Navigation -->
   <header>
-    <div class="logo">Moore Electric</div>
+    <div class="logo">
+      <!-- Simple SVG lightning bolt for an iconic logo -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+        <path d="M192 0c-16.7 0-31.3 10.4-37.3 26.2l-128 320c-5.8 14.4-3.9 31 5 44.1s23 20.7 38.3 20.7H160l-48 99.4c-7.1 14.8-4.9 32.5 5.5 45.2S141.5 576 158.4 576c12.8 0 25.1-6.3 32.7-17l160-240c8.1-12.1 9-27.6 2.4-40.3S331.2 272 316.8 272H256l64-192c5.3-15.8 2.6-33.2-7.4-46.6S289.6 0 273.6 0H192z"/>
+      </svg>
+      <div class="logo-text">Moore Electric</div>
+    </div>
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
-        <li><a href="#services">Residential Services</a></li>
+        <li><a href="#services">Services</a></li>
         <li><a href="#about">About Us</a></li>
         <li><a href="#weather">Local Weather</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -463,8 +488,8 @@
       autoplay muted loop playsinline>
     </video>
     <div class="hero-content" data-aos="fade-up">
-      <h1>Powering the Gulf Coast with Reliable Residential Electrical Services</h1>
-      <p>Moore Electric LLC focuses on TV mounting, smart switch installations, Tesla charger setups, and more.</p>
+      <h1>Powering Gulfport & Beyond With Top Residential Electrical Services</h1>
+      <p>Hi, I'm Devin Moore of Moore Electric, located in Gulfport, Mississippi. I specialize in TV mounting, smart switch installations, Tesla charger setups, and more.</p>
       <a href="#services" class="btn-glow">Explore Our Services</a>
     </div>
   </section>
@@ -502,7 +527,7 @@
       <div class="service-box" data-aos="flip-right">
         <h3>Electrical Inspections & Repairs</h3>
         <p>
-          Keep your home safe and up to code with thorough inspections, rewiring, and circuit breaker replacements.
+          Keep your home safe and up to code with thorough inspections, rewiring, and breaker replacements.
         </p>
       </div>
     </div>
@@ -513,26 +538,27 @@
     <div class="about-image">
       <img
         src="https://images.unsplash.com/photo-1565794282285-d8bfcf1e3a5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1960&q=80"
-        alt="Moore Electric Team"
+        alt="Moore Electric by Devin Moore in Gulfport, MS"
       />
     </div>
     <div class="about-content">
       <h2>About Us</h2>
       <p>
-        Welcome to Moore Electric, proudly serving the Gulf Coast with first-class residential electrical services.
-        From TV mounting and smart switches to Tesla charging stations, our experienced team provides prompt,
-        reliable solutions. Day or night, we’re ready to keep your home powered, safe, and modern.
+        At Moore Electric, we're proud to serve the Gulf Coast community with trusted, high-quality residential electrical work.
+        Whether you need a quick TV mounting or a complex EV charger install, you can count on us to deliver top-notch results 
+        on time and on budget. 
       </p>
-      <a href="#contact" class="btn-glow" style="margin-bottom:1rem;">Contact Us</a><br>
-      <a href="https://dvnmr.github.io/mooreelectric.github.io" target="_blank" class="btn-glow">Visit Our Main Site</a>
+      <a href="https://dvnmr.github.io/mooreelectric.github.io"
+         target="_blank" class="btn-glow" style="margin-bottom:1rem;">Visit Our Main Site</a><br>
+      <a href="#contact" class="btn-glow">Contact Us</a>
     </div>
   </section>
 
-  <!-- Weather Section -->
+  <!-- Weather Section (NWS) -->
   <section id="weather" data-aos="fade-up">
     <h2>Local Weather: Gulfport • Biloxi • Ocean Springs</h2>
     <div class="weather-container" id="weather-container">
-      <!-- Weather cards will be inserted by JavaScript -->
+      <!-- Forecast data will appear here -->
     </div>
   </section>
 
@@ -552,18 +578,18 @@
 
     <!-- Minimal Calendly Pop-up Button -->
     <a href="#" class="calendly-popup-btn" id="calendly-btn">
-      Schedule Service
+      Book Here
     </a>
   </section>
 
   <!-- Music Section -->
   <section id="music" data-aos="fade-up">
     <h2>Rock On</h2>
-    <p class="audio-intro">Enjoy a short music clip while you browse:</p>
+    <p class="audio-intro">Enjoy a short clip while you browse:</p>
     <!-- Short audio clip (user must click play due to modern browser policies) -->
     <audio controls style="outline:none;">
       <source src="https://www.sample-videos.com/audio/mp3/crowd-cheering.mp3" type="audio/mpeg" />
-      <!-- Replace above with your own short AC/DC clip if you have the rights/clip -->
+      <!-- Replace above with your own short AC/DC clip if you have the rights to use it -->
       Your browser does not support the audio element.
     </audio>
   </section>
@@ -591,49 +617,60 @@
     });
   </script>
 
-  <!-- WEATHER SCRIPT (OpenWeatherMap) -->
+  <!-- NWS Forecast Script -->
   <script>
-    // Cities you want to display
+    /*
+      HOW TO GET A NWS FORECAST:
+      1. Use /points/{lat},{lon} to get the "gridpoint" info (office, gridX, gridY).
+         Example: https://api.weather.gov/points/30.3674,-89.0928
+      2. From that JSON, get properties.forecast = e.g. "https://api.weather.gov/gridpoints/LIX/80,79/forecast"
+      3. Fetch that /forecast URL to get the forecast periods.
+    */
+
+    const weatherContainer = document.getElementById('weather-container');
+
+    // Example cities with lat/lon for Gulfport, Biloxi, Ocean Springs
     const cities = [
-      { name: "Gulfport", lat: 30.3674, lon: -89.0928 },
-      { name: "Biloxi", lat: 30.3960, lon: -88.8853 },
-      { name: "Ocean Springs", lat: 30.4113, lon: -88.8279 }
+      { name: 'Gulfport', lat: 30.3674, lon: -89.0928 },
+      { name: 'Biloxi', lat: 30.3960, lon: -88.8853 },
+      { name: 'Ocean Springs', lat: 30.4113, lon: -88.8279 }
     ];
 
-    // Replace with your own OpenWeatherMap API key
-    const apiKey = "YOUR_API_KEY";
-    const weatherContainer = document.getElementById("weather-container");
-
-    const getWeather = async (city) => {
-      // OpenWeather One Call by lat/lon
-      const url = `https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&units=imperial&appid=${apiKey}`;
+    async function fetchNWSForecast(city) {
       try {
-        const response = await fetch(url);
-        const data = await response.json();
-        return data;
-      } catch (err) {
-        console.error("Weather fetch error:", err);
-      }
-    };
+        // 1) Get the gridpoint info from the /points endpoint
+        const pointsURL = `https://api.weather.gov/points/${city.lat},${city.lon}`;
+        const pointsRes = await fetch(pointsURL);
+        const pointsData = await pointsRes.json();
 
-    const displayWeather = async () => {
-      for (const city of cities) {
-        const data = await getWeather(city);
-        if (data) {
-          const div = document.createElement("div");
-          div.className = "city-weather";
-          div.innerHTML = `
-            <h3>${city.name}</h3>
-            <p>Temperature: ${Math.round(data.main.temp)} °F</p>
-            <p>Condition: ${data.weather[0].description}</p>
-            <p>Humidity: ${data.main.humidity}%</p>
+        // 2) Extract the forecast URL from the points data
+        const forecastURL = pointsData.properties.forecast;
+        const forecastRes = await fetch(forecastURL);
+        const forecastData = await forecastRes.json();
+
+        // 3) Take just the first 2 periods (say next 12-24 hrs) for brevity
+        const periods = forecastData.properties.periods.slice(0, 2);
+
+        // Build a small HTML block for each city
+        const cityDiv = document.createElement('div');
+        cityDiv.classList.add('city-weather');
+
+        let forecastHTML = `<h3>${city.name}</h3>`;
+        periods.forEach(period => {
+          forecastHTML += `
+            <p><strong>${period.name}:</strong> ${period.temperature}°F, ${period.shortForecast}</p>
           `;
-          weatherContainer.appendChild(div);
-        }
-      }
-    };
+        });
 
-    displayWeather();
+        cityDiv.innerHTML = forecastHTML;
+        weatherContainer.appendChild(cityDiv);
+      } catch (error) {
+        console.error('NWS Forecast Error:', error);
+      }
+    }
+
+    // Fetch forecast for each city
+    cities.forEach(city => fetchNWSForecast(city));
   </script>
 
   <!-- Calendly Pop-Up Script -->

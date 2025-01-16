@@ -60,15 +60,37 @@
     nav ul li a:hover {
       color: #00ffc8;
     }
+
+    /* MATCHING HERO HEIGHT */
     .services-hero {
-      margin-top: 80px; /* to avoid header overlap */
-      padding: 3rem 2rem;
+      position: relative;
+      width: 100%;
+      min-height: 80vh; /* same as home for consistent look */
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
       background: url('YOUR_LARGE_LIGHTNING_IMAGE.jpg') no-repeat center center / cover;
+      margin-top: 80px; /* to avoid header overlap */
+    }
+    .services-hero::before {
+      content: "";
+      background: rgba(0,0,0,0.6);
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; 
+      height: 100%;
+      z-index: 1;
+    }
+    .services-hero-content {
       position: relative;
+      z-index: 2;
+      max-width: 80%;
+      margin: 0 auto;
+      padding: 2rem;
     }
     .services-hero h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 1rem;
       text-shadow: 0 0 8px rgba(0,0,0,0.7);
     }
@@ -78,6 +100,8 @@
       margin: 0 auto;
       line-height: 1.5;
     }
+
+    /* SERVICES LIST */
     .services-container {
       max-width: 1200px;
       margin: 0 auto;
@@ -103,11 +127,13 @@
     .service-item h3 {
       color: #00ffc8;
       margin-bottom: 1rem;
+      font-size: 1.4rem;
     }
     .service-item p {
       font-weight: 300;
       line-height: 1.4;
     }
+
     footer {
       padding: 2rem;
       text-align: center;
@@ -116,6 +142,12 @@
     }
     footer a {
       color: #00ffc8;
+    }
+
+    @media(max-width:768px) {
+      .services-hero h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
@@ -137,42 +169,37 @@
     </nav>
   </header>
 
-  <!-- HERO -->
+  <!-- SERVICES HERO -->
   <section class="services-hero">
-    <h1>Our Services</h1>
-    <p>From TV mounting to advanced surge protection, Moore Electric LLC keeps your home powered safely and reliably.</p>
+    <div class="services-hero-content">
+      <h1>Our Services</h1>
+      <p>From TV mounting to advanced surge protection, Moore Electric LLC keeps your home powered safely and reliably.</p>
+    </div>
   </section>
 
   <!-- SERVICES LIST -->
   <div class="services-container">
     <div class="service-list">
-
-      <!-- Example Services -->
       <div class="service-item">
         <h3>TV Mounting & Wiring</h3>
         <p>We professionally mount TVs and ensure hidden cables for a clutter-free setup.</p>
       </div>
-
       <div class="service-item">
         <h3>Smart Switch Installation</h3>
         <p>Upgrade your home with IoT-ready switches for energy management and voice control.</p>
       </div>
-
       <div class="service-item">
         <h3>Tesla Charger Setup</h3>
         <p>Charge your EV at home with our safe, code-compliant Tesla charger solutions.</p>
       </div>
-
       <div class="service-item">
         <h3>Surge Protection</h3>
         <p>Protect your electronics from power spikes with whole-house or panel-level surge devices.</p>
       </div>
-
       <div class="service-item">
         <h3>Fixture Installation</h3>
         <p>Lighting fixtures, fans, chandeliers—let us safely handle it and guarantee a top-notch finish.</p>
       </div>
-
       <div class="service-item">
         <h3>Free Inspection</h3>
         <p>Not sure if your wiring is up to code? We offer a free basic inspection to ensure safety.</p>

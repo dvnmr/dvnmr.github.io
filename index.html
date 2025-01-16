@@ -13,9 +13,8 @@
     rel="stylesheet"
   />
 
-  <!-- Calendly Widget CSS -->
+  <!-- Calendly Widget CSS (if you use Calendly pop-ups on home) -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-  <!-- Calendly Widget JS -->
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
   <style>
@@ -29,6 +28,7 @@
       font-family: 'Roboto', sans-serif;
       background: #0e0e0e;
       color: #ffffff;
+      margin: 0;
     }
     h1, h2, h3, h4 {
       font-family: 'Orbitron', sans-serif;
@@ -42,7 +42,6 @@
       background: rgba(15, 15, 15, 0.9);
       backdrop-filter: blur(8px);
     }
-    /* HEADER */
     header {
       position: fixed;
       top: 0;
@@ -79,14 +78,13 @@
 
     /* HERO SECTION */
     .hero {
-      height: 100vh;
       width: 100%;
+      min-height: 80vh;  /* ensures a good, visible area */
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       background: url('YOUR_LARGE_LIGHTNING_IMAGE.jpg') no-repeat center center / cover; 
-      /* Replace with your actual image URL */
       position: relative;
       margin-top: 80px; /* so we don't hide behind header */
     }
@@ -100,6 +98,7 @@
       position: relative;
       max-width: 90%;
       z-index: 1;
+      padding: 2rem;
     }
     .hero h1 {
       font-size: 3rem;
@@ -126,6 +125,44 @@
     }
     .btn-glow:hover {
       box-shadow: 0 0 15px #00ffc8;
+    }
+
+    /* FEATURED SERVICES SECTION */
+    .featured-services {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .featured-services h2 {
+      font-size: 2rem;
+      color: #00ffc8;
+      margin-bottom: 2rem;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+      align-items: start;
+    }
+    .service-box {
+      background: linear-gradient(145deg, rgba(0,0,0,0.8), rgba(20,20,20,0.6));
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      transition: transform 0.3s;
+    }
+    .service-box:hover {
+      transform: translateY(-3px);
+    }
+    .service-box h3 {
+      color: #00ffc8;
+      margin-bottom: 1rem;
+    }
+    .service-box p {
+      font-weight: 300;
+      line-height: 1.4;
     }
 
     /* WEATHER SECTION */
@@ -190,6 +227,13 @@
       nav ul {
         gap: 1rem;
       }
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .weather-grid {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
@@ -198,13 +242,12 @@
   <!-- HEADER -->
   <header>
     <div class="logo">
-      <!-- Show the lightning image as a small logo (cropped or scaled) -->
       <img src="YOUR_SMALL_LOGO_LIGHTNING.jpg" alt="Moore Electric Logo" style="height:40px; width:auto;">
       <div class="logo-text">Moore Electric</div>
     </div>
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" style="color:#00ffc8;">Home</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="team.html">Team</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -225,6 +268,30 @@
     </div>
   </section>
 
+  <!-- FEATURED SERVICES -->
+  <section class="featured-services">
+    <h2>Featured Residential Services</h2>
+    <div class="services-grid">
+      <!-- 3 or 4 key highlights from your Services page -->
+      <div class="service-box">
+        <h3>TV Mounting & Wiring</h3>
+        <p>Professional and secure TV mounting with hidden wiring for a seamless look.</p>
+      </div>
+      <div class="service-box">
+        <h3>Surge Protection</h3>
+        <p>Shield your home from unexpected power surges with panel-level protection.</p>
+      </div>
+      <div class="service-box">
+        <h3>Fixture Installation</h3>
+        <p>We install lighting fixtures, fans, and chandeliers with precision and care.</p>
+      </div>
+      <div class="service-box">
+        <h3>Free Inspection</h3>
+        <p>Unsure about your wiring? Ask about our complimentary inspection offer.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- WEATHER (with icons) -->
   <div class="weather-section">
     <h2 class="weather-title">Local Forecast</h2>
@@ -235,19 +302,18 @@
 
   <!-- FOOTER -->
   <footer>
-    &copy; 2025 Moore Electric LLC • <a href="index.html">Home</a> | <a href="services.html">Services</a> | 
-    <a href="team.html">Team</a> | <a href="contact.html">Contact</a>
+    &copy; 2025 Moore Electric LLC • 
+    <a href="index.html">Home</a> | 
+    <a href="services.html">Services</a> | 
+    <a href="team.html">Team</a> | 
+    <a href="contact.html">Contact</a>
   </footer>
 
   <!-- NWS Weather Script -->
   <script>
-    /*
-      We'll fetch from the NWS /points/ and /forecast endpoints for Gulfport, Biloxi, Ocean Springs.
-      We'll display an icon from the forecast JSON.
-    */
     const cityCoords = [
       { name: "Gulfport", lat: 30.3674, lon: -89.0928 },
-      { name: "Biloxi", lat: 30.3960, lon: -88.8853 },
+      { name: "Biloxi",   lat: 30.3960, lon: -88.8853 },
       { name: "Ocean Springs", lat: 30.4113, lon: -88.8279 }
     ];
     const container = document.getElementById('weather-container');
@@ -274,8 +340,7 @@
           const cityCard = document.createElement('div');
           cityCard.className = 'weather-card';
           let content = `<h3>${city.name}</h3>`;
-          // Show next 2 periods for brevity
-          const nextTwo = periods.slice(0, 2);
+          const nextTwo = periods.slice(0,2);
           nextTwo.forEach(period => {
             content += `
               <p>

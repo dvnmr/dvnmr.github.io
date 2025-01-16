@@ -257,6 +257,7 @@
       text-shadow: 0 0 5px #00ffc8;
       margin-bottom: 1rem;
     }
+    /*  First paragraph remains, second paragraph removed */
     #about .about-content p {
       font-weight: 300;
       line-height: 1.6;
@@ -453,16 +454,15 @@
       <a href="https://www.facebook.com/228MooreElectric" target="_blank">Facebook</a>
     </p>
 
-    <!-- Embedded Calendly Inline Widget -->
-<div
-  class="calendly-inline-widget"
-  data-url="https://calendly.com/your-scheduler-url"
-  style="min-width:320px; height:630px;">
-</div>
-</section>
+    <!-- Embedded Calendly Inline Widget (adjusted height) -->
+    <div
+      class="calendly-inline-widget"
+      data-url="https://calendly.com/228mooreelectric"
+      style="min-width:320px; height:550px; margin-top:2rem;"
+    ></div>
+  </section>
 
-<!-- Chat-Bot Button -->
-
+  <!-- Chat-Bot Button -->
   <button
     class="chat-bot"
     onclick="window.open('https://m.me/228MooreElectric?ref=Facebook%20messenger','_blank')">

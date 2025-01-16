@@ -3,7 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Moore Electric LLC - Futuristic</title>
+  <title>Moore Electric LLC - Residential Electrical, TV Mounting, Smart Switches, & Tesla Charger Installs</title>
+  
+  <!-- ======================
+       SEO META TAGS
+  ====================== -->
+  <meta name="description" content="Moore Electric LLC specializes in residential electrical services: TV mounting, smart switch upgrades, Tesla charger installations, and more on the Gulf Coast. Call us today!" />
+  <meta name="keywords" content="Residential Electrical, TV Mounting, Smart Switches, Tesla Charger Installation, Electrical Repair, Gulf Coast Electrician, Moore Electric LLC" />
+  <meta name="robots" content="index, follow" />
 
   <!-- AOS for Scroll Animations (Optional) -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
@@ -113,7 +120,7 @@
       max-width: 90%;
     }
     .hero h1 {
-      font-size: 4rem;
+      font-size: 3rem;
       text-shadow: 0 0 7px rgba(0,0,0,0.7);
       margin-bottom: 1rem;
     }
@@ -161,7 +168,7 @@
     .parallax-text {
       position: relative;
       z-index: 2;
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-family: 'Orbitron', sans-serif;
       color: #00ffc8;
       text-shadow: 0 0 10px #00ffc8;
@@ -178,7 +185,7 @@
       text-align: center;
     }
     #services h2 {
-      font-size: 2.5rem;
+      font-size: 2.3rem;
       margin-bottom: 2rem;
       color: #00ffc8;
       text-shadow: 0 0 5px #00ffc8;
@@ -211,7 +218,7 @@
       transform: translateY(-5px) scale(1.02);
     }
     .service-box h3 {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       margin-bottom: 1rem;
       color: #00ffc8;
       text-shadow: 0 0 2px #00ffc8;
@@ -252,16 +259,57 @@
       color: #ffffff;
     }
     #about .about-content h2 {
-      font-size: 2.5rem;
+      font-size: 2.3rem;
       color: #00ffc8;
       text-shadow: 0 0 5px #00ffc8;
       margin-bottom: 1rem;
     }
-    /*  First paragraph remains, second paragraph removed */
     #about .about-content p {
       font-weight: 300;
       line-height: 1.6;
       margin-bottom: 1.5rem;
+    }
+
+    /* ---------------------------------------
+       WEATHER SECTION
+    --------------------------------------- */
+    #weather {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      background: #111111;
+    }
+    #weather h2 {
+      font-size: 2.3rem;
+      margin-bottom: 2rem;
+      color: #00ffc8;
+      text-shadow: 0 0 5px #00ffc8;
+      position: relative;
+      display: inline-block;
+    }
+    #weather .weather-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .city-weather {
+      background: linear-gradient(145deg, rgba(0,0,0,0.8), rgba(20,20,20,0.6));
+      border-radius: 10px;
+      padding: 1.5rem;
+      width: 250px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+    .city-weather h3 {
+      font-size: 1.2rem;
+      color: #00ffc8;
+      margin-bottom: 0.5rem;
+    }
+    .city-weather p {
+      font-weight: 300;
+      font-size: 0.95rem;
+      line-height: 1.5;
     }
 
     /* ---------------------------------------
@@ -273,7 +321,7 @@
       text-align: center;
     }
     #contact h2 {
-      font-size: 2.5rem;
+      font-size: 2.3rem;
       margin-bottom: 2rem;
       color: #00ffc8;
       text-shadow: 0 0 5px #00ffc8;
@@ -291,10 +339,31 @@
     #contact p {
       margin-bottom: 1rem;
       font-weight: 300;
+      font-size: 1rem;
     }
     #contact a {
       color: #00ffc8;
       font-weight: 500;
+    }
+
+    /* ---------------------------------------
+       MUSIC SECTION
+    --------------------------------------- */
+    #music {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    #music h2 {
+      font-size: 2.3rem;
+      margin-bottom: 1rem;
+      color: #00ffc8;
+      text-shadow: 0 0 5px #00ffc8;
+    }
+    #music .audio-intro {
+      margin-bottom: 1rem;
+      font-weight: 300;
     }
 
     /* ---------------------------------------
@@ -335,12 +404,29 @@
       box-shadow: 0 0 25px rgba(0, 255, 200, 0.8);
     }
 
+    /* Calendly minimal pop-up button */
+    .calendly-popup-btn {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      color: #0e0e0e;
+      background: #00ffc8;
+      border-radius: 5px;
+      font-weight: 700;
+      margin-top: 2rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: box-shadow 0.3s;
+    }
+    .calendly-popup-btn:hover {
+      box-shadow: 0 0 15px #00ffc8;
+    }
+
     /* ---------------------------------------
        MEDIA QUERIES
     --------------------------------------- */
     @media (max-width: 768px) {
       .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
       }
       nav ul {
         gap: 1rem;
@@ -348,19 +434,24 @@
       .logo {
         font-size: 1.4rem;
       }
+      .parallax-text {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
-
   <!-- Header / Navigation -->
   <header>
     <div class="logo">Moore Electric</div>
     <nav>
       <ul>
-        <li><a href="#services">Services</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Residential Services</a></li>
         <li><a href="#about">About Us</a></li>
+        <li><a href="#weather">Local Weather</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="#music">Music</a></li>
       </ul>
     </nav>
   </header>
@@ -372,8 +463,8 @@
       autoplay muted loop playsinline>
     </video>
     <div class="hero-content" data-aos="fade-up">
-      <h1>Your Trusted Electrical Experts</h1>
-      <p>Bringing Next-Gen Electrical Solutions to the Gulf Coast and Beyond.</p>
+      <h1>Powering the Gulf Coast with Reliable Residential Electrical Services</h1>
+      <p>Moore Electric LLC focuses on TV mounting, smart switch installations, Tesla charger setups, and more.</p>
       <a href="#services" class="btn-glow">Explore Our Services</a>
     </div>
   </section>
@@ -388,34 +479,30 @@
 
   <!-- Services Section -->
   <section id="services" data-aos="fade-up">
-    <h2>Our Services</h2>
+    <h2>Our Residential Services</h2>
     <div class="services-grid">
       <div class="service-box" data-aos="flip-left">
-        <h3>Residential Installations</h3>
+        <h3>TV Mounting & Wiring</h3>
         <p>
-          From new wiring to panel upgrades, we provide safe, top-tier residential solutions to power
-          your home efficiently.
+          Securely mount your new flat-screen TV with professional wiring for a clean look and reliable signal.
         </p>
       </div>
       <div class="service-box" data-aos="flip-right">
-        <h3>Commercial Projects</h3>
+        <h3>Smart Switch Upgrades</h3>
         <p>
-          Equip your business with modern electrical systems designed to handle heavy loads and ensure
-          uninterrupted operations.
+          Transform any room with the latest IoT-ready light switches for efficient energy management.
         </p>
       </div>
       <div class="service-box" data-aos="flip-left">
-        <h3>Emergency Services</h3>
+        <h3>Tesla Charger Installation</h3>
         <p>
-          Day or night, our on-call experts are ready to tackle unexpected power outages and electrical
-          malfunctions.
+          Get your home EV-ready with safe, code-compliant Tesla charger setups and panel upgrades.
         </p>
       </div>
       <div class="service-box" data-aos="flip-right">
-        <h3>Smart Solutions</h3>
+        <h3>Electrical Inspections & Repairs</h3>
         <p>
-          Embrace IoT and automation: we set up smart lighting, climate control, security, and more for
-          cutting-edge efficiency.
+          Keep your home safe and up to code with thorough inspections, rewiring, and circuit breaker replacements.
         </p>
       </div>
     </div>
@@ -432,18 +519,27 @@
     <div class="about-content">
       <h2>About Us</h2>
       <p>
-        Welcome to Moore Electric, proudly serving the Gulf Coast with exceptional electrical services.
-        Specializing in residential and commercial projects, we excel in everything from routine repairs
-        to emergency services. Our dedicated team delivers reliable solutions to ensure your electrical
-        needs are met with excellence and care. We’re here for you, day or night!
+        Welcome to Moore Electric, proudly serving the Gulf Coast with first-class residential electrical services.
+        From TV mounting and smart switches to Tesla charging stations, our experienced team provides prompt,
+        reliable solutions. Day or night, we’re ready to keep your home powered, safe, and modern.
       </p>
+      <a href="#contact" class="btn-glow" style="margin-bottom:1rem;">Contact Us</a><br>
+      <a href="https://dvnmr.github.io/mooreelectric.github.io" target="_blank" class="btn-glow">Visit Our Main Site</a>
     </div>
   </section>
 
-  <!-- Contact Section with Calendly -->
+  <!-- Weather Section -->
+  <section id="weather" data-aos="fade-up">
+    <h2>Local Weather: Gulfport • Biloxi • Ocean Springs</h2>
+    <div class="weather-container" id="weather-container">
+      <!-- Weather cards will be inserted by JavaScript -->
+    </div>
+  </section>
+
+  <!-- Contact Section with minimal Calendly pop-up -->
   <section id="contact" data-aos="fade-up">
     <h2>Contact Us</h2>
-    <p>Phone: <a href="tel:2282249150">228-224-9150</a></p>
+    <p>Call: <a href="tel:2282249150">228-224-9150</a></p>
     <p>Email: <a href="mailto:mooreelectric228@gmail.com">mooreelectric228@gmail.com</a></p>
     <p>
       Chat with us:
@@ -454,12 +550,22 @@
       <a href="https://www.facebook.com/228MooreElectric" target="_blank">Facebook</a>
     </p>
 
-    <!-- Embedded Calendly Inline Widget (adjusted height) -->
-    <div
-      class="calendly-inline-widget"
-      data-url="https://calendly.com/228mooreelectric"
-      style="min-width:320px; height:550px; margin-top:2rem;"
-    ></div>
+    <!-- Minimal Calendly Pop-up Button -->
+    <a href="#" class="calendly-popup-btn" id="calendly-btn">
+      Schedule Service
+    </a>
+  </section>
+
+  <!-- Music Section -->
+  <section id="music" data-aos="fade-up">
+    <h2>Rock On</h2>
+    <p class="audio-intro">Enjoy a short music clip while you browse:</p>
+    <!-- Short audio clip (user must click play due to modern browser policies) -->
+    <audio controls style="outline:none;">
+      <source src="https://www.sample-videos.com/audio/mp3/crowd-cheering.mp3" type="audio/mpeg" />
+      <!-- Replace above with your own short AC/DC clip if you have the rights/clip -->
+      Your browser does not support the audio element.
+    </audio>
   </section>
 
   <!-- Chat-Bot Button -->
@@ -471,7 +577,9 @@
 
   <!-- Footer -->
   <footer>
-    &copy; 2025 Moore Electric LLC. All Rights Reserved.
+    &copy; 2025 Moore Electric LLC. All Rights Reserved. 
+    <br>
+    <a href="#home" style="color:#00ffc8;">Back to Top</a>
   </footer>
 
   <!-- AOS JS (Scroll Animations) -->
@@ -480,6 +588,60 @@
     AOS.init({
       duration: 1000, // Animation duration (ms)
       offset: 50      // Offset (in px) from the original trigger point
+    });
+  </script>
+
+  <!-- WEATHER SCRIPT (OpenWeatherMap) -->
+  <script>
+    // Cities you want to display
+    const cities = [
+      { name: "Gulfport", lat: 30.3674, lon: -89.0928 },
+      { name: "Biloxi", lat: 30.3960, lon: -88.8853 },
+      { name: "Ocean Springs", lat: 30.4113, lon: -88.8279 }
+    ];
+
+    // Replace with your own OpenWeatherMap API key
+    const apiKey = "YOUR_API_KEY";
+    const weatherContainer = document.getElementById("weather-container");
+
+    const getWeather = async (city) => {
+      // OpenWeather One Call by lat/lon
+      const url = `https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&units=imperial&appid=${apiKey}`;
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        return data;
+      } catch (err) {
+        console.error("Weather fetch error:", err);
+      }
+    };
+
+    const displayWeather = async () => {
+      for (const city of cities) {
+        const data = await getWeather(city);
+        if (data) {
+          const div = document.createElement("div");
+          div.className = "city-weather";
+          div.innerHTML = `
+            <h3>${city.name}</h3>
+            <p>Temperature: ${Math.round(data.main.temp)} °F</p>
+            <p>Condition: ${data.weather[0].description}</p>
+            <p>Humidity: ${data.main.humidity}%</p>
+          `;
+          weatherContainer.appendChild(div);
+        }
+      }
+    };
+
+    displayWeather();
+  </script>
+
+  <!-- Calendly Pop-Up Script -->
+  <script>
+    document.getElementById('calendly-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' });
+      return false;
     });
   </script>
 </body>

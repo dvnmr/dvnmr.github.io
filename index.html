@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moore Electric LLC</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #fff;
+            overflow-x: hidden;
+        }
+        header {
+            text-align: center;
+            padding: 2rem;
+            background: #0f3460;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        section {
+            padding: 3rem 1rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #00d4ff;
+        }
+        .services, .about, .contact {
+            text-align: center;
+        }
+        .contact a {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #0f3460;
+            margin-top: 2rem;
+        }
+        .chat-bot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #00d4ff;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+        }
+        .chat-bot:hover {
+            transform: scale(1.1);
+        }
+        .hero {
+            background-image: url('/mnt/data/471916574_1551447536246041_480832103889516604_n.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Moore Electric LLC</h1>
+        <p>Powering the Future, Brightening Your Present</p>
+        <nav>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Quantum-Inspired Power Solutions</h1>
+    </div>
+
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <p>From residential repairs to smart home automation, Moore Electric LLC delivers cutting-edge electrical solutions with precision and care.</p>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>With a legacy of excellence, Moore Electric LLC is committed to transforming homes and businesses with the latest in electrical technology and unparalleled expertise.</p>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Phone: <a href="tel:2282249150">228-224-9150</a></p>
+        <p>Email: <a href="mailto:mooreelectric228@gmail.com">mooreelectric228@gmail.com</a></p>
+        <p>Chat with us: <a href="https://m.me/228MooreElectric?ref=Facebook%20messenger" target="_blank">Facebook Messenger</a></p>
+        <p>Follow us on <a href="https://www.facebook.com/228MooreElectric" target="_blank">Facebook</a></p>
+    </section>
+
+    <button class="chat-bot" onclick="window.open('https://m.me/228MooreElectric?ref=Facebook%20messenger', '_blank')">&#128172;</button>
+
+    <footer>
+        <p>&copy; 2025 Moore Electric LLC. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

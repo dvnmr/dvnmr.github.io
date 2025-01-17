@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- BASIC SEO & META -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Moore Electric LLC – Services</title>
-  <meta name="description" content="Explore Moore Electric LLC's residential electrical services: TV mounting, surge protection, fixture installs, free inspections, Tesla charger setups, and more." />
-  <meta name="keywords" content="TV Mounting, Surge Protection, Fixture Installation, Free Inspection, Tesla Charger, Smart Switch, Gulfport Electrician" />
+  <title>Moore Electric LLC – Contact</title>
+  <meta name="description" content="Contact Moore Electric LLC for top-tier residential electrical services, Tesla charger installs, TV mounting, and more along the Gulf Coast." />
+  <meta name="keywords" content="Moore Electric, Contact, Gulfport Electrician, Tesla Charger, TV Mounting, Surge Protection, Residential Electrical" />
 
-  <!-- GOOGLE FONTS -->
+  <!-- Google Fonts -->
   <link
     href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
     rel="stylesheet"
@@ -17,35 +16,27 @@
   <!-- AOS for Scroll Animations -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
-  <!-- FONT AWESOME (for icons) -->
-  <script src="https://kit.fontawesome.com/YourFontAwesomeKit.js" crossorigin="anonymous"></script>
+  <!-- Calendly Widget CSS -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <!-- Calendly Widget JS (For pop-up scheduling) -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
-  <!-- TYPEIT (For typed text effect) -->
+  <!-- TypeIt (for typed text effect) -->
   <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/typeit.min.js"></script>
 
   <style>
     /***********************************************************
      * GLOBAL STYLES
      ***********************************************************/
-    :root {
-      --bg-color: #0e0e0e;
-      --primary-color: #00ffc8;
-      --hover-color: #ff00e6; /* Color shift for swirling circle on hover */
-      --subtext-color: #cccccc;
-      --text-color: #ffffff;
-      --transition-speed: 0.3s;
-      --header-height: 80px;
-    }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    html, body {
+    body {
       font-family: 'Roboto', sans-serif;
-      background: var(--bg-color);
-      color: var(--text-color);
+      background: #0e0e0e;
+      color: #ffffff;
       margin: 0;
       overflow-x: hidden;
     }
@@ -56,13 +47,10 @@
     a {
       text-decoration: none;
       color: inherit;
-      transition: color var(--transition-speed);
-    }
-    a:hover {
-      color: var(--primary-color);
+      cursor: pointer;
     }
 
-    /* HEADER & FOOTER */
+    /* Header & Footer */
     header, footer {
       background: rgba(15, 15, 15, 0.9);
       backdrop-filter: blur(8px);
@@ -71,7 +59,6 @@
       position: fixed;
       top: 0;
       width: 100%;
-      height: var(--header-height);
       z-index: 999;
       display: flex;
       align-items: center;
@@ -84,14 +71,10 @@
       align-items: center;
       gap: 0.5rem;
     }
-    .logo img {
-      height: 40px; 
-      width: auto;
-    }
     .logo-text {
       font-size: 1.5rem;
       font-weight: 700;
-      color: var(--primary-color);
+      color: #00ffc8;
       text-transform: uppercase;
     }
     nav ul {
@@ -101,8 +84,11 @@
     }
     nav ul li a {
       font-weight: 300;
+      transition: color 0.3s;
     }
-
+    nav ul li a:hover {
+      color: #00ffc8;
+    }
     footer {
       padding: 2rem;
       text-align: center;
@@ -110,7 +96,7 @@
       font-size: 0.9rem;
     }
     footer a {
-      color: var(--primary-color);
+      color: #00ffc8;
     }
 
     /***********************************************************
@@ -119,7 +105,7 @@
     .hero {
       position: relative;
       width: 100%;
-      height: 100vh; 
+      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -127,15 +113,13 @@
       background: url('YOUR_LARGE_LIGHTNING_IMAGE.jpg') no-repeat center center;
       background-size: cover;
       background-attachment: fixed;
-      margin-top: var(--header-height);
-      overflow: hidden;
+      margin-top: 80px;
     }
     .hero-overlay {
       background: rgba(0,0,0,0.5);
       position: absolute;
       top: 0; left: 0;
-      width: 100%;
-      height: 100%;
+      width: 100%; height: 100%;
       z-index: 1;
     }
     .hero-content {
@@ -149,38 +133,19 @@
       font-size: 3rem;
       margin-bottom: 1rem;
       text-shadow: 0 0 8px rgba(0,0,0,0.7);
-      animation: subtleGlow 3s ease-in-out infinite alternate;
-    }
-    @keyframes subtleGlow {
-      0% {
-        text-shadow: 0 0 8px rgba(0,255,200,0.3);
-      }
-      100% {
-        text-shadow: 0 0 16px rgba(0,255,200,0.8);
-      }
     }
     .hero p {
       font-size: 1.2rem;
       line-height: 1.5;
       max-width: 700px;
       margin: 0 auto;
-      opacity: 0;
-      animation: fadeBounce 2s ease forwards;
-      animation-delay: 2.5s; /* so it appears after typed text finishes */
     }
-    /* Gentle bounce in for hero paragraph */
-    @keyframes fadeBounce {
-      0% {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      60% {
-        opacity: 1;
-        transform: translateY(-5px);
-      }
-      100% {
-        transform: translateY(0);
-      }
+
+    #typed-hero-text {
+      color: #00ffc8;
+      text-shadow: 0 0 8px rgba(0,255,200,0.5);
+      margin-bottom: 1rem;
+      display: block;
     }
 
     /***********************************************************
@@ -193,121 +158,143 @@
     }
     .content-wrapper h2 {
       font-size: 2.2rem;
-      color: var(--primary-color);
+      color: #00ffc8;
       margin-bottom: 2rem;
       text-align: center;
       text-shadow: 0 0 10px rgba(0, 255, 200, 0.3);
     }
 
     /***********************************************************
-     * SERVICES GRID
+     * CONTACT CONTAINER
      ***********************************************************/
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
       gap: 2rem;
+      justify-content: center;
+      align-items: flex-start;
     }
-    .service-box {
+    .contact-box {
       background: linear-gradient(145deg, rgba(0,0,0,0.8), rgba(20,20,20,0.6));
-      padding: 2rem;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      padding: 2rem;
       transition: transform 0.3s, box-shadow 0.3s;
-      position: relative;
-      opacity: 0; 
-      animation: fadeInUp 0.8s ease forwards; /* slightly faster reveal */
+      flex: 1 1 320px;
+      min-width: 280px;
     }
-    /* Stagger animations for each item */
-    .service-box:nth-child(1) { animation-delay: 0.2s; }
-    .service-box:nth-child(2) { animation-delay: 0.4s; }
-    .service-box:nth-child(3) { animation-delay: 0.6s; }
-    .service-box:nth-child(4) { animation-delay: 0.8s; }
-    .service-box:nth-child(5) { animation-delay: 1s; }
-    .service-box:nth-child(6) { animation-delay: 1.2s; }
-
-    @keyframes fadeInUp {
-      0% {
-        transform: translateY(20px);
-        opacity: 0;
-      }
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    .service-box:hover {
-      transform: translateY(-5px) scale(1.02);
+    .contact-box:hover {
+      transform: translateY(-3px);
       box-shadow: 0 0 20px rgba(0, 255, 200, 0.3);
     }
-    .service-box h3 {
-      color: var(--primary-color);
+    .contact-box h3 {
+      color: #00ffc8;
       margin-bottom: 1rem;
-      font-size: 1.2rem;
-      text-transform: uppercase;
-      text-shadow: 0 0 5px rgba(0,255,200,0.5);
+      font-size: 1.3rem;
     }
-    .service-box p {
+    .contact-box p {
       font-weight: 300;
       line-height: 1.4;
       font-size: 0.95rem;
-      color: var(--subtext-color);
+      margin-bottom: 0.5rem;
+    }
+    .contact-box a {
+      color: #00ffc8;
+    }
+
+    /* Calendly Pop-Up Button */
+    .calendly-popup-btn {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      color: #0e0e0e;
+      background: #00ffc8;
+      border-radius: 5px;
+      font-weight: 700;
+      margin-top: 1rem;
+      text-decoration: none;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .calendly-popup-btn:hover {
+      box-shadow: 0 0 15px #00ffc8;
+      transform: scale(1.05);
     }
 
     /***********************************************************
-     * SWIRLING NEON CIRCLE FOR MESSENGER LINK
+     * WHY CONTACT US
      ***********************************************************/
-    .chat-float-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
+    .why-contact-us {
+      margin-top: 4rem;
+    }
+    .why-contact-us .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .feature-box {
+      background: linear-gradient(145deg, rgba(0,0,0,0.8), rgba(20,20,20,0.6));
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .feature-box:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 20px rgba(0, 255, 200, 0.3);
+    }
+    .feature-box img {
       width: 60px;
       height: 60px;
-      border-radius: 50%;
-      background: conic-gradient(
-        from 0deg,
-        var(--primary-color) 0%,
-        var(--bg-color) 80%,
-        var(--primary-color) 100%
-      );
-      animation: swirl 4s linear infinite;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      z-index: 10000;
-      transition: transform 0.3s ease;
+      margin-bottom: 1rem;
     }
-    @keyframes swirl {
-      to { transform: rotate(360deg); }
+    .feature-box h4 {
+      color: #00ffc8;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
     }
-    .chat-float-btn:hover {
-      animation: swirlHover 1.5s linear infinite;
-      transform: scale(1.1);
-      background: conic-gradient(
-        from 0deg,
-        var(--hover-color) 0%,
-        var(--bg-color) 80%,
-        var(--hover-color) 100%
-      );
+    .feature-box p {
+      font-weight: 300;
+      font-size: 0.95rem;
+      line-height: 1.4;
     }
-    @keyframes swirlHover {
-      to { transform: rotate(360deg); }
+
+    /***********************************************************
+     * TESTIMONIALS (Optional)
+     ***********************************************************/
+    .testimonials {
+      margin-top: 4rem;
+      text-align: center;
     }
-    .chat-float-btn:active {
-      transform: scale(0.95);
+    .testimonials h2 {
+      margin-bottom: 2rem;
     }
-    .chat-float-btn i {
-      color: #000;
-      font-size: 1.4rem;
-      background: #fff; /* White circle behind the icon */
-      border-radius: 50%;
-      padding: 6px;
-      transition: 0.3s ease;
+    .testimonial-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
     }
-    .chat-float-btn i:hover {
-      color: var(--primary-color);
-      background: #000;
+    .testimonial-box {
+      background: linear-gradient(145deg, rgba(0,0,0,0.8), rgba(20,20,20,0.6));
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      padding: 2rem;
+      transition: transform 0.3s;
+    }
+    .testimonial-box:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 20px rgba(0, 255, 200, 0.3);
+    }
+    .testimonial-content {
+      font-size: 0.95rem;
+      line-height: 1.4;
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+    .testimonial-author {
+      color: #00ffc8;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-align: right;
     }
 
     /***********************************************************
@@ -328,15 +315,15 @@
   <!-- HEADER -->
   <header>
     <div class="logo">
-      <img src="YOUR_SMALL_LOGO_LIGHTNING.jpg" alt="Moore Electric Logo">
+      <img src="YOUR_SMALL_LOGO_LIGHTNING.jpg" alt="Moore Electric Logo" style="height:40px; width:auto;">
       <div class="logo-text">Moore Electric</div>
     </div>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="services.html" style="color: var(--primary-color);">Services</a></li>
+        <li><a href="services.html">Services</a></li>
         <li><a href="team.html">Team</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" style="color:#00ffc8;">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -345,63 +332,100 @@
   <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content" data-aos="fade-up">
-      <!-- Typed text effect for the Services heading: multiple lines for variety -->
-      <h1 id="typed-services-title"></h1>
+      <!-- Typed text effect heading -->
+      <h1 id="typed-hero-text"></h1>
       <p>
-        From TV mounting to advanced surge protection, Moore Electric LLC keeps your home 
-        powered safely and reliably along the Gulf Coast.
+        Ready to power up your home with the latest innovations? 
+        From free inspections to Tesla charger installs—let’s talk!
       </p>
     </div>
   </section>
 
-  <!-- SERVICES GRID SECTION -->
+  <!-- CONTACT SECTIONS -->
   <section class="content-wrapper" data-aos="zoom-in">
-    <h2>Residential Electrical Expertise</h2>
-    <div class="services-grid">
-      <div class="service-box">
-        <h3>TV Mounting & Wiring</h3>
-        <p>Secure TV mounting with hidden cables for a sleek, clutter-free setup.</p>
+    <h2>Reach Out</h2>
+    <div class="contact-container">
+      <!-- Contact Details -->
+      <div class="contact-box">
+        <h3>Contact Details</h3>
+        <p>Phone: <a href="tel:2282249150">(228) 224-9150</a></p>
+        <p>Email: 
+          <a href="mailto:mooreelectric228@gmail.com">mooreelectric228@gmail.com</a>
+        </p>
+        <p>
+          Facebook Messenger: 
+          <a href="https://m.me/228MooreElectric?ref=Facebook%20messenger" target="_blank">
+            Message Us
+          </a>
+        </p>
       </div>
-      <div class="service-box">
-        <h3>Smart Switch Installation</h3>
-        <p>Upgrade your home with IoT-ready switches for energy management and voice control.</p>
+      <!-- Calendly Pop-up Section -->
+      <div class="contact-box">
+        <h3>Book a Service</h3>
+        <p>
+          Want to schedule a free inspection or chat about your next project? 
+          Pick a slot that fits your schedule.
+        </p>
+        <a href="#" class="calendly-popup-btn" id="calendly-btn">Book Now</a>
       </div>
-      <div class="service-box">
-        <h3>Tesla Charger Setup</h3>
-        <p>Charge your EV at home with safe, code-compliant Tesla charger solutions.</p>
+    </div>
+  </section>
+
+  <!-- WHY CONTACT US -->
+  <section class="content-wrapper why-contact-us" data-aos="fade-up">
+    <h2>Why Contact Moore Electric?</h2>
+    <div class="feature-grid">
+      <div class="feature-box">
+        <img src="ICON_SPEED.png" alt="Speed Icon">
+        <h4>Fast Response</h4>
+        <p>We’ll get back to you quickly—no more waiting days for a call back.</p>
       </div>
-      <div class="service-box">
-        <h3>Surge Protection</h3>
-        <p>Protect your electronics from power spikes with panel-level surge devices.</p>
+      <div class="feature-box">
+        <img src="ICON_BUDGET.png" alt="Budget Icon">
+        <h4>Upfront Pricing</h4>
+        <p>Transparent quotes, so you know exactly what you're paying for.</p>
       </div>
-      <div class="service-box">
-        <h3>Fixture Installation</h3>
-        <p>From lighting fixtures to ceiling fans and chandeliers, we handle it all with precision.</p>
+      <div class="feature-box">
+        <img src="ICON_EXPERTISE.png" alt="Expertise Icon">
+        <h4>Expertise Guaranteed</h4>
+        <p>Backed by years of residential experience and modern tech solutions.</p>
       </div>
-      <div class="service-box">
-        <h3>Free Inspection</h3>
-        <p>Schedule a basic inspection at no cost to ensure your wiring is safe and up to code.</p>
+      <div class="feature-box">
+        <img src="ICON_PEACE.png" alt="Peace of Mind Icon">
+        <h4>Peace of Mind</h4>
+        <p>Our work meets code requirements, ensuring your home's long-term safety.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- (Optional) TESTIMONIALS SECTION -->
+  <section class="content-wrapper testimonials" data-aos="zoom-in">
+    <h2>Our Clients Love Us</h2>
+    <div class="testimonial-list">
+      <div class="testimonial-box">
+        <div class="testimonial-content">
+          “Reached out via Facebook Messenger, and got a response within an hour. Great service!”
+        </div>
+        <div class="testimonial-author">– Brad T.</div>
+      </div>
+      <div class="testimonial-box">
+        <div class="testimonial-content">
+          “Devon was extremely professional and quick to install my new fixtures. 
+           Highly recommend Moore Electric!”
+        </div>
+        <div class="testimonial-author">– Emily P.</div>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer data-aos="fade-in">
-    &copy; 2025 Moore Electric LLC &bull; 
-    <a href="index.html">Home</a> | 
-    <a href="services.html">Services</a> | 
-    <a href="team.html">Team</a> | 
+    &copy; 2025 Moore Electric LLC &bull;
+    <a href="index.html">Home</a> |
+    <a href="services.html">Services</a> |
+    <a href="team.html">Team</a> |
     <a href="contact.html">Contact</a>
   </footer>
-
-  <!-- SWIRLING NEON CIRCLE FOR MESSENGER -->
-  <div 
-    class="chat-float-btn"
-    title="Chat with Moore Electric"
-    onclick="window.open('https://m.me/228MooreElectric?ref=Facebook%20messenger','_blank')"
-  >
-    <i class="fab fa-facebook-messenger"></i>
-  </div>
 
   <!-- AOS JS (Animate On Scroll) -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -412,18 +436,22 @@
     });
   </script>
 
-  <!-- TYPEIT for typed text in the Hero -->
+  <!-- TYPEIT for typed text effect in Hero -->
   <script>
-    new TypeIt("#typed-services-title", {
-      strings: ["Our Services", "Serving the Gulf Coast"],
+    new TypeIt("#typed-hero-text", {
+      strings: ["Get Wired, Stay Safe."],
       speed: 60,
       waitUntilVisible: true,
-      breakLines: false, // keep it on one line or allow line breaks
-      lifeLike: true,
-      loop: true,        // rotates back and forth
-      nextStringDelay: 1000,
-      loopDelay: 1500,
     }).go();
+  </script>
+
+  <!-- Calendly Pop-Up Script -->
+  <script>
+    document.getElementById('calendly-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' });
+      return false;
+    });
   </script>
 </body>
 </html>

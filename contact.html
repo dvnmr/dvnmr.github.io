@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- BASIC SEO & META -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Moore Electric LLC – Contact</title>
@@ -13,23 +14,23 @@
     rel="stylesheet"
   />
 
-  <!-- AOS for Scroll Animations -->
+  <!-- AOS (Animate On Scroll) -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
-  <!-- Calendly Widget CSS -->
+  <!-- CALENDLY WIDGET CSS -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 
-  <!-- TypeIt (for typed text effect) -->
+  <!-- TYPEIT (For typed text effect) -->
   <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/typeit.min.js"></script>
 
-  <!-- FONT AWESOME (for icons) -->
+  <!-- FONT AWESOME (if needed for icons) -->
   <script src="https://kit.fontawesome.com/yourFontAwesomeKit.js" crossorigin="anonymous"></script>
 
   <style>
     :root {
       --bg-color: #0e0e0e;         /* Page background */
       --primary-color: #00ffc8;    /* Neon green accent */
-      --hover-color: #ff00c8;      /* Pink hover color on scrollbar/orb hover */
+      --hover-color: #ff00c8;      /* Pink hover color for scrollbar/orb */
       --text-color: #ffffff;       /* Main text color */
       --subtext-color: #cccccc;    /* Secondary text color */
       --header-height: 70px;       /* Matches other pages */
@@ -51,7 +52,7 @@
       overflow-x: hidden;
     }
 
-    /* CUSTOM SCROLLBAR (Neon green track, pink hover) */
+    /* CUSTOM SCROLLBAR (Neon green, pink hover) */
     ::-webkit-scrollbar {
       width: 8px;
       background: #1a1a1a; /* track color */
@@ -115,7 +116,7 @@
       color: var(--primary-color);
     }
 
-    /* MAIN (Ensures scrolling behind fixed header) */
+    /* MAIN (for scrollbar behind header) */
     main {
       margin-top: var(--header-height);
       min-height: calc(100vh - var(--header-height));
@@ -233,7 +234,7 @@
       transform: scale(1.05);
     }
 
-    /* WHY CONTACT US (3 boxes now, no icons) */
+    /* WHY CONTACT US (3 boxes, no icons, peace-of-mind removed) */
     .why-contact-us {
       margin-top: 4rem;
     }
@@ -267,7 +268,7 @@
       color: var(--subtext-color);
     }
 
-    /* TESTIMONIALS (Optional) */
+    /* TESTIMONIALS */
     .testimonials {
       margin-top: 4rem;
       text-align: center;
@@ -321,7 +322,7 @@
       color: #fff;
     }
 
-    /* SWIRLING MESSENGER ORB */
+    /* SWIRLING NEON MESSENGER ORB */
     .chat-float-btn {
       position: fixed;
       bottom: 20px;
@@ -394,13 +395,13 @@
     </nav>
   </header>
 
-  <!-- MAIN CONTENT (Ensures the scrollbar extends behind the header) -->
+  <!-- MAIN CONTENT (Scrollbar behind fixed header) -->
   <main>
     <!-- PARALLAX HERO -->
     <section class="hero">
       <div class="hero-overlay"></div>
       <div class="hero-content" data-aos="fade-up">
-        <!-- Typed text effect heading -->
+        <!-- TYPED TEXT -->
         <h1 id="typed-hero-text"></h1>
         <p>
           Ready to power up your home with the latest innovations?
@@ -428,6 +429,7 @@
             </a>
           </p>
         </div>
+
         <!-- Calendly Pop-up Section -->
         <div class="contact-box">
           <h3>Book a Service</h3>
@@ -456,7 +458,6 @@
           <h4>Expertise Guaranteed</h4>
           <p>Backed by years of residential experience and modern tech solutions.</p>
         </div>
-        <!-- Removed 'Peace of Mind' box entirely -->
       </div>
     </section>
 
@@ -508,7 +509,7 @@
     }).go();
   </script>
 
-  <!-- Calendly Pop-Up Script -->
+  <!-- CALENDLY POP-UP SCRIPT -->
   <script>
     document.getElementById('calendly-btn').addEventListener('click', function(e) {
       e.preventDefault();

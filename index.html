@@ -17,13 +17,13 @@
   <!-- AOS (Animate On Scroll) -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
-  <!-- FONT AWESOME (for icons if needed) -->
+  <!-- FONT AWESOME (for icons if desired) -->
   <script src="https://kit.fontawesome.com/yourFontAwesomeKit.js" crossorigin="anonymous"></script>
 
   <!-- TYPEIT (For typed hero text) -->
   <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/typeit.min.js"></script>
 
-  <!-- CALENDLY (Optional for pop-up scheduling) -->
+  <!-- CALENDLY (For pop-up scheduling) -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
@@ -35,7 +35,7 @@
       --text-color: #ffffff;      /* main text color */
       --subtext-color: #cccccc;   /* secondary text color */
       --header-height: 70px;      
-      --transition-speed: 0.3s;
+      --transition-speed: 0.3s;   /* standard transition time */
     }
 
     /* RESET & GLOBAL */
@@ -53,7 +53,7 @@
       overflow-x: hidden;
     }
 
-    /* CUSTOM SCROLLBAR */
+    /* CUSTOM SCROLLBAR (Neon green, pink hover) */
     ::-webkit-scrollbar {
       width: 8px;
       background: #1a1a1a; /* track color */
@@ -122,29 +122,23 @@
       min-height: calc(100vh - var(--header-height));
     }
 
-    /* HERO SECTION (VIDEO OR IMAGE BACKGROUND) */
+    /* HERO SECTION (BACKGROUND IMAGE OR VIDEO) */
     .hero {
       position: relative;
       width: 100%;
       min-height: 100vh;
       overflow: hidden;
-    }
-    /* If you prefer a video background, uncomment the .video-bg and <video> code below
-       and remove or replace the background. Or keep a parallax image. */
-    .video-bg {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 0;
+      background: url("YOUR_HERO_IMAGE.jpg") center center / cover no-repeat fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
     .hero-overlay {
       position: absolute;
       top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.3);
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.4);
       z-index: 1;
     }
     .hero-content {
@@ -153,12 +147,6 @@
       max-width: 90%;
       margin: 0 auto;
       padding: 2rem;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh; /* ensures full-screen hero */
     }
     .hero-content h1 {
       font-size: 3rem;
@@ -172,7 +160,7 @@
       line-height: 1.5;
       color: var(--subtext-color);
     }
-    .cta-btn {
+    .hero .cta-btn {
       display: inline-block;
       padding: 0.75rem 2rem;
       background: var(--primary-color);
@@ -182,7 +170,7 @@
       text-decoration: none;
       transition: box-shadow var(--transition-speed), transform var(--transition-speed);
     }
-    .cta-btn:hover {
+    .hero .cta-btn:hover {
       box-shadow: 0 0 15px var(--primary-color);
       transform: scale(1.05);
     }
@@ -193,12 +181,12 @@
       margin: 0 auto;
       padding: 4rem 2rem;
     }
-    .featured-services h2 {
-      text-transform: uppercase;
-      color: var(--primary-color);
+    .content-wrapper h2 {
       font-size: 2rem;
+      color: var(--primary-color);
       text-align: center;
       margin-bottom: 2rem;
+      text-transform: uppercase;
     }
     .services-grid {
       display: grid;
@@ -213,24 +201,16 @@
       transition: transform var(--transition-speed), box-shadow var(--transition-speed);
       display: block;
       text-decoration: none;
-      opacity: 0;        /* fade in animation */
-      transform: translateY(15px); 
-      animation: fadeInUp 0.8s forwards;
+      opacity: 0;       
+      transform: translateY(10px);
+      animation: fadeInUp 0.7s forwards;
     }
-    .service-link:nth-child(1) {
-      animation-delay: 0.2s;
-    }
-    .service-link:nth-child(2) {
-      animation-delay: 0.4s;
-    }
-    .service-link:nth-child(3) {
-      animation-delay: 0.6s;
-    }
-    .service-link:nth-child(4) {
-      animation-delay: 0.8s;
-    }
+    .service-link:nth-child(1) { animation-delay: 0.1s; }
+    .service-link:nth-child(2) { animation-delay: 0.2s; }
+    .service-link:nth-child(3) { animation-delay: 0.3s; }
+    .service-link:nth-child(4) { animation-delay: 0.4s; }
     @keyframes fadeInUp {
-      to {
+      100% {
         opacity: 1;
         transform: translateY(0);
       }
@@ -272,7 +252,7 @@
       color: #fff;
     }
 
-    /* SWIRLING NEON ORB (MESSENGER LINK) */
+    /* SWIRLING NEON ORB (MESSENGER) */
     .chat-float-btn {
       position: fixed;
       bottom: 20px;
@@ -321,9 +301,6 @@
       .hero-content h1 {
         font-size: 2rem;
       }
-      .cta-btn {
-        margin-top: 1rem;
-      }
       nav ul {
         gap: 1rem;
       }
@@ -334,12 +311,10 @@
     }
   </style>
 </head>
-
 <body>
   <!-- HEADER -->
   <header>
     <div class="logo">
-      <!-- If you have a real logo, replace below: -->
       <img src="YOUR_LOGO.svg" alt="Moore Electric Logo">
       <div class="logo-text">Moore Electric</div>
     </div>
@@ -355,13 +330,9 @@
 
   <!-- MAIN CONTENT -->
   <main>
-    <!-- HERO SECTION (Video or Parallax) -->
-    <!-- Option 1: VIDEO BACKGROUND. Uncomment if you'd like a video hero. 
-         <video class="video-bg" autoplay muted loop playsinline>
-           <source src="YOUR_VIDEO_LINK.mp4" type="video/mp4" />
-         </video> 
-    -->
+    <!-- HERO SECTION (Image Parallax or Video) -->
     <section class="hero">
+      <!-- If you want a video background, swap this out with <video class="video-bg"> etc. -->
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <h1 id="typed-hero-text"></h1>
@@ -369,44 +340,98 @@
           Trusted residential electrical solutions for the Gulf Coast—TV mounting, Tesla chargers,
           surge protection, and more.
         </p>
+        <!-- CTA Button leading to Services page or Calendly -->
         <a href="services.html" class="cta-btn">Explore Our Services</a>
       </div>
     </section>
 
     <!-- FEATURED SERVICES -->
-    <section class="content-wrapper featured-services">
+    <section class="content-wrapper">
       <h2>Featured Services</h2>
       <div class="services-grid">
-        <a 
-          href="#" 
+        <a
+          href="#"
           class="service-link"
           onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' }); return false;"
         >
           <div class="service-title">TV Mounting</div>
           <div class="service-desc">
-            Keep your living space stylish and tidy with professional mounting and hidden wiring.
+            Keep your living space stylish and tidy with pro mounting & hidden wires.
           </div>
         </a>
-        <a 
+        <a
           href="#"
           class="service-link"
           onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' }); return false;"
         >
           <div class="service-title">Surge Protection</div>
           <div class="service-desc">
-            Protect expensive electronics from sudden voltage spikes with our panel-level solutions.
+            Guard your home electronics from damaging voltage spikes & storms.
           </div>
         </a>
-        <a 
+        <a
           href="#"
           class="service-link"
           onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' }); return false;"
         >
           <div class="service-title">Tesla Charger Setup</div>
           <div class="service-desc">
-            Ensure a safe, code-compliant EV charger install for fast home charging.
+            Install a safe, fast EV charging solution—charge your Tesla at home.
           </div>
         </a>
         <a
           href="#"
-          class="
+          class="service-link"
+          onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' }); return false;"
+        >
+          <div class="service-title">Free Inspection</div>
+          <div class="service-desc">
+            Concerned about wiring? Schedule a no-cost inspection for peace of mind.
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2025 Moore Electric LLC &bull;
+    <a href="index.html">Home</a> | 
+    <a href="services.html">Services</a> | 
+    <a href="team.html">Team</a> | 
+    <a href="contact.html">Contact</a>
+  </footer>
+
+  <!-- SWIRLING NEON MESSENGER ORB -->
+  <div 
+    class="chat-float-btn"
+    title="Chat with Moore Electric"
+    onclick="window.open('https://m.me/228MooreElectric?ref=Facebook%20messenger','_blank')"
+  >
+    <i class="fab fa-facebook-messenger"></i>
+  </div>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      offset: 50,
+    });
+  </script>
+
+  <!-- TYPED TEXT IN HERO -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      new TypeIt("#typed-hero-text", {
+        strings: ["Welcome to Moore Electric.", "Powering the Gulf Coast."],
+        speed: 60,
+        waitUntilVisible: true,
+        loop: true,
+        nextStringDelay: 1200,
+        loopDelay: 1500,
+      }).go();
+    });
+  </script>
+</body>
+</html>

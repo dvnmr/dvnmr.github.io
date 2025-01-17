@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Moore Electric LLC – Home</title>
-  <meta name="description" content="Moore Electric LLC in Gulfport, MS. Residential electrical services including TV mounting, surge protection, fixture installs, free inspections, and more."/>
-  <meta name="keywords" content="Moore Electric, Gulfport Electrician, Surge Protection, Fixture Install, Free Inspection, Tesla Charger, Smart Switch" />
+  <meta name="description" content="Moore Electric LLC in Gulfport, MS. Top-tier residential electrical services, featuring advanced Tesla charger installs, TV mounting, surge protection, and more."/>
+  <meta name="keywords" content="Moore Electric, Gulfport Electrician, Surge Protection, Tesla Charger, Smart Switch, TV Mounting" />
 
   <!-- Google Fonts -->
   <link
@@ -13,13 +13,16 @@
     rel="stylesheet"
   />
 
-  <!-- Calendly (If you plan to use pop-ups on Home) -->
+  <!-- AOS for Scroll Animations -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <!-- Calendly (If needed for pop-ups on Home) -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
   <style>
     /***********************************************************
-     * GLOBAL STYLES
+     * GLOBAL STYLES (Enhanced)
      ***********************************************************/
     * {
       margin: 0;
@@ -31,6 +34,7 @@
       background: #0e0e0e;
       color: #ffffff;
       margin: 0;
+      overflow-x: hidden; /* for parallax + no horizontal scroll */
     }
     h1, h2, h3, h4 {
       font-family: 'Orbitron', sans-serif;
@@ -41,7 +45,9 @@
       color: inherit;
     }
 
-    /* Header & Navigation */
+    /***********************************************************
+     * HEADER
+     ***********************************************************/
     header, footer {
       background: rgba(15, 15, 15, 0.9);
       backdrop-filter: blur(8px);
@@ -66,6 +72,7 @@
       font-size: 1.5rem;
       font-weight: 700;
       color: #00ffc8;
+      text-transform: uppercase;
     }
     nav ul {
       display: flex;
@@ -80,21 +87,24 @@
       color: #00ffc8;
     }
 
-    /* Hero Section */
+    /***********************************************************
+     * PARALLAX HERO
+     ***********************************************************/
     .hero {
       position: relative;
       width: 100%;
-      min-height: 80vh; /* ensures a visually appealing hero */
+      height: 100vh; /* full viewport height */
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      background: url('YOUR_LARGE_LIGHTNING_IMAGE.jpg') no-repeat center center / cover; 
-      /* Replace with your actual hero image */
+      background: url('YOUR_LARGE_LIGHTNING_IMAGE.jpg') no-repeat center center;
+      background-size: cover;
+      background-attachment: fixed; /* parallax effect */
       margin-top: 80px; /* avoid header overlap */
     }
     .hero-overlay {
-      background: rgba(0,0,0,0.6);
+      background: rgba(0,0,0,0.5);
       position: absolute;
       top: 0;
       left: 0;
@@ -110,9 +120,18 @@
       padding: 2rem;
     }
     .hero h1 {
-      font-size: 3rem;
+      font-size: 3.5rem;
       margin-bottom: 1rem;
       text-shadow: 0 0 10px rgba(0,0,0,0.7);
+      animation: glowText 3s ease-in-out infinite alternate;
+    }
+    @keyframes glowText {
+      from {
+        text-shadow: 0 0 10px rgba(0,255,200,0.5);
+      }
+      to {
+        text-shadow: 0 0 20px rgba(0,255,200,1);
+      }
     }
     .hero p {
       font-size: 1.2rem;
@@ -130,26 +149,32 @@
       font-weight: 700;
       margin-top: 2rem;
       text-decoration: none;
-      transition: box-shadow 0.3s;
+      transition: box-shadow 0.3s, transform 0.3s;
     }
     .btn-glow:hover {
       box-shadow: 0 0 15px #00ffc8;
+      transform: scale(1.05);
     }
 
-    /* Content Wrapper & Section Titles */
+    /***********************************************************
+     * CONTENT WRAPPER
+     ***********************************************************/
     .content-wrapper {
       max-width: 1200px;
       margin: 0 auto;
       padding: 4rem 2rem;
     }
     .content-wrapper h2 {
-      font-size: 2rem;
+      font-size: 2.2rem;
       color: #00ffc8;
       margin-bottom: 2rem;
       text-align: center;
+      text-shadow: 0 0 10px rgba(0, 255, 200, 0.3);
     }
 
-    /* Featured Services */
+    /***********************************************************
+     * FEATURED SERVICES
+     ***********************************************************/
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -160,21 +185,29 @@
       padding: 2rem;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
-      transition: transform 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
     }
     .service-box:hover {
-      transform: translateY(-3px);
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 0 20px rgba(0, 255, 200, 0.3);
     }
     .service-box h3 {
       color: #00ffc8;
       margin-bottom: 1rem;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      text-shadow: 0 0 5px rgba(0,255,200,0.5);
     }
     .service-box p {
       font-weight: 300;
       line-height: 1.4;
+      font-size: 0.95rem;
     }
 
-    /* Weather Section */
+    /***********************************************************
+     * WEATHER SECTION
+     ***********************************************************/
     .weather-section h2 {
       margin-bottom: 2rem;
     }
@@ -188,9 +221,9 @@
       background: linear-gradient(145deg, #222, #111);
       padding: 2rem;
       border-radius: 10px;
-      width: 250px;
+      width: 260px;
       box-shadow: 0 0 10px rgba(0,0,0,0.5);
-      text-align: left;
+      text-align: center;
       position: relative;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
@@ -204,8 +237,8 @@
       margin-bottom: 0.5rem;
     }
     .weather-card img {
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       margin-right: 0.5rem;
       vertical-align: middle;
     }
@@ -219,7 +252,9 @@
       color: #fff;
     }
 
-    /* Footer */
+    /***********************************************************
+     * FOOTER
+     ***********************************************************/
     footer {
       padding: 2rem;
       text-align: center;
@@ -230,16 +265,15 @@
       color: #00ffc8;
     }
 
-    /* Responsive Breakpoints */
+    /***********************************************************
+     * RESPONSIVE
+     ***********************************************************/
     @media(max-width:768px) {
       .hero h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
       nav ul {
         gap: 1rem;
-      }
-      .services-grid {
-        grid-template-columns: 1fr;
       }
       .weather-card {
         width: 100%;
@@ -249,7 +283,7 @@
 </head>
 <body>
 
-  <!-- Header / Navigation -->
+  <!-- HEADER -->
   <header>
     <div class="logo">
       <img src="YOUR_SMALL_LOGO_LIGHTNING.jpg" alt="Moore Electric Logo" style="height:40px; width:auto;">
@@ -265,53 +299,52 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
+  <!-- PARALLAX HERO -->
   <section class="hero">
     <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1>Your Local Gulfport Electricians</h1>
+    <div class="hero-content" data-aos="fade-up">
+      <h1>Empowering Gulfport & Beyond</h1>
       <p>
-        Moore Electric LLC provides top-tier residential electrical services, from TV mounting 
-        and surge protection to Tesla charger installations. Proudly serving Gulfport, Biloxi, 
-        Ocean Springs, and beyond.
+        Moore Electric LLC brings cutting-edge electrical solutions to your doorstep, 
+        from Tesla charger installs to top-notch surge protection. Experience the future of power—today.
       </p>
       <a href="services.html" class="btn-glow">Explore Our Services</a>
     </div>
   </section>
 
-  <!-- Featured Services -->
-  <section class="content-wrapper">
+  <!-- FEATURED SERVICES -->
+  <section class="content-wrapper" data-aos="zoom-in">
     <h2>Featured Residential Services</h2>
     <div class="services-grid">
       <div class="service-box">
-        <h3>TV Mounting & Wiring</h3>
-        <p>Professional TV mounting with hidden wiring for a clean look.</p>
+        <h3>TV Mounting</h3>
+        <p>Professional TV mounting with hidden wiring for a modern, clutter-free look.</p>
       </div>
       <div class="service-box">
         <h3>Surge Protection</h3>
-        <p>Panel-level surge protection to safeguard all your home electronics.</p>
+        <p>Guard your home electronics from power surges with advanced panel-level devices.</p>
       </div>
       <div class="service-box">
         <h3>Tesla Charger Setup</h3>
-        <p>Install safe, code-compliant EV chargers for your electric vehicle.</p>
+        <p>Install safe, code-compliant Tesla and EV chargers for your electric vehicle.</p>
       </div>
       <div class="service-box">
         <h3>Free Inspection</h3>
-        <p>Unsure about your wiring? Ask about our complimentary inspection offer.</p>
+        <p>Have concerns about your wiring? Schedule a complimentary safety inspection today.</p>
       </div>
     </div>
   </section>
 
-  <!-- Weather Section -->
-  <section class="weather-section content-wrapper">
-    <h2>Local Weather Forecast</h2>
+  <!-- WEATHER SECTION (CURRENT WEATHER ONLY) -->
+  <section class="weather-section content-wrapper" data-aos="fade-up">
+    <h2>Local Weather – Current Conditions</h2>
     <div class="weather-grid" id="weather-container">
-      <!-- Cards inserted by JavaScript -->
+      <!-- Single card per city, only periods[0] from the forecast. -->
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
+  <!-- FOOTER -->
+  <footer data-aos="fade-in">
     &copy; 2025 Moore Electric LLC &bull; 
     <a href="index.html">Home</a> | 
     <a href="services.html">Services</a> | 
@@ -319,8 +352,21 @@
     <a href="contact.html">Contact</a>
   </footer>
 
-  <!-- Weather Script (NWS API) -->
+  <!-- AOS JS (Animate On Scroll) -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
+    AOS.init({
+      duration: 1000, // animation duration in ms
+      offset: 50,     // offset (in px) from original trigger point
+    });
+  </script>
+
+  <!-- WEATHER SCRIPT (NWS - Current Condition) -->
+  <script>
+    /*
+      We'll fetch from the NWS /points/ and /forecast endpoints for each city,
+      then only display periods[0], which typically represents the current or very next condition.
+    */
     const cityCoords = [
       { name: "Gulfport", lat: 30.3674, lon: -89.0928 },
       { name: "Biloxi", lat: 30.3960, lon: -88.8853 },
@@ -344,7 +390,7 @@
 
     function createWeatherCard(city, period) {
       return `
-        <div class="weather-card">
+        <div class="weather-card" data-aos="zoom-in">
           <h3>${city}</h3>
           <p><img src="${period.icon}" alt="Weather Icon"> ${period.shortForecast}</p>
           <p>Temperature: <span>${period.temperature}°F</span></p>
@@ -357,17 +403,14 @@
       const container = document.getElementById("weather-container");
       for (const city of cityCoords) {
         const periods = await getNwsForecast(city.lat, city.lon);
-        if (periods) {
-          // Let's show the first 1 or 2 periods for brevity
-          const relevantPeriods = periods.slice(0, 2);
-          relevantPeriods.forEach(period => {
-            container.innerHTML += createWeatherCard(city.name, period);
-          });
+        if (periods && periods.length > 0) {
+          const current = periods[0]; // Show only the first period
+          container.innerHTML += createWeatherCard(city.name, current);
         }
       }
     }
-
     displayForecasts();
   </script>
+
 </body>
 </html>

@@ -114,18 +114,22 @@
       position: relative;
       width: 100%;
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      overflow: hidden;
-      /* Replace with your background image */
-      background: url("YOUR_HERO_IMAGE.jpg") center center / cover no-repeat;
+      overflow: hidden; /* ensures video doesn’t scroll */
+    }
+    .video-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
     }
     .hero-overlay {
       position: absolute;
       top: 0; left: 0;
-      width: 100%; height: 100%;
+      width: 100%;
+      height: 100%;
       background: rgba(0,0,0,0.3);
       z-index: 1;
     }
@@ -135,6 +139,7 @@
       max-width: 90%;
       margin: 0 auto;
       padding: 2rem;
+      text-align: center;
     }
     .hero h1 {
       font-family: 'Orbitron', sans-serif;
@@ -368,7 +373,7 @@
       color: #fff;
     }
 
-    /* SWIRLING NEON CIRCLE - NOW FOR CHATFUEL */
+    /* SWIRLING NEON CIRCLE - CHATFUEL LINK */
     .chat-float-btn {
       position: fixed;
       bottom: 20px;
@@ -376,7 +381,6 @@
       width: 70px;
       height: 70px;
       border-radius: 50%;
-      /* Create a glowing orb using a conic or radial gradient */
       background: radial-gradient(circle, var(--primary-color) 0%, var(--bg-color) 80%, var(--primary-color) 100%);
       animation: swirl 4s linear infinite;
       display: flex;
@@ -387,29 +391,24 @@
       transition: transform 0.3s ease, background var(--transition-speed);
     }
 
-    /* Swirl animation */
     @keyframes swirl {
       to { transform: rotate(360deg); }
     }
     .chat-float-btn:hover {
       animation: swirlHover 1.5s linear infinite;
       transform: scale(1.1);
-      /* Change color on hover */
       background: radial-gradient(circle, #ff00c8 0%, #0e0e0e 80%, #ff00c8 100%);
     }
-    /* Faster swirl on hover */
     @keyframes swirlHover {
       to { transform: rotate(360deg); }
     }
-    /* Visual feedback on click */
     .chat-float-btn:active {
       transform: scale(0.95);
     }
-    /* Center an icon inside swirling circle */
     .chat-float-btn i {
       color: #000;
       font-size: 1.6rem;
-      background: #fff; /* White circle behind the icon for clarity */
+      background: #fff;
       border-radius: 50%;
       padding: 8px;
       transition: 0.3s ease;
@@ -455,8 +454,22 @@
 
   <!-- MAIN CONTENT -->
   <main>
-    <!-- HERO -->
+    <!-- HERO with VIDEO BACKGROUND -->
     <section class="hero">
+      <video 
+        class="video-bg" 
+        autoplay 
+        muted 
+        loop 
+        playsinline
+      >
+        <!-- Replace the URL below with your actual Dropbox link + ?raw=1 -->
+        <source 
+          src="https://www.dropbox.com/scl/fi/5ycicqxjy9fom5mr57ru6/20250116_2150_Tech-Harmony-to-Dynamic-Thrill_remix_01jhs64yn4feptndn40ear2hhf.mp4?raw=1"
+          type="video/mp4"
+        />
+      </video>
+
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <h1 id="typed-hero-text"></h1>
@@ -588,7 +601,6 @@
     title="Chat with Moore Electric via Chatfuel"
     onclick="window.open('https://chatfuel.com/your-bot-link','_blank')"
   >
-    <!-- You can pick a different icon if you want -->
     <i class="fas fa-comments"></i>
   </div>
 

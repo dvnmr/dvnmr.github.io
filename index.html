@@ -5,12 +5,12 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Moore Electric LLC – Gulf Coast Electrical Services & Chat Bot</title>
-  <meta name="description" content="Moore Electric: Top-tier residential electrical solutions. Now featuring our advanced Messenger Chatbot for quick support."/>
+  <meta name="description" content="Moore Electric: Top-tier electrical solutions. Now featuring our advanced Messenger Chatbot for instant on-site support."/>
   <meta name="keywords" content="Moore Electric, Tesla Charger, Messenger Chatbot, Electrical Services, Surge Protection"/>
 
   <!-- OG TAGS -->
   <meta property="og:title" content="Moore Electric LLC – Next-Level Electrical Services"/>
-  <meta property="og:description" content="Professional electrician services plus a brand-new Messenger Chatbot experience."/>
+  <meta property="og:description" content="Professional electrician services plus a Messenger Chatbot experience."/>
   <meta property="og:url" content="https://www.yourdomain.com/"/>
   <meta property="og:type" content="website"/>
   <meta property="og:image" content="https://www.yourdomain.com/images/og_image.jpg"/>
@@ -18,7 +18,7 @@
   <!-- TWITTER -->
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Moore Electric LLC – Next-Level Electrical Services"/>
-  <meta name="twitter:description" content="Professional electrician services plus a brand-new Messenger Chatbot experience."/>
+  <meta name="twitter:description" content="Professional electrician services plus a Messenger Chatbot experience."/>
   <meta name="twitter:image" content="https://www.yourdomain.com/images/twitter_card.jpg"/>
 
   <!-- CANONICAL URL -->
@@ -35,48 +35,35 @@
   <!-- TYPEIT (For typed text) -->
   <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/typeit.min.js"></script>
 
-  <!-- CALENDLY WIDGET (If needed) -->
+  <!-- CALENDLY (If needed) -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
-  <!-- OPTIONAL PRELOADER STYLES -->
-  <style>
-    /* PRELOADER (Optional) */
-    #preloader {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: #0e0e0e;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      opacity: 1;
-      transition: opacity 0.5s ease;
-    }
-    #preloader.hidden {
-      opacity: 0;
-      pointer-events: none;
-    }
-    .spinner {
-      border: 4px solid #ccc;
-      border-top: 4px solid #00ffc8;
-      border-radius: 50%;
-      width: 40px; height: 40px;
-      animation: spin 0.8s linear infinite;
-    }
-    @keyframes spin {
-      100% { transform: rotate(360deg); }
-    }
-  </style>
+  <!-- FACEBOOK SDK & CUSTOMER CHAT (required for chat plugin) -->
+  <div id="fb-root"></div>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        xfbml: true,
+        version: 'v17.0'
+      });
+    };
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+       fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
 
   <!-- MAIN STYLES -->
   <style>
     :root {
-      --color-bg: #0e0e0e;
-      --color-primary: #00ffc8;
-      --color-text: #fff;
-      --color-subtext: #ccc;
+      --bg-color: #0e0e0e;
+      --primary-color: #00ffc8;
+      --text-color: #fff;
+      --subtext-color: #ccc;
       --transition-speed: 0.3s;
       --header-height: 70px;
     }
@@ -87,16 +74,15 @@
     }
     html, body {
       font-family: 'Roboto', sans-serif;
-      background: var(--color-bg);
-      color: var(--color-text);
+      background: var(--bg-color);
+      color: var(--text-color);
       overflow-x: hidden;
     }
 
     /* HEADER */
     header {
       position: fixed;
-      top: 0;
-      left: 0;
+      top: 0; left: 0;
       width: 100%;
       height: var(--header-height);
       display: flex;
@@ -119,7 +105,7 @@
     .logo-text {
       font-family: 'Orbitron', sans-serif;
       font-size: 1.5rem;
-      color: var(--color-primary);
+      color: var(--primary-color);
       text-transform: uppercase;
     }
     nav ul {
@@ -128,54 +114,51 @@
       gap: 2rem;
     }
     nav ul li a {
-      color: var(--color-text);
+      color: var(--text-color);
       transition: color var(--transition-speed);
     }
     nav ul li a:hover {
-      color: var(--color-primary);
+      color: var(--primary-color);
     }
 
-    /* HERO SECTION */
+    /* HERO */
     main {
       margin-top: var(--header-height);
     }
-
-    /* 
-      Option 1: Video background hero
-      Make sure to optimize (short, looped, muted, small file size).
-    */
     .hero {
       position: relative;
       width: 100%;
-      min-height: 100vh; /* ensures we fill the screen initially */
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       overflow: hidden;
     }
-    .hero-video {
+    /* If you want a video background, place a video tag here 
+       Or replace with a single hero image background:
+    */
+    .hero::before {
+      content: "";
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      object-fit: cover;
-      z-index: -1;
+      background: url("YOUR_HERO_IMAGE.jpg") center center / cover no-repeat;
+      z-index: -2;
     }
-    /* Lighten or remove hero overlay to avoid a big black block. */
     .hero-overlay {
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0,0,0,0.3); /* was 0.5 or more; keep it low */
-      z-index: 1;
-      transition: background var(--transition-speed);
+      background: rgba(0, 0, 0, 0.3);
+      z-index: -1;
     }
     .hero-content {
       position: relative;
-      z-index: 2;
       max-width: 90%;
       margin: 0 auto;
       padding: 2rem;
+      z-index: 1;
     }
     .hero h1 {
       font-family: 'Orbitron', sans-serif;
@@ -188,12 +171,13 @@
       max-width: 600px;
       margin: 0.5rem auto 0;
       line-height: 1.5;
+      color: var(--subtext-color);
     }
     .btn-glow {
       margin-top: 2rem;
       display: inline-block;
       padding: 0.75rem 2rem;
-      background: var(--color-primary);
+      background: var(--primary-color);
       color: #000;
       border-radius: 4px;
       font-weight: 700;
@@ -201,7 +185,7 @@
       transition: box-shadow var(--transition-speed), transform var(--transition-speed);
     }
     .btn-glow:hover {
-      box-shadow: 0 0 15px var(--color-primary);
+      box-shadow: 0 0 15px var(--primary-color);
       transform: scale(1.05);
     }
 
@@ -213,7 +197,7 @@
     }
     .content-wrapper h2 {
       font-size: 2rem;
-      color: var(--color-primary);
+      color: var(--primary-color);
       text-align: center;
       margin-bottom: 2rem;
     }
@@ -237,13 +221,13 @@
       box-shadow: 0 0 15px rgba(0,255,200,0.4);
     }
     .service-title {
-      color: var(--color-primary);
+      color: var(--primary-color);
       font-size: 1.2rem;
       margin-bottom: 1rem;
       text-transform: uppercase;
     }
     .service-desc {
-      color: var(--color-subtext);
+      color: var(--subtext-color);
       font-weight: 300;
     }
 
@@ -270,7 +254,7 @@
       position: relative;
       z-index: 2;
       font-size: 2rem;
-      color: var(--color-primary);
+      color: var(--primary-color);
       text-align: center;
       text-shadow: 0 0 8px rgba(0,255,200,0.5);
       padding: 2rem;
@@ -302,12 +286,12 @@
       object-fit: contain;
     }
     .choose-item h3 {
-      color: var(--color-primary);
+      color: var(--primary-color);
       margin-bottom: 1rem;
       font-size: 1.2rem;
     }
     .choose-item p {
-      color: var(--color-subtext);
+      color: var(--subtext-color);
       font-size: 0.95rem;
       line-height: 1.4;
     }
@@ -337,11 +321,11 @@
       font-size: 0.95rem;
       line-height: 1.4;
       margin-bottom: 1rem;
-      color: var(--color-subtext);
+      color: var(--subtext-color);
       font-weight: 300;
     }
     .testimonial-author {
-      color: var(--color-primary);
+      color: var(--primary-color);
       font-size: 0.9rem;
       text-align: right;
     }
@@ -367,11 +351,11 @@
     }
     .weather-card:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(0, 255, 200, 0.8);
+      box-shadow: 0 0 20px rgba(0,255,200,0.8);
     }
     .weather-card h3 {
       font-size: 1.4rem;
-      color: var(--color-primary);
+      color: var(--primary-color);
       margin-bottom: 0.5rem;
     }
     .weather-card img {
@@ -384,7 +368,7 @@
     .weather-card p {
       font-size: 1rem;
       margin-bottom: 0.5rem;
-      color: var(--color-subtext);
+      color: var(--subtext-color);
     }
     .weather-card span {
       font-weight: bold;
@@ -401,11 +385,98 @@
       margin-top: 3rem;
     }
     footer a {
-      color: var(--color-primary);
+      color: var(--primary-color);
       transition: color var(--transition-speed);
     }
     footer a:hover {
       color: #fff;
+    }
+
+    /* SIDEPANEL FOR MESSENGER CHAT */
+    .chat-panel {
+      position: fixed;
+      top: 0;
+      right: -370px; /* hide off screen initially */
+      width: 350px;
+      height: 100%;
+      background: #fff; /* White background for the plugin’s container */
+      box-shadow: -2px 0 10px rgba(0,0,0,0.4);
+      transition: right 0.4s ease;
+      z-index: 10000;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .chat-panel.open {
+      right: 0; /* Slide in */
+    }
+    .chat-header {
+      background: var(--primary-color);
+      color: #000;
+      font-weight: 600;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .chat-header .close-btn {
+      cursor: pointer;
+      font-size: 1.2rem;
+      background: #000;
+      color: var(--primary-color);
+      border: none;
+      border-radius: 4px;
+      padding: 0.3rem 0.6rem;
+      transition: 0.3s ease;
+    }
+    .chat-header .close-btn:hover {
+      opacity: 0.8;
+    }
+    .chat-body {
+      flex-grow: 1;
+      position: relative;
+    }
+
+    /* Hidden official Messenger plugin in DOM until we want it visible. 
+       We'll show it in this container with FB attributes. */
+    .fb-customerchat {
+      width: 100%;
+      height: 100%;
+      transform: scale(1); /* can adjust scale if needed */
+      transform-origin: top left;
+    }
+
+    /* TOGGLE BUTTON FOR SIDEPANEL */
+    .chat-toggle-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px; 
+      height: 60px;
+      border-radius: 50%;
+      background: var(--primary-color);
+      box-shadow: 0 0 15px rgba(0,255,200,0.5), inset 0 0 10px rgba(0,255,200,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10001;
+      transition: transform 0.3s ease;
+      animation: neonPulse 2s infinite;
+    }
+    .chat-toggle-btn:hover {
+      transform: scale(1.1);
+    }
+    @keyframes neonPulse {
+      0% { box-shadow: 0 0 10px rgba(0,255,200,0.2); }
+      50% { box-shadow: 0 0 20px rgba(0,255,200,0.5); }
+      100% { box-shadow: 0 0 10px rgba(0,255,200,0.2); }
+    }
+    .chat-toggle-btn img {
+      width: 28px; 
+      height: 28px; 
+      object-fit: contain;
+      filter: invert(8%) sepia(0%) saturate(0%) hue-rotate(45deg) brightness(1000%) contrast(96%);
     }
 
     /* RESPONSIVE */
@@ -416,61 +487,18 @@
       nav ul {
         gap: 1rem;
       }
-      .weather-card {
+      .chat-panel {
         width: 100%;
+        right: -100%;
       }
-    }
-
-    /* FLOATING MESSENGER BUTTON */
-    .chat-float-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 60px; 
-      height: 60px;
-      border-radius: 50%;
-      background: var(--color-primary);
-      box-shadow: 0 0 15px rgba(0,255,200,0.5), inset 0 0 15px rgba(0,255,200,0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      z-index: 10000;
-      transition: transform 0.3s ease;
-      animation: pulse 2s infinite;
-    }
-    .chat-float-btn:hover {
-      transform: scale(1.1);
-    }
-    /* Neon pulse animation */
-    @keyframes pulse {
-      0% {
-        box-shadow: 0 0 10px rgba(0,255,200,0.2), inset 0 0 10px rgba(0,255,200,0.2);
+      .chat-panel.open {
+        right: 0;
       }
-      50% {
-        box-shadow: 0 0 20px rgba(0,255,200,0.5), inset 0 0 20px rgba(0,255,200,0.3);
-      }
-      100% {
-        box-shadow: 0 0 10px rgba(0,255,200,0.2), inset 0 0 10px rgba(0,255,200,0.2);
-      }
-    }
-    /* Chat icon inside button */
-    .chat-float-btn img {
-      width: 30px;
-      height: 30px;
-      object-fit: contain;
-      filter: invert(8%) sepia(0%) saturate(0%) hue-rotate(45deg) brightness(1000%) contrast(96%);
-      /* Above filter is just to ensure the icon is visible. Tweak if needed. */
     }
   </style>
 </head>
 
 <body>
-  <!-- PRELOADER (Optional) -->
-  <div id="preloader">
-    <div class="spinner"></div>
-  </div>
-
   <!-- HEADER -->
   <header>
     <div class="logo">
@@ -479,7 +507,7 @@
     </div>
     <nav>
       <ul>
-        <li><a href="index.html" style="color:var(--color-primary);">Home</a></li>
+        <li><a href="index.html" style="color:var(--primary-color);">Home</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="team.html">Team</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -489,25 +517,13 @@
 
   <!-- MAIN CONTENT -->
   <main>
-    <!-- HERO WITH VIDEO OR IMAGE -->
+    <!-- HERO -->
     <section class="hero">
-      <!-- If you prefer an image instead of video:  
-           <div class="hero" style="background: url('YOUR_IMAGE.jpg') center center / cover no-repeat;">
-      -->
-      <video class="hero-video" autoplay muted loop playsinline poster="YOUR_IMAGE_FALLBACK.jpg">
-        <source src="YOUR_LIGHTNING_VIDEO.mp4" type="video/mp4">
-        <!-- fallback text -->
-        Your browser does not support the video tag.
-      </video>
-
-      <!-- Light overlay so background is visible -->
       <div class="hero-overlay"></div>
-
       <div class="hero-content">
         <h1 id="typed-hero-text"></h1>
         <p>
-          Powering the Gulf Coast with top-notch electrical services &mdash; 
-          plus our brand-new Messenger Chatbot for instant support!
+          Powering the Gulf Coast with modern electrical solutions—plus our new on-site Messenger Chat for instant support!
         </p>
         <a href="services.html" class="btn-glow">Explore Our Services</a>
       </div>
@@ -523,7 +539,7 @@
           onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' }); return false;"
         >
           <div class="service-title">TV Mounting</div>
-          <div class="service-desc">Professional mounting with hidden wiring for a modern, clutter-free setup.</div>
+          <div class="service-desc">Professional mounting with hidden wiring for a sleek, modern look.</div>
         </a>
         <a
           href="#"
@@ -531,7 +547,7 @@
           onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' }); return false;"
         >
           <div class="service-title">Surge Protection</div>
-          <div class="service-desc">Shield your home electronics from sudden power spikes with advanced solutions.</div>
+          <div class="service-desc">Guard your electronics from sudden power spikes with panel-level devices.</div>
         </a>
         <a
           href="#"
@@ -539,7 +555,7 @@
           onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' }); return false;"
         >
           <div class="service-title">Tesla Charger Setup</div>
-          <div class="service-desc">Install safe, code-compliant EV chargers for your electric vehicle.</div>
+          <div class="service-desc">Install code-compliant EV chargers for safe, fast charging.</div>
         </a>
         <a
           href="#"
@@ -547,7 +563,7 @@
           onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' }); return false;"
         >
           <div class="service-title">Free Inspection</div>
-          <div class="service-desc">Worried about wiring? Schedule a complimentary safety inspection today.</div>
+          <div class="service-desc">Have wiring concerns? Schedule a complimentary safety inspection.</div>
         </a>
       </div>
     </section>
@@ -564,45 +580,45 @@
         <div class="choose-item">
           <img src="ICON_QUALITY.svg" alt="Quality Icon" loading="lazy">
           <h3>Top-Notch Quality</h3>
-          <p>We use premium materials and follow strict guidelines to ensure every job is done right.</p>
+          <p>Premium materials and strict guidelines ensure every job is done right.</p>
         </div>
         <div class="choose-item">
           <img src="ICON_SAFETY.svg" alt="Safety Icon" loading="lazy">
           <h3>Safety First</h3>
-          <p>All work is code-compliant and guaranteed. Your home's safety is our priority.</p>
+          <p>All work is code-compliant and guaranteed—your home’s safety is our priority.</p>
         </div>
         <div class="choose-item">
-          <img src="ICON_TECH.svg" alt="Technology Icon" loading="lazy">
+          <img src="ICON_TECH.svg" alt="Tech Icon" loading="lazy">
           <h3>Cutting-Edge Tech</h3>
           <p>From EV chargers to home automation, we stay ahead with the latest innovations.</p>
         </div>
         <div class="choose-item">
           <img src="ICON_SUPPORT.svg" alt="Support Icon" loading="lazy">
           <h3>24/7 Support</h3>
-          <p>Day or night, our team is ready to tackle emergencies and give you peace of mind.</p>
+          <p>We’re ready day or night for emergencies—your peace of mind is our mission.</p>
         </div>
       </div>
     </section>
 
-    <!-- TESTIMONIALS SECTION -->
+    <!-- TESTIMONIALS -->
     <section class="content-wrapper testimonials">
       <h2>What Our Clients Say</h2>
       <div class="testimonial-list">
         <div class="testimonial-box">
           <div class="testimonial-content">
-            “Moore Electric did an amazing job installing my Tesla charger. Fast, friendly, and affordable!”
+            “Moore Electric made installing my Tesla charger quick and painless. Customer service is top-notch!”
           </div>
           <div class="testimonial-author">– Sarah W.</div>
         </div>
         <div class="testimonial-box">
           <div class="testimonial-content">
-            “I love my newly mounted TV! They hid every wire—I can’t believe how clean it looks.”
+            “I love my mounted TV—it looks like it’s floating! No wires in sight.”
           </div>
           <div class="testimonial-author">– Mike K.</div>
         </div>
         <div class="testimonial-box">
           <div class="testimonial-content">
-            “After a huge storm, our surge protector saved our electronics. Thank you, Moore Electric!”
+            “Storm season? No worries. The surge protector they installed kept everything safe.”
           </div>
           <div class="testimonial-author">– Ava R.</div>
         </div>
@@ -627,16 +643,7 @@
     <a href="contact.html">Contact</a>
   </footer>
 
-  <!-- FLOATING MESSENGER BUTTON -->
-  <div 
-    class="chat-float-btn" 
-    onclick="window.open('https://m.me/228MooreElectric?ref=Facebook%20messenger','_blank')"
-    title="Chat with us on Messenger">
-    <!-- Possibly replace with a Messenger icon in SVG -->
-    <img src="MESSENGER_ICON.svg" alt="Messenger Chat Icon">
-  </div>
-
-  <!-- TYPED TEXT (HERO) -->
+  <!-- TYPEIT TEXT -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       new TypeIt("#typed-hero-text", {
@@ -647,17 +654,6 @@
           instance.destroy();
         },
       }).go();
-    });
-  </script>
-
-  <!-- OPTIONAL PRELOADER HIDE LOGIC -->
-  <script>
-    window.addEventListener("load", () => {
-      const preloader = document.getElementById("preloader");
-      preloader.classList.add("hidden");
-      setTimeout(() => {
-        preloader.style.display = "none";
-      }, 600);
     });
   </script>
 
@@ -688,7 +684,10 @@
       return `
         <div class="weather-card">
           <h3>${city}</h3>
-          <p><img src="${period.icon}" alt="${period.shortForecast} icon">${period.shortForecast}</p>
+          <p>
+            <img src="${period.icon}" alt="${period.shortForecast} Icon"/>
+            ${period.shortForecast}
+          </p>
           <p>Temperature: <span>${period.temperature}°F</span></p>
         </div>
       `;
@@ -699,12 +698,53 @@
       for (const city of cityCoords) {
         const periods = await getNwsForecast(city.lat, city.lon);
         if (periods && periods.length > 0) {
-          const current = periods[0]; 
+          const current = periods[0];
           container.innerHTML += createWeatherCard(city.name, current);
         }
       }
     }
     displayForecasts();
+  </script>
+
+  <!-- MESSENGER SIDEPANEL TOGGLE BUTTON & LOGIC -->
+  <div class="chat-toggle-btn" id="chatToggle">
+    <img src="MESSENGER_ICON.svg" alt="Chat Icon">
+  </div>
+
+  <!-- Slide-Out Chat Panel -->
+  <div class="chat-panel" id="chatPanel">
+    <div class="chat-header">
+      <span>Chat with Moore Electric</span>
+      <button class="close-btn" id="closeChat">&times;</button>
+    </div>
+    <div class="chat-body">
+      <!-- Facebook Customer Chat Plugin 
+           Change 'YOUR_PAGE_ID' to your real Facebook Page ID
+      -->
+      <div 
+        class="fb-customerchat"
+        attribution="biz_inbox"
+        page_id="YOUR_PAGE_ID"
+        theme_color="#00ffc8"
+        logged_in_greeting="Hi there! How can we help you today?"
+        logged_out_greeting="Please log into Facebook to chat with us."
+      >
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const chatToggle = document.getElementById("chatToggle");
+    const chatPanel = document.getElementById("chatPanel");
+    const closeChat = document.getElementById("closeChat");
+
+    chatToggle.addEventListener("click", () => {
+      chatPanel.classList.toggle("open");
+    });
+
+    closeChat.addEventListener("click", () => {
+      chatPanel.classList.remove("open");
+    });
   </script>
 
   <!-- JSON-LD SCHEMA -->
@@ -729,7 +769,7 @@
       "latitude": 30.3674,
       "longitude": -89.0928
     },
-    "description": "Moore Electric: Premier Electrical Services & Instant Messenger Chatbot for Gulf Coast residents.",
+    "description": "Moore Electric: Premier Electrical Services & Instant Messenger Chat Support for Gulf Coast residents.",
     "priceRange": "$$"
   }
   </script>

@@ -5,46 +5,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Moore Electric LLC – Services</title>
-  <meta name="description" content="Explore Moore Electric LLC's residential electrical services."/>
-  <meta name="keywords" content="Electrical Services, Tesla Charger, Surge Protection, etc." />
+  <meta name="description" content="Explore Moore Electric LLC's residential electrical services: TV mounting, surge protection, fixture installs, free inspections, Tesla charger setups, and more." />
+  <meta name="keywords" content="TV Mounting, Surge Protection, Fixture Installation, Free Inspection, Tesla Charger, Smart Switch, Gulfport Electrician, Panel Upgrades, Exterior Lighting and Cameras" />
 
-  <!-- OG TAGS (Optional) -->
-  <meta property="og:title" content="Moore Electric LLC – Next-Level Electrical Services"/>
-  <meta property="og:description" content="Professional electrician services plus a brand-new Messenger Chatbot experience."/>
-  <meta property="og:url" content="https://www.yourdomain.com/"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:image" content="https://www.yourdomain.com/images/og_image.jpg"/>
-
-  <!-- TWITTER (Optional) -->
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Moore Electric LLC – Next-Level Electrical Services"/>
-  <meta name="twitter:description" content="Professional electrician services plus a brand-new Messenger Chatbot experience."/>
-  <meta name="twitter:image" content="https://www.yourdomain.com/images/twitter_card.jpg"/>
-
-  <!-- CANONICAL URL -->
-  <link rel="canonical" href="https://www.yourdomain.com/services.html"/>
-
-  <!-- GOOGLE FONTS (Same as Home) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <!-- Google Fonts -->
   <link
     href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
     rel="stylesheet"
   />
 
-  <!-- FONT AWESOME (for icons, if used) -->
-  <script src="https://kit.fontawesome.com/yourFontAwesomeKit.js" crossorigin="anonymous"></script>
-
-  <!-- TYPEIT (if you want typed text) -->
-  <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/typeit.min.js"></script>
+  <!-- AOS for Scroll Animations -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
   <!-- CALENDLY (If needed) -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
+  <!-- TypeIt (Optional if you want typed text in the hero) -->
+  <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/typeit.min.js"></script>
+
   <style>
     :root {
-      /* Same color variables from your Home page */
       --bg-color: #0e0e0e;
       --primary-color: #00ffc8;
       --text-color: #ffffff;
@@ -53,313 +34,176 @@
       --header-height: 70px;
     }
 
-    /* RESET & GLOBAL */
+    /* Global Styling */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
     html, body {
-      font-family: 'Roboto', sans-serif; /* Body font same as Home */
+      font-family: 'Roboto', sans-serif;
       background: var(--bg-color);
       color: var(--text-color);
-      overflow-x: hidden; /* Avoid horizontal scroll */
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 1px;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
     }
 
-    /* HEADER (Match EXACT style from Home) */
+    /* Header & Footer */
+    header, footer {
+      background: rgba(15, 15, 15, 0.9);
+      backdrop-filter: blur(8px);
+    }
     header {
       position: fixed;
-      top: 0; left: 0;
+      top: 0;
       width: 100%;
-      height: var(--header-height);
+      z-index: 999;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 2rem;
-      background: rgba(15,15,15,0.9);
-      backdrop-filter: blur(6px);
-      z-index: 999;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.7);
     }
     .logo {
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
-    .logo img {
-      height: 40px;
-      width: auto;
-    }
-    /* EXACT .logo-text from Home page */
     .logo-text {
       font-family: 'Orbitron', sans-serif;
       font-size: 1.5rem;
+      font-weight: 700;
       color: var(--primary-color);
       text-transform: uppercase;
     }
     nav ul {
       display: flex;
-      list-style: none;
       gap: 2rem;
+      list-style: none;
     }
     nav ul li a {
-      color: var(--text-color);
+      font-weight: 300;
       transition: color var(--transition-speed);
     }
     nav ul li a:hover {
       color: var(--primary-color);
     }
-
-    /* MAIN */
-    main {
-      margin-top: var(--header-height); /* Avoid header overlap */
-      min-height: 100vh; /* Just to ensure content has full screen space */
-    }
-
-    /* HERO (Optional for Services) */
-    .hero {
-      position: relative;
-      width: 100%;
-      min-height: 50vh; /* Could be changed or removed, depends on design */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      /* If you want a background image or video, replicate from Home */
-      background: url('YOUR_SERVICES_HERO_IMAGE.jpg') center center / cover no-repeat;
-    }
-    .hero-overlay {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.3);
-      z-index: 1;
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 90%;
-      margin: 0 auto;
+    footer {
       padding: 2rem;
-    }
-    /* If you want hero headings in Orbitron as in Home: */
-    .hero h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      text-shadow: 0 0 10px rgba(0,0,0,0.7);
-    }
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0.5rem auto 0;
-      line-height: 1.5;
-      color: var(--subtext-color);
-    }
-
-    /* CONTENT WRAPPER & SECTION TITLES */
-    .content-wrapper {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 4rem 2rem;
-    }
-    .content-wrapper h2 {
-      font-size: 2rem;
-      color: var(--primary-color);
       text-align: center;
-      margin-bottom: 2rem;
-      font-family: 'Orbitron', sans-serif; /* Headings match Home page */
+      color: #888888;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: var(--primary-color);
     }
 
-    /* SERVICES GRID EXAMPLE */
+    /* Services Section */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 2rem;
     }
     .service-link {
-      background: linear-gradient(145deg, rgba(0,0,0,0.7), rgba(20,20,20,0.6));
-      border-radius: 8px;
+      background: linear-gradient(145deg, rgba(0,0,0,0.8), rgba(20,20,20,0.6));
       padding: 2rem;
+      border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
       transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-      display: block;
       text-decoration: none;
     }
     .service-link:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 0 15px rgba(0,255,200,0.4);
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 0 20px rgba(0, 255, 200, 0.3);
     }
     .service-title {
       color: var(--primary-color);
-      font-size: 1.2rem;
       margin-bottom: 1rem;
+      font-size: 1.2rem;
       text-transform: uppercase;
-      font-family: 'Orbitron', sans-serif; /* to match headings from Home if needed */
     }
     .service-desc {
-      color: var(--subtext-color);
       font-weight: 300;
       line-height: 1.4;
+      font-size: 0.95rem;
+      color: var(--subtext-color);
     }
 
-    /* FOOTER (Match Home) */
-    footer {
-      background: rgba(15,15,15,0.9);
-      backdrop-filter: blur(6px);
-      padding: 2rem;
-      text-align: center;
-      color: #888;
-      margin-top: 3rem;
-    }
-    footer a {
-      color: var(--primary-color);
-      transition: color var(--transition-speed);
-    }
-    footer a:hover {
-      color: #fff;
-    }
-
-    /* CHAT ORB (Same swirl effect) */
-    .chat-float-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      background: radial-gradient(circle, var(--primary-color) 0%, var(--bg-color) 80%, var(--primary-color) 100%);
-      animation: swirl 4s linear infinite;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      z-index: 10000;
-      transition: transform 0.3s ease, background var(--transition-speed);
-    }
-    @keyframes swirl {
-      to { transform: rotate(360deg); }
-    }
-    .chat-float-btn:hover {
-      animation: swirlHover 1.5s linear infinite;
-      transform: scale(1.1);
-      background: radial-gradient(circle, #ff00c8 0%, #0e0e0e 80%, #ff00c8 100%);
-    }
-    @keyframes swirlHover {
-      to { transform: rotate(360deg); }
-    }
-    .chat-float-btn:active {
-      transform: scale(0.95);
-    }
-    .chat-float-btn i {
-      color: #000;
-      font-size: 1.6rem;
-      background: #fff;
-      border-radius: 50%;
-      padding: 8px;
-      transition: 0.3s ease;
-    }
-    .chat-float-btn i:hover {
-      color: var(--primary-color);
-      background: #000;
-    }
-
-    /* RESPONSIVE */
+    /* Responsive */
     @media(max-width: 768px) {
       nav ul {
         gap: 1rem;
-      }
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .chat-float-btn {
-        width: 60px;
-        height: 60px;
       }
     }
   </style>
 </head>
 
 <body>
-  <!-- HEADER (EXACT) -->
   <header>
     <div class="logo">
-      <!-- Replace with your actual logo image if needed -->
       <img src="YOUR_LOGO.svg" alt="Moore Electric Logo">
-      <!-- EXACT .logo-text from Home page -->
       <div class="logo-text">Moore Electric</div>
     </div>
     <nav>
       <ul>
-        <!-- Highlight "Services" if you want, same as Home highlights "Home" -->
         <li><a href="index.html">Home</a></li>
-        <li><a href="services.html" style="color:var(--primary-color);">Services</a></li>
+        <li><a href="services.html" style="color: var(--primary-color);">Services</a></li>
         <li><a href="team.html">Team</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- MAIN CONTENT -->
   <main>
-    <!-- HERO (Optional) -->
-    <section class="hero">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <h1>Your Services</h1>
-        <p>
-          Explore our range of electrical services — from Tesla charger installations to fixture upgrades.
-        </p>
-      </div>
-    </section>
-
-    <!-- SERVICES LIST EXAMPLE -->
     <section class="content-wrapper">
-      <h2>Our Electrical Services</h2>
+      <h2>Our Residential Services</h2>
       <div class="services-grid">
-        <!-- Example service card -->
-        <a
-          href="#"
-          class="service-link"
-          onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' }); return false;"
-        >
-          <div class="service-title">TV Mounting</div>
-          <div class="service-desc">
-            Professional mounting with hidden wiring for a modern, clutter-free setup.
-          </div>
+        <a href="#" class="service-link">
+          <div class="service-title">TV Mounting & Wiring</div>
+          <div class="service-desc">Securely mount your TV and hide cables for a sleek, clutter-free setup.</div>
         </a>
-        <!-- Add more as needed -->
+        <a href="#" class="service-link">
+          <div class="service-title">Smart Switch Installation</div>
+          <div class="service-desc">Upgrade your home with IoT-ready switches for easy energy management and voice control.</div>
+        </a>
+        <a href="#" class="service-link">
+          <div class="service-title">Tesla Charger Setup</div>
+          <div class="service-desc">Charge your EV at home with safe, code-compliant Tesla charger solutions.</div>
+        </a>
+        <a href="#" class="service-link">
+          <div class="service-title">Surge Protection</div>
+          <div class="service-desc">Protect your electronics from power spikes with panel-level surge devices.</div>
+        </a>
+        <a href="#" class="service-link">
+          <div class="service-title">Fixture Installation</div>
+          <div class="service-desc">Need a new light fixture or ceiling fan installed? We’ll do it safely and efficiently.</div>
+        </a>
+        <a href="#" class="service-link">
+          <div class="service-title">Free Inspection</div>
+          <div class="service-desc">Schedule a no-cost inspection to ensure your wiring and panels are up to code.</div>
+        </a>
+        <a href="#" class="service-link">
+          <div class="service-title">Panel Upgrades</div>
+          <div class="service-desc">Modernize your electrical panel to support higher loads, ensuring safety and compliance.</div>
+        </a>
+        <a href="#" class="service-link">
+          <div class="service-title">Exterior Lighting & Camera Installation</div>
+          <div class="service-desc">Enhance your home’s security and curb appeal with professionally installed outdoor lighting and cameras.</div>
+        </a>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER (Match Home) -->
   <footer>
-    &copy; 2025 Moore Electric LLC &bull;
-    <a href="index.html">Home</a> |
-    <a href="services.html">Services</a> |
-    <a href="team.html">Team</a> |
-    <a href="contact.html">Contact</a>
+    &copy; 2025 Moore Electric LLC &bull; <a href="index.html">Home</a> | <a href="services.html">Services</a> | <a href="team.html">Team</a> | <a href="contact.html">Contact</a>
   </footer>
-
-  <!-- GLOWING ORB FOR CHATFUEL (Same swirl effect) -->
-  <div
-    class="chat-float-btn"
-    title="Chat with Moore Electric via Chatfuel"
-    onclick="window.open('https://chatfuel.com/your-bot-link','_blank')"
-  >
-    <i class="fas fa-comments"></i>
-  </div>
-
-  <!-- (Optional) If you want typed text on the hero heading -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      new TypeIt(".hero h1", {
-        strings: ["Services for a Brighter Future."],
-        speed: 60,
-        waitUntilVisible: true
-      }).go();
-    });
-  </script>
 </body>
 </html>

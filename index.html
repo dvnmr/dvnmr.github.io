@@ -10,7 +10,7 @@
 
   <!-- OG TAGS -->
   <meta property="og:title" content="Moore Electric LLC – Next-Level Electrical Services"/>
-  <meta property="og:description" content="Professional electrician services plus a Messenger Chatbot experience."/>
+  <meta property="og:description" content="Professional electrician services plus a brand-new Messenger Chatbot experience."/>
   <meta property="og:url" content="https://www.yourdomain.com/"/>
   <meta property="og:type" content="website"/>
   <meta property="og:image" content="https://www.yourdomain.com/images/og_image.jpg"/>
@@ -18,7 +18,7 @@
   <!-- TWITTER -->
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Moore Electric LLC – Next-Level Electrical Services"/>
-  <meta name="twitter:description" content="Professional electrician services plus a Messenger Chatbot experience."/>
+  <meta name="twitter:description" content="Professional electrician services plus a brand-new Messenger Chatbot experience."/>
   <meta name="twitter:image" content="https://www.yourdomain.com/images/twitter_card.jpg"/>
 
   <!-- CANONICAL URL -->
@@ -32,6 +32,9 @@
     rel="stylesheet"
   />
 
+  <!-- FONT AWESOME (for icons) -->
+  <script src="https://kit.fontawesome.com/yourFontAwesomeKit.js" crossorigin="anonymous"></script>
+
   <!-- TYPEIT (For typed text) -->
   <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/typeit.min.js"></script>
 
@@ -39,36 +42,18 @@
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
-  <!-- FACEBOOK SDK & CUSTOMER CHAT (required for chat plugin) -->
-  <div id="fb-root"></div>
-  <script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        xfbml: true,
-        version: 'v17.0'
-      });
-    };
-    (function(d, s, id){
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) {return;}
-       js = d.createElement(s); js.id = id;
-       js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
-       fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  </script>
-
-  <!-- MAIN STYLES -->
   <style>
     :root {
       --bg-color: #0e0e0e;
       --primary-color: #00ffc8;
-      --text-color: #fff;
-      --subtext-color: #ccc;
+      --text-color: #ffffff;
+      --subtext-color: #cccccc;
       --transition-speed: 0.3s;
       --header-height: 70px;
     }
+
     * {
-      margin: 0; 
+      margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
@@ -134,31 +119,21 @@
       justify-content: center;
       text-align: center;
       overflow: hidden;
-    }
-    /* If you want a video background, place a video tag here 
-       Or replace with a single hero image background:
-    */
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
       background: url("YOUR_HERO_IMAGE.jpg") center center / cover no-repeat;
-      z-index: -2;
     }
     .hero-overlay {
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.3);
-      z-index: -1;
+      background: rgba(0,0,0,0.3);
+      z-index: 1;
     }
     .hero-content {
       position: relative;
+      z-index: 2;
       max-width: 90%;
       margin: 0 auto;
       padding: 2rem;
-      z-index: 1;
     }
     .hero h1 {
       font-family: 'Orbitron', sans-serif;
@@ -279,16 +254,16 @@
       transform: translateY(-3px) scale(1.02);
       box-shadow: 0 0 15px rgba(0,255,200,0.4);
     }
-    .choose-item img {
-      width: 60px;
-      height: 60px;
+    .choose-item i {
+      font-size: 3rem; 
+      color: var(--primary-color);
       margin-bottom: 1rem;
-      object-fit: contain;
     }
     .choose-item h3 {
       color: var(--primary-color);
       margin-bottom: 1rem;
       font-size: 1.2rem;
+      text-transform: uppercase;
     }
     .choose-item p {
       color: var(--subtext-color);
@@ -392,91 +367,56 @@
       color: #fff;
     }
 
-    /* SIDEPANEL FOR MESSENGER CHAT */
-    .chat-panel {
-      position: fixed;
-      top: 0;
-      right: -370px; /* hide off screen initially */
-      width: 350px;
-      height: 100%;
-      background: #fff; /* White background for the plugin’s container */
-      box-shadow: -2px 0 10px rgba(0,0,0,0.4);
-      transition: right 0.4s ease;
-      z-index: 10000;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-    }
-    .chat-panel.open {
-      right: 0; /* Slide in */
-    }
-    .chat-header {
-      background: var(--primary-color);
-      color: #000;
-      font-weight: 600;
-      padding: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .chat-header .close-btn {
-      cursor: pointer;
-      font-size: 1.2rem;
-      background: #000;
-      color: var(--primary-color);
-      border: none;
-      border-radius: 4px;
-      padding: 0.3rem 0.6rem;
-      transition: 0.3s ease;
-    }
-    .chat-header .close-btn:hover {
-      opacity: 0.8;
-    }
-    .chat-body {
-      flex-grow: 1;
-      position: relative;
-    }
-
-    /* Hidden official Messenger plugin in DOM until we want it visible. 
-       We'll show it in this container with FB attributes. */
-    .fb-customerchat {
-      width: 100%;
-      height: 100%;
-      transform: scale(1); /* can adjust scale if needed */
-      transform-origin: top left;
-    }
-
-    /* TOGGLE BUTTON FOR SIDEPANEL */
-    .chat-toggle-btn {
+    /* SWIRLING NEON CIRCLE FOR MESSENGER LINK */
+    .chat-float-btn {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      width: 60px; 
-      height: 60px;
+      width: 70px;
+      height: 70px;
       border-radius: 50%;
-      background: var(--primary-color);
-      box-shadow: 0 0 15px rgba(0,255,200,0.5), inset 0 0 10px rgba(0,255,200,0.3);
+      background: conic-gradient(
+        from 0deg,
+        var(--primary-color) 0%,
+        var(--bg-color) 80%,
+        var(--primary-color) 100%
+      );
+      animation: swirl 4s linear infinite;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      z-index: 10001;
+      z-index: 10000;
       transition: transform 0.3s ease;
-      animation: neonPulse 2s infinite;
     }
-    .chat-toggle-btn:hover {
+    /* Swirl animation */
+    @keyframes swirl {
+      to { transform: rotate(360deg); }
+    }
+    .chat-float-btn:hover {
+      animation: swirlHover 1.5s linear infinite;
       transform: scale(1.1);
     }
-    @keyframes neonPulse {
-      0% { box-shadow: 0 0 10px rgba(0,255,200,0.2); }
-      50% { box-shadow: 0 0 20px rgba(0,255,200,0.5); }
-      100% { box-shadow: 0 0 10px rgba(0,255,200,0.2); }
+    /* Faster swirl on hover */
+    @keyframes swirlHover {
+      to { transform: rotate(360deg); }
     }
-    .chat-toggle-btn img {
-      width: 28px; 
-      height: 28px; 
-      object-fit: contain;
-      filter: invert(8%) sepia(0%) saturate(0%) hue-rotate(45deg) brightness(1000%) contrast(96%);
+    /* Visual feedback on click */
+    .chat-float-btn:active {
+      transform: scale(0.95);
+    }
+    /* Center messenger icon inside swirling circle */
+    .chat-float-btn i {
+      color: #000;
+      font-size: 1.6rem;
+      background: #fff; /* White circle behind the icon for clarity */
+      border-radius: 50%;
+      padding: 8px;
+      transition: 0.3s ease;
+    }
+    .chat-float-btn i:hover {
+      color: var(--primary-color);
+      background: #000;
     }
 
     /* RESPONSIVE */
@@ -487,12 +427,9 @@
       nav ul {
         gap: 1rem;
       }
-      .chat-panel {
-        width: 100%;
-        right: -100%;
-      }
-      .chat-panel.open {
-        right: 0;
+      .chat-float-btn {
+        width: 60px;
+        height: 60px;
       }
     }
   </style>
@@ -502,6 +439,7 @@
   <!-- HEADER -->
   <header>
     <div class="logo">
+      <!-- Replace with a real logo if you have one -->
       <img src="YOUR_LOGO.svg" alt="Moore Electric Logo">
       <div class="logo-text">Moore Electric</div>
     </div>
@@ -523,7 +461,8 @@
       <div class="hero-content">
         <h1 id="typed-hero-text"></h1>
         <p>
-          Powering the Gulf Coast with modern electrical solutions—plus our new on-site Messenger Chat for instant support!
+          Powering the Gulf Coast with ultra-modern electrical services — 
+          and a next-level Messenger Chat for instant help!
         </p>
         <a href="services.html" class="btn-glow">Explore Our Services</a>
       </div>
@@ -539,7 +478,7 @@
           onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' }); return false;"
         >
           <div class="service-title">TV Mounting</div>
-          <div class="service-desc">Professional mounting with hidden wiring for a sleek, modern look.</div>
+          <div class="service-desc">Professional mounting with hidden wiring for a modern, clutter-free setup.</div>
         </a>
         <a
           href="#"
@@ -547,7 +486,7 @@
           onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' }); return false;"
         >
           <div class="service-title">Surge Protection</div>
-          <div class="service-desc">Guard your electronics from sudden power spikes with panel-level devices.</div>
+          <div class="service-desc">Guard your home electronics from power surges with advanced panel-level devices.</div>
         </a>
         <a
           href="#"
@@ -555,7 +494,7 @@
           onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' }); return false;"
         >
           <div class="service-title">Tesla Charger Setup</div>
-          <div class="service-desc">Install code-compliant EV chargers for safe, fast charging.</div>
+          <div class="service-desc">Install safe, code-compliant EV chargers for your electric vehicle.</div>
         </a>
         <a
           href="#"
@@ -563,7 +502,7 @@
           onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' }); return false;"
         >
           <div class="service-title">Free Inspection</div>
-          <div class="service-desc">Have wiring concerns? Schedule a complimentary safety inspection.</div>
+          <div class="service-desc">Have wiring concerns? Schedule a complimentary safety inspection today.</div>
         </a>
       </div>
     </section>
@@ -577,25 +516,26 @@
     <section class="content-wrapper">
       <h2>Why Choose Moore Electric?</h2>
       <div class="why-choose-us">
+        <!-- Example icons from Font Awesome -->
         <div class="choose-item">
-          <img src="ICON_QUALITY.svg" alt="Quality Icon" loading="lazy">
+          <i class="fas fa-bolt"></i>
           <h3>Top-Notch Quality</h3>
-          <p>Premium materials and strict guidelines ensure every job is done right.</p>
+          <p>We use premium materials and follow strict guidelines to ensure every job is done right.</p>
         </div>
         <div class="choose-item">
-          <img src="ICON_SAFETY.svg" alt="Safety Icon" loading="lazy">
+          <i class="fas fa-shield-alt"></i>
           <h3>Safety First</h3>
-          <p>All work is code-compliant and guaranteed—your home’s safety is our priority.</p>
+          <p>Your home and family’s safety is our priority. Everything is code-compliant and guaranteed.</p>
         </div>
         <div class="choose-item">
-          <img src="ICON_TECH.svg" alt="Tech Icon" loading="lazy">
+          <i class="fas fa-microchip"></i>
           <h3>Cutting-Edge Tech</h3>
-          <p>From EV chargers to home automation, we stay ahead with the latest innovations.</p>
+          <p>From EV chargers to home automation, we stay on top of the latest electrical innovations.</p>
         </div>
         <div class="choose-item">
-          <img src="ICON_SUPPORT.svg" alt="Support Icon" loading="lazy">
+          <i class="fas fa-headset"></i>
           <h3>24/7 Support</h3>
-          <p>We’re ready day or night for emergencies—your peace of mind is our mission.</p>
+          <p>Day or night, our team is ready to tackle emergencies and keep your power flowing.</p>
         </div>
       </div>
     </section>
@@ -606,19 +546,19 @@
       <div class="testimonial-list">
         <div class="testimonial-box">
           <div class="testimonial-content">
-            “Moore Electric made installing my Tesla charger quick and painless. Customer service is top-notch!”
+            “Moore Electric installed my Tesla charger so quickly, and the service was outstanding!”
           </div>
           <div class="testimonial-author">– Sarah W.</div>
         </div>
         <div class="testimonial-box">
           <div class="testimonial-content">
-            “I love my mounted TV—it looks like it’s floating! No wires in sight.”
+            “Our new mounted TV looks incredible! No wires anywhere. So happy with the result.”
           </div>
           <div class="testimonial-author">– Mike K.</div>
         </div>
         <div class="testimonial-box">
           <div class="testimonial-content">
-            “Storm season? No worries. The surge protector they installed kept everything safe.”
+            “After a big storm, the surge protector they installed saved all our electronics. Highly recommend!”
           </div>
           <div class="testimonial-author">– Ava R.</div>
         </div>
@@ -643,7 +583,16 @@
     <a href="contact.html">Contact</a>
   </footer>
 
-  <!-- TYPEIT TEXT -->
+  <!-- SWIRLING NEON CIRCLE FOR MESSENGER -->
+  <div 
+    class="chat-float-btn"
+    title="Chat with Moore Electric"
+    onclick="window.open('https://m.me/228MooreElectric?ref=Facebook%20messenger','_blank')"
+  >
+    <i class="fab fa-facebook-messenger"></i>
+  </div>
+
+  <!-- TYPED TEXT IN HERO -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       new TypeIt("#typed-hero-text", {
@@ -706,47 +655,6 @@
     displayForecasts();
   </script>
 
-  <!-- MESSENGER SIDEPANEL TOGGLE BUTTON & LOGIC -->
-  <div class="chat-toggle-btn" id="chatToggle">
-    <img src="MESSENGER_ICON.svg" alt="Chat Icon">
-  </div>
-
-  <!-- Slide-Out Chat Panel -->
-  <div class="chat-panel" id="chatPanel">
-    <div class="chat-header">
-      <span>Chat with Moore Electric</span>
-      <button class="close-btn" id="closeChat">&times;</button>
-    </div>
-    <div class="chat-body">
-      <!-- Facebook Customer Chat Plugin 
-           Change 'YOUR_PAGE_ID' to your real Facebook Page ID
-      -->
-      <div 
-        class="fb-customerchat"
-        attribution="biz_inbox"
-        page_id="YOUR_PAGE_ID"
-        theme_color="#00ffc8"
-        logged_in_greeting="Hi there! How can we help you today?"
-        logged_out_greeting="Please log into Facebook to chat with us."
-      >
-      </div>
-    </div>
-  </div>
-
-  <script>
-    const chatToggle = document.getElementById("chatToggle");
-    const chatPanel = document.getElementById("chatPanel");
-    const closeChat = document.getElementById("closeChat");
-
-    chatToggle.addEventListener("click", () => {
-      chatPanel.classList.toggle("open");
-    });
-
-    closeChat.addEventListener("click", () => {
-      chatPanel.classList.remove("open");
-    });
-  </script>
-
   <!-- JSON-LD SCHEMA -->
   <script type="application/ld+json">
   {
@@ -769,7 +677,7 @@
       "latitude": 30.3674,
       "longitude": -89.0928
     },
-    "description": "Moore Electric: Premier Electrical Services & Instant Messenger Chat Support for Gulf Coast residents.",
+    "description": "Moore Electric: Premier Electrical Services & Instant Messenger Chat for Gulf Coast residents.",
     "priceRange": "$$"
   }
   </script>

@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <!-- BASIC SEO & META -->
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Moore Electric LLC – Home</title>
-  <meta name="description" content="Moore Electric LLC: Top-tier residential electrical services along the Gulf Coast. From free inspections to Tesla charger installs, we've got you covered."/>
-  <meta name="keywords" content="Moore Electric, Tesla Charger, TV Mounting, Residential Electrical, Surge Protection"/>
+  <meta name="description" content="Moore Electric LLC: Top-tier residential electrical services along the Gulf Coast. Free inspections, Tesla charger installs, and more." />
+  <meta name="keywords" content="Moore Electric, Tesla Charger, TV Mounting, Residential Electrical, Surge Protection" />
 
   <!-- GOOGLE FONTS -->
   <link
@@ -14,28 +14,25 @@
     rel="stylesheet"
   />
 
-  <!-- AOS (Animate On Scroll) -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
-
-  <!-- FONT AWESOME (if needed) -->
+  <!-- FONT AWESOME (if you need icons) -->
   <script src="https://kit.fontawesome.com/yourFontAwesomeKit.js" crossorigin="anonymous"></script>
 
-  <!-- TYPEIT (For typed hero text) -->
+  <!-- TYPEIT (For typed text in hero) -->
   <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/typeit.min.js"></script>
 
-  <!-- CALENDLY (For pop-up scheduling) -->
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <!-- CALENDLY (Pop-up scheduling) -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
   <style>
     :root {
-      --bg-color: #0e0e0e;        /* Page background */
-      --primary-color: #00ffc8;   /* Neon green accent */
-      --hover-color: #ff00c8;     /* Pink hover color */
-      --text-color: #ffffff;      /* Main text color */
-      --subtext-color: #cccccc;   /* Secondary text color */
-      --header-height: 70px;      
-      --transition-speed: 0.3s;   /* standard transition time */
+      --bg-color: #0e0e0e;    
+      --primary-color: #00ffc8;
+      --hover-color: #ff00c8;
+      --text-color: #ffffff;
+      --subtext-color: #cccccc;
+      --transition-speed: 0.3s;
+      --header-height: 70px;
     }
 
     /* RESET & GLOBAL */
@@ -53,7 +50,7 @@
       overflow-x: hidden;
     }
 
-    /* CUSTOM SCROLLBAR (Neon green, pink hover) */
+    /* CUSTOM SCROLLBAR */
     ::-webkit-scrollbar {
       width: 8px;
       background: #1a1a1a; /* track color */
@@ -67,16 +64,21 @@
       background: var(--hover-color);
     }
 
-    /* HEADINGS USE ORBITRON */
     h1, h2, h3, h4 {
       font-family: 'Orbitron', sans-serif;
       letter-spacing: 1px;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
     }
 
     /* HEADER */
     header {
       position: fixed;
-      top: 0; left: 0;
+      top: 0; 
+      left: 0;
       width: 100%;
       height: var(--header-height);
       display: flex;
@@ -98,6 +100,7 @@
       width: auto;
     }
     .logo-text {
+      font-family: 'Orbitron', sans-serif;
       font-size: 1.5rem;
       color: var(--primary-color);
       text-transform: uppercase;
@@ -116,29 +119,29 @@
       color: var(--primary-color);
     }
 
-    /* MAIN (For scrolling behind the header) */
+    /* MAIN */
     main {
       margin-top: var(--header-height);
       min-height: calc(100vh - var(--header-height));
     }
 
-    /* HERO SECTION */
+    /* HERO */
     .hero {
       position: relative;
       width: 100%;
       min-height: 100vh;
-      overflow: hidden;
       background: url("YOUR_HERO_IMAGE.jpg") center center / cover no-repeat fixed;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
+      overflow: hidden;
     }
     .hero-overlay {
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0,0,0,0.4);
+      background: rgba(0,0,0,0.3);
       z-index: 1;
     }
     .hero-content {
@@ -151,11 +154,11 @@
     .hero-content h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
-      text-shadow: 0 0 10px rgba(0,0,0,0.7);
+      text-shadow: 0 0 8px rgba(0,0,0,0.7);
     }
     .hero-content p {
       font-size: 1.2rem;
-      max-width: 650px;
+      max-width: 600px;
       margin: 0.5rem auto 2rem;
       line-height: 1.5;
       color: var(--subtext-color);
@@ -194,16 +197,16 @@
       gap: 2rem;
     }
     .service-link {
-      background: linear-gradient(145deg, rgba(0,0,0,0.7), rgba(20,20,20,0.6));
-      border-radius: 8px;
+      background: linear-gradient(145deg, rgba(0,0,0,0.8), rgba(20,20,20,0.6));
+      border-radius: 10px;
       padding: 2rem;
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
       transition: transform var(--transition-speed), box-shadow var(--transition-speed);
       display: block;
       text-decoration: none;
-      opacity: 0;       
-      transform: translateY(10px);
-      animation: fadeInUp 0.7s forwards;
+      opacity: 0;
+      transform: translateY(15px);
+      animation: fadeInUp 0.8s forwards;
     }
     .service-link:nth-child(1) { animation-delay: 0.1s; }
     .service-link:nth-child(2) { animation-delay: 0.2s; }
@@ -302,7 +305,7 @@
       color: #fff;
     }
 
-    /* SWIRLING NEON ORB (MESSENGER) */
+    /* SWIRLING NEON ORB (Messenger) */
     .chat-float-btn {
       position: fixed;
       bottom: 20px;
@@ -370,6 +373,7 @@
     </div>
     <nav>
       <ul>
+        <!-- Home link is highlighted -->
         <li><a href="index.html" style="color: var(--primary-color);">Home</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="team.html">Team</a></li>
@@ -386,8 +390,8 @@
       <div class="hero-content">
         <h1 id="typed-hero-text"></h1>
         <p>
-          Trusted residential electrical solutions for the Gulf Coast—TV mounting, Tesla chargers,
-          surge protection, and more.
+          Bringing modern electrical solutions to the Gulf Coast—TV mounting, Tesla chargers,
+          free inspections, and more.
         </p>
         <a href="services.html" class="cta-btn">Explore Our Services</a>
       </div>
@@ -395,7 +399,7 @@
 
     <!-- FEATURED SERVICES -->
     <section class="content-wrapper">
-      <h2>Featured Services</h2>
+      <h2>Featured Residential Services</h2>
       <div class="services-grid">
         <a
           href="#"
@@ -404,7 +408,7 @@
         >
           <div class="service-title">TV Mounting</div>
           <div class="service-desc">
-            Keep your living space stylish and tidy with pro mounting & hidden wiring.
+            Keep your living space looking clean and professional with hidden wiring.
           </div>
         </a>
         <a
@@ -414,7 +418,7 @@
         >
           <div class="service-title">Surge Protection</div>
           <div class="service-desc">
-            Guard your home electronics from damaging voltage spikes & storms.
+            Safeguard your electronics from sudden voltage spikes and power surges.
           </div>
         </a>
         <a
@@ -424,7 +428,7 @@
         >
           <div class="service-title">Tesla Charger Setup</div>
           <div class="service-desc">
-            Install a safe, code-compliant EV charger for your electric vehicle.
+            Certified EV charging installations for safe, efficient home charging.
           </div>
         </a>
         <a
@@ -434,7 +438,7 @@
         >
           <div class="service-title">Free Inspection</div>
           <div class="service-desc">
-            Schedule a no-cost inspection for peace of mind & up-to-code wiring.
+            Unsure about wiring? Book a no-cost inspection for a professional assessment.
           </div>
         </a>
       </div>
@@ -451,14 +455,14 @@
 
   <!-- FOOTER -->
   <footer>
-    &copy; 2025 Moore Electric LLC &bull;
+    &copy; 2025 Moore Electric LLC &bull; 
     <a href="index.html">Home</a> | 
     <a href="services.html">Services</a> | 
     <a href="team.html">Team</a> | 
     <a href="contact.html">Contact</a>
   </footer>
 
-  <!-- SWIRLING NEON MESSENGER ORB -->
+  <!-- SWIRLING NEON ORB FOR MESSENGER -->
   <div 
     class="chat-float-btn"
     title="Chat with Moore Electric"
@@ -467,16 +471,7 @@
     <i class="fab fa-facebook-messenger"></i>
   </div>
 
-  <!-- AOS JS (optional) -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      offset: 50,
-    });
-  </script>
-
-  <!-- TYPED TEXT IN HERO -->
+  <!-- TYPED TEXT SCRIPT -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       new TypeIt("#typed-hero-text", {
@@ -492,14 +487,10 @@
 
   <!-- WEATHER SCRIPT -->
   <script>
-    /* 
-      This script fetches local weather from weather.gov for the specified coordinates.
-      Feel free to adjust or add more cities if needed.
-    */
     const cityCoords = [
       { name: "Gulfport", lat: 30.3674, lon: -89.0928 },
       { name: "Biloxi", lat: 30.3960, lon: -88.8853 },
-      { name: "Ocean Springs", lat: 30.4113, lon: -88.8279 },
+      { name: "Ocean Springs", lat: 30.4113, lon: -88.8279 }
     ];
 
     async function getNwsForecast(lat, lon) {

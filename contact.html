@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <!-- BASIC SEO & META -->
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Moore Electric LLC – Contact</title>
-  <meta name="description" content="Contact Moore Electric LLC for top-tier residential electrical services, Tesla charger installs, TV mounting, and more along the Gulf Coast." />
-  <meta name="keywords" content="Moore Electric, Contact, Gulfport Electrician, Tesla Charger, TV Mounting, Surge Protection, Residential Electrical" />
+  <meta name="description" content="Contact Moore Electric LLC for top-tier residential electrical services, Tesla charger installs, TV mounting, and more along the Gulf Coast."/>
+  <meta name="keywords" content="Moore Electric, Contact, Gulfport Electrician, Tesla Charger, TV Mounting, Surge Protection, Residential Electrical"/>
 
   <!-- GOOGLE FONTS -->
   <link
@@ -14,23 +14,27 @@
     rel="stylesheet"
   />
 
-  <!-- AOS for Scroll Animations (optional) -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <!-- AOS (Animate On Scroll) for optional animations -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
-  <!-- TYPEIT (For typed text effect) -->
+  <!-- CALENDLY (For pop-up scheduling) -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+  <!-- TYPEIT (For typed text) -->
   <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/typeit.min.js"></script>
 
-  <!-- FONT AWESOME (for icons, if needed) -->
+  <!-- FONT AWESOME (for icons if needed) -->
   <script src="https://kit.fontawesome.com/yourFontAwesomeKit.js" crossorigin="anonymous"></script>
 
   <style>
     :root {
-      --bg-color: #0e0e0e;         /* Page background */
-      --primary-color: #00ffc8;    /* Neon green accent */
-      --hover-color: #ff00c8;      /* Pink hover color for scrollbar & orb */
-      --text-color: #ffffff;       /* Main text color */
-      --subtext-color: #cccccc;    /* Secondary text color */
-      --header-height: 70px;       /* Matches other pages */
+      --bg-color: #0e0e0e;         
+      --primary-color: #00ffc8;    
+      --hover-color: #ff00c8;      
+      --text-color: #ffffff;       
+      --subtext-color: #cccccc;    
+      --header-height: 70px;       
       --transition-speed: 0.3s;
     }
 
@@ -49,10 +53,10 @@
       overflow-x: hidden;
     }
 
-    /* CUSTOM SCROLLBAR (Neon green track, pink hover) */
+    /* CUSTOM SCROLLBAR */
     ::-webkit-scrollbar {
       width: 8px;
-      background: #1a1a1a; /* Track color */
+      background: #1a1a1a; /* track color */
     }
     ::-webkit-scrollbar-thumb {
       background: var(--primary-color);
@@ -113,7 +117,7 @@
       color: var(--primary-color);
     }
 
-    /* MAIN (Ensures page scrolls behind header) */
+    /* MAIN (SCROLL BEHIND HEADER) */
     main {
       margin-top: var(--header-height);
       min-height: calc(100vh - var(--header-height));
@@ -123,7 +127,7 @@
     .hero {
       position: relative;
       width: 100%;
-      min-height: 100vh;
+      min-height: 100vh; 
       background: url("YOUR_LARGE_LIGHTNING_IMAGE.jpg") center center / cover no-repeat fixed;
       display: flex;
       align-items: center;
@@ -152,7 +156,7 @@
     }
     .hero-content p {
       font-size: 1.2rem;
-      max-width: 700px;
+      max-width: 600px;
       margin: 0.5rem auto 0;
       line-height: 1.5;
       color: var(--subtext-color);
@@ -172,37 +176,36 @@
       text-transform: uppercase;
     }
 
-    /* CONTACT INFO + FORM */
+    /* CONTACT SECTION */
     .contact-container {
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
       justify-content: center;
+      align-items: flex-start;
     }
     .contact-box {
       background: linear-gradient(145deg, rgba(0,0,0,0.8), rgba(20,20,20,0.6));
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
       padding: 2rem;
-      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-      flex: 1 1 320px;
-      min-width: 280px;
       text-align: center;
+      flex: 1 1 300px;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
     }
     .contact-box:hover {
       transform: translateY(-3px);
       box-shadow: 0 0 20px rgba(0,255,200,0.3);
     }
     .contact-box h3 {
+      font-size: 1.3rem;
       color: var(--primary-color);
       margin-bottom: 1rem;
-      font-size: 1.3rem;
-      text-transform: uppercase;
     }
     .contact-box p {
+      font-size: 0.95rem;
       font-weight: 300;
       line-height: 1.4;
-      font-size: 0.95rem;
       color: var(--subtext-color);
       margin-bottom: 0.5rem;
     }
@@ -214,63 +217,22 @@
       color: var(--hover-color);
     }
 
-    /* CONTACT FORM BOX */
-    .contact-form-box {
-      background: linear-gradient(145deg, rgba(0,0,0,0.8), rgba(20,20,20,0.6));
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.4);
-      padding: 2rem;
-      flex: 1 1 320px;
-      min-width: 280px;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      text-align: center;
-      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-    }
-    .contact-form-box:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 0 20px rgba(0,255,200,0.3);
-    }
-    .contact-form-box h3 {
-      color: var(--primary-color);
-      margin-bottom: 1rem;
-      font-size: 1.3rem;
-      text-transform: uppercase;
-    }
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .contact-form input,
-    .contact-form textarea {
-      font-family: 'Roboto', sans-serif;
-      padding: 0.7rem;
-      border: none;
-      border-radius: 5px;
-      outline: none;
-      background: #1a1a1a;
-      color: var(--text-color);
-      transition: background var(--transition-speed);
-    }
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      background: #2b2b2b;
-    }
-    .contact-form button {
-      background: var(--primary-color);
-      color: #000;
-      border: none;
-      border-radius: 5px;
+    /* CALENDLY GLOW BUTTON */
+    .glow-btn {
+      display: inline-block;
       padding: 0.8rem 1.5rem;
+      margin-top: 1rem;
+      background: var(--primary-color);
+      color: #000; 
       font-weight: 700;
-      cursor: pointer;
+      border-radius: 4px;
+      text-decoration: none;
       transition: box-shadow var(--transition-speed), transform var(--transition-speed);
+      box-shadow: 0 0 10px rgba(0,255,200,0.4);
     }
-    .contact-form button:hover {
-      box-shadow: 0 0 15px var(--primary-color);
+    .glow-btn:hover {
       transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0,255,200,0.8);
     }
 
     /* FOOTER */
@@ -335,8 +297,8 @@
     }
 
     /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .hero h1 {
+    @media(max-width: 768px) {
+      .hero-content h1 {
         font-size: 2rem;
       }
       nav ul {
@@ -354,7 +316,7 @@
   <!-- HEADER -->
   <header>
     <div class="logo">
-      <img src="YOUR_SMALL_LOGO_LIGHTNING.jpg" alt="Moore Electric Logo">
+      <img src="YOUR_LOGO.svg" alt="Moore Electric Logo">
       <div class="logo-text">Moore Electric</div>
     </div>
     <nav>
@@ -373,11 +335,11 @@
     <section class="hero">
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <!-- TYPED TEXT FOR CONTACT PAGE HEADING -->
-        <h1 id="typed-contact-title"></h1>
+        <!-- Typed text effect in hero -->
+        <h1 id="typed-hero-text"></h1>
         <p>
-          Let’s power up your home! For free inspections, quotes, and general inquiries,
-          we’re here to help—call, email, or use the form below.
+          Get in touch with Moore Electric LLC for free inspections, EV charger installs, and more. 
+          We're here to power up your home safely!
         </p>
       </div>
     </section>
@@ -386,58 +348,71 @@
     <section class="content-wrapper">
       <h2>Contact Us</h2>
       <div class="contact-container">
-
-        <!-- BOX 1: Phone & Email Info -->
+        
+        <!-- CONTACT DETAILS -->
         <div class="contact-box">
-          <h3>Call or Email</h3>
+          <h3>Reach Us Directly</h3>
           <p>
             <strong>Phone:</strong> 
-            <a href="tel:2282249150">228-224-9150</a>
+            <a href="tel:228-224-9150">228-224-9150</a>
           </p>
           <p>
-            <strong>Email:</strong>
+            <strong>Email:</strong> 
             <a href="mailto:228mooreelectric@gmail.com">228mooreelectric@gmail.com</a>
           </p>
-          <p>We typically respond within an hour.</p>
         </div>
 
-        <!-- BOX 2: Messenger Link (Optional) -->
+        <!-- SEND US A MESSAGE BOX (Calendly) -->
         <div class="contact-box">
-          <h3>Facebook Messenger</h3>
-          <p>Prefer to chat instantly? Reach us on Messenger:</p>
+          <h3>Send Us a Message</h3>
           <p>
-            <a 
-              href="https://m.me/228MooreElectric?ref=Facebook%20messenger" 
-              target="_blank"
-            >
-              Message Us
-            </a>
+            Have a quick question or ready to schedule a service? 
+            Use our Calendly link to lock in a time.
           </p>
+          <!-- Glowing button triggers Calendly popup -->
+          <a 
+            href="#" 
+            class="glow-btn" 
+            onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' }); return false;"
+          >
+            Schedule Now
+          </a>
         </div>
-
-        <!-- BOX 3: Contact Form -->
-        <div class="contact-form-box">
-          <h3>Send a Message</h3>
-          <form class="contact-form" onsubmit="return false;">
-            <input type="text" name="name" placeholder="Your Name" required />
-            <input type="email" name="email" placeholder="Your Email" required />
-            <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
-          </form>
-        </div>
-
       </div>
     </section>
   </main>
 
   <!-- FOOTER -->
   <footer>
-    &copy; 2025 Moore Electric LLC &bull; 
+    &copy; 2025 Moore Electric LLC &bull;
     <a href="index.html">Home</a> |
     <a href="services.html">Services</a> |
     <a href="team.html">Team</a> |
     <a href="contact.html">Contact</a>
   </footer>
+
+  <!-- TYPED TEXT SCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      new TypeIt("#typed-hero-text", {
+        strings: ["Let's Connect!", "Powering the Gulf Coast..."],
+        speed: 60,
+        waitUntilVisible: true,
+        loop: true,
+        nextStringDelay: 1000,
+        loopDelay: 1500,
+      }).go();
+    });
+  </script>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000, 
+      offset: 50,     
+    });
+  </script>
 
   <!-- SWIRLING NEON MESSENGER ORB -->
   <div 
@@ -448,28 +423,5 @@
     <i class="fab fa-facebook-messenger"></i>
   </div>
 
-  <!-- AOS JS (optional) -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000, 
-      offset: 50,
-    });
-  </script>
-
-  <!-- TYPEIT FOR CONTACT HERO TEXT -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      new TypeIt("#typed-contact-title", {
-        strings: ["Contact Moore Electric", "Get Wired, Stay Safe."],
-        speed: 60,
-        waitUntilVisible: true,
-        breakLines: false,
-        loop: true,
-        nextStringDelay: 1200,
-        loopDelay: 1500,
-      }).go();
-    });
-  </script>
 </body>
 </html>

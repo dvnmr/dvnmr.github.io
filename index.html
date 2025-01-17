@@ -52,6 +52,7 @@
       --header-height: 70px;
     }
 
+    /* RESET & GLOBAL STYLES */
     * {
       margin: 0;
       padding: 0;
@@ -62,6 +63,21 @@
       background: var(--bg-color);
       color: var(--text-color);
       overflow-x: hidden;
+      /* Scrollbar is on by default; we’ll style it below */
+    }
+
+    /* CUSTOM SCROLLBAR (MATCHES SERVICES PAGE) */
+    ::-webkit-scrollbar {
+      width: 8px;
+      background: #1a1a1a; /* Track color */
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary-color);
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #ff00c8; /* hover color for scrollbar thumb */
     }
 
     /* HEADER */
@@ -114,7 +130,7 @@
       position: relative;
       width: 100%;
       min-height: 100vh;
-      overflow: hidden; /* ensures video doesn’t scroll */
+      overflow: hidden; /* ensures video doesn’t scroll horizontally */
     }
     .video-bg {
       position: absolute;
@@ -390,7 +406,6 @@
       z-index: 10000;
       transition: transform 0.3s ease, background var(--transition-speed);
     }
-
     @keyframes swirl {
       to { transform: rotate(360deg); }
     }
@@ -463,7 +478,7 @@
         loop 
         playsinline
       >
-        <!-- Replace the URL below with your actual Dropbox link + ?raw=1 -->
+        <!-- Replace with your actual video link + ?raw=1 if from Dropbox -->
         <source 
           src="https://www.dropbox.com/scl/fi/5ycicqxjy9fom5mr57ru6/20250116_2150_Tech-Harmony-to-Dynamic-Thrill_remix_01jhs64yn4feptndn40ear2hhf.mp4?raw=1"
           type="video/mp4"

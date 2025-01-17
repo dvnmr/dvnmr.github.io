@@ -1,30 +1,30 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 <head>
-  <!-- Basic SEO & Meta Setup -->
+  <!-- BASIC SEO -->
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Moore Electric LLC – Premier Gulf Coast Residential Electrical Services</title>
-  <meta name="description" content="Moore Electric LLC: Delivering top-tier residential electrical services across the Gulf Coast. TV mounting, surge protection, Tesla charger installs, and more."/>
-  <meta name="keywords" content="Moore Electric, Gulfport Electrician, Surge Protection, Tesla Charger, Smart Switch, TV Mounting, Residential Electrical"/>
+  <title>Moore Electric LLC – Gulf Coast’s Ultra-Modern Electrical Services</title>
+  <meta name="description" content="Moore Electric LLC brings cutting-edge EV charging, surge protection, and electrical solutions to the Gulf Coast, blending modern aesthetics with top-tier service."/>
+  <meta name="keywords" content="Moore Electric, Gulfport Electrician, Tesla Charger, Surge Protection, Smart Home, EV Charger Installation, Electrical Upgrades"/>
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:title" content="Moore Electric LLC – Gulf Coast Electrical Services"/>
-  <meta property="og:description" content="Premier residential electrical services including TV mounting, surge protection, EV charger installs, and more."/>
+  <!-- OG TAGS -->
+  <meta property="og:title" content="Moore Electric LLC – Next-Level Electrical Services"/>
+  <meta property="og:description" content="Tesla chargers, surge protection, and modern automation—serving Gulfport, Biloxi, Ocean Springs, and beyond."/>
   <meta property="og:url" content="https://www.yourdomain.com/"/>
   <meta property="og:type" content="website"/>
   <meta property="og:image" content="https://www.yourdomain.com/images/og_image.jpg"/>
 
-  <!-- Twitter Meta -->
+  <!-- TWITTER -->
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Moore Electric LLC – Gulf Coast Electrical Services"/>
-  <meta name="twitter:description" content="Premier residential electrical services including TV mounting, surge protection, EV charger installs, and more."/>
+  <meta name="twitter:title" content="Moore Electric LLC – Next-Level Electrical Services"/>
+  <meta name="twitter:description" content="Tesla chargers, surge protection, and modern automation—serving Gulfport, Biloxi, Ocean Springs, and beyond."/>
   <meta name="twitter:image" content="https://www.yourdomain.com/images/twitter_card.jpg"/>
 
-  <!-- Canonical URL -->
+  <!-- CANONICAL URL -->
   <link rel="canonical" href="https://www.yourdomain.com/"/>
 
-  <!-- Google Fonts: Preconnect and Preload for performance -->
+  <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link
@@ -32,198 +32,210 @@
     rel="stylesheet"
   />
 
-  <!-- AOS for Scroll Animations -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <!-- GSAP / SCROLL PLUGINS (Optional) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-n...=="></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-...=="></script>
+  <!-- OR Locomotive Scroll if you prefer: https://github.com/locomotivemtl/locomotive-scroll -->
 
-  <!-- Calendly (If needed for pop-ups on Home) -->
+  <!-- TYPEIT (For typed text) -->
+  <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/typeit.min.js"></script>
+
+  <!-- CALENDLY WIDGET -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
-  <!-- TypeIt (for typed text effect) -->
-  <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/typeit.min.js"></script>
-
-  <!-- 
-    PRO MODE: 
-    1) We can use a separate .css file or keep inline for demonstration
-    2) Added some CSS custom properties to easily change highlight color 
-  -->
+  <!-- STYLES -->
   <style>
     :root {
-      --background-color: #0e0e0e;
-      --highlight-color: #00ffc8;
-      --text-color: #ffffff;
-      --secondary-text-color: #888888;
-      --box-shadow-color: rgba(0, 0, 0, 0.7);
+      /* BRAND & THEME COLORS */
+      --color-bg: #0e0e0e;
+      --color-primary: #00ffc8;
+      --color-text: #ffffff;
+      --color-subtext: #cccccc;
+      --color-accent-dark: #0c5959;
+
+      /* SIZING */
+      --header-height: 80px;
+
+      /* TRANSITIONS & EFFECTS */
       --transition-speed: 0.3s;
-      /* Additional brand variables can go here */
+      --box-shadow-color: rgba(0, 0, 0, 0.7);
     }
 
-    /* GLOBAL STYLES */
-    * {
-      margin: 0;
+    /* RESET */
+    *, *::before, *::after {
+      margin: 0; 
       padding: 0;
       box-sizing: border-box;
     }
     html, body {
       font-family: 'Roboto', sans-serif;
-      background: var(--background-color);
-      color: var(--text-color);
-      margin: 0;
+      background: var(--color-bg);
+      color: var(--color-text);
       overflow-x: hidden;
     }
-    h1, h2, h3, h4 {
-      font-family: 'Orbitron', sans-serif;
-      letter-spacing: 1px;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-      cursor: pointer;
-    }
-    img[loading="lazy"] {
-      /* Slight fade-in effect for lazy loaded images */
-      opacity: 0;
-      transition: opacity 0.5s ease-in-out;
-    }
-    img[loading="lazy"].loaded {
-      opacity: 1;
-    }
 
-    /* HEADER & NAV */
+    /* HEADER */
     header {
       position: fixed;
       top: 0;
+      left: 0;
       width: 100%;
-      z-index: 999;
+      height: var(--header-height);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1rem 2rem;
-      background: rgba(15, 15, 15, 0.9);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 2px 10px var(--box-shadow-color);
+      padding: 0 2rem;
+      background: rgba(15, 15, 15, 0.85);
+      backdrop-filter: blur(10px);
+      z-index: 999;
+      transition: background var(--transition-speed), height var(--transition-speed);
+    }
+    /* Sticky header shrink effect (if desired) */
+    header.scrolled {
+      height: 60px;
+      background: rgba(15, 15, 15, 0.95);
     }
     .logo {
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
+    .logo img {
+      height: 40px;
+      width: auto;
+      transition: transform 0.5s ease;
+    }
+    /* Example: the lightning bolt does a quick jiggle on hover */
+    .logo img:hover {
+      transform: rotate(-15deg) scale(1.1);
+    }
     .logo-text {
+      font-family: 'Orbitron', sans-serif;
       font-size: 1.5rem;
       font-weight: 700;
-      color: var(--highlight-color);
       text-transform: uppercase;
+      color: var(--color-primary);
     }
     nav ul {
+      list-style: none;
       display: flex;
       gap: 2rem;
-      list-style: none;
     }
     nav ul li a {
+      color: var(--color-text);
       font-weight: 300;
       transition: color var(--transition-speed);
     }
     nav ul li a:hover {
-      color: var(--highlight-color);
+      color: var(--color-primary);
     }
 
-    /* FOOTER */
-    footer {
-      background: rgba(15, 15, 15, 0.9);
-      backdrop-filter: blur(8px);
-      padding: 2rem;
-      text-align: center;
-      color: var(--secondary-text-color);
-      font-size: 0.9rem;
-      margin-top: 3rem;
-    }
-    footer a {
-      color: var(--highlight-color);
-      transition: color var(--transition-speed);
-    }
-    footer a:hover {
-      color: #fff;
-    }
-
-    /* HERO SECTION */
+    /* MAIN WRAPPER */
     main {
-      margin-top: 80px; /* offset header height */
+      margin-top: var(--header-height);
     }
+
+    /* HERO SECTION WITH MULTI-LAYER PARALLAX */
     .hero {
       position: relative;
       width: 100%;
       height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background: url('YOUR_LARGE_LIGHTNING_IMAGE.jpg') no-repeat center center;
-      background-size: cover;
-      background-attachment: fixed; /* parallax effect */
+      overflow: hidden;
     }
-    .hero-overlay {
-      background: rgba(0, 0, 0, 0.5);
+    .parallax-layer {
       position: absolute;
-      top: 0; left: 0;
       width: 100%;
       height: 100%;
+      top: 0; left: 0;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      will-change: transform; /* Smoother parallax performance */
+    }
+    /* Example layers; you can add more and change backgrounds & speeds */
+    .layer-1 {
+      background-image: url('PARALLAX_LAYER1.jpg');
       z-index: 1;
+    }
+    .layer-2 {
+      background-image: url('PARALLAX_LAYER2.png');
+      z-index: 2;
+    }
+    .layer-overlay {
+      background: rgba(0,0,0,0.5);
+      z-index: 3;
     }
     .hero-content {
       position: relative;
-      z-index: 2;
-      max-width: 90%;
-      margin: 0 auto;
+      z-index: 4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+      height: 100%;
       padding: 2rem;
     }
     .hero h1 {
+      font-family: 'Orbitron', sans-serif;
       font-size: 3.5rem;
       margin-bottom: 1rem;
       text-shadow: 0 0 10px var(--box-shadow-color);
     }
     .hero p {
       font-size: 1.2rem;
-      line-height: 1.5;
       max-width: 600px;
-      margin: 0.5rem auto 0;
+      margin: 0 auto;
+      line-height: 1.6;
     }
     .btn-glow {
-      display: inline-block;
+      margin-top: 2rem;
       padding: 0.75rem 2rem;
       font-size: 1rem;
-      color: var(--background-color);
-      background: var(--highlight-color);
-      border-radius: 5px;
       font-weight: 700;
-      margin-top: 2rem;
+      color: #0e0e0e;
+      background: var(--color-primary);
+      border-radius: 5px;
       text-decoration: none;
       transition: box-shadow var(--transition-speed), transform var(--transition-speed);
     }
     .btn-glow:hover {
-      box-shadow: 0 0 15px var(--highlight-color);
+      box-shadow: 0 0 15px var(--color-primary);
       transform: scale(1.05);
     }
 
-    /* CONTENT WRAPPER & SECTION TITLES */
+    /* SHAPE DIVIDER EXAMPLE */
+    .shape-divider {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+    .shape-divider svg {
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 100px;
+    }
+    .shape-divider .shape-fill {
+      fill: var(--color-bg);
+    }
+
+    /* SECTION WRAPPER */
     .content-wrapper {
       max-width: 1200px;
       margin: 0 auto;
       padding: 4rem 2rem;
+      position: relative;
+      z-index: 1;
     }
     .content-wrapper h2 {
       font-size: 2.2rem;
-      color: var(--highlight-color);
+      color: var(--color-primary);
       margin-bottom: 2rem;
       text-align: center;
-      text-shadow: 0 0 10px rgba(0, 255, 200, 0.3);
-    }
-
-    /* TYPED TEXT */
-    #typed-hero-text {
-      color: var(--highlight-color);
-      text-shadow: 0 0 8px rgba(0,255,200,0.5);
-      margin-bottom: 1rem;
-      display: block;
+      text-shadow: 0 0 8px rgba(0,255,200,0.4);
     }
 
     /* FEATURED SERVICES */
@@ -233,21 +245,19 @@
       gap: 2rem;
     }
     .service-link {
-      background: linear-gradient(145deg, rgba(0, 0, 0, 0.8), rgba(20, 20, 20, 0.6));
+      background: linear-gradient(145deg, rgba(0, 0, 0, 0.75), rgba(20, 20, 20, 0.6));
       padding: 2rem;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
       position: relative;
-      display: block;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
     }
     .service-link:hover {
       transform: translateY(-5px) scale(1.02);
       box-shadow: 0 0 20px rgba(0, 255, 200, 0.3);
-      text-decoration: none;
     }
     .service-title {
-      color: var(--highlight-color);
+      color: var(--color-primary);
       margin-bottom: 1rem;
       font-size: 1.2rem;
       text-transform: uppercase;
@@ -257,25 +267,23 @@
       font-weight: 300;
       line-height: 1.4;
       font-size: 0.95rem;
+      color: var(--color-subtext);
     }
 
-    /* PARALLAX BREAK SECTION */
+    /* PARALLAX BREAK SECTION W/ SHAPE DIVIDER */
     .parallax-break {
       position: relative;
       width: 100%;
       height: 50vh;
-      background: url('YOUR_SECONDARY_PARALLAX_IMAGE.jpg') no-repeat center center;
-      background-size: cover;
-      background-attachment: fixed; /* parallax effect */
+      background: url('YOUR_SECONDARY_PARALLAX_IMAGE.jpg') center center / cover fixed no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-top: 4rem;
-      margin-bottom: 4rem;
+      margin: 0; /* We'll use shape dividers to separate from other sections */
     }
     .parallax-break::before {
       content: "";
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0,0,0,0.4);
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
@@ -284,7 +292,7 @@
     .parallax-break-text {
       position: relative;
       z-index: 2;
-      color: var(--highlight-color);
+      color: var(--color-primary);
       font-size: 2rem;
       text-shadow: 0 0 8px rgba(0,255,200,0.5);
       text-align: center;
@@ -296,7 +304,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
-      margin-top: 2rem;
     }
     .choose-item {
       background: linear-gradient(145deg, rgba(0,0,0,0.8), rgba(20,20,20,0.6));
@@ -315,9 +322,13 @@
       height: 60px;
       margin-bottom: 1rem;
       object-fit: contain;
+      transition: transform 0.5s ease;
+    }
+    .choose-item img:hover {
+      transform: rotate(10deg) scale(1.1);
     }
     .choose-item h3 {
-      color: var(--highlight-color);
+      color: var(--color-primary);
       margin-bottom: 1rem;
       font-size: 1.2rem;
     }
@@ -325,15 +336,13 @@
       font-weight: 300;
       font-size: 0.95rem;
       line-height: 1.4;
+      color: var(--color-subtext);
     }
 
     /* TESTIMONIALS */
     .testimonials {
-      margin-top: 4rem;
       text-align: center;
-    }
-    .testimonials h2 {
-      margin-bottom: 2rem;
+      margin-top: 4rem;
     }
     .testimonial-list {
       display: grid;
@@ -346,6 +355,8 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
       padding: 2rem;
       transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+      position: relative;
+      overflow: hidden;
     }
     .testimonial-box:hover {
       transform: scale(1.02);
@@ -356,9 +367,10 @@
       line-height: 1.4;
       margin-bottom: 1rem;
       font-weight: 300;
+      color: var(--color-subtext);
     }
     .testimonial-author {
-      color: var(--highlight-color);
+      color: var(--color-primary);
       font-size: 0.9rem;
       font-weight: 500;
       text-align: right;
@@ -381,7 +393,6 @@
       width: 260px;
       box-shadow: 0 0 10px rgba(0,0,0,0.5);
       text-align: center;
-      position: relative;
       transition: transform var(--transition-speed), box-shadow var(--transition-speed);
     }
     .weather-card:hover {
@@ -390,7 +401,7 @@
     }
     .weather-card h3 {
       font-size: 1.4rem;
-      color: var(--highlight-color);
+      color: var(--color-primary);
       margin-bottom: 0.5rem;
     }
     .weather-card img {
@@ -403,15 +414,35 @@
     .weather-card p {
       font-size: 1rem;
       margin-bottom: 0.5rem;
-      color: #ddd;
     }
     .weather-card span {
       font-weight: bold;
       color: #fff;
     }
 
-    /* RESPONSIVE BREAKPOINTS */
-    @media(max-width: 768px) {
+    /* FOOTER */
+    footer {
+      background: rgba(15,15,15,0.85);
+      backdrop-filter: blur(8px);
+      text-align: center;
+      color: #888;
+      padding: 2rem;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+    footer a {
+      color: var(--color-primary);
+      transition: color var(--transition-speed);
+    }
+    footer a:hover {
+      color: #fff;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      header.scrolled {
+        height: 60px;
+      }
       .hero h1 {
         font-size: 2.2rem;
       }
@@ -421,22 +452,20 @@
       .weather-card {
         width: 100%;
       }
-      /* Consider adding a hamburger menu for smaller screens if desired */
     }
   </style>
 </head>
 <body>
-
   <!-- HEADER -->
-  <header role="banner">
+  <header id="main-header">
     <div class="logo">
-      <!-- Provide a meaningful alt for screen readers -->
-      <img src="YOUR_SMALL_LOGO_LIGHTNING.jpg" alt="Moore Electric Lightning Logo" style="height:40px; width:auto;">
+      <!-- Optionally swap for an animated SVG lightning bolt -->
+      <img src="YOUR_SMALL_LOGO_LIGHTNING.svg" alt="Moore Electric Lightning Logo">
       <div class="logo-text">Moore Electric</div>
     </div>
-    <nav role="navigation" aria-label="Main Navigation">
+    <nav>
       <ul>
-        <li><a href="index.html" style="color:var(--highlight-color);">Home</a></li>
+        <li><a href="index.html" style="color:var(--color-primary);">Home</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="team.html">Team</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -446,154 +475,175 @@
 
   <!-- MAIN CONTENT -->
   <main>
-    <!-- PARALLAX HERO -->
-    <section class="hero">
-      <div class="hero-overlay"></div>
-      <div class="hero-content" data-aos="fade-up">
-        <!-- TYPED TEXT -->
+
+    <!-- HERO SECTION WITH MULTI-LAYER PARALLAX -->
+    <section class="hero" id="hero">
+      <!-- Add layered backgrounds for multi-layer parallax -->
+      <div class="parallax-layer layer-1"></div>
+      <div class="parallax-layer layer-2"></div>
+      <div class="parallax-layer layer-overlay"></div>
+      <div class="hero-content">
+        <!-- TYPED TEXT EFFECT -->
         <h1 id="typed-hero-text"></h1>
-        <p>
-          Moore Electric LLC provides top-tier residential electrical services, from TV mounting 
-          and surge protection to Tesla charger installations.
-        </p>
+        <p>Bringing next-generation electrical services to the Gulf Coast—surge protection, Tesla chargers, smart home upgrades, and more.</p>
         <a href="services.html" class="btn-glow">Explore Our Services</a>
       </div>
     </section>
 
+    <!-- SHAPE DIVIDER EXAMPLE -->
+    <div class="shape-divider">
+      <!-- Example wave-style SVG shape divider (you can find free shape dividers online) -->
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.4C174.63,94,..." class="shape-fill"></path>
+      </svg>
+    </div>
+
     <!-- FEATURED SERVICES -->
-    <section class="content-wrapper" data-aos="zoom-in">
+    <section class="content-wrapper" id="featured-services">
       <h2>Featured Residential Services</h2>
       <div class="services-grid">
-        <!-- Each service is an <a> link to open Calendly pop-up -->
+        <!-- Calendly example remains the same -->
         <a 
-          href="#" 
-          class="service-link" 
+          href="#"
+          class="service-link"
           onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' }); return false;"
         >
           <div class="service-title">TV Mounting</div>
-          <div class="service-desc">Professional TV mounting with hidden wiring for a modern, clutter-free look.</div>
+          <div class="service-desc">
+            Professional mounting with concealed wiring, creating a sleek, modern focal point.
+          </div>
         </a>
 
         <a 
-          href="#" 
-          class="service-link" 
+          href="#"
+          class="service-link"
           onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' }); return false;"
         >
           <div class="service-title">Surge Protection</div>
-          <div class="service-desc">Guard your home electronics from power surges with advanced panel-level devices.</div>
+          <div class="service-desc">
+            Safeguard your electronics with robust whole-home surge solutions.
+          </div>
         </a>
 
         <a 
-          href="#" 
-          class="service-link" 
+          href="#"
+          class="service-link"
           onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' }); return false;"
         >
           <div class="service-title">Tesla Charger Setup</div>
-          <div class="service-desc">Install safe, code-compliant Tesla and EV chargers for your electric vehicle.</div>
+          <div class="service-desc">
+            Expert EV charger installations that meet code and ensure fast, safe charging.
+          </div>
         </a>
 
         <a 
-          href="#" 
-          class="service-link" 
+          href="#"
+          class="service-link"
           onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' }); return false;"
         >
           <div class="service-title">Free Inspection</div>
-          <div class="service-desc">Have concerns about your wiring? Schedule a complimentary safety inspection today.</div>
+          <div class="service-desc">
+            Unsure about your wiring? Schedule a complimentary safety check today.
+          </div>
         </a>
       </div>
     </section>
 
     <!-- PARALLAX BREAK -->
-    <section class="parallax-break" data-aos="fade-in">
-      <div class="parallax-break-text">
-        The Future of Power is Here
-      </div>
+    <section class="parallax-break">
+      <div class="parallax-break-text">The Future of Power is Here</div>
     </section>
 
-    <!-- WHY CHOOSE US SECTION -->
-    <section class="content-wrapper" data-aos="fade-up">
+    <!-- SHAPE DIVIDER -->
+    <div class="shape-divider" style="transform: rotate(180deg);">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.4C174.63,94,..." class="shape-fill"></path>
+      </svg>
+    </div>
+
+    <!-- WHY CHOOSE US -->
+    <section class="content-wrapper" id="why-choose-us">
       <h2>Why Choose Moore Electric?</h2>
       <div class="why-choose-us">
         <div class="choose-item">
-          <img src="ICON_QUALITY.png" alt="Quality Icon" loading="lazy" />
-          <h3>Top-Notch Quality</h3>
-          <p>We use premium materials and follow strict guidelines to ensure every job is done right.</p>
+          <img src="ICON_QUALITY.svg" alt="Quality Icon" loading="lazy">
+          <h3>Uncompromising Quality</h3>
+          <p>
+            Premium materials, rigorous standards, and meticulous attention to detail.
+          </p>
         </div>
         <div class="choose-item">
-          <img src="ICON_SAFETY.png" alt="Safety Icon" loading="lazy" />
-          <h3>Safety First</h3>
-          <p>Your home and family’s safety is our priority. All work is code-compliant and guaranteed.</p>
+          <img src="ICON_SAFETY.svg" alt="Safety Icon" loading="lazy">
+          <h3>Safety-Centric</h3>
+          <p>
+            Our priority is protecting your home and family with code-compliant solutions.
+          </p>
         </div>
         <div class="choose-item">
-          <img src="ICON_TECH.png" alt="Technology Icon" loading="lazy" />
+          <img src="ICON_TECH.svg" alt="Tech Icon" loading="lazy">
           <h3>Cutting-Edge Tech</h3>
-          <p>From EV chargers to home automation, we stay ahead with the latest innovations.</p>
+          <p>
+            EV charging, smart home integration, and more—on the forefront of innovation.
+          </p>
         </div>
         <div class="choose-item">
-          <img src="ICON_SUPPORT.png" alt="Support Icon" loading="lazy" />
+          <img src="ICON_SUPPORT.svg" alt="Support Icon" loading="lazy">
           <h3>24/7 Support</h3>
-          <p>Day or night, our team is ready to tackle emergencies and ensure your peace of mind.</p>
+          <p>
+            Day or night, we’re ready to tackle emergencies for your peace of mind.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- TESTIMONIALS SECTION -->
-    <section class="content-wrapper testimonials" data-aos="zoom-in">
+    <!-- TESTIMONIALS -->
+    <section class="content-wrapper testimonials" id="testimonials">
       <h2>What Our Clients Say</h2>
       <div class="testimonial-list">
         <div class="testimonial-box">
           <div class="testimonial-content">
-            “Moore Electric did an amazing job installing my Tesla charger. Fast, friendly, and affordable!”
+            “Moore Electric made installing my Tesla charger a breeze. Their expertise and friendliness set them apart.”
           </div>
           <div class="testimonial-author">– Sarah W.</div>
         </div>
         <div class="testimonial-box">
           <div class="testimonial-content">
-            “I love my newly mounted TV! They hid every wire—I can’t believe how clean it looks.”
+            “My new mounted TV looks incredible—like it’s floating. No visible wires at all. Highly recommend!”
           </div>
           <div class="testimonial-author">– Mike K.</div>
         </div>
         <div class="testimonial-box">
           <div class="testimonial-content">
-            “After a huge storm, our surge protector saved our electronics. Thank you, Moore Electric!”
+            “After a major storm, not a single device was fried thanks to the surge protector they installed. Lifesaver!”
           </div>
           <div class="testimonial-author">– Ava R.</div>
         </div>
       </div>
     </section>
 
-    <!-- WEATHER SECTION (CURRENT ONLY) -->
-    <section class="weather-section content-wrapper" data-aos="fade-up">
+    <!-- WEATHER SECTION -->
+    <section class="weather-section content-wrapper" id="weather-section">
       <h2>Local Weather – Current Conditions</h2>
       <div class="weather-grid" id="weather-container">
-        <!-- Single card per city; only periods[0] from the forecast, no wind displayed. -->
+        <!-- Weather cards injected by JS -->
       </div>
     </section>
   </main>
 
   <!-- FOOTER -->
-  <footer role="contentinfo">
-    &copy; 2025 Moore Electric LLC &bull; 
+  <footer>
+    &copy; 2025 Moore Electric LLC &bull;
     <a href="index.html">Home</a> | 
     <a href="services.html">Services</a> | 
     <a href="team.html">Team</a> | 
     <a href="contact.html">Contact</a>
   </footer>
 
-  <!-- AOS JS (Animate On Scroll) -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000, // animation duration in ms
-      offset: 50,     // offset (in px) from original trigger point
-    });
-  </script>
-
-  <!-- TYPEIT for typed text effect in Hero -->
+  <!-- TYPEIT: TYPED TEXT IN HERO -->
   <script>
     new TypeIt("#typed-hero-text", {
-      strings: ["We keep the lights on for Gulf Coast residents."],
-      speed: 60,
+      strings: ["We Keep the Gulf Coast Bright & Powered."],
+      speed: 50,
       waitUntilVisible: true,
       afterComplete: (instance) => {
         instance.destroy();
@@ -601,7 +651,36 @@
     }).go();
   </script>
 
-  <!-- WEATHER SCRIPT (NWS - Current Condition, NO WIND) -->
+  <!-- GSAP SCROLLTRIGGER EXAMPLE (if you want parallax or scroll animations) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Header shrink on scroll
+      const header = document.getElementById("main-header");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+
+      // If you want multi-layer parallax using GSAP's ScrollTrigger
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.utils.toArray(".parallax-layer").forEach((layer, i) => {
+        gsap.to(layer, {
+          scrollTrigger: {
+            trigger: layer,
+            start: "top top",
+            end: "bottom top",
+            scrub: true
+          },
+          y: (i+1) * 100, // different speeds for layers
+        });
+      });
+    });
+  </script>
+
+  <!-- WEATHER SCRIPT -->
   <script>
     const cityCoords = [
       { name: "Gulfport", lat: 30.3674, lon: -89.0928 },
@@ -626,10 +705,13 @@
 
     function createWeatherCard(city, period) {
       return `
-        <div class="weather-card" data-aos="zoom-in">
+        <div class="weather-card">
           <h3>${city}</h3>
-          <p><img src="${period.icon}" alt="${period.shortForecast} Weather Icon"> ${period.shortForecast}</p>
-          <p>Temperature: <span>${period.temperature}°F</span></p>
+          <p>
+            <img src="${period.icon}" alt="${period.shortForecast} icon"/>
+            ${period.shortForecast}
+          </p>
+          <p>Temp: <span>${period.temperature}°F</span></p>
         </div>
       `;
     }
@@ -639,7 +721,7 @@
       for (const city of cityCoords) {
         const periods = await getNwsForecast(city.lat, city.lon);
         if (periods && periods.length > 0) {
-          const current = periods[0]; 
+          const current = periods[0];
           container.innerHTML += createWeatherCard(city.name, current);
         }
       }
@@ -647,7 +729,7 @@
     displayForecasts();
   </script>
 
-  <!-- JSON-LD SCHEMA for Local Business (SEO) -->
+  <!-- JSON-LD SCHEMA for Local Business -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -678,7 +760,7 @@
       "opens": "08:00",
       "closes": "17:00"
     }],
-    "description": "Moore Electric LLC: Your trusted Gulf Coast electrician for surge protection, Tesla charger installs, and more.",
+    "description": "Moore Electric LLC: Next-level electrical solutions for Tesla chargers, surge protection, and smart home tech on the Gulf Coast.",
     "priceRange": "$$"
   }
   </script>

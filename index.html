@@ -8,25 +8,7 @@
   <meta name="description" content="Moore Electric: Top-tier electrical solutions. Now featuring our advanced Messenger Chatbot for instant on-site support."/>
   <meta name="keywords" content="Moore Electric, Tesla Charger, Messenger Chatbot, Electrical Services, Surge Protection"/>
 
-  <!-- OG TAGS -->
-  <meta property="og:title" content="Moore Electric LLC – Next-Level Electrical Services"/>
-  <meta property="og:description" content="Professional electrician services plus a brand-new Messenger Chatbot experience."/>
-  <meta property="og:url" content="https://www.yourdomain.com/"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:image" content="https://www.yourdomain.com/images/og_image.jpg"/>
-
-  <!-- TWITTER -->
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Moore Electric LLC – Next-Level Electrical Services"/>
-  <meta name="twitter:description" content="Professional electrician services plus a brand-new Messenger Chatbot experience."/>
-  <meta name="twitter:image" content="https://www.yourdomain.com/images/twitter_card.jpg"/>
-
-  <!-- CANONICAL URL -->
-  <link rel="canonical" href="https://www.yourdomain.com/"/>
-
   <!-- GOOGLE FONTS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link
     href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
     rel="stylesheet"
@@ -44,10 +26,10 @@
 
   <style>
     :root {
-      --bg-color: #0e0e0e;
-      --primary-color: #00ffc8;
-      --text-color: #ffffff;
-      --subtext-color: #cccccc;
+      --bg-color: #0e0e0e;         /* Page background */
+      --primary-color: #00ffc8;    /* Neon green accent */
+      --text-color: #ffffff;       /* Main text color */
+      --subtext-color: #cccccc;    /* Secondary text color */
       --transition-speed: 0.3s;
       --header-height: 70px;
     }
@@ -59,11 +41,12 @@
       box-sizing: border-box;
     }
     html, body {
+      width: 100%;
+      height: 100%;
       font-family: 'Roboto', sans-serif;
       background: var(--bg-color);
       color: var(--text-color);
       overflow-x: hidden;
-      /* Scrollbar is on by default; we’ll style it below */
     }
 
     /* CUSTOM SCROLLBAR (MATCHES SERVICES PAGE) */
@@ -80,10 +63,24 @@
       background: #ff00c8; /* hover color for scrollbar thumb */
     }
 
+    /* HEADINGS USE ORBITRON */
+    h1, h2, h3, h4 {
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 1px;
+    }
+
+    /* LINKS */
+    a {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+
     /* HEADER */
     header {
       position: fixed;
-      top: 0; left: 0;
+      top: 0; 
+      left: 0;
       width: 100%;
       height: var(--header-height);
       display: flex;
@@ -104,11 +101,12 @@
       width: auto;
     }
     .logo-text {
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Orbitron', sans-serif; /* matches Services page */
       font-size: 1.5rem;
       color: var(--primary-color);
       text-transform: uppercase;
     }
+
     nav ul {
       display: flex;
       list-style: none;
@@ -122,15 +120,16 @@
       color: var(--primary-color);
     }
 
-    /* HERO */
+    /* MAIN & HERO */
     main {
       margin-top: var(--header-height);
+      min-height: calc(100vh - var(--header-height));
     }
     .hero {
       position: relative;
       width: 100%;
-      min-height: 100vh;
-      overflow: hidden; /* ensures video doesn’t scroll horizontally */
+      min-height: 100vh; /* Full viewport for video background */
+      overflow: hidden;
     }
     .video-bg {
       position: absolute;
@@ -143,8 +142,9 @@
     }
     .hero-overlay {
       position: absolute;
-      top: 0; left: 0;
-      width: 100%;
+      top: 0; 
+      left: 0;
+      width: 100%; 
       height: 100%;
       background: rgba(0,0,0,0.3);
       z-index: 1;
@@ -158,7 +158,6 @@
       text-align: center;
     }
     .hero h1 {
-      font-family: 'Orbitron', sans-serif;
       font-size: 3rem;
       margin-bottom: 1rem;
       text-shadow: 0 0 10px rgba(0,0,0,0.7);
@@ -197,6 +196,7 @@
       color: var(--primary-color);
       text-align: center;
       margin-bottom: 2rem;
+      text-transform: uppercase;
     }
 
     /* FEATURED SERVICES */
@@ -212,6 +212,7 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
       transition: transform var(--transition-speed), box-shadow var(--transition-speed);
       display: block;
+      text-decoration: none;
     }
     .service-link:hover {
       transform: translateY(-3px) scale(1.02);
@@ -242,8 +243,10 @@
     .parallax-break::before {
       content: "";
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      top: 0; 
+      left: 0;
+      width: 100%; 
+      height: 100%;
       background: rgba(0,0,0,0.4);
       z-index: 1;
     }
@@ -389,7 +392,7 @@
       color: #fff;
     }
 
-    /* SWIRLING NEON CIRCLE - CHATFUEL LINK */
+    /* CHAT ORB (ChatFuel) */
     .chat-float-btn {
       position: fixed;
       bottom: 20px;
@@ -453,13 +456,13 @@
   <!-- HEADER -->
   <header>
     <div class="logo">
-      <!-- Replace with a real logo if you have one -->
       <img src="YOUR_LOGO.svg" alt="Moore Electric Logo">
       <div class="logo-text">Moore Electric</div>
     </div>
     <nav>
       <ul>
-        <li><a href="index.html" style="color:var(--primary-color);">Home</a></li>
+        <!-- Home link with highlight -->
+        <li><a href="index.html" style="color: var(--primary-color);">Home</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="team.html">Team</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -478,7 +481,7 @@
         loop 
         playsinline
       >
-        <!-- Replace with your actual video link + ?raw=1 if from Dropbox -->
+        <!-- Replace with your actual Dropbox/video link + ?raw=1 -->
         <source 
           src="https://www.dropbox.com/scl/fi/5ycicqxjy9fom5mr57ru6/20250116_2150_Tech-Harmony-to-Dynamic-Thrill_remix_01jhs64yn4feptndn40ear2hhf.mp4?raw=1"
           type="video/mp4"
@@ -506,7 +509,9 @@
           onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' }); return false;"
         >
           <div class="service-title">TV Mounting</div>
-          <div class="service-desc">Professional mounting with hidden wiring for a modern, clutter-free setup.</div>
+          <div class="service-desc">
+            Professional mounting with hidden wiring for a modern, clutter-free setup.
+          </div>
         </a>
         <a
           href="#"
@@ -514,7 +519,9 @@
           onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' }); return false;"
         >
           <div class="service-title">Surge Protection</div>
-          <div class="service-desc">Guard your home electronics from power surges with advanced panel-level devices.</div>
+          <div class="service-desc">
+            Guard your home electronics from power surges with advanced panel-level devices.
+          </div>
         </a>
         <a
           href="#"
@@ -522,7 +529,9 @@
           onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' }); return false;"
         >
           <div class="service-title">Tesla Charger Setup</div>
-          <div class="service-desc">Install safe, code-compliant EV chargers for your electric vehicle.</div>
+          <div class="service-desc">
+            Install safe, code-compliant EV chargers for your electric vehicle.
+          </div>
         </a>
         <a
           href="#"
@@ -530,7 +539,9 @@
           onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' }); return false;"
         >
           <div class="service-title">Free Inspection</div>
-          <div class="service-desc">Have wiring concerns? Schedule a complimentary safety inspection today.</div>
+          <div class="service-desc">
+            Have wiring concerns? Schedule a complimentary safety inspection today.
+          </div>
         </a>
       </div>
     </section>
@@ -610,11 +621,12 @@
     <a href="contact.html">Contact</a>
   </footer>
 
-  <!-- GLOWING ORB FOR CHATFUEL -->
+  <!-- SWIRLING NEON CIRCLE FOR CHATFUEL -->
+  <!-- Updated to open your Messenger link -->
   <div 
     class="chat-float-btn"
-    title="Chat with Moore Electric via Chatfuel"
-    onclick="window.open('https://chatfuel.com/your-bot-link','_blank')"
+    title="Chat with Moore Electric via Messenger"
+    onclick="window.open('https://m.me/228MooreElectric?ref=Facebook%20messenger','_blank')"
   >
     <i class="fas fa-comments"></i>
   </div>
@@ -682,7 +694,7 @@
     displayForecasts();
   </script>
 
-  <!-- JSON-LD SCHEMA -->
+  <!-- JSON-LD SCHEMA (optional) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",

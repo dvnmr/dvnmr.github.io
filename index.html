@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Moore Electric LLC – Gulfport MS Electricians</title>
-  <meta name="description" content="Moore Electric LLC in Gulfport MS. Residential electrical services including TV mounting, surge protection, fixture installations, free inspections, and more."/>
+  <title>Moore Electric LLC – Home</title>
+  <meta name="description" content="Moore Electric LLC in Gulfport, MS. Residential electrical services including TV mounting, surge protection, fixture installs, free inspections, and more."/>
   <meta name="keywords" content="Moore Electric, Gulfport Electrician, Surge Protection, Fixture Install, Free Inspection, Tesla Charger, Smart Switch" />
 
   <!-- Google Fonts -->
@@ -13,15 +13,17 @@
     rel="stylesheet"
   />
 
-  <!-- Calendly Widget CSS (if you use Calendly pop-ups on home) -->
+  <!-- Calendly (If you plan to use pop-ups on Home) -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
   <style>
-    /* GLOBAL STYLES */
+    /***********************************************************
+     * GLOBAL STYLES
+     ***********************************************************/
     * {
-      margin: 0; 
-      padding: 0; 
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
     body {
@@ -38,7 +40,9 @@
       text-decoration: none;
       color: inherit;
     }
-    header, nav, footer {
+
+    /* Header & Navigation */
+    header, footer {
       background: rgba(15, 15, 15, 0.9);
       backdrop-filter: blur(8px);
     }
@@ -76,28 +80,33 @@
       color: #00ffc8;
     }
 
-    /* HERO SECTION */
+    /* Hero Section */
     .hero {
+      position: relative;
       width: 100%;
-      min-height: 80vh;  /* ensures a good, visible area */
+      min-height: 80vh; /* ensures a visually appealing hero */
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       background: url('YOUR_LARGE_LIGHTNING_IMAGE.jpg') no-repeat center center / cover; 
-      position: relative;
-      margin-top: 80px; /* so we don't hide behind header */
+      /* Replace with your actual hero image */
+      margin-top: 80px; /* avoid header overlap */
     }
     .hero-overlay {
       background: rgba(0,0,0,0.6);
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
     }
     .hero-content {
       position: relative;
+      z-index: 2;
       max-width: 90%;
-      z-index: 1;
+      margin: 0 auto;
       padding: 2rem;
     }
     .hero h1 {
@@ -127,24 +136,24 @@
       box-shadow: 0 0 15px #00ffc8;
     }
 
-    /* FEATURED SERVICES SECTION */
-    .featured-services {
-      padding: 4rem 2rem;
+    /* Content Wrapper & Section Titles */
+    .content-wrapper {
       max-width: 1200px;
       margin: 0 auto;
-      text-align: center;
+      padding: 4rem 2rem;
     }
-    .featured-services h2 {
+    .content-wrapper h2 {
       font-size: 2rem;
       color: #00ffc8;
       margin-bottom: 2rem;
+      text-align: center;
     }
+
+    /* Featured Services */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 2rem;
-      margin-top: 2rem;
-      align-items: start;
     }
     .service-box {
       background: linear-gradient(145deg, rgba(0,0,0,0.8), rgba(20,20,20,0.6));
@@ -165,17 +174,9 @@
       line-height: 1.4;
     }
 
-    /* WEATHER SECTION */
-    .weather-section {
-      padding: 4rem 2rem;
-      text-align: center;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .weather-title {
-      font-size: 2rem;
+    /* Weather Section */
+    .weather-section h2 {
       margin-bottom: 2rem;
-      color: #00ffc8;
     }
     .weather-grid {
       display: flex;
@@ -184,32 +185,42 @@
       justify-content: center;
     }
     .weather-card {
-      background: linear-gradient(145deg, rgba(0,0,0,0.8), rgba(20,20,20,0.6));
-      padding: 1.5rem;
+      background: linear-gradient(145deg, #222, #111);
+      padding: 2rem;
       border-radius: 10px;
-      width: 220px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      width: 250px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
       text-align: left;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .weather-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 255, 200, 0.8);
     }
     .weather-card h3 {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       color: #00ffc8;
       margin-bottom: 0.5rem;
     }
-    .weather-card p {
-      font-size: 0.95rem;
-      margin-bottom: 0.5rem;
-    }
     .weather-card img {
-      width: 40px; 
-      height: 40px;
-      vertical-align: middle;
+      width: 50px;
+      height: 50px;
       margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+    .weather-card p {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: #ddd;
+    }
+    .weather-card span {
+      font-weight: bold;
+      color: #fff;
     }
 
-    /* FOOTER */
+    /* Footer */
     footer {
-      margin-top: 4rem;
       padding: 2rem;
       text-align: center;
       color: #888888;
@@ -219,8 +230,8 @@
       color: #00ffc8;
     }
 
-    /* MEDIA QUERIES */
-    @media(max-width: 768px) {
+    /* Responsive Breakpoints */
+    @media(max-width:768px) {
       .hero h1 {
         font-size: 2rem;
       }
@@ -230,16 +241,15 @@
       .services-grid {
         grid-template-columns: 1fr;
       }
-      .weather-grid {
-        flex-direction: column;
-        align-items: center;
+      .weather-card {
+        width: 100%;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- Header / Navigation -->
   <header>
     <div class="logo">
       <img src="YOUR_SMALL_LOGO_LIGHTNING.jpg" alt="Moore Electric Logo" style="height:40px; width:auto;">
@@ -255,35 +265,35 @@
     </nav>
   </header>
 
-  <!-- HERO -->
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>Your Local Gulfport Electricians</h1>
       <p>
-        Moore Electric LLC provides top-tier residential electrical services, from TV mounting to surge protection 
-        and Tesla charger installations. Serving Gulfport, Biloxi, Ocean Springs, and beyond.
+        Moore Electric LLC provides top-tier residential electrical services, from TV mounting 
+        and surge protection to Tesla charger installations. Proudly serving Gulfport, Biloxi, 
+        Ocean Springs, and beyond.
       </p>
       <a href="services.html" class="btn-glow">Explore Our Services</a>
     </div>
   </section>
 
-  <!-- FEATURED SERVICES -->
-  <section class="featured-services">
+  <!-- Featured Services -->
+  <section class="content-wrapper">
     <h2>Featured Residential Services</h2>
     <div class="services-grid">
-      <!-- 3 or 4 key highlights from your Services page -->
       <div class="service-box">
         <h3>TV Mounting & Wiring</h3>
-        <p>Professional and secure TV mounting with hidden wiring for a seamless look.</p>
+        <p>Professional TV mounting with hidden wiring for a clean look.</p>
       </div>
       <div class="service-box">
         <h3>Surge Protection</h3>
-        <p>Shield your home from unexpected power surges with panel-level protection.</p>
+        <p>Panel-level surge protection to safeguard all your home electronics.</p>
       </div>
       <div class="service-box">
-        <h3>Fixture Installation</h3>
-        <p>We install lighting fixtures, fans, and chandeliers with precision and care.</p>
+        <h3>Tesla Charger Setup</h3>
+        <p>Install safe, code-compliant EV chargers for your electric vehicle.</p>
       </div>
       <div class="service-box">
         <h3>Free Inspection</h3>
@@ -292,31 +302,30 @@
     </div>
   </section>
 
-  <!-- WEATHER (with icons) -->
-  <div class="weather-section">
-    <h2 class="weather-title">Local Forecast</h2>
+  <!-- Weather Section -->
+  <section class="weather-section content-wrapper">
+    <h2>Local Weather Forecast</h2>
     <div class="weather-grid" id="weather-container">
-      <!-- Weather data will be inserted by JavaScript -->
+      <!-- Cards inserted by JavaScript -->
     </div>
-  </div>
+  </section>
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer>
-    &copy; 2025 Moore Electric LLC • 
+    &copy; 2025 Moore Electric LLC &bull; 
     <a href="index.html">Home</a> | 
     <a href="services.html">Services</a> | 
     <a href="team.html">Team</a> | 
     <a href="contact.html">Contact</a>
   </footer>
 
-  <!-- NWS Weather Script -->
+  <!-- Weather Script (NWS API) -->
   <script>
     const cityCoords = [
       { name: "Gulfport", lat: 30.3674, lon: -89.0928 },
-      { name: "Biloxi",   lat: 30.3960, lon: -88.8853 },
+      { name: "Biloxi", lat: 30.3960, lon: -88.8853 },
       { name: "Ocean Springs", lat: 30.4113, lon: -88.8279 }
     ];
-    const container = document.getElementById('weather-container');
 
     async function getNwsForecast(lat, lon) {
       try {
@@ -328,34 +337,37 @@
         const forecastData = await forecastRes.json();
         return forecastData.properties.periods;
       } catch (error) {
-        console.error(error);
+        console.error("Error fetching weather data:", error);
         return null;
       }
     }
 
+    function createWeatherCard(city, period) {
+      return `
+        <div class="weather-card">
+          <h3>${city}</h3>
+          <p><img src="${period.icon}" alt="Weather Icon"> ${period.shortForecast}</p>
+          <p>Temperature: <span>${period.temperature}°F</span></p>
+          <p>Wind: <span>${period.windSpeed}</span></p>
+        </div>
+      `;
+    }
+
     async function displayForecasts() {
+      const container = document.getElementById("weather-container");
       for (const city of cityCoords) {
         const periods = await getNwsForecast(city.lat, city.lon);
         if (periods) {
-          const cityCard = document.createElement('div');
-          cityCard.className = 'weather-card';
-          let content = `<h3>${city.name}</h3>`;
-          const nextTwo = periods.slice(0,2);
-          nextTwo.forEach(period => {
-            content += `
-              <p>
-                <img src="${period.icon}" alt="Weather icon">
-                <strong>${period.name}:</strong> ${period.temperature}°F, ${period.shortForecast}
-              </p>
-            `;
+          // Let's show the first 1 or 2 periods for brevity
+          const relevantPeriods = periods.slice(0, 2);
+          relevantPeriods.forEach(period => {
+            container.innerHTML += createWeatherCard(city.name, period);
           });
-          cityCard.innerHTML = content;
-          container.appendChild(cityCard);
         }
       }
     }
+
     displayForecasts();
   </script>
-
 </body>
 </html>

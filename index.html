@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Moore Electric LLC – Home</title>
-  <meta name="description" content="Moore Electric LLC in Gulfport, MS. Top-tier residential electrical services, featuring advanced Tesla charger installs, TV mounting, surge protection, and more."/>
+  <meta name="description" content="Moore Electric LLC in Gulfport, MS. Top-tier residential electrical services: Tesla charger installs, TV mounting, surge protection, and more."/>
   <meta name="keywords" content="Moore Electric, Gulfport Electrician, Surge Protection, Tesla Charger, Smart Switch, TV Mounting" />
 
   <!-- Google Fonts -->
@@ -25,7 +25,7 @@
 
   <style>
     /***********************************************************
-     * GLOBAL STYLES (Enhanced)
+     * GLOBAL STYLES
      ***********************************************************/
     * {
       margin: 0;
@@ -37,7 +37,7 @@
       background: #0e0e0e;
       color: #ffffff;
       margin: 0;
-      overflow-x: hidden; /* for parallax + no horizontal scroll */
+      overflow-x: hidden;
     }
     h1, h2, h3, h4 {
       font-family: 'Orbitron', sans-serif;
@@ -50,7 +50,7 @@
     }
 
     /***********************************************************
-     * HEADER
+     * HEADER & FOOTER
      ***********************************************************/
     header, footer {
       background: rgba(15, 15, 15, 0.9);
@@ -90,6 +90,15 @@
     nav ul li a:hover {
       color: #00ffc8;
     }
+    footer {
+      padding: 2rem;
+      text-align: center;
+      color: #888888;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #00ffc8;
+    }
 
     /***********************************************************
      * PARALLAX HERO
@@ -97,23 +106,21 @@
     .hero {
       position: relative;
       width: 100%;
-      height: 100vh; /* full viewport height */
+      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       background: url('YOUR_LARGE_LIGHTNING_IMAGE.jpg') no-repeat center center;
       background-size: cover;
-      background-attachment: fixed; /* parallax effect */
-      margin-top: 80px; /* avoid header overlap */
+      background-attachment: fixed;
+      margin-top: 80px; 
     }
     .hero-overlay {
       background: rgba(0,0,0,0.5);
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       z-index: 1;
     }
     .hero-content {
@@ -127,8 +134,6 @@
       font-size: 3.5rem;
       margin-bottom: 1rem;
       text-shadow: 0 0 10px rgba(0,0,0,0.7);
-      /* If you want a glow animation, you can keep or remove the below keyframes
-         or just rely on TypeIt's typed effect. */
     }
     .hero p {
       font-size: 1.2rem;
@@ -154,7 +159,7 @@
     }
 
     /***********************************************************
-     * CONTENT WRAPPER
+     * CONTENT WRAPPER, TITLES
      ***********************************************************/
     .content-wrapper {
       max-width: 1200px;
@@ -170,6 +175,16 @@
     }
 
     /***********************************************************
+     * TYPED TEXT (in hero)
+     ***********************************************************/
+    #typed-hero-text {
+      color: #00ffc8;
+      text-shadow: 0 0 8px rgba(0,255,200,0.5);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    /***********************************************************
      * FEATURED SERVICES (CLICKABLE)
      ***********************************************************/
     .services-grid {
@@ -177,7 +192,6 @@
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 2rem;
     }
-    /* Make entire service "box" a clickable link */
     .service-link {
       background: linear-gradient(145deg, rgba(0,0,0,0.8), rgba(20,20,20,0.6));
       padding: 2rem;
@@ -185,7 +199,7 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
       transition: transform 0.3s, box-shadow 0.3s;
       position: relative;
-      display: block; /* ensures anchor covers full box */
+      display: block;
     }
     .service-link:hover {
       transform: translateY(-5px) scale(1.02);
@@ -203,6 +217,116 @@
       font-weight: 300;
       line-height: 1.4;
       font-size: 0.95rem;
+    }
+
+    /***********************************************************
+     * PARALLAX BREAK SECTION
+     ***********************************************************/
+    .parallax-break {
+      position: relative;
+      width: 100%;
+      height: 50vh;
+      background: url('YOUR_SECONDARY_PARALLAX_IMAGE.jpg') no-repeat center center;
+      background-size: cover;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 4rem;
+      margin-bottom: 4rem;
+    }
+    .parallax-break::before {
+      content: "";
+      background: rgba(0,0,0,0.4);
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 1;
+    }
+    .parallax-break-text {
+      position: relative;
+      z-index: 2;
+      color: #00ffc8;
+      font-size: 2rem;
+      text-shadow: 0 0 8px rgba(0,255,200,0.5);
+      text-align: center;
+      padding: 1rem 2rem;
+    }
+
+    /***********************************************************
+     * WHY CHOOSE US
+     ***********************************************************/
+    .why-choose-us {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .choose-item {
+      background: linear-gradient(145deg, rgba(0,0,0,0.8), rgba(20,20,20,0.6));
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      padding: 2rem;
+      transition: transform 0.3s;
+      text-align: center;
+    }
+    .choose-item:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 0 20px rgba(0, 255, 200, 0.3);
+    }
+    .choose-item img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 1rem;
+    }
+    .choose-item h3 {
+      color: #00ffc8;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+    .choose-item p {
+      font-weight: 300;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    /***********************************************************
+     * TESTIMONIALS
+     ***********************************************************/
+    .testimonials {
+      margin-top: 4rem;
+      text-align: center;
+    }
+    .testimonials h2 {
+      margin-bottom: 2rem;
+    }
+    .testimonial-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .testimonial-box {
+      background: linear-gradient(145deg, rgba(0,0,0,0.8), rgba(20,20,20,0.6));
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      padding: 2rem;
+      transition: transform 0.3s;
+    }
+    .testimonial-box:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 20px rgba(0, 255, 200, 0.3);
+    }
+    .testimonial-content {
+      font-size: 0.95rem;
+      line-height: 1.4;
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+    .testimonial-author {
+      color: #00ffc8;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-align: right;
     }
 
     /***********************************************************
@@ -253,19 +377,6 @@
     }
 
     /***********************************************************
-     * FOOTER
-     ***********************************************************/
-    footer {
-      padding: 2rem;
-      text-align: center;
-      color: #888888;
-      font-size: 0.9rem;
-    }
-    footer a {
-      color: #00ffc8;
-    }
-
-    /***********************************************************
      * RESPONSIVE
      ***********************************************************/
     @media(max-width:768px) {
@@ -303,9 +414,6 @@
   <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content" data-aos="fade-up">
-      <!-- 
-        Instead of a static heading, we have an empty <h1> that gets "typed" text via TypeIt 
-      -->
       <h1 id="typed-hero-text"></h1>
       <p>
         Moore Electric LLC provides top-tier residential electrical services, from TV mounting 
@@ -358,6 +466,65 @@
     </div>
   </section>
 
+  <!-- PARALLAX BREAK -->
+  <section class="parallax-break" data-aos="fade-in">
+    <div class="parallax-break-text">
+      The Future of Power is Here
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US SECTION -->
+  <section class="content-wrapper" data-aos="fade-up">
+    <h2>Why Choose Moore Electric?</h2>
+    <div class="why-choose-us">
+      <div class="choose-item">
+        <img src="ICON_QUALITY.png" alt="Quality Icon" />
+        <h3>Top-Notch Quality</h3>
+        <p>We use premium materials and follow strict guidelines to ensure every job is done right.</p>
+      </div>
+      <div class="choose-item">
+        <img src="ICON_SAFETY.png" alt="Safety Icon" />
+        <h3>Safety First</h3>
+        <p>Your home and family’s safety is our priority. All work is code-compliant and guaranteed.</p>
+      </div>
+      <div class="choose-item">
+        <img src="ICON_TECH.png" alt="Technology Icon" />
+        <h3>Cutting-Edge Tech</h3>
+        <p>From EV chargers to home automation, we stay ahead with the latest innovations.</p>
+      </div>
+      <div class="choose-item">
+        <img src="ICON_SUPPORT.png" alt="Support Icon" />
+        <h3>24/7 Support</h3>
+        <p>Day or night, our team is ready to tackle emergencies and ensure your peace of mind.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS SECTION -->
+  <section class="content-wrapper testimonials" data-aos="zoom-in">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial-list">
+      <div class="testimonial-box">
+        <div class="testimonial-content">
+          “Moore Electric did an amazing job installing my Tesla charger. Fast, friendly, and affordable!”
+        </div>
+        <div class="testimonial-author">– Sarah W.</div>
+      </div>
+      <div class="testimonial-box">
+        <div class="testimonial-content">
+          “I love my newly mounted TV! They hid every wire—I can’t believe how clean it looks.”
+        </div>
+        <div class="testimonial-author">– Mike K.</div>
+      </div>
+      <div class="testimonial-box">
+        <div class="testimonial-content">
+          “After a huge storm, our surge protector saved our electronics. Thank you, Moore Electric!”
+        </div>
+        <div class="testimonial-author">– Ava R.</div>
+      </div>
+    </div>
+  </section>
+
   <!-- WEATHER SECTION (CURRENT ONLY) -->
   <section class="weather-section content-wrapper" data-aos="fade-up">
     <h2>Local Weather – Current Conditions</h2>
@@ -367,7 +534,7 @@
   </section>
 
   <!-- FOOTER -->
-  <footer data-aos="fade-in">
+  <footer>
     &copy; 2025 Moore Electric LLC &bull; 
     <a href="index.html">Home</a> | 
     <a href="services.html">Services</a> | 

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- BASIC SEO & META -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Moore Electric LLC – Contact</title>
@@ -14,130 +13,125 @@
     rel="stylesheet"
   />
 
-  <!-- AOS (Animate On Scroll) -->
+  <!-- AOS for Scroll Animations -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
-  <!-- CALENDLY (For pop-up scheduling) -->
+  <!-- Calendly Widget CSS -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
-  <!-- TYPEIT (For typed hero text) -->
+  <!-- TypeIt (for typed text effect) -->
   <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/typeit.min.js"></script>
 
-  <!-- FONT AWESOME (for icons) -->
-  <script src="https://kit.fontawesome.com/yourFontAwesomeKit.js" crossorigin="anonymous"></script>
-
   <style>
-    :root {
-      --bg-color: #0e0e0e;         /* Background */
-      --primary-color: #00ffc8;    /* Neon green accent */
-      --hover-color: #ff00c8;      /* Pink hover accent */
-      --text-color: #ffffff;       /* Main text color */
-      --subtext-color: #cccccc;    /* Secondary text color */
-      --header-height: 70px;       /* Consistent across site */
-      --transition-speed: 0.3s;
-    }
-
-    /* RESET & GLOBAL */
+    /***********************************************************
+     * GLOBAL STYLES
+     ***********************************************************/
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    html, body {
-      width: 100%;
-      height: 100%;
+    body {
       font-family: 'Roboto', sans-serif;
-      background: var(--bg-color);
-      color: var(--text-color);
+      background: #0e0e0e;
+      color: #ffffff;
+      margin: 0;
       overflow-x: hidden;
     }
-
-    /* CUSTOM SCROLLBAR (matching Home/Services/Team) */
-    ::-webkit-scrollbar {
-      width: 8px;
-      background: #1a1a1a; /* Track color */
-    }
-    ::-webkit-scrollbar-thumb {
-      background: var(--primary-color);
-      border-radius: 4px;
-      transition: background 0.3s ease;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: var(--hover-color);
-    }
-
-    /* HEADINGS USE ORBITRON */
     h1, h2, h3, h4 {
       font-family: 'Orbitron', sans-serif;
       letter-spacing: 1px;
     }
+    a {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
 
-    /* HEADER */
+    /* CUSTOM SCROLLBAR (Neon green, pink hover) */
+    ::-webkit-scrollbar {
+      width: 8px;
+      background: #1a1a1a; /* track color */
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #00ffc8; /* base color */
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #ff00c8; /* hover color */
+    }
+
+    /* HEADER & FOOTER */
+    header, footer {
+      background: rgba(15, 15, 15, 0.9);
+      backdrop-filter: blur(8px);
+    }
     header {
       position: fixed;
-      top: 0; left: 0;
+      top: 0;
       width: 100%;
-      height: var(--header-height);
+      z-index: 999;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 2rem;
-      background: rgba(15,15,15,0.9);
-      backdrop-filter: blur(6px);
-      z-index: 999;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.7);
     }
     .logo {
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
-    .logo img {
-      height: 40px;
-      width: auto;
-    }
     .logo-text {
-      font-family: 'Orbitron', sans-serif;
       font-size: 1.5rem;
-      color: var(--primary-color);
+      font-weight: 700;
+      color: #00ffc8;
       text-transform: uppercase;
     }
     nav ul {
       display: flex;
-      list-style: none;
       gap: 2rem;
+      list-style: none;
     }
     nav ul li a {
-      color: var(--text-color);
-      transition: color var(--transition-speed);
+      font-weight: 300;
+      transition: color 0.3s;
     }
     nav ul li a:hover {
-      color: var(--primary-color);
+      color: #00ffc8;
+    }
+    footer {
+      padding: 2rem;
+      text-align: center;
+      color: #888888;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #00ffc8;
     }
 
-    /* MAIN */
-    main {
-      margin-top: var(--header-height);
-      min-height: calc(100vh - var(--header-height));
-    }
-
-    /* PARALLAX HERO */
+    /***********************************************************
+     * PARALLAX HERO
+     ***********************************************************/
     .hero {
       position: relative;
       width: 100%;
-      min-height: 100vh; /* or 50vh, depending on your preference */
-      background: url("YOUR_LARGE_LIGHTNING_IMAGE.jpg") center center / cover no-repeat fixed;
+      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      overflow: hidden;
+      background: url('YOUR_LARGE_LIGHTNING_IMAGE.jpg') no-repeat center center;
+      background-size: cover;
+      background-attachment: fixed;
+      margin-top: 80px; /* Because header is fixed */
     }
     .hero-overlay {
+      background: rgba(0,0,0,0.5);
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5);
       z-index: 1;
     }
     .hero-content {
@@ -147,34 +141,44 @@
       margin: 0 auto;
       padding: 2rem;
     }
-    .hero-content h1 {
+    .hero h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
       text-shadow: 0 0 8px rgba(0,0,0,0.7);
     }
-    .hero-content p {
+    .hero p {
       font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0.5rem auto 0;
       line-height: 1.5;
-      color: var(--subtext-color);
+      max-width: 700px;
+      margin: 0 auto;
     }
 
-    /* CONTENT WRAPPER & SECTION TITLES */
+    #typed-hero-text {
+      color: #00ffc8;
+      text-shadow: 0 0 8px rgba(0,255,200,0.5);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    /***********************************************************
+     * CONTENT WRAPPER & SECTION TITLES
+     ***********************************************************/
     .content-wrapper {
       max-width: 1200px;
       margin: 0 auto;
       padding: 4rem 2rem;
     }
     .content-wrapper h2 {
-      font-size: 2rem;
-      color: var(--primary-color);
-      text-align: center;
+      font-size: 2.2rem;
+      color: #00ffc8;
       margin-bottom: 2rem;
-      text-transform: uppercase;
+      text-align: center;
+      text-shadow: 0 0 10px rgba(0, 255, 200, 0.3);
     }
 
-    /* CONTACT CONTAINER */
+    /***********************************************************
+     * CONTACT CONTAINER
+     ***********************************************************/
     .contact-container {
       display: flex;
       flex-wrap: wrap;
@@ -187,8 +191,7 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
       padding: 2rem;
-      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
       flex: 1 1 320px;
       min-width: 280px;
     }
@@ -197,7 +200,7 @@
       box-shadow: 0 0 20px rgba(0, 255, 200, 0.3);
     }
     .contact-box h3 {
-      color: var(--primary-color);
+      color: #00ffc8;
       margin-bottom: 1rem;
       font-size: 1.3rem;
     }
@@ -206,34 +209,31 @@
       line-height: 1.4;
       font-size: 0.95rem;
       margin-bottom: 0.5rem;
-      color: var(--subtext-color);
     }
     .contact-box a {
-      color: var(--primary-color);
-      transition: color var(--transition-speed);
-    }
-    .contact-box a:hover {
-      color: var(--hover-color);
+      color: #00ffc8;
     }
 
-    /* CALENDLY POP-UP BUTTON */
+    /* Calendly Pop-Up Button */
     .calendly-popup-btn {
       display: inline-block;
       padding: 0.7rem 1.5rem;
-      color: #000;
-      background: var(--primary-color);
+      color: #0e0e0e;
+      background: #00ffc8;
       border-radius: 5px;
       font-weight: 700;
       margin-top: 1rem;
       text-decoration: none;
-      transition: box-shadow var(--transition-speed), transform var(--transition-speed);
+      transition: box-shadow 0.3s, transform 0.3s;
     }
     .calendly-popup-btn:hover {
-      box-shadow: 0 0 15px var(--primary-color);
+      box-shadow: 0 0 15px #00ffc8;
       transform: scale(1.05);
     }
 
-    /* WHY CONTACT US */
+    /***********************************************************
+     * WHY CONTACT US
+     ***********************************************************/
     .why-contact-us {
       margin-top: 4rem;
     }
@@ -248,11 +248,11 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
       padding: 2rem;
       text-align: center;
-      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+      transition: transform 0.3s;
     }
     .feature-box:hover {
       transform: scale(1.02);
-      box-shadow: 0 0 20px rgba(0,255,200,0.3);
+      box-shadow: 0 0 20px rgba(0, 255, 200, 0.3);
     }
     .feature-box img {
       width: 60px;
@@ -260,7 +260,7 @@
       margin-bottom: 1rem;
     }
     .feature-box h4 {
-      color: var(--primary-color);
+      color: #00ffc8;
       margin-bottom: 1rem;
       font-size: 1.2rem;
     }
@@ -268,10 +268,11 @@
       font-weight: 300;
       font-size: 0.95rem;
       line-height: 1.4;
-      color: var(--subtext-color);
     }
 
-    /* (Optional) TESTIMONIALS */
+    /***********************************************************
+     * TESTIMONIALS (Optional)
+     ***********************************************************/
     .testimonials {
       margin-top: 4rem;
       text-align: center;
@@ -289,44 +290,40 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
       padding: 2rem;
-      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+      transition: transform 0.3s;
     }
     .testimonial-box:hover {
       transform: scale(1.02);
-      box-shadow: 0 0 20px rgba(0,255,200,0.3);
+      box-shadow: 0 0 20px rgba(0, 255, 200, 0.3);
     }
     .testimonial-content {
       font-size: 0.95rem;
       line-height: 1.4;
       margin-bottom: 1rem;
       font-weight: 300;
-      color: var(--subtext-color);
     }
     .testimonial-author {
-      color: var(--primary-color);
+      color: #00ffc8;
       font-size: 0.9rem;
       font-weight: 500;
       text-align: right;
     }
 
-    /* FOOTER */
-    footer {
-      background: rgba(15,15,15,0.9);
-      backdrop-filter: blur(6px);
-      padding: 2rem;
-      text-align: center;
-      color: #888;
-      margin-top: 3rem;
-    }
-    footer a {
-      color: var(--primary-color);
-      transition: color var(--transition-speed);
-    }
-    footer a:hover {
-      color: #fff;
+    /***********************************************************
+     * RESPONSIVE
+     ***********************************************************/
+    @media(max-width:768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      nav ul {
+        gap: 1rem;
+      }
     }
 
-    /* SWIRLING NEON MESSENGER ORB */
+    /***********************************************************
+     * MESSENGER ORB (SWIRLING)
+     ***********************************************************/
     .chat-float-btn {
       position: fixed;
       bottom: 20px;
@@ -334,14 +331,14 @@
       width: 70px;
       height: 70px;
       border-radius: 50%;
-      background: radial-gradient(circle, var(--primary-color) 0%, var(--bg-color) 80%, var(--primary-color) 100%);
+      background: radial-gradient(circle, #00ffc8 0%, #0e0e0e 80%, #00ffc8 100%);
       animation: swirl 4s linear infinite;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       z-index: 10000;
-      transition: transform 0.3s ease, background var(--transition-speed);
+      transition: transform 0.3s ease;
     }
     @keyframes swirl {
       to { transform: rotate(360deg); }
@@ -349,7 +346,7 @@
     .chat-float-btn:hover {
       animation: swirlHover 1.5s linear infinite;
       transform: scale(1.1);
-      background: radial-gradient(circle, var(--hover-color) 0%, #0e0e0e 80%, var(--hover-color) 100%);
+      background: radial-gradient(circle, #ff00c8 0%, #0e0e0e 80%, #ff00c8 100%);
     }
     @keyframes swirlHover {
       to { transform: rotate(360deg); }
@@ -360,33 +357,23 @@
     .chat-float-btn i {
       color: #000;
       font-size: 1.6rem;
-      background: #fff;
+      background: #fff; /* White circle behind icon */
       border-radius: 50%;
       padding: 8px;
       transition: 0.3s ease;
     }
     .chat-float-btn i:hover {
-      color: var(--primary-color);
+      color: #00ffc8;
       background: #000;
-    }
-
-    /* RESPONSIVE */
-    @media(max-width: 768px) {
-      .hero-content h1 {
-        font-size: 2rem;
-      }
-      nav ul {
-        gap: 1rem;
-      }
     }
   </style>
 </head>
-
 <body>
+
   <!-- HEADER -->
   <header>
     <div class="logo">
-      <img src="YOUR_LOGO.svg" alt="Moore Electric Logo">
+      <img src="YOUR_SMALL_LOGO_LIGHTNING.jpg" alt="Moore Electric Logo" style="height:40px; width:auto;">
       <div class="logo-text">Moore Electric</div>
     </div>
     <nav>
@@ -394,109 +381,100 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="team.html">Team</a></li>
-        <!-- Highlight contact link -->
-        <li><a href="contact.html" style="color: var(--primary-color);">Contact</a></li>
+        <li><a href="contact.html" style="color:#00ffc8;">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- MAIN CONTENT -->
-  <main>
-    <!-- PARALLAX HERO -->
-    <section class="hero">
-      <div class="hero-overlay"></div>
-      <div class="hero-content" data-aos="fade-up">
-        <!-- TYPED TEXT -->
-        <h1 id="typed-hero-text"></h1>
+  <!-- PARALLAX HERO -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content" data-aos="fade-up">
+      <!-- Typed text effect heading -->
+      <h1 id="typed-hero-text"></h1>
+      <p>
+        Ready to power up your home with the latest innovations?
+        From free inspections to Tesla charger installs—let’s talk!
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTIONS -->
+  <section class="content-wrapper" data-aos="zoom-in">
+    <h2>Reach Out</h2>
+    <div class="contact-container">
+      <!-- Contact Details -->
+      <div class="contact-box">
+        <h3>Contact Details</h3>
+        <p>Phone: <a href="tel:2282249150">(228) 224-9150</a></p>
+        <p>Email:
+          <a href="mailto:mooreelectric228@gmail.com">mooreelectric228@gmail.com</a>
+        </p>
         <p>
-          Ready to power up your home with the latest innovations?
-          From free inspections to Tesla charger installs—let’s talk!
+          Facebook Messenger:
+          <a href="https://m.me/228MooreElectric?ref=Facebook%20messenger" target="_blank">
+            Message Us
+          </a>
         </p>
       </div>
-    </section>
-
-    <!-- CONTACT INFO & CALENDLY -->
-    <section class="content-wrapper" data-aos="zoom-in">
-      <h2>Reach Out</h2>
-      <div class="contact-container">
-        <!-- Contact Details Box -->
-        <div class="contact-box">
-          <h3>Contact Details</h3>
-          <p>
-            Phone: 
-            <a href="tel:2282249150">(228) 224-9150</a>
-          </p>
-          <p>
-            Email: 
-            <a href="mailto:mooreelectric228@gmail.com">mooreelectric228@gmail.com</a>
-          </p>
-          <p>
-            Facebook Messenger: 
-            <a href="https://m.me/228MooreElectric?ref=Facebook%20messenger" target="_blank">
-              Message Us
-            </a>
-          </p>
-        </div>
-
-        <!-- Calendly Scheduling Box -->
-        <div class="contact-box">
-          <h3>Book a Service</h3>
-          <p>
-            Want to schedule a free inspection or discuss your next project?
-            Pick a time that fits your schedule below.
-          </p>
-          <a href="#" class="calendly-popup-btn" id="calendly-btn">Book Now</a>
-        </div>
+      <!-- Calendly Pop-up Section -->
+      <div class="contact-box">
+        <h3>Book a Service</h3>
+        <p>
+          Want to schedule a free inspection or chat about your next project?
+          Pick a slot that fits your schedule.
+        </p>
+        <a href="#" class="calendly-popup-btn" id="calendly-btn">Book Now</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- WHY CONTACT US -->
-    <section class="content-wrapper why-contact-us" data-aos="fade-up">
-      <h2>Why Contact Moore Electric?</h2>
-      <div class="feature-grid">
-        <div class="feature-box">
-          <img src="ICON_SPEED.png" alt="Speed Icon">
-          <h4>Fast Response</h4>
-          <p>No more waiting days for a call back—we’ll get back to you quickly.</p>
-        </div>
-        <div class="feature-box">
-          <img src="ICON_BUDGET.png" alt="Budget Icon">
-          <h4>Upfront Pricing</h4>
-          <p>Transparent quotes ensure you know exactly what you're paying for.</p>
-        </div>
-        <div class="feature-box">
-          <img src="ICON_EXPERTISE.png" alt="Expertise Icon">
-          <h4>Expertise Guaranteed</h4>
-          <p>Backed by years of residential experience & modern tech solutions.</p>
-        </div>
-        <div class="feature-box">
-          <img src="ICON_PEACE.png" alt="Peace of Mind Icon">
-          <h4>Peace of Mind</h4>
-          <p>We meet code requirements, ensuring your home's safety for the long haul.</p>
-        </div>
+  <!-- WHY CONTACT US -->
+  <section class="content-wrapper why-contact-us" data-aos="fade-up">
+    <h2>Why Contact Moore Electric?</h2>
+    <div class="feature-grid">
+      <div class="feature-box">
+        <img src="ICON_SPEED.png" alt="Speed Icon">
+        <h4>Fast Response</h4>
+        <p>We’ll get back to you quickly—no more waiting days for a call back.</p>
       </div>
-    </section>
+      <div class="feature-box">
+        <img src="ICON_BUDGET.png" alt="Budget Icon">
+        <h4>Upfront Pricing</h4>
+        <p>Transparent quotes, so you know exactly what you're paying for.</p>
+      </div>
+      <div class="feature-box">
+        <img src="ICON_EXPERTISE.png" alt="Expertise Icon">
+        <h4>Expertise Guaranteed</h4>
+        <p>Backed by years of residential experience and modern tech solutions.</p>
+      </div>
+      <div class="feature-box">
+        <img src="ICON_PEACE.png" alt="Peace of Mind Icon">
+        <h4>Peace of Mind</h4>
+        <p>Our work meets code requirements, ensuring your home's long-term safety.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- (Optional) TESTIMONIALS -->
-    <section class="content-wrapper testimonials" data-aos="zoom-in">
-      <h2>Our Clients Love Us</h2>
-      <div class="testimonial-list">
-        <div class="testimonial-box">
-          <div class="testimonial-content">
-            “Reached out via Facebook Messenger, got a response within an hour. Great service!”
-          </div>
-          <div class="testimonial-author">– Brad T.</div>
+  <!-- (Optional) TESTIMONIALS SECTION -->
+  <section class="content-wrapper testimonials" data-aos="zoom-in">
+    <h2>Our Clients Love Us</h2>
+    <div class="testimonial-list">
+      <div class="testimonial-box">
+        <div class="testimonial-content">
+          “Reached out via Facebook Messenger, and got a response within an hour. Great service!”
         </div>
-        <div class="testimonial-box">
-          <div class="testimonial-content">
-            “Devin was extremely professional and quick to install my new fixtures. 
-             Highly recommend Moore Electric!”
-          </div>
-          <div class="testimonial-author">– Emily P.</div>
-        </div>
+        <div class="testimonial-author">– Brad T.</div>
       </div>
-    </section>
-  </main>
+      <div class="testimonial-box">
+        <div class="testimonial-content">
+          “Devon was extremely professional and quick to install my new fixtures.
+           Highly recommend Moore Electric!”
+        </div>
+        <div class="testimonial-author">– Emily P.</div>
+      </div>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer data-aos="fade-in">
@@ -507,16 +485,7 @@
     <a href="contact.html">Contact</a>
   </footer>
 
-  <!-- SWIRLING MESSENGER ORB -->
-  <div 
-    class="chat-float-btn"
-    title="Chat with Moore Electric"
-    onclick="window.open('https://m.me/228MooreElectric?ref=Facebook%20messenger','_blank')"
-  >
-    <i class="fab fa-facebook-messenger"></i>
-  </div>
-
-  <!-- AOS JS -->
+  <!-- AOS JS (Animate On Scroll) -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({
@@ -525,21 +494,16 @@
     });
   </script>
 
-  <!-- TYPED TEXT IN HERO -->
+  <!-- TYPEIT for typed text effect in Hero -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      new TypeIt("#typed-hero-text", {
-        strings: ["Need an Electrician You Can Trust? Let’s Get Started."],
-        speed: 60,
-        waitUntilVisible: true,
-        afterComplete: (instance) => {
-          instance.destroy();
-        },
-      }).go();
-    });
+    new TypeIt("#typed-hero-text", {
+      strings: ["Get Wired, Stay Safe."],
+      speed: 60,
+      waitUntilVisible: true,
+    }).go();
   </script>
 
-  <!-- CALENDLY POP-UP SCRIPT -->
+  <!-- Calendly Pop-Up Script -->
   <script>
     document.getElementById('calendly-btn').addEventListener('click', function(e) {
       e.preventDefault();
@@ -547,5 +511,14 @@
       return false;
     });
   </script>
+
+  <!-- SWIRLING NEON MESSENGER ORB -->
+  <div 
+    class="chat-float-btn"
+    title="Chat with Moore Electric"
+    onclick="window.open('https://m.me/228MooreElectric?ref=Facebook%20messenger','_blank')"
+  >
+    <i class="fab fa-facebook-messenger"></i>
+  </div>
 </body>
 </html>

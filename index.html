@@ -17,7 +17,7 @@
   <!-- AOS (Animate On Scroll) -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
-  <!-- FONT AWESOME (for icons if desired) -->
+  <!-- FONT AWESOME (if needed) -->
   <script src="https://kit.fontawesome.com/yourFontAwesomeKit.js" crossorigin="anonymous"></script>
 
   <!-- TYPEIT (For typed hero text) -->
@@ -29,11 +29,11 @@
 
   <style>
     :root {
-      --bg-color: #0e0e0e;        /* page background */
-      --primary-color: #00ffc8;   /* neon green accent */
-      --hover-color: #ff00c8;     /* pink hover color */
-      --text-color: #ffffff;      /* main text color */
-      --subtext-color: #cccccc;   /* secondary text color */
+      --bg-color: #0e0e0e;        /* Page background */
+      --primary-color: #00ffc8;   /* Neon green accent */
+      --hover-color: #ff00c8;     /* Pink hover color */
+      --text-color: #ffffff;      /* Main text color */
+      --subtext-color: #cccccc;   /* Secondary text color */
       --header-height: 70px;      
       --transition-speed: 0.3s;   /* standard transition time */
     }
@@ -122,7 +122,7 @@
       min-height: calc(100vh - var(--header-height));
     }
 
-    /* HERO SECTION (BACKGROUND IMAGE OR VIDEO) */
+    /* HERO SECTION */
     .hero {
       position: relative;
       width: 100%;
@@ -160,7 +160,7 @@
       line-height: 1.5;
       color: var(--subtext-color);
     }
-    .hero .cta-btn {
+    .cta-btn {
       display: inline-block;
       padding: 0.75rem 2rem;
       background: var(--primary-color);
@@ -170,7 +170,7 @@
       text-decoration: none;
       transition: box-shadow var(--transition-speed), transform var(--transition-speed);
     }
-    .hero .cta-btn:hover {
+    .cta-btn:hover {
       box-shadow: 0 0 15px var(--primary-color);
       transform: scale(1.05);
     }
@@ -209,8 +209,9 @@
     .service-link:nth-child(2) { animation-delay: 0.2s; }
     .service-link:nth-child(3) { animation-delay: 0.3s; }
     .service-link:nth-child(4) { animation-delay: 0.4s; }
+
     @keyframes fadeInUp {
-      100% {
+      to {
         opacity: 1;
         transform: translateY(0);
       }
@@ -233,6 +234,55 @@
       line-height: 1.4;
       font-size: 0.95rem;
       color: var(--subtext-color);
+    }
+
+    /* WEATHER SECTION */
+    .weather-section h2 {
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+      text-align: center;
+      color: var(--primary-color);
+      font-size: 2rem;
+    }
+    .weather-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .weather-card {
+      background: linear-gradient(145deg, #222, #111);
+      padding: 2rem;
+      border-radius: 8px;
+      width: 260px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      text-align: center;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    }
+    .weather-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0,255,200,0.8);
+    }
+    .weather-card h3 {
+      font-size: 1.4rem;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+    .weather-card img {
+      width: 60px;
+      height: 60px;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+      object-fit: contain;
+    }
+    .weather-card p {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--subtext-color);
+    }
+    .weather-card span {
+      font-weight: bold;
+      color: #fff;
     }
 
     /* FOOTER */
@@ -330,9 +380,8 @@
 
   <!-- MAIN CONTENT -->
   <main>
-    <!-- HERO SECTION (Image Parallax or Video) -->
+    <!-- HERO SECTION -->
     <section class="hero">
-      <!-- If you want a video background, swap this out with <video class="video-bg"> etc. -->
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <h1 id="typed-hero-text"></h1>
@@ -340,7 +389,6 @@
           Trusted residential electrical solutions for the Gulf Coast—TV mounting, Tesla chargers,
           surge protection, and more.
         </p>
-        <!-- CTA Button leading to Services page or Calendly -->
         <a href="services.html" class="cta-btn">Explore Our Services</a>
       </div>
     </section>
@@ -356,7 +404,7 @@
         >
           <div class="service-title">TV Mounting</div>
           <div class="service-desc">
-            Keep your living space stylish and tidy with pro mounting & hidden wires.
+            Keep your living space stylish and tidy with pro mounting & hidden wiring.
           </div>
         </a>
         <a
@@ -376,7 +424,7 @@
         >
           <div class="service-title">Tesla Charger Setup</div>
           <div class="service-desc">
-            Install a safe, fast EV charging solution—charge your Tesla at home.
+            Install a safe, code-compliant EV charger for your electric vehicle.
           </div>
         </a>
         <a
@@ -386,9 +434,17 @@
         >
           <div class="service-title">Free Inspection</div>
           <div class="service-desc">
-            Concerned about wiring? Schedule a no-cost inspection for peace of mind.
+            Schedule a no-cost inspection for peace of mind & up-to-code wiring.
           </div>
         </a>
+      </div>
+    </section>
+
+    <!-- WEATHER SECTION -->
+    <section class="weather-section content-wrapper">
+      <h2>Local Weather – Current Conditions</h2>
+      <div class="weather-grid" id="weather-container">
+        <!-- Populated by script below -->
       </div>
     </section>
   </main>
@@ -411,7 +467,7 @@
     <i class="fab fa-facebook-messenger"></i>
   </div>
 
-  <!-- AOS JS -->
+  <!-- AOS JS (optional) -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({
@@ -432,6 +488,59 @@
         loopDelay: 1500,
       }).go();
     });
+  </script>
+
+  <!-- WEATHER SCRIPT -->
+  <script>
+    /* 
+      This script fetches local weather from weather.gov for the specified coordinates.
+      Feel free to adjust or add more cities if needed.
+    */
+    const cityCoords = [
+      { name: "Gulfport", lat: 30.3674, lon: -89.0928 },
+      { name: "Biloxi", lat: 30.3960, lon: -88.8853 },
+      { name: "Ocean Springs", lat: 30.4113, lon: -88.8279 },
+    ];
+
+    async function getNwsForecast(lat, lon) {
+      try {
+        const pointsUrl = `https://api.weather.gov/points/${lat},${lon}`;
+        const pointsRes = await fetch(pointsUrl);
+        const pointsData = await pointsRes.json();
+        const forecastUrl = pointsData.properties.forecast;
+        const forecastRes = await fetch(forecastUrl);
+        const forecastData = await forecastRes.json();
+        return forecastData.properties.periods;
+      } catch (error) {
+        console.error("Error fetching weather data:", error);
+        return null;
+      }
+    }
+
+    function createWeatherCard(city, period) {
+      return `
+        <div class="weather-card">
+          <h3>${city}</h3>
+          <p>
+            <img src="${period.icon}" alt="${period.shortForecast} Icon"/>
+            ${period.shortForecast}
+          </p>
+          <p>Temperature: <span>${period.temperature}°F</span></p>
+        </div>
+      `;
+    }
+
+    async function displayForecasts() {
+      const container = document.getElementById("weather-container");
+      for (const city of cityCoords) {
+        const periods = await getNwsForecast(city.lat, city.lon);
+        if (periods && periods.length > 0) {
+          const current = periods[0];
+          container.innerHTML += createWeatherCard(city.name, current);
+        }
+      }
+    }
+    displayForecasts();
   </script>
 </body>
 </html>

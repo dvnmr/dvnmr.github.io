@@ -20,6 +20,9 @@
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
+  <!-- TypeIt (for typed text effect) -->
+  <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/typeit.min.js"></script>
+
   <style>
     /***********************************************************
      * GLOBAL STYLES (Enhanced)
@@ -43,6 +46,7 @@
     a {
       text-decoration: none;
       color: inherit;
+      cursor: pointer;
     }
 
     /***********************************************************
@@ -123,15 +127,8 @@
       font-size: 3.5rem;
       margin-bottom: 1rem;
       text-shadow: 0 0 10px rgba(0,0,0,0.7);
-      animation: glowText 3s ease-in-out infinite alternate;
-    }
-    @keyframes glowText {
-      from {
-        text-shadow: 0 0 10px rgba(0,255,200,0.5);
-      }
-      to {
-        text-shadow: 0 0 20px rgba(0,255,200,1);
-      }
+      /* If you want a glow animation, you can keep or remove the below keyframes
+         or just rely on TypeIt's typed effect. */
     }
     .hero p {
       font-size: 1.2rem;
@@ -173,40 +170,43 @@
     }
 
     /***********************************************************
-     * FEATURED SERVICES
+     * FEATURED SERVICES (CLICKABLE)
      ***********************************************************/
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 2rem;
     }
-    .service-box {
+    /* Make entire service "box" a clickable link */
+    .service-link {
       background: linear-gradient(145deg, rgba(0,0,0,0.8), rgba(20,20,20,0.6));
       padding: 2rem;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
       transition: transform 0.3s, box-shadow 0.3s;
       position: relative;
+      display: block; /* ensures anchor covers full box */
     }
-    .service-box:hover {
+    .service-link:hover {
       transform: translateY(-5px) scale(1.02);
       box-shadow: 0 0 20px rgba(0, 255, 200, 0.3);
+      text-decoration: none;
     }
-    .service-box h3 {
+    .service-title {
       color: #00ffc8;
       margin-bottom: 1rem;
       font-size: 1.2rem;
       text-transform: uppercase;
       text-shadow: 0 0 5px rgba(0,255,200,0.5);
     }
-    .service-box p {
+    .service-desc {
       font-weight: 300;
       line-height: 1.4;
       font-size: 0.95rem;
     }
 
     /***********************************************************
-     * WEATHER SECTION (NO WIND SPEED)
+     * WEATHER SECTION (CURRENT ONLY)
      ***********************************************************/
     .weather-section h2 {
       margin-bottom: 2rem;
@@ -303,10 +303,13 @@
   <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content" data-aos="fade-up">
-      <h1>Empowering Gulfport & Beyond</h1>
+      <!-- 
+        Instead of a static heading, we have an empty <h1> that gets "typed" text via TypeIt 
+      -->
+      <h1 id="typed-hero-text"></h1>
       <p>
-        Moore Electric LLC brings cutting-edge electrical solutions to your doorstep, 
-        from Tesla charger installs to top-notch surge protection. Experience the future of power—today.
+        Moore Electric LLC provides top-tier residential electrical services, from TV mounting 
+        and surge protection to Tesla charger installations.
       </p>
       <a href="services.html" class="btn-glow">Explore Our Services</a>
     </div>
@@ -316,26 +319,46 @@
   <section class="content-wrapper" data-aos="zoom-in">
     <h2>Featured Residential Services</h2>
     <div class="services-grid">
-      <div class="service-box">
-        <h3>TV Mounting</h3>
-        <p>Professional TV mounting with hidden wiring for a modern, clutter-free look.</p>
-      </div>
-      <div class="service-box">
-        <h3>Surge Protection</h3>
-        <p>Guard your home electronics from power surges with advanced panel-level devices.</p>
-      </div>
-      <div class="service-box">
-        <h3>Tesla Charger Setup</h3>
-        <p>Install safe, code-compliant Tesla and EV chargers for your electric vehicle.</p>
-      </div>
-      <div class="service-box">
-        <h3>Free Inspection</h3>
-        <p>Have concerns about your wiring? Schedule a complimentary safety inspection today.</p>
-      </div>
+      <!-- Each service is an <a> link to open Calendly pop-up -->
+      <a 
+        href="#" 
+        class="service-link" 
+        onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' }); return false;"
+      >
+        <div class="service-title">TV Mounting</div>
+        <div class="service-desc">Professional TV mounting with hidden wiring for a modern, clutter-free look.</div>
+      </a>
+
+      <a 
+        href="#" 
+        class="service-link" 
+        onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' }); return false;"
+      >
+        <div class="service-title">Surge Protection</div>
+        <div class="service-desc">Guard your home electronics from power surges with advanced panel-level devices.</div>
+      </a>
+
+      <a 
+        href="#" 
+        class="service-link" 
+        onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' }); return false;"
+      >
+        <div class="service-title">Tesla Charger Setup</div>
+        <div class="service-desc">Install safe, code-compliant Tesla and EV chargers for your electric vehicle.</div>
+      </a>
+
+      <a 
+        href="#" 
+        class="service-link" 
+        onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' }); return false;"
+      >
+        <div class="service-title">Free Inspection</div>
+        <div class="service-desc">Have concerns about your wiring? Schedule a complimentary safety inspection today.</div>
+      </a>
     </div>
   </section>
 
-  <!-- WEATHER SECTION (CURRENT ONLY, NO WIND) -->
+  <!-- WEATHER SECTION (CURRENT ONLY) -->
   <section class="weather-section content-wrapper" data-aos="fade-up">
     <h2>Local Weather – Current Conditions</h2>
     <div class="weather-grid" id="weather-container">
@@ -361,11 +384,20 @@
     });
   </script>
 
+  <!-- TYPEIT for typed text effect in Hero -->
+  <script>
+    new TypeIt("#typed-hero-text", {
+      strings: ["We keep the lights on for Gulf Coast residents."],
+      speed: 60,
+      waitUntilVisible: true,
+    }).go();
+  </script>
+
   <!-- WEATHER SCRIPT (NWS - Current Condition, NO WIND) -->
   <script>
     /*
       We'll fetch from the NWS /points/ and /forecast endpoints for each city,
-      then only display periods[0], which typically represents the next immediate condition.
+      then only display periods[0], typically the next immediate condition.
     */
     const cityCoords = [
       { name: "Gulfport", lat: 30.3674, lon: -89.0928 },

@@ -206,7 +206,7 @@
     }
 
     /***********************************************************
-     * WEATHER SECTION
+     * WEATHER SECTION (NO WIND SPEED)
      ***********************************************************/
     .weather-section h2 {
       margin-bottom: 2rem;
@@ -335,11 +335,11 @@
     </div>
   </section>
 
-  <!-- WEATHER SECTION (CURRENT WEATHER ONLY) -->
+  <!-- WEATHER SECTION (CURRENT ONLY, NO WIND) -->
   <section class="weather-section content-wrapper" data-aos="fade-up">
     <h2>Local Weather – Current Conditions</h2>
     <div class="weather-grid" id="weather-container">
-      <!-- Single card per city, only periods[0] from the forecast. -->
+      <!-- Single card per city, only periods[0] from the forecast, no wind displayed. -->
     </div>
   </section>
 
@@ -361,11 +361,11 @@
     });
   </script>
 
-  <!-- WEATHER SCRIPT (NWS - Current Condition) -->
+  <!-- WEATHER SCRIPT (NWS - Current Condition, NO WIND) -->
   <script>
     /*
       We'll fetch from the NWS /points/ and /forecast endpoints for each city,
-      then only display periods[0], which typically represents the current or very next condition.
+      then only display periods[0], which typically represents the next immediate condition.
     */
     const cityCoords = [
       { name: "Gulfport", lat: 30.3674, lon: -89.0928 },
@@ -394,7 +394,6 @@
           <h3>${city}</h3>
           <p><img src="${period.icon}" alt="Weather Icon"> ${period.shortForecast}</p>
           <p>Temperature: <span>${period.temperature}°F</span></p>
-          <p>Wind: <span>${period.windSpeed}</span></p>
         </div>
       `;
     }

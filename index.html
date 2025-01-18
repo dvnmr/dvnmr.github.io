@@ -19,7 +19,7 @@
   <!-- FONT AWESOME (if needed for icons) -->
   <script src="https://kit.fontawesome.com/yourFontAwesomeKit.js" crossorigin="anonymous"></script>
 
-  <!-- TYPEIT (For typed text, if used) -->
+  <!-- TYPEIT (Optional, for typed text) -->
   <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/typeit.min.js"></script>
 
   <!-- CALENDLY (Pop-up scheduling) -->
@@ -105,6 +105,7 @@
       gap: 0.5rem;
     }
     .logo-video {
+      /* 40px tall, auto width to keep aspect ratio */
       height: 40px; 
       width: auto;
       border: none;
@@ -395,9 +396,9 @@
   <!-- HEADER -->
   <header>
     <div class="logo">
-      <!-- Logo Video in Top-Left -->
+      <!-- Video logo in top-left -->
       <video autoplay muted loop playsinline class="logo-video">
-        <!-- Update the src path to match your GitHub repo structure exactly -->
+        <!-- Safest to URL-encode spaces: 'Electric%20Logo%20Animation' -->
         <source src="assets/videos/20250117_2005_Electric%20Logo%20Animation_storyboard_01jhvjhcbceaw96hbsvdqvz7rm.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -409,7 +410,7 @@
         <li><a href="services.html">Services</a></li>
         <li><a href="team.html">Team</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <!-- Safety link removed -->
+        <!-- No Safety link -->
       </ul>
     </nav>
   </header>
@@ -419,7 +420,7 @@
     <!-- HERO SECTION WITH COMMERCIAL VIDEO -->
     <section class="home-commercial">
       <video autoplay muted loop playsinline id="homeVideo">
-        <!-- Same video reference if you want the hero to also play the same file -->
+        <!-- Same video file, also encoding spaces -->
         <source src="assets/videos/20250117_2005_Electric%20Logo%20Animation_storyboard_01jhvjhcbceaw96hbsvdqvz7rm.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -490,12 +491,12 @@
 
   <!-- FOOTER -->
   <footer>
-    &copy; 2025 Moore Electric LLC &bull; 
-    <a href="index.html">Home</a> | 
-    <a href="services.html">Services</a> | 
-    <a href="team.html">Team</a> | 
+    &copy; 2025 Moore Electric LLC &bull;
+    <a href="index.html">Home</a> |
+    <a href="services.html">Services</a> |
+    <a href="team.html">Team</a> |
     <a href="contact.html">Contact</a>
-    <!-- Safety link removed -->
+    <!-- No Safety link -->
   </footer>
 
   <!-- SWIRLING NEON ORB FOR MESSENGER -->
@@ -509,8 +510,10 @@
 
   <!-- TYPED TEXT SCRIPT (Optional) -->
   <script>
-    // If you're using typed text somewhere, place the target element in your HTML and reference its ID here.
-    // Example: <span id="typed-hero-text"></span> in the hero overlay or wherever you want typed text to appear.
+    // If you have a <span> with ID "typed-hero-text" somewhere, you can enable typed text.
+    // Example usage:
+    // <h1><span id="typed-hero-text"></span></h1>
+    /*
     document.addEventListener('DOMContentLoaded', () => {
       new TypeIt("#typed-hero-text", {
         strings: ["Welcome to Moore Electric.", "Powering the Gulf Coast."],
@@ -521,9 +524,10 @@
         loopDelay: 1500,
       }).go();
     });
+    */
   </script>
 
-  <!-- WEATHER SCRIPT (NWS) -->
+  <!-- WEATHER SCRIPT -->
   <script>
     const cityCoords = [
       { name: "Gulfport", lat: 30.3674, lon: -89.0928 },

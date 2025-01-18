@@ -104,9 +104,9 @@
       align-items: center;
       gap: 0.5rem;
     }
+    /* ENLARGE the logo-video from 40px to 60px for more prominence */
     .logo-video {
-      /* 40px tall, auto width to keep aspect ratio */
-      height: 40px; 
+      height: 60px; 
       width: auto;
       border: none;
       outline: none;
@@ -142,31 +142,25 @@
       position: relative;
       width: 100%;
       height: 100vh; /* Full viewport height */
-      overflow: hidden;
-    }
-    #homeVideo {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .video-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(14, 14, 14, 0.5); /* Semi-transparent overlay */
+      background: #0e0e0e; /* or a subtle gradient if you prefer */
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #ffffff;
       text-align: center;
       padding: 2rem;
+    }
+    /* Reuse .video-overlay style or remove if not needed */
+    .video-overlay {
+      /* No video in the background, so we can simply treat this
+         as a container for the hero text. */
+      position: relative;
+      max-width: 600px;
+      margin: 0 auto;
     }
     .video-overlay h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 3rem;
-      color: #00ffc8; /* Neon green */
+      color: #00ffc8;
       text-shadow: 0 0 10px rgba(0, 255, 200, 0.7);
       margin-bottom: 1rem;
     }
@@ -174,9 +168,6 @@
       font-size: 1.2rem;
       color: #cccccc;
       margin-bottom: 1.5rem;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
     }
     .cta-button {
       display: inline-block;
@@ -366,6 +357,7 @@
 
     /* Responsive Adjustments */
     @media (max-width: 768px) {
+      /* Adjust hero text for tablets */
       .video-overlay h1 {
         font-size: 2rem;
       }
@@ -382,6 +374,7 @@
     }
 
     @media (max-width: 480px) {
+      /* Adjust hero text for phones */
       .video-overlay h1 {
         font-size: 1.8rem;
       }
@@ -396,9 +389,9 @@
   <!-- HEADER -->
   <header>
     <div class="logo">
-      <!-- Video logo in top-left -->
+      <!-- Enlarged Video Logo (60px tall) -->
       <video autoplay muted loop playsinline class="logo-video">
-        <!-- Safest to URL-encode spaces: 'Electric%20Logo%20Animation' -->
+        <!-- Update this path/filename if needed -->
         <source src="assets/videos/20250117_2005_Electric%20Logo%20Animation_storyboard_01jhvjhcbceaw96hbsvdqvz7rm.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -410,26 +403,19 @@
         <li><a href="services.html">Services</a></li>
         <li><a href="team.html">Team</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <!-- No Safety link -->
+        <!-- Safety link removed -->
       </ul>
     </nav>
   </header>
 
   <!-- MAIN CONTENT -->
   <main>
-    <!-- HERO SECTION WITH COMMERCIAL VIDEO -->
+    <!-- HERO SECTION WITHOUT BACKGROUND VIDEO -->
     <section class="home-commercial">
-      <video autoplay muted loop playsinline id="homeVideo">
-        <!-- Same video file, also encoding spaces -->
-        <source src="assets/videos/20250117_2005_Electric%20Logo%20Animation_storyboard_01jhvjhcbceaw96hbsvdqvz7rm.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
       <div class="video-overlay">
-        <div>
-          <h1>Powering the Gulf Coast, One Home at a Time.</h1>
-          <p>Discover our range of professional electrical services tailored for your home.</p>
-          <a href="services.html" class="cta-button">Explore Services</a>
-        </div>
+        <h1>Powering the Gulf Coast, One Home at a Time.</h1>
+        <p>Discover our range of professional electrical services tailored for your home.</p>
+        <a href="services.html" class="cta-button">Explore Services</a>
       </div>
     </section>
 
@@ -496,7 +482,7 @@
     <a href="services.html">Services</a> |
     <a href="team.html">Team</a> |
     <a href="contact.html">Contact</a>
-    <!-- No Safety link -->
+    <!-- Safety link removed -->
   </footer>
 
   <!-- SWIRLING NEON ORB FOR MESSENGER -->
@@ -510,9 +496,6 @@
 
   <!-- TYPED TEXT SCRIPT (Optional) -->
   <script>
-    // If you have a <span> with ID "typed-hero-text" somewhere, you can enable typed text.
-    // Example usage:
-    // <h1><span id="typed-hero-text"></span></h1>
     /*
     document.addEventListener('DOMContentLoaded', () => {
       new TypeIt("#typed-hero-text", {

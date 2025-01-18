@@ -27,7 +27,7 @@
   <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/typeit.min.js"></script>
 
   <style>
-    /* COLOR THEME: Matching #19c8fa for primary color */
+    /* COLOR THEME: #19c8fa as primary color */
     :root {
       --bg-color: #0e0e0e;
       --primary-color: #19c8fa;
@@ -56,6 +56,7 @@
       height: auto;
       display: block;
     }
+
     /* Custom scrollbar styling */
     ::-webkit-scrollbar {
       width: 8px;
@@ -69,6 +70,7 @@
     ::-webkit-scrollbar-thumb:hover {
       background: var(--hover-color);
     }
+
     h1, h2, h3, h4 {
       font-family: 'Orbitron', sans-serif;
       letter-spacing: 1px;
@@ -101,7 +103,7 @@
       align-items: center;
       gap: 0.5rem;
     }
-    /* MP4 or GIF that matches the new branding */
+    /* MP4 or GIF for branding */
     .logo-video {
       height: 60px;
       width: auto;
@@ -135,7 +137,7 @@
      * MAIN & HERO
      *************************************************/
     main {
-      padding-top: 80px; /* space below fixed header */
+      padding-top: 80px; 
       min-height: 100vh;
     }
     /* HERO SECTION */
@@ -143,7 +145,7 @@
       position: relative;
       width: 100%;
       min-height: 100vh;
-      background: #0e0e0e; /* or your parallax background if preferred */
+      background: #0e0e0e; 
       display: flex;
       align-items: center;
       justify-content: center;
@@ -194,10 +196,11 @@
       margin-bottom: 3rem;
       text-transform: uppercase;
     }
-    /* Just one card now, but keep the container structure for future expansion */
+
+    /* Only one card for Devin, but structured for possible expansion */
     .team-container {
       display: flex;
-      justify-content: center; /* center single card */
+      justify-content: center;
       align-items: flex-start;
     }
     .member-card {
@@ -207,7 +210,7 @@
       text-align: center;
       padding: 2rem;
       transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-      /* Fade-in + slight upward motion for effect */
+      /* Fade-in + slight upward motion */
       opacity: 0;
       transform: translateY(15px);
       animation: fadeInUp 0.8s forwards;
@@ -222,13 +225,14 @@
       transform: translateY(-3px) scale(1.03);
       box-shadow: 0 0 20px rgba(25, 200, 250, 0.3);
     }
+    /* Remove circle shape => small corner rounding or none at all */
     .member-card img {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
+      width: 160px;
+      height: auto;
       object-fit: cover;
       margin-bottom: 1rem;
       border: 2px solid var(--primary-color);
+      border-radius: 8px; /* e.g. 8px corners instead of 50% circle */
     }
     .member-card h3 {
       font-size: 1.4rem;
@@ -267,7 +271,7 @@
       color: #fff;
     }
 
-    /* SWIRLING NEON ORB FOR MESSENGER */
+    /* SWIRLING NEON ORB FOR MESSENGER (with bobbing swirl) */
     @keyframes swirlAndBob {
       0%   { transform: rotate(0deg) translateY(0); }
       25%  { transform: rotate(90deg) translateY(-3px); }
@@ -372,8 +376,7 @@
       <div class="hero-content">
         <h1 id="typed-team-title"></h1>
         <p>
-          A licensed Master Electrician serving the Gulf Coast with integrity and innovation.
-          Get to know the leader behind Moore Electric.
+          Serving the Gulf Coast with integrity and innovation. Get to know the leader behind Moore Electric.
         </p>
       </div>
     </section>
@@ -382,16 +385,17 @@
     <section class="content-wrapper">
       <h2>Our Team</h2>
       <div class="team-container">
-        <!-- Only Devin Moore's Card -->
+        <!-- Single Member: Devin Moore -->
         <div class="member-card">
+          <!-- Adjust the path to Devin’s actual photo -->
           <img src="assets/images/devin-headshot.jpg" alt="Devin Moore" />
           <h3>Devin Moore</h3>
-          <h4>Owner, Master Electrician &amp; Automation Lead</h4>
+          <!-- Removed "licensed Master Electrician" text -->
+          <h4>Owner &amp; Automation Lead</h4>
           <p>
-            Devin manages Moore Electric’s end-to-end operations —
+            Devin manages Moore Electric’s end-to-end operations — 
             from Tesla charger installs to advanced home automation.
-            He’s passionate about bringing reliable and modern electrical solutions
-            to every client along the Gulf Coast.
+            He’s passionate about modern electrical solutions for every home along the Gulf Coast.
           </p>
         </div>
       </div>
@@ -420,7 +424,10 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       new TypeIt("#typed-team-title", {
-        strings: ["Meet Devin Moore", "Powering Homes Across the Gulf Coast"],
+        strings: [
+          "Meet Devin Moore",
+          "Powering Homes Across the Gulf Coast"
+        ],
         speed: 60,
         waitUntilVisible: true,
         breakLines: false,

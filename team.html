@@ -14,7 +14,7 @@
     rel="stylesheet"
   />
 
-  <!-- FONT AWESOME (for icons: Messenger, etc.) -->
+  <!-- FONT AWESOME (for Messenger icon) -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -23,27 +23,20 @@
     referrerpolicy="no-referrer"
   />
 
-  <!-- AOS (Animate On Scroll) for optional scroll animations -->
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/aos@2.3.1/dist/aos.css"
-  />
-
-  <!-- TYPEIT (For typed text in the hero) -->
+  <!-- TYPEIT (For typed text in hero) -->
   <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/typeit.min.js"></script>
 
   <style>
     :root {
-      --bg-color: #0e0e0e;        /* Page background */
-      --primary-color: #00ffc8;   /* Neon green accent */
-      --hover-color: #ff00c8;     /* Hover color (for swirl, etc.) */
-      --subtext-color: #cccccc;   /* Secondary text color */
-      --text-color: #ffffff;      /* Main text color */
-      --header-height: 70px;      /* Keep consistent with other pages */
-      --transition-speed: 0.3s;  
+      --bg-color: #0e0e0e;
+      --primary-color: #00ffc8;
+      --hover-color: #ff00c8;
+      --text-color: #ffffff;
+      --subtext-color: #cccccc;
+      --transition-speed: 0.3s;
     }
 
-    /* RESET & GLOBAL */
+    /* RESET & GLOBAL STYLES */
     * {
       margin: 0;
       padding: 0;
@@ -62,11 +55,10 @@
       height: auto;
       display: block;
     }
-
-    /* CUSTOM SCROLLBAR */
+    /* SCROLLBAR */
     ::-webkit-scrollbar {
       width: 8px;
-      background: #1a1a1a; /* Track color */
+      background: #1a1a1a;
     }
     ::-webkit-scrollbar-thumb {
       background: var(--primary-color);
@@ -77,40 +69,45 @@
       background: var(--hover-color);
     }
 
-    /* HEADINGS USE ORBITRON */
+    /* HEADINGS (Orbitron) */
     h1, h2, h3, h4 {
       font-family: 'Orbitron', sans-serif;
       letter-spacing: 1px;
     }
+    a {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
 
-    /************************************************
-     * HEADER
-     ************************************************/
+    /*************************************************
+     * HEADER (No Hamburger)
+     *************************************************/
     header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      height: var(--header-height);
-      background: rgba(15, 15, 15, 0.9);
-      backdrop-filter: blur(6px);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 2rem;
-      z-index: 999;
+      padding: 0.25rem 0.5rem; /* slim bar */
+      background: rgba(15,15,15,0.9);
+      backdrop-filter: blur(6px);
       box-shadow: 0 2px 10px rgba(0,0,0,0.7);
+      z-index: 999;
     }
-
-    /* LOGO */
+    /* LOGO with video or image */
     .logo {
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
-    .logo img {
-      height: 40px;
+    .logo-video {
+      height: 60px;
       width: auto;
+      border: none;
+      outline: none;
     }
     .logo-text {
       font-family: 'Orbitron', sans-serif;
@@ -119,7 +116,7 @@
       text-transform: uppercase;
     }
 
-    /* NAVIGATION */
+    /* SIMPLE NAV (No hamburger) */
     nav ul {
       display: flex;
       list-style: none;
@@ -128,26 +125,27 @@
     nav ul li a {
       color: var(--text-color);
       transition: color var(--transition-speed);
-      font-weight: 400;
+      font-weight: 300;
+      font-size: 1rem;
     }
     nav ul li a:hover {
       color: var(--primary-color);
     }
 
-    /************************************************
-     * MAIN & HERO
-     ************************************************/
+    /*************************************************
+     * MAIN CONTENT
+     *************************************************/
     main {
-      margin-top: var(--header-height);
-      min-height: calc(100vh - var(--header-height));
+      padding-top: 80px; /* space for fixed header */
+      min-height: 100vh;
     }
 
-    /* HERO SECTION (Parallax) */
+    /* HERO SECTION (Parallax-like) */
     .hero {
       position: relative;
       width: 100%;
-      min-height: 100vh; /* full viewport if you want a big hero */
-      /* Replace with your actual large background image or use a video */
+      min-height: 100vh;
+      /* Use your background or a solid color if you prefer */
       background: url('YOUR_LARGE_LIGHTNING_IMAGE.jpg') center center / cover no-repeat fixed;
       display: flex;
       align-items: center;
@@ -184,9 +182,7 @@
       color: var(--subtext-color);
     }
 
-    /************************************************
-     * TEAM SECTION
-     ************************************************/
+    /* TEAM SECTION */
     .content-wrapper {
       max-width: 1200px;
       margin: 0 auto;
@@ -199,7 +195,6 @@
       margin-bottom: 2rem;
       text-transform: uppercase;
     }
-
     .team-container {
       display: flex;
       flex-wrap: wrap;
@@ -207,7 +202,6 @@
       justify-content: center;
       align-items: flex-start;
     }
-
     .member-card {
       background: linear-gradient(145deg, rgba(0,0,0,0.8), rgba(20,20,20,0.6));
       border-radius: 10px;
@@ -221,7 +215,6 @@
       transform: translateY(-3px) scale(1.02);
       box-shadow: 0 0 20px rgba(0, 255, 200, 0.3);
     }
-
     .member-card img {
       width: 120px;
       height: 120px;
@@ -247,16 +240,16 @@
       color: var(--subtext-color);
     }
 
-    /************************************************
+    /*************************************************
      * FOOTER
-     ************************************************/
+     *************************************************/
     footer {
       background: rgba(15,15,15,0.9);
       backdrop-filter: blur(6px);
       padding: 2rem;
       text-align: center;
       color: #888;
-      margin-top: 3rem; /* spacing above footer */
+      margin-top: 3rem;
     }
     footer a {
       color: var(--primary-color);
@@ -266,9 +259,7 @@
       color: #fff;
     }
 
-    /************************************************
-     * MESSENGER FLOAT BUTTON
-     ************************************************/
+    /* SWIRLING NEON ORB FOR MESSENGER */
     .chat-float-btn {
       position: fixed;
       bottom: 20px;
@@ -312,9 +303,9 @@
       background: #000;
     }
 
-    /************************************************
+    /*************************************************
      * RESPONSIVE
-     ************************************************/
+     *************************************************/
     @media (max-width: 768px) {
       .hero-content h1 {
         font-size: 2rem;
@@ -334,14 +325,17 @@
 </head>
 
 <body>
-  <!-- HEADER -->
+  <!-- HEADER (No hamburger) -->
   <header>
     <div class="logo">
-      <!-- Replace with your smaller or brand-specific image/logo -->
-      <img src="YOUR_SMALL_LOGO_LIGHTNING.jpg" alt="Moore Electric Logo">
+      <!-- If you have a video logo, use <video> like on Home. Otherwise, an <img> is fine. -->
+      <video autoplay muted loop playsinline class="logo-video">
+        <source src="assets/videos/20250117_2005_Electric%20Logo%20Animation_storyboard_01jhvjhcbceaw96hbsvdqvz7rm.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
       <div class="logo-text">Moore Electric</div>
     </div>
-    <!-- No hamburger, just a simple nav -->
+    <!-- Simple Nav (no hamburger) -->
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -358,7 +352,7 @@
     <section class="hero">
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <!-- TYPED TEXT in hero -->
+        <!-- TYPED TEXT -->
         <h1 id="typed-team-title"></h1>
         <p>
           Discover the faces behind Moore Electric: providing exceptional electrical services,
@@ -370,28 +364,26 @@
     <!-- TEAM SECTION -->
     <section class="content-wrapper">
       <h2>Our Team</h2>
-
-      <!-- Team Container -->
       <div class="team-container">
         <!-- Single Member: Devin Moore -->
-        <div class="member-card" data-aos="fade-up">
+        <div class="member-card">
           <img src="YOUR_HEADSHOT.jpg" alt="Devin Moore" />
           <h3>Devin Moore</h3>
           <h4>Owner, Master Electrician & Automation Lead</h4>
           <p>
-            Devin manages all aspects of Moore Electric's residential electrical work—from 
-            routine repairs to cutting-edge Tesla charger installs. He also oversees web design 
-            and advanced automation projects, ensuring Moore Electric remains at the forefront 
-            of innovation.
+            Devin manages all aspects of Moore Electric's residential electrical work —
+            from routine repairs to cutting-edge Tesla charger installs. He also oversees 
+            website design and advanced automation projects, ensuring Moore Electric remains 
+            at the forefront of innovation.
           </p>
         </div>
 
-        <!-- Example for additional team members (optional):
-        <div class="member-card" data-aos="fade-up" data-aos-delay="150">
+        <!-- Add other team members if needed:
+        <div class="member-card">
           <img src="TEAM_MEMBER_2.jpg" alt="Jane Doe" />
           <h3>Jane Doe</h3>
           <h4>Lead Technician</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>Short bio describing role and expertise...</p>
         </div>
         -->
       </div>
@@ -406,23 +398,14 @@
     <a href="contact.html">Contact</a>
   </footer>
 
-  <!-- FLOATING MESSENGER ORB -->
-  <div 
+  <!-- SWIRLING NEON CIRCLE FOR MESSENGER -->
+  <div
     class="chat-float-btn"
     title="Chat with Moore Electric"
     onclick="window.open('https://m.me/228MooreElectric?ref=Facebook%20messenger','_blank')"
   >
     <i class="fab fa-facebook-messenger"></i>
   </div>
-
-  <!-- AOS JS (Optional) -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000, // Animation duration in ms
-      offset: 50,     // Offset (in px) from original trigger point
-    });
-  </script>
 
   <!-- TYPED TEXT SCRIPT -->
   <script>

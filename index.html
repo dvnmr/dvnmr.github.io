@@ -3,7 +3,6 @@
 <head>
   <!-- BASIC SEO & META -->
   <meta charset="UTF-8" />
-  <!-- Ensures proper mobile responsiveness -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>Moore Electric LLC – Home</title>
@@ -16,7 +15,7 @@
     rel="stylesheet"
   />
 
-  <!-- FONT AWESOME (if needed for icons) -->
+  <!-- FONT AWESOME (for the hamburger icon) -->
   <script src="https://kit.fontawesome.com/yourFontAwesomeKit.js" crossorigin="anonymous"></script>
 
   <!-- TYPEIT (Optional, for typed text) -->
@@ -34,7 +33,6 @@
       --text-color: #ffffff;
       --subtext-color: #cccccc;
       --transition-speed: 0.3s;
-      --header-height: 70px;
     }
 
     /* RESET & GLOBAL STYLES */
@@ -59,10 +57,10 @@
       display: block;
     }
 
-    /* CUSTOM SCROLLBAR (Optional styling) */
+    /* CUSTOM SCROLLBAR (Optional) */
     ::-webkit-scrollbar {
       width: 8px;
-      background: #1a1a1a; /* Track color */
+      background: #1a1a1a;
     }
     ::-webkit-scrollbar-thumb {
       background: var(--primary-color);
@@ -83,47 +81,71 @@
       cursor: pointer;
     }
 
-    /* HEADER */
+    /*************************************************
+     * HEADER
+     *************************************************/
     header {
+      /* Let content define height, so the big logo fits */
       position: fixed;
       top: 0; 
       left: 0;
       width: 100%;
-      height: var(--header-height);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 2rem;
+      padding: 0.5rem 1rem;
       background: rgba(15,15,15,0.9);
       backdrop-filter: blur(6px);
       box-shadow: 0 2px 10px rgba(0,0,0,0.7);
       z-index: 999;
     }
+
+    /* LOGO AREA */
     .logo {
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
-    /* Make the logo bigger: 100px tall */
+    /* The large video logo */
     .logo-video {
-      height: 100px;
+      height: 100px; /* bigger, more prominent */
       width: auto;
       border: none;
       outline: none;
     }
     .logo-text {
       font-family: 'Orbitron', sans-serif;
-      font-size: 2rem; /* slightly bigger for more visual impact */
+      font-size: 2rem;
       color: var(--primary-color);
       text-transform: uppercase;
     }
 
-    /* NAVIGATION (always visible) */
+    /* NAVIGATION */
+    nav {
+      position: relative;
+    }
+
+    /* We'll use a hidden checkbox to toggle the mobile nav */
+    #menu-toggle {
+      display: none;
+    }
+
+    /* The hamburger icon (visible on mobile) */
+    .menu-icon {
+      display: none; /* hidden on desktop, shown on mobile below 768px */
+      cursor: pointer;
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      transition: color 0.3s;
+    }
+    .menu-icon:hover {
+      color: var(--hover-color);
+    }
+
+    /* Desktop Nav: Horizontal List */
     nav ul {
       display: flex;
       list-style: none;
-      /* Let the nav items wrap on smaller screens */
-      flex-wrap: wrap;
       gap: 2rem;
     }
     nav ul li a {
@@ -138,16 +160,19 @@
 
     /* MAIN CONTENT */
     main {
-      margin-top: var(--header-height);
-      min-height: calc(100vh - var(--header-height));
+      /* top padding so content isn't hidden behind the fixed header */
+      padding-top: 120px; 
+      min-height: 100vh;
     }
 
-    /* HERO SECTION */
+    /*************************************************
+     * HERO SECTION
+     *************************************************/
     .home-commercial {
       position: relative;
       width: 100%;
       height: 100vh; /* Full viewport height */
-      background: #0e0e0e; /* or a subtle gradient if you prefer */
+      background: #0e0e0e;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -187,7 +212,9 @@
       border: 2px solid #00ffc8;
     }
 
-    /* FEATURED SERVICES */
+    /*************************************************
+     * FEATURED SERVICES
+     *************************************************/
     .content-wrapper {
       max-width: 1200px;
       margin: 0 auto;
@@ -247,7 +274,9 @@
       color: var(--subtext-color);
     }
 
-    /* WEATHER SECTION */
+    /*************************************************
+     * WEATHER SECTION
+     *************************************************/
     .weather-section h2 {
       margin-bottom: 2rem;
       text-transform: uppercase;
@@ -296,7 +325,9 @@
       color: #fff;
     }
 
-    /* FOOTER */
+    /*************************************************
+     * FOOTER
+     *************************************************/
     footer {
       background: rgba(15,15,15,0.9);
       backdrop-filter: blur(6px);
@@ -313,7 +344,9 @@
       color: #fff;
     }
 
-    /* SWIRLING NEON ORB (Messenger Link) */
+    /*************************************************
+     * SWIRLING NEON ORB (Messenger Link)
+     *************************************************/
     .chat-float-btn {
       position: fixed;
       bottom: 20px;
@@ -357,28 +390,47 @@
       background: #000;
     }
 
-    /* RESPONSIVE ADJUSTMENTS */
+    /*************************************************
+     * RESPONSIVE ADJUSTMENTS
+     *************************************************/
+    /* MOBILE (UNDER 768px) */
     @media (max-width: 768px) {
+      /* Show hamburger, hide normal horizontal nav. */
+      .menu-icon {
+        display: block; 
+      }
+      nav ul {
+        /* Hide it off-canvas until toggled */
+        position: absolute;
+        top: 100%; /* just below the header */
+        right: 0;
+        background: rgba(15,15,15,0.98);
+        width: 200px;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        box-shadow: -2px 0 10px rgba(0,0,0,0.7);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 9999;
+      }
+
+      /* If #menu-toggle is checked, show the menu. */
+      #menu-toggle:checked ~ ul {
+        transform: translateX(0);
+      }
+    }
+
+    /* UNDER 480px */
+    @media (max-width: 480px) {
       .video-overlay h1 {
         font-size: 2rem;
       }
       .video-overlay p {
         font-size: 1rem;
       }
-      nav ul {
-        gap: 1rem; /* Less space between links so they fit better */
-      }
-    }
-
-    @media (max-width: 480px) {
-      .video-overlay h1 {
-        font-size: 1.8rem;
-      }
-      .video-overlay p {
-        font-size: 0.9rem;
-      }
       .logo-text {
-        font-size: 1.5rem; /* Slightly smaller for small phones, if needed */
+        font-size: 1.6rem;
       }
     }
   </style>
@@ -388,15 +440,20 @@
   <!-- HEADER -->
   <header>
     <div class="logo">
-      <!-- Larger Video Logo (100px) -->
       <video autoplay muted loop playsinline class="logo-video">
-        <!-- Update the path if necessary; note the space is URL-encoded as %20 -->
+        <!-- Make sure the path matches your file exactly. Encoding spaces as %20 is safest. -->
         <source src="assets/videos/20250117_2005_Electric%20Logo%20Animation_storyboard_01jhvjhcbceaw96hbsvdqvz7rm.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
       <div class="logo-text">Moore Electric</div>
     </div>
+
+    <!-- Nav area with hamburger for mobile -->
     <nav>
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="menu-icon">
+        <i class="fas fa-bars"></i>
+      </label>
       <ul>
         <li><a href="index.html" style="color: var(--primary-color);">Home</a></li>
         <li><a href="services.html">Services</a></li>
@@ -409,7 +466,7 @@
 
   <!-- MAIN CONTENT -->
   <main>
-    <!-- HERO SECTION WITHOUT BACKGROUND VIDEO -->
+    <!-- HERO SECTION -->
     <section class="home-commercial">
       <div class="video-overlay">
         <h1>Powering the Gulf Coast, One Home at a Time.</h1>
@@ -493,7 +550,7 @@
     <i class="fab fa-facebook-messenger"></i>
   </div>
 
-  <!-- TYPED TEXT SCRIPT (Optional) -->
+  <!-- (Optional) TYPED TEXT SCRIPT -->
   <script>
     /*
     document.addEventListener('DOMContentLoaded', () => {

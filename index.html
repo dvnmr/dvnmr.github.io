@@ -35,7 +35,7 @@
       --header-height: 70px;
     }
 
-    /* RESET & GLOBAL */
+    /* RESET & GLOBAL STYLES */
     * {
       margin: 0;
       padding: 0;
@@ -53,7 +53,7 @@
     /* CUSTOM SCROLLBAR */
     ::-webkit-scrollbar {
       width: 8px;
-      background: #1a1a1a; /* track color */
+      background: #1a1a1a; /* Track color */
     }
     ::-webkit-scrollbar-thumb {
       background: var(--primary-color);
@@ -61,7 +61,7 @@
       transition: background 0.3s ease;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: var(--hover-color);
+      background: var(--hover-color); /* Hover color for scrollbar thumb */
     }
 
     h1, h2, h3, h4 {
@@ -95,9 +95,11 @@
       align-items: center;
       gap: 0.5rem;
     }
-    .logo img {
-      height: 40px;
+    .logo-video {
+      height: 40px; /* Matches the original logo height */
       width: auto;
+      border: none;
+      outline: none;
     }
     .logo-text {
       font-family: 'Orbitron', sans-serif;
@@ -119,63 +121,71 @@
       color: var(--primary-color);
     }
 
-    /* MAIN */
+    /* MAIN CONTENT */
     main {
       margin-top: var(--header-height);
       min-height: calc(100vh - var(--header-height));
     }
 
-    /* HERO */
-    .hero {
+    /* HERO SECTION */
+    .home-commercial {
       position: relative;
       width: 100%;
-      min-height: 100vh;
-      background: url("YOUR_HERO_IMAGE.jpg") center center / cover no-repeat fixed;
+      height: 100vh; /* Full viewport height */
+      overflow: hidden;
+    }
+
+    #homeVideo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(14, 14, 14, 0.5); /* Semi-transparent overlay */
       display: flex;
       align-items: center;
       justify-content: center;
+      color: #ffffff;
       text-align: center;
-      overflow: hidden;
-    }
-    .hero-overlay {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.3);
-      z-index: 1;
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 90%;
-      margin: 0 auto;
       padding: 2rem;
     }
-    .hero-content h1 {
+
+    .video-overlay h1 {
+      font-family: 'Orbitron', sans-serif;
       font-size: 3rem;
+      color: #00ffc8; /* Neon green */
+      text-shadow: 0 0 10px rgba(0, 255, 200, 0.7);
       margin-bottom: 1rem;
-      text-shadow: 0 0 8px rgba(0,0,0,0.7);
     }
-    .hero-content p {
+
+    .video-overlay p {
       font-size: 1.2rem;
+      color: #cccccc; /* Light gray */
+      margin-bottom: 1.5rem;
       max-width: 600px;
-      margin: 0.5rem auto 2rem;
-      line-height: 1.5;
-      color: var(--subtext-color);
     }
-    .cta-btn {
+
+    .cta-button {
       display: inline-block;
-      padding: 0.75rem 2rem;
-      background: var(--primary-color);
-      color: #000;
-      border-radius: 4px;
-      font-weight: 700;
+      padding: 0.75rem 1.5rem;
+      background-color: #00ffc8; /* Neon green */
+      color: #0e0e0e; /* Dark background */
       text-decoration: none;
-      transition: box-shadow var(--transition-speed), transform var(--transition-speed);
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
-    .cta-btn:hover {
-      box-shadow: 0 0 15px var(--primary-color);
-      transform: scale(1.05);
+
+    .cta-button:hover {
+      background-color: #0e0e0e;
+      color: #00ffc8;
+      border: 2px solid #00ffc8;
     }
 
     /* FEATURED SERVICES */
@@ -221,7 +231,7 @@
     }
     .service-link:hover {
       transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 0 20px rgba(0,255,200,0.3);
+      box-shadow: 0 0 20px rgba(0, 255, 200, 0.3);
     }
     .service-title {
       color: var(--primary-color);
@@ -305,7 +315,7 @@
       color: #fff;
     }
 
-    /* SWIRLING NEON ORB (Messenger) */
+    /* SWIRLING NEON ORB (Messenger Link) */
     .chat-float-btn {
       position: fixed;
       bottom: 20px;
@@ -328,7 +338,7 @@
     .chat-float-btn:hover {
       animation: swirlHover 1.5s linear infinite;
       transform: scale(1.1);
-      background: radial-gradient(circle, var(--hover-color) 0%, #0e0e0e 80%, var(--hover-color) 100%);
+      background: radial-gradient(circle, #ff00c8 0%, #0e0e0e 80%, #ff00c8 100%);
     }
     @keyframes swirlHover {
       to { transform: rotate(360deg); }
@@ -351,7 +361,7 @@
 
     /* RESPONSIVE */
     @media(max-width: 768px) {
-      .hero-content h1 {
+      .video-overlay h1 {
         font-size: 2rem;
       }
       nav ul {
@@ -361,39 +371,48 @@
         width: 60px;
         height: 60px;
       }
+      .video-overlay p {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
+
 <body>
   <!-- HEADER -->
   <header>
     <div class="logo">
-      <img src="YOUR_LOGO.svg" alt="Moore Electric Logo">
+      <video autoplay muted loop playsinline class="logo-video">
+        <source src="20250117_2005_Electric%20Logo%20Animation_storyboard_01jhvjhcbceaw96hbsvdqvz7rm.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
       <div class="logo-text">Moore Electric</div>
     </div>
     <nav>
       <ul>
-        <!-- Home link is highlighted -->
         <li><a href="index.html" style="color: var(--primary-color);">Home</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="team.html">Team</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li><a href="Safety.html">Safety</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- MAIN CONTENT -->
   <main>
-    <!-- HERO SECTION -->
-    <section class="hero">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <h1 id="typed-hero-text"></h1>
-        <p>
-          Bringing modern electrical solutions to the Gulf Coast—TV mounting, Tesla chargers,
-          free inspections, and more.
-        </p>
-        <a href="services.html" class="cta-btn">Explore Our Services</a>
+    <!-- HERO SECTION WITH COMMERCIAL VIDEO -->
+    <section class="home-commercial">
+      <video autoplay muted loop playsinline id="homeVideo">
+        <source src="20250117_2005_Electric%20Logo%20Animation_storyboard_01jhvjhcbceaw96hbsvdqvz7rm.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-overlay">
+        <div>
+          <h1>Powering the Gulf Coast, One Home at a Time.</h1>
+          <p>Discover our range of professional electrical services tailored for your home.</p>
+          <a href="services.html" class="cta-button">Explore Services</a>
+        </div>
       </div>
     </section>
 
@@ -459,13 +478,14 @@
     <a href="index.html">Home</a> | 
     <a href="services.html">Services</a> | 
     <a href="team.html">Team</a> | 
-    <a href="contact.html">Contact</a>
+    <a href="contact.html">Contact</a> | 
+    <a href="Safety.html">Safety</a>
   </footer>
 
   <!-- SWIRLING NEON ORB FOR MESSENGER -->
   <div 
     class="chat-float-btn"
-    title="Chat with Moore Electric"
+    title="Chat with Moore Electric via Messenger"
     onclick="window.open('https://m.me/228MooreElectric?ref=Facebook%20messenger','_blank')"
   >
     <i class="fab fa-facebook-messenger"></i>

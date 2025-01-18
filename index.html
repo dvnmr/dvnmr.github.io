@@ -127,20 +127,14 @@
       min-height: calc(100vh - var(--header-height));
     }
 
-    /* HERO SECTION */
+    /* HERO SECTION WITHOUT BACKGROUND VIDEO */
     .home-commercial {
       position: relative;
       width: 100%;
-      height: 100vh; /* Full viewport height */
+      height: 100vh; /* Full viewport height if you still want a big hero area */
       overflow: hidden;
+      /* No video here anymore */
     }
-
-    #homeVideo {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
     .video-overlay {
       position: absolute;
       top: 0;
@@ -151,11 +145,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #ffffff;
       text-align: center;
       padding: 2rem;
     }
-
     .video-overlay h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 3rem;
@@ -163,14 +155,13 @@
       text-shadow: 0 0 10px rgba(0, 255, 200, 0.7);
       margin-bottom: 1rem;
     }
-
     .video-overlay p {
       font-size: 1.2rem;
       color: #cccccc; /* Light gray */
       margin-bottom: 1.5rem;
       max-width: 600px;
+      margin: 0 auto;
     }
-
     .cta-button {
       display: inline-block;
       padding: 0.75rem 1.5rem;
@@ -181,7 +172,6 @@
       font-weight: bold;
       transition: background-color 0.3s ease, color 0.3s ease;
     }
-
     .cta-button:hover {
       background-color: #0e0e0e;
       color: #00ffc8;
@@ -382,6 +372,7 @@
   <!-- HEADER -->
   <header>
     <div class="logo">
+      <!-- Small Animated Video Logo -->
       <video autoplay muted loop playsinline class="logo-video">
         <source src="20250117_2005_Electric%20Logo%20Animation_storyboard_01jhvjhcbceaw96hbsvdqvz7rm.mp4" type="video/mp4">
         Your browser does not support the video tag.
@@ -401,12 +392,8 @@
 
   <!-- MAIN CONTENT -->
   <main>
-    <!-- HERO SECTION WITH COMMERCIAL VIDEO -->
+    <!-- HERO SECTION WITHOUT THE BIG BACKGROUND VIDEO -->
     <section class="home-commercial">
-      <video autoplay muted loop playsinline id="homeVideo">
-        <source src="20250117_2005_Electric%20Logo%20Animation_storyboard_01jhvjhcbceaw96hbsvdqvz7rm.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
       <div class="video-overlay">
         <div>
           <h1>Powering the Gulf Coast, One Home at a Time.</h1>

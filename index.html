@@ -3,7 +3,9 @@
 <head>
   <!-- BASIC SEO & META -->
   <meta charset="UTF-8" />
+  <!-- Ensures proper mobile responsiveness -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
   <title>Moore Electric LLC – Home</title>
   <meta name="description" content="Moore Electric LLC: Top-tier residential electrical services along the Gulf Coast. Free inspections, Tesla charger installs, and more." />
   <meta name="keywords" content="Moore Electric, Tesla Charger, TV Mounting, Residential Electrical, Surge Protection" />
@@ -50,7 +52,14 @@
       overflow-x: hidden;
     }
 
-    /* CUSTOM SCROLLBAR */
+    /* Ensure images and video don't overflow on mobile */
+    img, video {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* CUSTOM SCROLLBAR (Optional styling) */
     ::-webkit-scrollbar {
       width: 8px;
       background: #1a1a1a; /* Track color */
@@ -61,7 +70,7 @@
       transition: background 0.3s ease;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: var(--hover-color); /* Hover color for scrollbar thumb */
+      background: var(--hover-color);
     }
 
     h1, h2, h3, h4 {
@@ -96,7 +105,7 @@
       gap: 0.5rem;
     }
     .logo-video {
-      height: 40px; /* Matches the original logo height */
+      height: 40px; 
       width: auto;
       border: none;
       outline: none;
@@ -127,13 +136,17 @@
       min-height: calc(100vh - var(--header-height));
     }
 
-    /* HERO SECTION WITHOUT BACKGROUND VIDEO */
+    /* HERO SECTION */
     .home-commercial {
       position: relative;
       width: 100%;
-      height: 100vh; /* Full viewport height if you still want a big hero area */
+      height: 100vh; /* Full viewport height */
       overflow: hidden;
-      /* No video here anymore */
+    }
+    #homeVideo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
     .video-overlay {
       position: absolute;
@@ -145,6 +158,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      color: #ffffff;
       text-align: center;
       padding: 2rem;
     }
@@ -157,10 +171,11 @@
     }
     .video-overlay p {
       font-size: 1.2rem;
-      color: #cccccc; /* Light gray */
+      color: #cccccc;
       margin-bottom: 1.5rem;
       max-width: 600px;
-      margin: 0 auto;
+      margin-left: auto;
+      margin-right: auto;
     }
     .cta-button {
       display: inline-block;
@@ -212,7 +227,6 @@
     .service-link:nth-child(2) { animation-delay: 0.2s; }
     .service-link:nth-child(3) { animation-delay: 0.3s; }
     .service-link:nth-child(4) { animation-delay: 0.4s; }
-
     @keyframes fadeInUp {
       to {
         opacity: 1;
@@ -349,10 +363,13 @@
       background: #000;
     }
 
-    /* RESPONSIVE */
-    @media(max-width: 768px) {
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
       .video-overlay h1 {
         font-size: 2rem;
+      }
+      .video-overlay p {
+        font-size: 1rem;
       }
       nav ul {
         gap: 1rem;
@@ -361,8 +378,14 @@
         width: 60px;
         height: 60px;
       }
+    }
+
+    @media (max-width: 480px) {
+      .video-overlay h1 {
+        font-size: 1.8rem;
+      }
       .video-overlay p {
-        font-size: 1rem;
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -372,7 +395,6 @@
   <!-- HEADER -->
   <header>
     <div class="logo">
-      <!-- Small Animated Video Logo -->
       <video autoplay muted loop playsinline class="logo-video">
         <source src="20250117_2005_Electric%20Logo%20Animation_storyboard_01jhvjhcbceaw96hbsvdqvz7rm.mp4" type="video/mp4">
         Your browser does not support the video tag.
@@ -392,8 +414,12 @@
 
   <!-- MAIN CONTENT -->
   <main>
-    <!-- HERO SECTION WITHOUT THE BIG BACKGROUND VIDEO -->
+    <!-- HERO SECTION WITH COMMERCIAL VIDEO -->
     <section class="home-commercial">
+      <video autoplay muted loop playsinline id="homeVideo">
+        <source src="20250117_2005_Electric%20Logo%20Animation_storyboard_01jhvjhcbceaw96hbsvdqvz7rm.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
       <div class="video-overlay">
         <div>
           <h1>Powering the Gulf Coast, One Home at a Time.</h1>
@@ -454,7 +480,7 @@
     <section class="weather-section content-wrapper">
       <h2>Local Weather – Current Conditions</h2>
       <div class="weather-grid" id="weather-container">
-        <!-- Populated by script below -->
+        <!-- Weather cards populated by script below -->
       </div>
     </section>
   </main>

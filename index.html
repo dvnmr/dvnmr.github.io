@@ -268,55 +268,6 @@
       color: var(--subtext-color);
     }
 
-    /* WEATHER SECTION */
-    .weather-section h2 {
-      margin-bottom: 2rem;
-      text-transform: uppercase;
-      text-align: center;
-      color: var(--primary-color);
-      font-size: 2rem;
-    }
-    .weather-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-    }
-    .weather-card {
-      background: linear-gradient(145deg, #222, #111);
-      padding: 2rem;
-      border-radius: 8px;
-      width: 260px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-      text-align: center;
-      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-    }
-    .weather-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(25,200,250,0.8);
-    }
-    .weather-card h3 {
-      font-size: 1.4rem;
-      color: var(--primary-color);
-      margin-bottom: 0.5rem;
-    }
-    .weather-card img {
-      width: 60px;
-      height: 60px;
-      margin-right: 0.5rem;
-      vertical-align: middle;
-      object-fit: contain;
-    }
-    .weather-card p {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-      color: var(--subtext-color);
-    }
-    .weather-card span {
-      font-weight: bold;
-      color: #fff;
-    }
-
     /* FOOTER */
     footer {
       background: rgba(15,15,15,0.9);
@@ -513,14 +464,6 @@
         </a>
       </div>
     </section>
-
-    <!-- WEATHER SECTION -->
-    <section class="weather-section content-wrapper">
-      <h2>Local Weather – Current Conditions</h2>
-      <div class="weather-grid" id="weather-container">
-        <!-- Weather cards populated by script below -->
-      </div>
-    </section>
   </main>
 
   <!-- FOOTER -->
@@ -540,85 +483,5 @@
   >
     <i class="fab fa-facebook-messenger"></i>
   </div>
-
-  <!-- WEATHER SCRIPT -->
-  <script>
-    const cityCoords = [
-      { name: "Gulfport", lat: 30.3674, lon: -89.0928 },
-      { name: "Biloxi", lat: 30.3960, lon: -88.8853 },
-      { name: "Ocean Springs", lat: 30.4113, lon: -88.8279 }
-    ];
-
-    async function getNwsForecast(lat, lon) {
-      try {
-        const pointsUrl = \`https://api.weather.gov/points/\${lat},\${lon}\`;
-        const pointsRes = await fetch(pointsUrl, {
-          headers: {
-            "User-Agent": "<YOUR_APP_NAME> ( <YOUR_CONTACT_INFO> )",
-            "Accept": "application/ld+json"
-          }
-        });
-        const pointsData = await pointsRes.json();
-
-        if (!pointsData.properties || !pointsData.properties.forecast) {
-          console.warn("Forecast URL not found for coordinates:", lat, lon, pointsData);
-          return null;
-        }
-
-        const forecastUrl = pointsData.properties.forecast;
-        const forecastRes = await fetch(forecastUrl, {
-          headers: {
-            "User-Agent": "<YOUR_APP_NAME> ( <YOUR_CONTACT_INFO> )",
-            "Accept": "application/ld+json"
-          }
-        });
-        const forecastData = await forecastRes.json();
-
-        if (!forecastData.properties || !forecastData.properties.periods) {
-          console.warn("No forecast data returned:", forecastData);
-          return null;
-        }
-
-        return forecastData.properties.periods;
-      } catch (error) {
-        console.error("Error fetching weather data:", error);
-        return null;
-      }
-    }
-
-    function createWeatherCard(city, period) {
-      return \`
-        <div class="weather-card">
-          <h3>\${city}</h3>
-          <p>
-            <img src="\${period.icon}" alt="\${period.shortForecast} Icon"/>
-            \${period.shortForecast}
-          </p>
-          <p>Temperature: <span>\${period.temperature}°F</span></p>
-        </div>
-      \`;
-    }
-
-    async function displayForecasts() {
-      const container = document.getElementById("weather-container");
-      for (const city of cityCoords) {
-        const periods = await getNwsForecast(city.lat, city.lon);
-        if (periods && periods.length > 0) {
-          // Use the first period as "current" conditions
-          const current = periods[0];
-          container.innerHTML += createWeatherCard(city.name, current);
-        } else {
-          // fallback if no data
-          container.innerHTML += \`
-            <div class="weather-card">
-              <h3>\${city.name}</h3>
-              <p>Weather data not currently available.</p>
-            </div>
-          \`;
-        }
-      }
-    }
-    displayForecasts();
-  </script>
 </body>
 </html>

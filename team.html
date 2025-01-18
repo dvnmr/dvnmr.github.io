@@ -14,7 +14,7 @@
     rel="stylesheet"
   />
 
-  <!-- FONT AWESOME (for Messenger icon) -->
+  <!-- FONT AWESOME (for Messenger icon, etc.) -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -27,9 +27,10 @@
   <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/typeit.min.js"></script>
 
   <style>
+    /* COLOR THEME updated to #19c8fa to match your new brand color */
     :root {
       --bg-color: #0e0e0e;
-      --primary-color: #00ffc8;
+      --primary-color: #19c8fa;
       --hover-color: #ff00c8;
       --text-color: #ffffff;
       --subtext-color: #cccccc;
@@ -55,7 +56,7 @@
       height: auto;
       display: block;
     }
-    /* SCROLLBAR */
+    /* Custom scrollbar */
     ::-webkit-scrollbar {
       width: 8px;
       background: #1a1a1a;
@@ -74,6 +75,7 @@
       font-family: 'Orbitron', sans-serif;
       letter-spacing: 1px;
     }
+
     a {
       text-decoration: none;
       color: inherit;
@@ -81,7 +83,7 @@
     }
 
     /*************************************************
-     * HEADER (No Hamburger)
+     * HEADER
      *************************************************/
     header {
       position: fixed;
@@ -91,18 +93,18 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.25rem 0.5rem; /* slim bar */
+      padding: 0.25rem 0.5rem;
       background: rgba(15,15,15,0.9);
       backdrop-filter: blur(6px);
       box-shadow: 0 2px 10px rgba(0,0,0,0.7);
       z-index: 999;
     }
-    /* LOGO with video or image */
     .logo {
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
+    /* Insert your new MP4 or GIF below, matching Home Page. */
     .logo-video {
       height: 60px;
       width: auto;
@@ -116,7 +118,7 @@
       text-transform: uppercase;
     }
 
-    /* SIMPLE NAV (No hamburger) */
+    /* SIMPLE NAV (no hamburger, to match your instructions) */
     nav ul {
       display: flex;
       list-style: none;
@@ -136,16 +138,20 @@
      * MAIN CONTENT
      *************************************************/
     main {
-      padding-top: 80px; /* space for fixed header */
+      padding-top: 80px; /* space for the fixed header */
       min-height: 100vh;
     }
 
-    /* HERO SECTION (Parallax-like) */
+    /* HERO SECTION */
     .hero {
       position: relative;
       width: 100%;
       min-height: 100vh;
-      background: url('YOUR_LARGE_LIGHTNING_IMAGE.jpg') center center / cover no-repeat fixed;
+      /* If you have a custom background for the team page, specify it below or keep black */
+      background: #0e0e0e; 
+      /* Or parallax-like background:
+         background: url('YOUR_LARGE_LIGHTNING_IMAGE.jpg') center center / cover no-repeat fixed; 
+      */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -172,6 +178,7 @@
       font-size: 3rem;
       margin-bottom: 1rem;
       text-shadow: 0 0 10px rgba(0,0,0,0.7);
+      color: var(--primary-color);
     }
     .hero-content p {
       font-size: 1.2rem;
@@ -212,7 +219,7 @@
     }
     .member-card:hover {
       transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 0 20px rgba(0, 255, 200, 0.3);
+      box-shadow: 0 0 20px rgba(25, 200, 250, 0.3); /* matching #19c8fa glow */
     }
     .member-card img {
       width: 120px;
@@ -259,6 +266,14 @@
     }
 
     /* SWIRLING NEON ORB FOR MESSENGER */
+    @keyframes swirlAndBob {
+      0%   { transform: rotate(0deg) translateY(0); }
+      25%  { transform: rotate(90deg) translateY(-3px); }
+      50%  { transform: rotate(180deg) translateY(0); }
+      75%  { transform: rotate(270deg) translateY(-3px); }
+      100% { transform: rotate(360deg) translateY(0); }
+    }
+
     .chat-float-btn {
       position: fixed;
       bottom: 20px;
@@ -267,7 +282,7 @@
       height: 70px;
       border-radius: 50%;
       background: radial-gradient(circle, var(--primary-color) 0%, var(--bg-color) 80%, var(--primary-color) 100%);
-      animation: swirl 4s linear infinite;
+      animation: swirlAndBob 4s linear infinite;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -275,16 +290,9 @@
       z-index: 10000;
       transition: transform 0.3s ease, background var(--transition-speed);
     }
-    @keyframes swirl {
-      to { transform: rotate(360deg); }
-    }
     .chat-float-btn:hover {
-      animation: swirlHover 1.5s linear infinite;
       transform: scale(1.1);
       background: radial-gradient(circle, var(--hover-color) 0%, #0e0e0e 80%, var(--hover-color) 100%);
-    }
-    @keyframes swirlHover {
-      to { transform: rotate(360deg); }
     }
     .chat-float-btn:active {
       transform: scale(0.95);
@@ -324,17 +332,19 @@
 </head>
 
 <body>
-  <!-- HEADER (No hamburger) -->
+  <!-- HEADER -->
   <header>
     <div class="logo">
-      <!-- Video-based logo, matching your new style -->
+      <!-- If you have a new MP4 or GIF, replace the path here. -->
       <video autoplay muted loop playsinline class="logo-video">
-        <source src="assets/videos/20250117_2005_Electric%20Logo%20Animation_storyboard_01jhvjhcbceaw96hbsvdqvz7rm.mp4" type="video/mp4">
+        <source src="assets/videos/Your_New_Logo_Animation.mp4" type="video/mp4">
+        <!-- fallback img if needed:
+        <img src="assets/videos/Your_New_Logo_Animation.gif" alt="Moore Electric Logo">
+        -->
         Your browser does not support the video tag.
       </video>
       <div class="logo-text">Moore Electric</div>
     </div>
-    <!-- Simple Nav -->
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -370,18 +380,26 @@
           <h3>Devin Moore</h3>
           <h4>Owner, Master Electrician &amp; Automation Lead</h4>
           <p>
-            Devin manages all aspects of Moore Electric's residential electrical work —
-            from routine repairs to cutting-edge Tesla charger installs. He also oversees 
-            website design and advanced automation projects, ensuring Moore Electric remains 
+            Devin manages all aspects of Moore Electric's residential electrical work — 
+            from routine repairs to cutting-edge Tesla charger installs. He also oversees
+            website design and advanced automation projects, ensuring Moore Electric stays 
             at the forefront of innovation.
           </p>
         </div>
-        <!-- Add additional team members below if needed -->
+
+        <!-- Example additional members:
+        <div class="member-card">
+          <img src="TEAM_MEMBER_2.jpg" alt="Jane Doe" />
+          <h3>Jane Doe</h3>
+          <h4>Lead Technician</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        </div>
+        -->
       </div>
     </section>
   </main>
 
-  <!-- FOOTER (TEAM LINK RESTORED) -->
+  <!-- FOOTER -->
   <footer>
     &copy; 2025 Moore Electric LLC &bull;
     <a href="index.html">Home</a> |
@@ -390,7 +408,7 @@
     <a href="contact.html">Contact</a>
   </footer>
 
-  <!-- SWIRLING NEON ORB FOR MESSENGER -->
+  <!-- SWIRLING NEON ORB (Messenger) -->
   <div
     class="chat-float-btn"
     title="Chat with Moore Electric"

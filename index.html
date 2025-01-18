@@ -16,10 +16,10 @@
     rel="stylesheet"
   />
 
-  <!-- FONT AWESOME (if you need icons) -->
+  <!-- FONT AWESOME (if needed for icons) -->
   <script src="https://kit.fontawesome.com/yourFontAwesomeKit.js" crossorigin="anonymous"></script>
 
-  <!-- TYPEIT (For typed text in hero) -->
+  <!-- TYPEIT (For typed text, if used) -->
   <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/typeit.min.js"></script>
 
   <!-- CALENDLY (Pop-up scheduling) -->
@@ -180,8 +180,8 @@
     .cta-button {
       display: inline-block;
       padding: 0.75rem 1.5rem;
-      background-color: #00ffc8; /* Neon green */
-      color: #0e0e0e; /* Dark background */
+      background-color: #00ffc8;
+      color: #0e0e0e;
       text-decoration: none;
       border-radius: 5px;
       font-weight: bold;
@@ -395,8 +395,10 @@
   <!-- HEADER -->
   <header>
     <div class="logo">
+      <!-- Logo Video in Top-Left -->
       <video autoplay muted loop playsinline class="logo-video">
-        <source src="20250117_2005_Electric%20Logo%20Animation_storyboard_01jhvjhcbceaw96hbsvdqvz7rm.mp4" type="video/mp4">
+        <!-- Update the src path to match your GitHub repo structure exactly -->
+        <source src="assets/videos/20250117_2005_Electric%20Logo%20Animation_storyboard_01jhvjhcbceaw96hbsvdqvz7rm.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
       <div class="logo-text">Moore Electric</div>
@@ -407,7 +409,7 @@
         <li><a href="services.html">Services</a></li>
         <li><a href="team.html">Team</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="Safety.html">Safety</a></li>
+        <!-- Safety link removed -->
       </ul>
     </nav>
   </header>
@@ -417,7 +419,8 @@
     <!-- HERO SECTION WITH COMMERCIAL VIDEO -->
     <section class="home-commercial">
       <video autoplay muted loop playsinline id="homeVideo">
-        <source src="20250117_2005_Electric%20Logo%20Animation_storyboard_01jhvjhcbceaw96hbsvdqvz7rm.mp4" type="video/mp4">
+        <!-- Same video reference if you want the hero to also play the same file -->
+        <source src="assets/videos/20250117_2005_Electric%20Logo%20Animation_storyboard_01jhvjhcbceaw96hbsvdqvz7rm.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
       <div class="video-overlay">
@@ -491,8 +494,8 @@
     <a href="index.html">Home</a> | 
     <a href="services.html">Services</a> | 
     <a href="team.html">Team</a> | 
-    <a href="contact.html">Contact</a> | 
-    <a href="Safety.html">Safety</a>
+    <a href="contact.html">Contact</a>
+    <!-- Safety link removed -->
   </footer>
 
   <!-- SWIRLING NEON ORB FOR MESSENGER -->
@@ -504,8 +507,10 @@
     <i class="fab fa-facebook-messenger"></i>
   </div>
 
-  <!-- TYPED TEXT SCRIPT -->
+  <!-- TYPED TEXT SCRIPT (Optional) -->
   <script>
+    // If you're using typed text somewhere, place the target element in your HTML and reference its ID here.
+    // Example: <span id="typed-hero-text"></span> in the hero overlay or wherever you want typed text to appear.
     document.addEventListener('DOMContentLoaded', () => {
       new TypeIt("#typed-hero-text", {
         strings: ["Welcome to Moore Electric.", "Powering the Gulf Coast."],
@@ -518,7 +523,7 @@
     });
   </script>
 
-  <!-- WEATHER SCRIPT -->
+  <!-- WEATHER SCRIPT (NWS) -->
   <script>
     const cityCoords = [
       { name: "Gulfport", lat: 30.3674, lon: -89.0928 },

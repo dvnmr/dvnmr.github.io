@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Moore Electric LLC – Team</title>
-  <meta name="description" content="Meet Devin Moore of Moore Electric LLC, your Gulfport-based electrician specializing in residential work, websites, and automation." />
-  <meta name="keywords" content="Moore Electric, Devin Moore, Gulfport Electrician, Residential Electrical, Automation, Website, Tesla Charger" />
+  <meta name="description" content="Meet the dedicated team at Moore Electric, serving Gulfport and the Gulf Coast with top-tier electrical services and cutting-edge automation." />
+  <meta name="keywords" content="Moore Electric, Team, Gulfport Electrician, Residential Electrical, Automation, Tesla Charger" />
 
   <!-- GOOGLE FONTS -->
   <link
@@ -14,7 +14,7 @@
     rel="stylesheet"
   />
 
-  <!-- FONT AWESOME (for Messenger icon, etc.) -->
+  <!-- FONT AWESOME (for Messenger orb, etc.) -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -27,17 +27,17 @@
   <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/typeit.min.js"></script>
 
   <style>
-    /* COLOR THEME updated to #19c8fa to match your new brand color */
+    /* COLOR THEME: Matching your brand (#19c8fa) */
     :root {
       --bg-color: #0e0e0e;
-      --primary-color: #19c8fa;
+      --primary-color: #19c8fa;  /* or #00ffc8 if you prefer the older color */
       --hover-color: #ff00c8;
       --text-color: #ffffff;
       --subtext-color: #cccccc;
       --transition-speed: 0.3s;
     }
 
-    /* RESET & GLOBAL STYLES */
+    /* RESET & GLOBAL */
     * {
       margin: 0;
       padding: 0;
@@ -56,7 +56,7 @@
       height: auto;
       display: block;
     }
-    /* Custom scrollbar */
+    /* Custom scrollbar styling */
     ::-webkit-scrollbar {
       width: 8px;
       background: #1a1a1a;
@@ -69,13 +69,10 @@
     ::-webkit-scrollbar-thumb:hover {
       background: var(--hover-color);
     }
-
-    /* HEADINGS (Orbitron) */
     h1, h2, h3, h4 {
       font-family: 'Orbitron', sans-serif;
       letter-spacing: 1px;
     }
-
     a {
       text-decoration: none;
       color: inherit;
@@ -104,7 +101,7 @@
       align-items: center;
       gap: 0.5rem;
     }
-    /* Insert your new MP4 or GIF below, matching Home Page. */
+    /* MP4 or GIF for your brand logo */
     .logo-video {
       height: 60px;
       width: auto;
@@ -118,7 +115,7 @@
       text-transform: uppercase;
     }
 
-    /* SIMPLE NAV (no hamburger, to match your instructions) */
+    /* SIMPLE NAV (no hamburger, as requested) */
     nav ul {
       display: flex;
       list-style: none;
@@ -135,28 +132,25 @@
     }
 
     /*************************************************
-     * MAIN CONTENT
+     * MAIN & HERO
      *************************************************/
     main {
-      padding-top: 80px; /* space for the fixed header */
+      padding-top: 80px; /* space for fixed header */
       min-height: 100vh;
     }
-
-    /* HERO SECTION */
+    /* TEAM HERO SECTION */
     .hero {
       position: relative;
       width: 100%;
       min-height: 100vh;
-      /* If you have a custom background for the team page, specify it below or keep black */
+      /* Use your own background if you want a parallax or lightning effect: */
       background: #0e0e0e; 
-      /* Or parallax-like background:
-         background: url('YOUR_LARGE_LIGHTNING_IMAGE.jpg') center center / cover no-repeat fixed; 
-      */
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       overflow: hidden;
+      padding: 2rem;
     }
     .hero-overlay {
       position: absolute;
@@ -164,31 +158,31 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0,0,0,0.6);
       z-index: 1;
     }
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 90%;
+      max-width: 700px;
       margin: 0 auto;
-      padding: 2rem;
+      color: var(--subtext-color);
     }
     .hero-content h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      text-shadow: 0 0 10px rgba(0,0,0,0.7);
       color: var(--primary-color);
+      font-size: 3rem;
+      text-shadow: 0 0 12px rgba(25,200,250,0.7);
+      margin-bottom: 1rem;
     }
     .hero-content p {
       font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0.5rem auto 0;
       line-height: 1.5;
-      color: var(--subtext-color);
+      margin-bottom: 1rem;
     }
 
-    /* TEAM SECTION */
+    /*************************************************
+     * TEAM SECTION
+     *************************************************/
     .content-wrapper {
       max-width: 1200px;
       margin: 0 auto;
@@ -198,15 +192,13 @@
       font-size: 2rem;
       color: var(--primary-color);
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
       text-transform: uppercase;
     }
     .team-container {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
-      justify-content: center;
-      align-items: flex-start;
     }
     .member-card {
       background: linear-gradient(145deg, rgba(0,0,0,0.8), rgba(20,20,20,0.6));
@@ -214,11 +206,24 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
       text-align: center;
       padding: 2rem;
-      width: 300px;
       transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+      opacity: 0;
+      transform: translateY(15px);
+      animation: fadeInUp 0.8s forwards;
+    }
+    /* Staggered fade for each card */
+    .member-card:nth-child(1) { animation-delay: 0.1s; }
+    .member-card:nth-child(2) { animation-delay: 0.2s; }
+    .member-card:nth-child(3) { animation-delay: 0.3s; }
+    .member-card:nth-child(4) { animation-delay: 0.4s; }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
     .member-card:hover {
-      transform: translateY(-3px) scale(1.02);
+      transform: translateY(-3px) scale(1.03);
       box-shadow: 0 0 20px rgba(25, 200, 250, 0.3); /* matching #19c8fa glow */
     }
     .member-card img {
@@ -230,14 +235,15 @@
       border: 2px solid var(--primary-color);
     }
     .member-card h3 {
-      color: var(--primary-color);
-      margin-bottom: 0.5rem;
       font-size: 1.3rem;
+      color: var(--primary-color);
+      margin-bottom: 0.25rem;
     }
     .member-card h4 {
-      margin-bottom: 0.5rem;
       font-size: 1rem;
       font-weight: 400;
+      margin-bottom: 0.75rem;
+      color: var(--text-color);
     }
     .member-card p {
       font-weight: 300;
@@ -273,7 +279,6 @@
       75%  { transform: rotate(270deg) translateY(-3px); }
       100% { transform: rotate(360deg) translateY(0); }
     }
-
     .chat-float-btn {
       position: fixed;
       bottom: 20px;
@@ -287,7 +292,7 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      z-index: 10000;
+      z-index: 999999;
       transition: transform 0.3s ease, background var(--transition-speed);
     }
     .chat-float-btn:hover {
@@ -320,12 +325,17 @@
       .hero-content p {
         font-size: 1rem;
       }
-      nav ul {
-        gap: 1rem;
-      }
       .member-card {
-        width: 90%;
+        width: 80%;
         margin: 0 auto;
+      }
+    }
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 1.8rem;
+      }
+      .hero-content p {
+        font-size: 0.95rem;
       }
     }
   </style>
@@ -335,11 +345,11 @@
   <!-- HEADER -->
   <header>
     <div class="logo">
-      <!-- If you have a new MP4 or GIF, replace the path here. -->
+      <!-- Insert your MP4 or GIF that you want to show. Make sure the path/filename is correct. -->
       <video autoplay muted loop playsinline class="logo-video">
-        <source src="assets/videos/Your_New_Logo_Animation.mp4" type="video/mp4">
-        <!-- fallback img if needed:
-        <img src="assets/videos/Your_New_Logo_Animation.gif" alt="Moore Electric Logo">
+        <source src="assets/videos/20250117_1849_Electric%20Quantum%20Logo_simple_compose_01jhve65zdfwr9mv836zk8dxw3.mp4" type="video/mp4">
+        <!-- Or fallback GIF:
+        <img src="assets/videos/20250117_1849_Electric_Quantum_Logo.gif" alt="Moore Electric Logo">
         -->
         Your browser does not support the video tag.
       </video>
@@ -357,44 +367,59 @@
 
   <!-- MAIN CONTENT -->
   <main>
-    <!-- HERO SECTION -->
+    <!-- TEAM HERO SECTION -->
     <section class="hero">
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <!-- TYPED TEXT -->
         <h1 id="typed-team-title"></h1>
         <p>
-          Discover the faces behind Moore Electric: providing exceptional electrical services,
-          innovative automation, and unparalleled web solutions.
+          We're proud to introduce our dedicated professionals,
+          serving the Gulf Coast with unmatched expertise in
+          residential electrical solutions, EV chargers, and beyond.
         </p>
       </div>
     </section>
 
-    <!-- TEAM SECTION -->
+    <!-- TEAM PROFILES -->
     <section class="content-wrapper">
-      <h2>Our Team</h2>
+      <h2>Meet Our Team</h2>
       <div class="team-container">
-        <!-- Single Member: Devin Moore -->
+        <!-- Example Member #1 -->
         <div class="member-card">
-          <img src="YOUR_HEADSHOT.jpg" alt="Devin Moore" />
+          <img src="assets/images/devin-headshot.jpg" alt="Devin Moore" />
           <h3>Devin Moore</h3>
-          <h4>Owner, Master Electrician &amp; Automation Lead</h4>
+          <h4>Owner &amp; Master Electrician</h4>
           <p>
-            Devin manages all aspects of Moore Electric's residential electrical work — 
-            from routine repairs to cutting-edge Tesla charger installs. He also oversees
-            website design and advanced automation projects, ensuring Moore Electric stays 
-            at the forefront of innovation.
+            Devin oversees all of Moore Electric's operations, ensuring
+            top-quality installations from Tesla chargers to custom wiring.
+            His passion for tech drives our cutting-edge automation services.
           </p>
         </div>
 
-        <!-- Example additional members:
+        <!-- Example Additional Member #2 -->
         <div class="member-card">
-          <img src="TEAM_MEMBER_2.jpg" alt="Jane Doe" />
-          <h3>Jane Doe</h3>
+          <img src="assets/images/jane-headshot.jpg" alt="Jane Smith" />
+          <h3>Jane Smith</h3>
           <h4>Lead Technician</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <p>
+            Jane specializes in advanced troubleshooting and panel upgrades.
+            Whether it's a complex wiring issue or a routine inspection, she
+            delivers thorough, code-compliant solutions every time.
+          </p>
         </div>
-        -->
+
+        <!-- Example Additional Member #3 -->
+        <div class="member-card">
+          <img src="assets/images/mark-headshot.jpg" alt="Mark Johnson" />
+          <h3>Mark Johnson</h3>
+          <h4>Automation &amp; IoT Expert</h4>
+          <p>
+            Mark integrates smart switches, voice control, and IoT devices
+            into residential systems, turning ordinary homes into
+            energy-efficient, future-ready living spaces.
+          </p>
+        </div>
+
       </div>
     </section>
   </main>
@@ -408,7 +433,7 @@
     <a href="contact.html">Contact</a>
   </footer>
 
-  <!-- SWIRLING NEON ORB (Messenger) -->
+  <!-- SWIRLING NEON ORB (MESSENGER) -->
   <div
     class="chat-float-btn"
     title="Chat with Moore Electric"
@@ -421,13 +446,13 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       new TypeIt("#typed-team-title", {
-        strings: ["Meet the Team", "Where Innovation & Expertise Unite"],
+        strings: ["Meet the Team", "Your Gulf Coast Electrical Experts"],
         speed: 60,
         waitUntilVisible: true,
         breakLines: false,
         loop: true,
-        nextStringDelay: 1200,
-        loopDelay: 1500,
+        nextStringDelay: 1500,
+        loopDelay: 1800,
       }).go();
     });
   </script>

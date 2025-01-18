@@ -33,12 +33,11 @@
   <style>
     /* 
       UPDATED COLOR THEME 
-      (Example: #19c8fa is your new "primary-color" from the logo).
-      Adjust as needed to match your new animated GIF or MP4 brand color.
+      #19c8fa as your new "primary-color"
     */
     :root {
       --bg-color: #0e0e0e;
-      --primary-color: #19c8fa;  /* changed from #00ffc8 to match the new logo color */
+      --primary-color: #19c8fa;
       --hover-color: #ff00c8;
       --text-color: #ffffff;
       --subtext-color: #cccccc;
@@ -102,7 +101,7 @@
       background: rgba(15,15,15,0.9);
       backdrop-filter: blur(6px);
       box-shadow: 0 2px 10px rgba(0,0,0,0.7);
-      z-index: 999;
+      z-index: 999; /* keeps header above main content but below orb */
     }
 
     .logo {
@@ -110,7 +109,7 @@
       align-items: center;
       gap: 0.5rem;
     }
-    /* Insert your new GIF or MP4 below */
+    /* Replace with your GIF or MP4 path. E.g. '20250117_1849_Electric Quantum Logo...' */
     .logo-video {
       height: 60px;
       width: auto;
@@ -143,7 +142,7 @@
       color: var(--hover-color);
     }
 
-    /* Desktop nav */
+    /* Desktop nav (horizontal) */
     nav ul {
       display: flex;
       list-style: none;
@@ -163,7 +162,7 @@
      * MAIN CONTENT
      *************************************************/
     main {
-      padding-top: 80px; /* space under fixed header */
+      padding-top: 80px; /* space under the fixed header */
       min-height: 100vh;
     }
 
@@ -188,7 +187,7 @@
       font-family: 'Orbitron', sans-serif;
       font-size: 3rem;
       color: var(--primary-color);
-      text-shadow: 0 0 10px rgba(25, 200, 250, 0.7); /* adjusted shadow color to match new primary-color */
+      text-shadow: 0 0 10px rgba(25, 200, 250, 0.7);
       margin-bottom: 1rem;
     }
     .video-overlay p {
@@ -254,7 +253,7 @@
     }
     .service-link:hover {
       transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 0 20px rgba(25, 200, 250, 0.3); /* updated color to match new primary color */
+      box-shadow: 0 0 20px rgba(25, 200, 250, 0.3);
     }
     .service-title {
       color: var(--primary-color);
@@ -346,14 +345,14 @@
       width: 70px;
       height: 70px;
       border-radius: 50%;
-      /* Updated color swirl to match new primary color (#19c8fa). */
+      /* color swirl matching #19c8fa plus accent #ff00c8 */
       background: radial-gradient(circle, var(--primary-color) 0%, var(--bg-color) 80%, var(--primary-color) 100%);
       animation: swirl 4s linear infinite;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      /* BIG z-index to ensure it floats above everything */
+      /* Very high z-index so it stays on top while scrolling */
       z-index: 999999;
       transition: transform 0.3s ease, background var(--transition-speed);
     }
@@ -363,7 +362,6 @@
     .chat-float-btn:hover {
       animation: swirlHover 1.5s linear infinite;
       transform: scale(1.1);
-      /* If you want a 2nd color, keep it, or unify with #19c8fa. Let's keep #ff00c8 for a neon accent. */
       background: radial-gradient(circle, #ff00c8 0%, #0e0e0e 80%, #ff00c8 100%);
     }
     @keyframes swirlHover {
@@ -436,11 +434,11 @@
   <!-- HEADER -->
   <header>
     <div class="logo">
-      <!-- Insert the new GIF or MP4 path that matches your brand color -->
+      <!-- Use the correct path/filename for your animated GIF or MP4 -->
       <video autoplay muted loop playsinline class="logo-video">
-        <source src="assets/videos/Your_New_Logo_Animation.mp4" type="video/mp4">
-        <!-- Or use the GIF:
-        <img src="assets/videos/Your_New_Logo_Animation.gif" alt="Moore Electric Logo" />
+        <source src="assets/videos/20250117_1849_Electric%20Quantum%20Logo_simple_compose_01jhve65zdfwr9mv836zk8dxw3.mp4" type="video/mp4">
+        <!-- Or if you'd rather use a GIF:
+        <img src="assets/videos/20250117_1849_Electric Quantum Logo_simple_compose.gif" alt="Moore Electric Logo" />
         -->
         Your browser does not support the video tag.
       </video>

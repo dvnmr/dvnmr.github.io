@@ -14,7 +14,7 @@
     rel="stylesheet"
   />
 
-  <!-- FONT AWESOME (for Messenger icon, etc.) -->
+  <!-- FONT AWESOME (for icons, e.g. Messenger orb) -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -31,17 +31,17 @@
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
   <style>
-    /* COLOR THEME (Updated to #19c8fa if you prefer that brand color) */
+    /* COLOR THEME (Matching your updated brand color #19c8fa) */
     :root {
       --bg-color: #0e0e0e;
-      --primary-color: #19c8fa;  /* or keep #00ffc8 if desired */
+      --primary-color: #19c8fa;
       --hover-color: #ff00c8;
       --text-color: #ffffff;
       --subtext-color: #cccccc;
       --transition-speed: 0.3s;
     }
 
-    /* RESET & GLOBAL */
+    /* RESET & GLOBAL STYLES */
     * {
       margin: 0;
       padding: 0;
@@ -60,6 +60,7 @@
       height: auto;
       display: block;
     }
+
     /* Custom Scrollbar */
     ::-webkit-scrollbar {
       width: 8px;
@@ -73,6 +74,7 @@
     ::-webkit-scrollbar-thumb:hover {
       background: var(--hover-color);
     }
+
     h1, h2, h3, h4 {
       font-family: 'Orbitron', sans-serif;
       letter-spacing: 1px;
@@ -105,7 +107,7 @@
       align-items: center;
       gap: 0.5rem;
     }
-    /* Insert your new animated MP4 or GIF path below */
+    /* Same path used on your home page. If your actual file differs, adjust below. */
     .logo-video {
       height: 60px;
       width: auto;
@@ -119,7 +121,7 @@
       text-transform: uppercase;
     }
 
-    /* SIMPLE NAV (no hamburger per your request) */
+    /* SIMPLE NAV (No hamburger, as requested) */
     nav ul {
       display: flex;
       list-style: none;
@@ -139,10 +141,9 @@
      * MAIN & HERO
      *************************************************/
     main {
-      padding-top: 80px; /* space under the fixed header */
+      padding-top: 80px;
       min-height: 100vh;
     }
-
     .contact-hero {
       position: relative;
       width: 100%;
@@ -163,7 +164,7 @@
       font-family: 'Orbitron', sans-serif;
       font-size: 3rem;
       color: var(--primary-color);
-      text-shadow: 0 0 10px rgba(25, 200, 250, 0.7); /* adjusted to match #19c8fa glow */
+      text-shadow: 0 0 10px rgba(25, 200, 250, 0.7);
       margin-bottom: 1rem;
     }
     .contact-hero-overlay p {
@@ -217,7 +218,7 @@
     }
     .contact-box:hover {
       transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 0 20px rgba(25,200,250,0.3); /* updated to match #19c8fa */
+      box-shadow: 0 0 20px rgba(25,200,250,0.3);
     }
     .contact-box h3 {
       font-size: 1.3rem;
@@ -243,7 +244,7 @@
       padding: 0.8rem 1.5rem;
       margin-top: 1rem;
       background: var(--primary-color);
-      color: #000; 
+      color: #000;
       font-weight: 700;
       border-radius: 4px;
       text-decoration: none;
@@ -274,7 +275,7 @@
       color: #fff;
     }
 
-    /* SWIRLING NEON ORB (Messenger Link) w/ bobbing swirl */
+    /* SWIRLING NEON ORB (Messenger) with bobbing swirl */
     @keyframes swirlAndBob {
       0%   { transform: rotate(0deg) translateY(0); }
       25%  { transform: rotate(90deg) translateY(-3px); }
@@ -282,7 +283,6 @@
       75%  { transform: rotate(270deg) translateY(-3px); }
       100% { transform: rotate(360deg) translateY(0); }
     }
-
     .chat-float-btn {
       position: fixed;
       bottom: 20px;
@@ -320,7 +320,7 @@
     }
 
     /*************************************************
-     * RESPONSIVE (MOBILE) ADJUSTMENTS
+     * RESPONSIVE ADJUSTMENTS
      *************************************************/
     @media (max-width: 768px) {
       .contact-hero-overlay h1 {
@@ -342,11 +342,11 @@
   <!-- HEADER -->
   <header>
     <div class="logo">
-      <!-- Adjust the path to your brand's MP4 or GIF -->
+      <!-- IMPORTANT: Using the exact same path from your home page -->
       <video autoplay muted loop playsinline class="logo-video">
-        <source src="assets/videos/Your_New_Logo_Animation.mp4" type="video/mp4">
-        <!-- fallback if needed
-        <img src="assets/videos/Your_New_Logo_Animation.gif" alt="Moore Electric Logo" />
+        <source src="assets/videos/20250117_1849_Electric Quantum Logo_simple_compose_01jhve65zdfwr9mv836zk8dxw3.mp4" type="video/mp4" />
+        <!-- Optional fallback if the MP4 fails:
+        <img src="assets/videos/20250117_1849_Electric Quantum Logo_simple_compose_01jhve65zdfwr9mv836zk8dxw3 (1).gif" alt="Moore Electric Logo" />
         -->
         Your browser does not support the video tag.
       </video>

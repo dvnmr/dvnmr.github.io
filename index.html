@@ -31,10 +31,7 @@
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
   <style>
-    /*
-      COLOR THEME:
-      Using #19c8fa for --primary-color as requested
-    */
+    /* COLOR THEME (#19c8fa as primary) */
     :root {
       --bg-color: #0e0e0e;
       --primary-color: #19c8fa;
@@ -44,7 +41,7 @@
       --transition-speed: 0.3s;
     }
 
-    /* RESET & GLOBAL STYLES */
+    /* RESET & GLOBAL */
     * {
       margin: 0;
       padding: 0;
@@ -63,7 +60,7 @@
       height: auto;
       display: block;
     }
-    /* Scrollbar styling */
+    /* SCROLLBAR */
     ::-webkit-scrollbar {
       width: 8px;
       background: #1a1a1a;
@@ -101,7 +98,7 @@
       background: rgba(15,15,15,0.9);
       backdrop-filter: blur(6px);
       box-shadow: 0 2px 10px rgba(0,0,0,0.7);
-      z-index: 999; /* ensures header above main content but below orb */
+      z-index: 999;
     }
 
     .logo {
@@ -109,7 +106,7 @@
       align-items: center;
       gap: 0.5rem;
     }
-    /* Insert the path for your new MP4 or GIF (to fix logo display) */
+    /* Insert your new MP4 or GIF path to fix the logo display */
     .logo-video {
       height: 60px;
       width: auto;
@@ -131,7 +128,7 @@
       display: none;
     }
     .menu-icon {
-      display: none; /* Only show on mobile <768px */
+      display: none; /* for mobile <768px */
       font-size: 1.8rem;
       color: var(--primary-color);
       padding: 0.5rem;
@@ -162,7 +159,7 @@
      * MAIN CONTENT
      *************************************************/
     main {
-      padding-top: 80px; /* space for fixed header */
+      padding-top: 80px;
       min-height: 100vh;
     }
 
@@ -337,16 +334,16 @@
       color: #fff;
     }
 
-    /* ORB ANIMATION: rotate + bob for continuous movement */
+    /* ORB ANIMATION: swirl + bob or continuous rotate */
     @keyframes swirlAndBob {
-      0%   { transform: rotate(0deg) translateY(0); }
-      25%  { transform: rotate(90deg) translateY(-3px); }
-      50%  { transform: rotate(180deg) translateY(0); }
-      75%  { transform: rotate(270deg) translateY(-3px); }
-      100% { transform: rotate(360deg) translateY(0); }
+      0%   { transform: rotate(0deg)   translateY(0);   }
+      25%  { transform: rotate(90deg)  translateY(-3px);}
+      50%  { transform: rotate(180deg) translateY(0);   }
+      75%  { transform: rotate(270deg) translateY(-3px);}
+      100% { transform: rotate(360deg) translateY(0);   }
     }
 
-    /* SWIRLING NEON ORB FOR MESSENGER (with motion) */
+    /* SWIRLING NEON ORB FOR MESSENGER */
     .chat-float-btn {
       position: fixed;
       bottom: 20px;
@@ -364,9 +361,7 @@
       transition: transform 0.3s ease, background var(--transition-speed);
     }
     .chat-float-btn:hover {
-      /* Could do a slight scale on hover if you want */
       transform: scale(1.1);
-      /* We keep the same swirlAndBob animation, but you can add color changes if desired: */
       background: radial-gradient(circle, #ff00c8 0%, #0e0e0e 80%, #ff00c8 100%);
     }
     .chat-float-btn:active {
@@ -434,10 +429,10 @@
   <!-- HEADER -->
   <header>
     <div class="logo">
-      <!-- Adjust the path below for your actual MP4 or GIF file -->
+      <!-- Make sure the path is correct for your MP4 or GIF -->
       <video autoplay muted loop playsinline class="logo-video">
         <source src="assets/videos/20250117_1849_Electric%20Quantum%20Logo_simple_compose_01jhve65zdfwr9mv836zk8dxw3.mp4" type="video/mp4">
-        <!-- Or if you have a GIF:
+        <!-- Alternatively, a GIF:
         <img src="assets/videos/Your_New_Logo_Animation.gif" alt="Moore Electric Logo" />
         -->
         Your browser does not support the video tag.
@@ -557,24 +552,33 @@
     async function getNwsForecast(lat, lon) {
       try {
         const pointsUrl = \`https://api.weather.gov/points/\${lat},\${lon}\`;
-        const pointsRes = await fetch(pointsUrl);
+        const pointsRes = await fetch(pointsUrl, {
+          headers: {
+            "User-Agent": "<YOUR_APP_NAME> ( <YOUR_CONTACT_INFO> )",
+            "Accept": "application/ld+json"
+          }
+        });
         const pointsData = await pointsRes.json();
-        
-        // If the 'forecast' property is missing, handle gracefully
+
         if (!pointsData.properties || !pointsData.properties.forecast) {
-          console.warn("Forecast URL not found for coordinates:", lat, lon);
+          console.warn("Forecast URL not found for coordinates:", lat, lon, pointsData);
           return null;
         }
-        
+
         const forecastUrl = pointsData.properties.forecast;
-        const forecastRes = await fetch(forecastUrl);
+        const forecastRes = await fetch(forecastUrl, {
+          headers: {
+            "User-Agent": "<YOUR_APP_NAME> ( <YOUR_CONTACT_INFO> )",
+            "Accept": "application/ld+json"
+          }
+        });
         const forecastData = await forecastRes.json();
-        
+
         if (!forecastData.properties || !forecastData.properties.periods) {
           console.warn("No forecast data returned:", forecastData);
           return null;
         }
-        
+
         return forecastData.properties.periods;
       } catch (error) {
         console.error("Error fetching weather data:", error);
@@ -597,10 +601,10 @@
 
     async function displayForecasts() {
       const container = document.getElementById("weather-container");
-
       for (const city of cityCoords) {
         const periods = await getNwsForecast(city.lat, city.lon);
         if (periods && periods.length > 0) {
+          // Use the first period as "current" conditions
           const current = periods[0];
           container.innerHTML += createWeatherCard(city.name, current);
         } else {

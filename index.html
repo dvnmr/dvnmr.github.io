@@ -4,7 +4,6 @@
   <!-- BASIC SEO & META -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
   <title>Moore Electric LLC – Home</title>
   <meta name="description" content="Moore Electric LLC: Top-tier residential electrical services along the Gulf Coast. Free inspections, Tesla charger installs, and more." />
   <meta name="keywords" content="Moore Electric, Tesla Charger, TV Mounting, Residential Electrical, Surge Protection" />
@@ -15,20 +14,11 @@
     rel="stylesheet"
   />
 
-  <!-- FONT AWESOME (for Messenger icon) -->
+  <!-- FONT AWESOME (for icons, e.g. Messenger orb) -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     integrity="sha512-PcFZlg4zKnRAu3eOAhIM9nhpcSg93396XeIyMI7ENIbq9jcQ7q7OKFSFLaC0V2rOgfjRvX1s6O2thtGO6vWxQg=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-
-  <!-- HAMBURGERS LIBRARY (for the animated hamburger icon) -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css"
-    integrity="sha512-q1snToxJb4yzcrT4X2oaCKlW4zcCxXM+MsC6TynK0RVpC4pC5Lxt1IAb9chbLHf39dkDFdgyNm5dPqEefU1R1A=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
@@ -69,6 +59,7 @@
       height: auto;
       display: block;
     }
+    /* Custom scrollbar styling */
     ::-webkit-scrollbar {
       width: 8px;
       background: #1a1a1a;
@@ -102,7 +93,6 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      /* Reduced padding for slimmer bar */
       padding: 0.25rem 0.5rem;
       background: rgba(15,15,15,0.9);
       backdrop-filter: blur(6px);
@@ -110,50 +100,49 @@
       z-index: 999;
     }
 
-    /* LOGO AREA */
     .logo {
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
-    /* Reduced the logo-video height to shrink the header */
+    /* Use the new GIF or MP4 path below */
     .logo-video {
-      height: 60px; 
+      height: 60px;
       width: auto;
       border: none;
       outline: none;
     }
     .logo-text {
       font-family: 'Orbitron', sans-serif;
-      font-size: 1.5rem; /* slightly smaller so it fits nicely */
+      font-size: 1.5rem;
       color: var(--primary-color);
       text-transform: uppercase;
     }
 
-    /*************************************************
-     * NAVIGATION
-     *************************************************/
+    /* NAVIGATION */
     nav {
       position: relative;
     }
 
-    /* The hidden checkbox approach to toggling mobile nav */
+    /* We'll use a hidden checkbox for toggling the mobile menu */
     #menu-toggle {
       display: none;
     }
 
-    /* HAMBURGER ICON using Hamburgers library */
-    .hamburger {
-      display: none; /* show only on mobile via media query */
-      /* you can tweak spacing, color, etc. below if desired */
+    /* The hamburger icon (on mobile) */
+    .menu-icon {
+      display: none; /* hidden on desktop, shown on mobile <768px */
+      font-size: 1.8rem;
       color: var(--primary-color);
-      transition: color 0.3s;
+      padding: 0.5rem;
+      cursor: pointer;
+      transition: color var(--transition-speed);
     }
-    .hamburger:hover {
+    .menu-icon:hover {
       color: var(--hover-color);
     }
 
-    /* Normal horizontal nav for desktop */
+    /* Desktop nav: horizontal list */
     nav ul {
       display: flex;
       list-style: none;
@@ -173,8 +162,7 @@
      * MAIN CONTENT
      *************************************************/
     main {
-      /* Reduced top padding to match slimmer header */
-      padding-top: 80px; 
+      padding-top: 80px; /* space under fixed header */
       min-height: 100vh;
     }
 
@@ -182,7 +170,7 @@
     .home-commercial {
       position: relative;
       width: 100%;
-      height: 100vh;
+      height: 100vh; /* Full viewport height */
       background: #0e0e0e;
       display: flex;
       align-items: center;
@@ -198,19 +186,19 @@
     .video-overlay h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 3rem;
-      color: #00ffc8;
+      color: var(--primary-color);
       text-shadow: 0 0 10px rgba(0, 255, 200, 0.7);
       margin-bottom: 1rem;
     }
     .video-overlay p {
       font-size: 1.2rem;
-      color: #cccccc;
+      color: var(--subtext-color);
       margin-bottom: 1.5rem;
     }
     .cta-button {
       display: inline-block;
       padding: 0.75rem 1.5rem;
-      background-color: #00ffc8;
+      background-color: var(--primary-color);
       color: #0e0e0e;
       text-decoration: none;
       border-radius: 5px;
@@ -219,8 +207,8 @@
     }
     .cta-button:hover {
       background-color: #0e0e0e;
-      color: #00ffc8;
-      border: 2px solid #00ffc8;
+      color: var(--primary-color);
+      border: 2px solid var(--primary-color);
     }
 
     /* FEATURED SERVICES */
@@ -349,7 +337,7 @@
       color: #fff;
     }
 
-    /* SWIRLING NEON ORB (Messenger Link) */
+    /* SWIRLING NEON ORB FOR MESSENGER */
     .chat-float-btn {
       position: fixed;
       bottom: 20px;
@@ -397,10 +385,9 @@
      * RESPONSIVE ADJUSTMENTS
      *************************************************/
     @media (max-width: 768px) {
-      /* Show hamburger, hide normal horizontal nav. */
-      .hamburger {
+      /* Show hamburger, hide normal nav. */
+      .menu-icon {
         display: block;
-        font-size: 1.8rem;
       }
       nav ul {
         position: absolute;
@@ -420,8 +407,6 @@
       #menu-toggle:checked ~ nav ul {
         transform: translateX(0);
       }
-    }
-    @media (max-width: 480px) {
       .video-overlay h1 {
         font-size: 2rem;
       }
@@ -432,6 +417,14 @@
         font-size: 1.2rem;
       }
     }
+    @media (max-width: 480px) {
+      .video-overlay h1 {
+        font-size: 1.8rem;
+      }
+      .video-overlay p {
+        font-size: 0.95rem;
+      }
+    }
   </style>
 </head>
 
@@ -439,25 +432,21 @@
   <!-- HEADER -->
   <header>
     <div class="logo">
+      <!-- Swap in your new GIF or MP4 path below -->
       <video autoplay muted loop playsinline class="logo-video">
-        <source src="assets/videos/20250117_2005_Electric%20Logo%20Animation_storyboard_01jhvjhcbceaw96hbsvdqvz7rm.mp4" type="video/mp4">
+        <source src="assets/videos/20250117_1849_Electric Quantum Logo_simple_compose_01jhve65zdfwr9mv836zk8dxw3.mp4" type="video/mp4">
+        <!-- If you prefer the GIF, do: 
+        <img src="assets/videos/20250117_1849_Electric Quantum Logo_simple_compose_01jhve65zdfwr9mv836zk8dxw3 (1).gif" alt="Moore Electric Logo" />
+        -->
         Your browser does not support the video tag.
       </video>
       <div class="logo-text">Moore Electric</div>
     </div>
 
-    <!-- Nav area with hamburger for mobile -->
-    <!-- The hidden checkbox toggle -->
+    <!-- Mobile menu toggle -->
     <input type="checkbox" id="menu-toggle" />
-
-    <!-- Label: Hamburgers library classes -->
-    <label
-      for="menu-toggle"
-      class="hamburger hamburger--spin"
-      onclick="this.classList.toggle('is-active');">
-      <span class="hamburger-box">
-        <span class="hamburger-inner"></span>
-      </span>
+    <label for="menu-toggle" class="menu-icon">
+      <i class="fa-solid fa-bars"></i>
     </label>
 
     <nav>
@@ -466,7 +455,6 @@
         <li><a href="services.html">Services</a></li>
         <li><a href="team.html">Team</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <!-- Safety link removed -->
       </ul>
     </nav>
   </header>
@@ -545,7 +533,6 @@
     <a href="services.html">Services</a> |
     <a href="team.html">Team</a> |
     <a href="contact.html">Contact</a>
-    <!-- Safety link removed -->
   </footer>
 
   <!-- SWIRLING NEON ORB FOR MESSENGER -->
@@ -557,27 +544,11 @@
     <i class="fab fa-facebook-messenger"></i>
   </div>
 
-  <!-- (Optional) TYPED TEXT SCRIPT -->
-  <script>
-    /*
-    document.addEventListener('DOMContentLoaded', () => {
-      new TypeIt("#typed-hero-text", {
-        strings: ["Welcome to Moore Electric.", "Powering the Gulf Coast."],
-        speed: 60,
-        waitUntilVisible: true,
-        loop: true,
-        nextStringDelay: 1200,
-        loopDelay: 1500,
-      }).go();
-    });
-    */
-  </script>
-
   <!-- WEATHER SCRIPT -->
   <script>
     const cityCoords = [
       { name: "Gulfport", lat: 30.3674, lon: -89.0928 },
-      { name: "Biloxi",   lat: 30.3960, lon: -88.8853 },
+      { name: "Biloxi", lat: 30.3960, lon: -88.8853 },
       { name: "Ocean Springs", lat: 30.4113, lon: -88.8279 }
     ];
 

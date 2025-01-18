@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
   <!-- BASIC SEO & META -->
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
   <title>Moore Electric LLC – Contact</title>
-  <meta name="description" content="Contact Moore Electric LLC for top-tier residential electrical services, Tesla charger installs, TV mounting, and more along the Gulf Coast." />
-  <meta name="keywords" content="Moore Electric, Contact, Gulfport Electrician, Tesla Charger, TV Mounting, Surge Protection, Residential Electrical" />
+  <meta name="description" content="Contact Moore Electric LLC for top-tier residential electrical services, Tesla charger installs, TV mounting, and more along the Gulf Coast."/>
+  <meta name="keywords" content="Moore Electric, Contact, Gulfport Electrician, Tesla Charger, TV Mounting, Surge Protection, Residential Electrical"/>
 
   <!-- GOOGLE FONTS -->
   <link
@@ -15,7 +14,7 @@
     rel="stylesheet"
   />
 
-  <!-- FONT AWESOME (for Messenger icon) -->
+  <!-- FONT AWESOME (for Messenger icon, etc.) -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -24,7 +23,7 @@
     referrerpolicy="no-referrer"
   />
 
-  <!-- TYPEIT (Optional, for typed text) -->
+  <!-- TYPEIT (For typed hero text) -->
   <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/typeit.min.js"></script>
 
   <!-- CALENDLY (Pop-up scheduling) -->
@@ -41,7 +40,7 @@
       --transition-speed: 0.3s;
     }
 
-    /* RESET & GLOBAL STYLES */
+    /* RESET & GLOBAL */
     * {
       margin: 0;
       padding: 0;
@@ -55,7 +54,11 @@
       color: var(--text-color);
       overflow-x: hidden;
     }
-
+    img, video {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
     /* SCROLLBAR */
     ::-webkit-scrollbar {
       width: 8px;
@@ -69,8 +72,6 @@
     ::-webkit-scrollbar-thumb:hover {
       background: var(--hover-color);
     }
-
-    /* HEADINGS (Orbitron) */
     h1, h2, h3, h4 {
       font-family: 'Orbitron', sans-serif;
       letter-spacing: 1px;
@@ -92,7 +93,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.25rem 0.5rem; /* slim bar like the home page */
+      padding: 0.25rem 0.5rem; /* slim bar */
       background: rgba(15,15,15,0.9);
       backdrop-filter: blur(6px);
       box-shadow: 0 2px 10px rgba(0,0,0,0.7);
@@ -103,7 +104,6 @@
       align-items: center;
       gap: 0.5rem;
     }
-    /* If you have a video logo, place it here */
     .logo-video {
       height: 60px;
       width: auto;
@@ -116,7 +116,7 @@
       color: var(--primary-color);
       text-transform: uppercase;
     }
-    /* Simple Nav (No hamburger) */
+    /* Simple nav */
     nav ul {
       display: flex;
       list-style: none;
@@ -133,14 +133,13 @@
     }
 
     /*************************************************
-     * MAIN CONTENT
+     * MAIN & HERO
      *************************************************/
     main {
-      padding-top: 80px; /* space for fixed header */
+      padding-top: 80px; /* space for the fixed header */
       min-height: 100vh;
     }
 
-    /* HERO SECTION (like your original “home-commercial” style) */
     .contact-hero {
       position: relative;
       width: 100%;
@@ -185,7 +184,9 @@
       border: 2px solid #00ffc8;
     }
 
-    /* CONTACT SECTION (mirroring your “content-wrapper” style) */
+    /*************************************************
+     * CONTACT SECTION
+     *************************************************/
     .contact-content-wrapper {
       max-width: 1200px;
       margin: 0 auto;
@@ -200,51 +201,60 @@
     }
     .contact-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
     }
-    .contact-card {
+    .contact-box {
       background: linear-gradient(145deg, rgba(0,0,0,0.8), rgba(20,20,20,0.6));
       border-radius: 10px;
-      padding: 2rem;
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      text-align: center;
+      padding: 2rem;
       transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-      display: block;
-      text-decoration: none;
-      opacity: 0;
-      transform: translateY(15px);
-      animation: fadeInUp 0.8s forwards;
     }
-    .contact-card:nth-child(1) { animation-delay: 0.1s; }
-    .contact-card:nth-child(2) { animation-delay: 0.2s; }
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    .contact-card:hover {
+    .contact-box:hover {
       transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 0 20px rgba(0, 255, 200, 0.3);
+      box-shadow: 0 0 20px rgba(0,255,200,0.3);
     }
-    .contact-title {
+    .contact-box h3 {
+      font-size: 1.3rem;
       color: var(--primary-color);
       margin-bottom: 1rem;
-      font-size: 1.2rem;
-      text-transform: uppercase;
-      font-family: 'Orbitron', sans-serif;
-      letter-spacing: 1px;
     }
-    .contact-desc {
-      font-family: 'Roboto', sans-serif;
+    .contact-box p {
+      font-size: 0.95rem;
       font-weight: 300;
       line-height: 1.4;
-      font-size: 0.95rem;
       color: var(--subtext-color);
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .contact-box a {
+      color: var(--primary-color);
+      transition: color var(--transition-speed);
+    }
+    .contact-box a:hover {
+      color: var(--hover-color);
+    }
+    .glow-btn {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      margin-top: 1rem;
+      background: var(--primary-color);
+      color: #000; 
+      font-weight: 700;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: box-shadow var(--transition-speed), transform var(--transition-speed);
+      box-shadow: 0 0 10px rgba(0,255,200,0.4);
+    }
+    .glow-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0,255,200,0.8);
     }
 
-    /* FOOTER */
+    /*************************************************
+     * FOOTER
+     *************************************************/
     footer {
       background: rgba(15,15,15,0.9);
       backdrop-filter: blur(6px);
@@ -261,7 +271,7 @@
       color: #fff;
     }
 
-    /* SWIRLING NEON ORB FOR MESSENGER */
+    /* SWIRLING NEON ORB (Messenger Link) */
     .chat-float-btn {
       position: fixed;
       bottom: 20px;
@@ -305,29 +315,25 @@
       background: #000;
     }
 
-    /* RESPONSIVE ADJUSTMENTS */
+    /*************************************************
+     * RESPONSIVE (MOBILE) ADJUSTMENTS
+     *************************************************/
     @media (max-width: 768px) {
-      .hero-content h1 {
+      .contact-hero-overlay h1 {
         font-size: 2rem;
       }
-      .hero-content p {
+      .contact-hero-overlay p {
         font-size: 1rem;
       }
       nav ul {
         gap: 1rem;
       }
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    @media (max-width: 480px) {
-      .logo-text {
-        font-size: 1.2rem;
+      .contact-box {
+        flex: 1 1 100%;
       }
     }
   </style>
 </head>
-
 <body>
   <!-- HEADER -->
   <header>
@@ -338,8 +344,6 @@
       </video>
       <div class="logo-text">Moore Electric</div>
     </div>
-
-    <!-- Simple Nav (no hamburger) -->
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -352,13 +356,11 @@
 
   <!-- MAIN CONTENT -->
   <main>
-    <!-- HERO SECTION (like your original home-commercial style but for Contact) -->
+    <!-- PARALLAX-LIKE HERO SECTION -->
     <section class="contact-hero">
       <div class="contact-hero-overlay">
-        <!-- Keep your original hero text: e.g. “We’re here to help,” etc. -->
-        <h1>Let's Connect</h1>
-        <p>Have questions or ready to schedule? Let's chat about your electrical needs.</p>
-        <!-- Example CTA button linking to Calendly or a “Send Message” form -->
+        <h1 id="typed-contact-hero"></h1>
+        <p>Have a question or ready to schedule? We’re here to power your home safely!</p>
         <a
           href="#"
           class="cta-button"
@@ -369,30 +371,43 @@
       </div>
     </section>
 
-    <!-- CONTACT INFO SECTION (like your featured services, but for contact) -->
+    <!-- CONTACT DETAILS & CALENDLY SECTION -->
     <section class="contact-content-wrapper">
-      <h2>Get in Touch</h2>
+      <h2>Contact Us</h2>
       <div class="contact-grid">
-        <!-- Example contact card: phone/email -->
-        <div class="contact-card">
-          <div class="contact-title">Call or Email</div>
-          <div class="contact-desc">
+        <!-- CONTACT BOX (Phone, Email, Facebook) -->
+        <div class="contact-box">
+          <h3>Reach Us Directly</h3>
+          <p>
             <strong>Phone:</strong> 
-            <a href="tel:228-224-9150" style="color: var(--primary-color)">228-224-9150</a> <br />
+            <a href="tel:228-224-9150" style="color: var(--primary-color)">228-224-9150</a>
+          </p>
+          <p>
             <strong>Email:</strong> 
             <a href="mailto:228mooreelectric@gmail.com" style="color: var(--primary-color)">228mooreelectric@gmail.com</a>
-          </div>
+          </p>
+          <p>
+            <strong>Facebook:</strong>
+            <a 
+              href="https://www.facebook.com/228MooreElectric/" 
+              target="_blank"
+              style="color: var(--primary-color)"
+            >
+              @228MooreElectric
+            </a>
+          </p>
         </div>
 
-        <!-- Another contact card: maybe a direct message or free inspection link -->
-        <div class="contact-card">
-          <div class="contact-title">Free Inspection</div>
-          <div class="contact-desc">
-            Unsure about wiring or need a second opinion? Book a no-cost inspection to ensure your system is safe.
-          </div>
-          <a
+        <!-- Another CONTACT BOX for scheduling or free inspections -->
+        <div class="contact-box">
+          <h3>Free Inspection</h3>
+          <p>
+            Unsure about wiring? Book a no-cost inspection to ensure everything is code-compliant
+            and safe.
+          </p>
+          <a 
             href="#"
-            class="cta-button"
+            class="glow-btn"
             onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' }); return false;"
           >
             Book Inspection
@@ -411,10 +426,10 @@
     <a href="contact.html">Contact</a>
   </footer>
 
-  <!-- SWIRLING NEON ORB FOR MESSENGER -->
+  <!-- SWIRLING NEON MESSENGER ORB -->
   <div
     class="chat-float-btn"
-    title="Chat with Moore Electric via Messenger"
+    title="Chat with Moore Electric"
     onclick="window.open('https://m.me/228MooreElectric?ref=Facebook%20messenger','_blank')"
   >
     <i class="fab fa-facebook-messenger"></i>
@@ -422,9 +437,8 @@
 
   <!-- OPTIONAL TYPED TEXT SCRIPT -->
   <script>
-    /*
     document.addEventListener('DOMContentLoaded', () => {
-      new TypeIt("#typed-hero-text", {
+      new TypeIt("#typed-contact-hero", {
         strings: ["Let's Connect!", "Powering the Gulf Coast..."],
         speed: 60,
         waitUntilVisible: true,
@@ -433,7 +447,6 @@
         loopDelay: 1500,
       }).go();
     });
-    */
   </script>
 </body>
 </html>

@@ -4,6 +4,25 @@
   <!-- BASIC SEO & META -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="canonical" href="https://dvnmr.github.io/mooreelectric.github.io/">
+  <meta name="theme-color" content="#0e0e0e">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="assets/images/favicon-64.png" type="image/png" sizes="64x64">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Moore Electric LLC">
+  <meta property="og:title" content="Moore Electric LLC – Home">
+  <meta property="og:description" content="Moore Electric LLC: Top-tier residential electrical services along the Gulf Coast. Free inspections, Tesla charger installs, and more.">
+  <meta property="og:url" content="https://dvnmr.github.io/mooreelectric.github.io/">
+  <meta property="og:image" content="https://dvnmr.github.io/mooreelectric.github.io/assets/images/og-logo.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Electrician","name":"Moore Electric LLC","url":"https://dvnmr.github.io/mooreelectric.github.io/","telephone":"+1-228-224-9150","email":"228mooreelectric@gmail.com","sameAs":["https://www.facebook.com/228MooreElectric/","https://www.homeadvisor.com/rated.MooreElectric.119830835.html"]}
+  </script>
   <title>Moore Electric LLC – Home</title>
   <meta name="description" content="Moore Electric LLC: Top-tier residential electrical services along the Gulf Coast. Free inspections, Tesla charger installs, and more." />
   <meta name="keywords" content="Moore Electric, Tesla Charger, TV Mounting, Residential Electrical, Surge Protection" />
@@ -23,11 +42,8 @@
     referrerpolicy="no-referrer"
   />
 
-  <!-- TYPEIT (Optional, for typed text) -->
-  <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/typeit.min.js"></script>
-
   <!-- CALENDLY (Pop-up scheduling) -->
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" media="print" onload="this.media='all'"/>
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
   <style>
@@ -49,7 +65,6 @@
     }
     html, body {
       width: 100%;
-      height: 100%;
       font-family: 'Roboto', sans-serif;
       background: var(--bg-color);
       color: var(--text-color);
@@ -125,7 +140,12 @@
       position: relative;
     }
     #menu-toggle {
-      display: none;
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
     }
     .menu-icon {
       display: none; /* for mobile <768px */
@@ -198,6 +218,7 @@
       background-color: var(--primary-color);
       color: #0e0e0e;
       text-decoration: none;
+      border: 2px solid transparent;
       border-radius: 5px;
       font-weight: bold;
       transition: background-color 0.3s ease, color 0.3s ease;
@@ -318,18 +339,6 @@
     .chat-float-btn:active {
       transform: scale(0.95);
     }
-    .chat-float-btn i {
-      color: #000;
-      font-size: 1.6rem;
-      background: #fff;
-      border-radius: 50%;
-      padding: 8px;
-      transition: 0.3s ease;
-    }
-    .chat-float-btn i:hover {
-      color: var(--primary-color);
-      background: #000;
-    }
 
     /*************************************************
      * RESPONSIVE ADJUSTMENTS
@@ -373,6 +382,157 @@
         font-size: 0.95rem;
       }
     }
+    /*************************************************
+     * SITE-SHELL ADDITIONS (2026-10 refresh) — one block, keep together.
+     * Header call pill, sticky mobile call bar, SVG menu icon,
+     * keyboard-reachable menu checkbox, Messenger orb as an anchor,
+     * footer contact line, scroll-container fix, reduced motion,
+     * mobile offsets (footer padding + orb lift).
+     * Insert this block as the LAST block inside the page style element.
+     *************************************************/
+
+    /* ---- SECTION B: COMMON (every page, verbatim) ---------------------- */
+    /* Scroll container: body grows with content
+       (the html, body { height: 100% } line is removed in place, css-edits.md E1) */
+    body {
+      min-height: 100vh;
+    }
+    header {
+      gap: 0.5rem;
+    }
+    /* Menu icon: inline SVG, 44px tap target, no Font Awesome */
+    .menu-icon {
+      align-items: center;
+      justify-content: center;
+      min-width: 44px;
+      min-height: 44px;
+    }
+    .menu-icon svg {
+      width: 24px;
+      height: 24px;
+      display: block;
+    }
+    #menu-toggle:focus-visible + .menu-icon {
+      outline: 2px solid var(--primary-color);
+      outline-offset: 2px;
+    }
+    /* Header phone pill (desktop / tablet; the sticky bar covers mobile) */
+    .header-call {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0 1.1rem;
+      border-radius: 999px;
+      background: var(--primary-color);
+      color: #0e0e0e;
+      font-weight: 700;
+      white-space: nowrap;
+      transition: background var(--transition-speed), color var(--transition-speed);
+    }
+    .header-call:hover,
+    .header-call:focus-visible {
+      background: #fff;
+      color: #0e0e0e;
+    }
+    /* Hero buttons: breathing room when two sit side by side or wrap */
+    .cta-button {
+      margin: 0.25rem 0.35rem;
+    }
+    /* Sticky mobile call bar */
+    .call-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 56px;
+      display: flex;
+      background: var(--bg-color);
+      border-top: 2px solid var(--primary-color);
+      z-index: 1000;
+    }
+    .call-bar a {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      font-weight: 700;
+    }
+    .call-bar a:first-child {
+      background: var(--primary-color);
+      color: #0e0e0e;
+    }
+    .call-bar a:last-child {
+      color: var(--primary-color);
+    }
+    /* Messenger orb is now an anchor holding an inline SVG on the white circle */
+    .chat-float-btn {
+      text-decoration: none;
+    }
+    .chat-float-btn svg {
+      width: 28px;
+      height: 28px;
+      padding: 8px;
+      box-sizing: content-box;
+      fill: #000;
+      background: #fff;
+      border-radius: 50%;
+      transition: fill 0.3s ease, background 0.3s ease;
+    }
+    .chat-float-btn:hover svg {
+      fill: var(--primary-color);
+      background: #000;
+    }
+    /* Footer contact line (above the copyright line) */
+    .footer-contact {
+      margin-bottom: 0.75rem;
+      color: var(--subtext-color);
+    }
+    /* Tablet: keep logo + nav + pill on one header row */
+    @media (min-width: 769px) and (max-width: 960px) {
+      nav ul {
+        gap: 1.25rem;
+      }
+      .logo-text {
+        font-size: 1.1rem;
+      }
+      .header-call {
+        padding: 0 0.85rem;
+        font-size: 0.95rem;
+      }
+    }
+    /* Desktop: sticky bar off */
+    @media (min-width: 768px) {
+      .call-bar {
+        display: none;
+      }
+    }
+    /* Mobile */
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: flex;
+        margin-left: auto;
+      }
+      .header-call {
+        display: none;
+      }
+      .logo-video {
+        height: 48px;
+      }
+      footer {
+        padding-bottom: calc(2rem + 64px);
+      }
+      .chat-float-btn {
+        bottom: 76px;
+        z-index: 999;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .chat-float-btn {
+        animation: none;
+      }
+    }
+    /* ---- END SECTION B / END SITE-SHELL ADDITIONS ---- */
   </style>
 </head>
 
@@ -380,31 +540,27 @@
   <!-- HEADER -->
   <header>
     <div class="logo">
-      <!-- Make sure the path is correct for your MP4 or GIF -->
-      <video autoplay muted loop playsinline class="logo-video">
-        <source src="assets/videos/20250117_1849_Electric%20Quantum%20Logo_simple_compose_01jhve65zdfwr9mv836zk8dxw3.mp4" type="video/mp4">
-        <!-- Alternatively, a GIF:
-        <img src="assets/videos/Your_New_Logo_Animation.gif" alt="Moore Electric Logo" />
-        -->
-        Your browser does not support the video tag.
-      </video>
+      <video class="logo-video" autoplay muted loop playsinline preload="metadata" width="214" height="120" poster="assets/images/logo-poster.png" aria-hidden="true"><source src="assets/videos/logo-120.webm" type="video/webm"><source src="assets/videos/logo-120.mp4" type="video/mp4"></video>
       <div class="logo-text">Moore Electric</div>
     </div>
 
-    <!-- Mobile menu toggle -->
+    <!-- Mobile menu toggle: input, label, nav must stay siblings in this order -->
     <input type="checkbox" id="menu-toggle" />
-    <label for="menu-toggle" class="menu-icon">
-      <i class="fa-solid fa-bars"></i>
+    <label for="menu-toggle" class="menu-icon" aria-label="Open menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
     </label>
 
     <nav>
       <ul>
         <li><a href="index.html" style="color: var(--primary-color);">Home</a></li>
         <li><a href="services.html">Services</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
         <li><a href="team.html">Team</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
+
+    <a class="header-call" href="tel:+12282249150" aria-label="Call Moore Electric at 228-224-9150">Call 228-224-9150</a>
   </header>
 
   <!-- MAIN CONTENT -->
@@ -415,6 +571,7 @@
         <h1>Powering the Gulf Coast, One Home at a Time.</h1>
         <p>Discover our range of professional electrical services tailored for your home.</p>
         <a href="services.html" class="cta-button">Explore Services</a>
+        <a class="cta-button" href="tel:+12282249150">Call 228-224-9150</a>
       </div>
     </section>
 
@@ -422,10 +579,13 @@
     <section class="content-wrapper">
       <h2>Featured Residential Services</h2>
       <div class="services-grid">
+        <!-- TODO(Dev): confirm calendly.com/228mooreelectric is still active; if not, point these CTAs at contact.html -->
         <a
-          href="#"
+          href="https://calendly.com/228mooreelectric"
+          target="_blank"
+          rel="noopener"
           class="service-link"
-          onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' }); return false;"
+          onclick="if(window.Calendly){Calendly.initPopupWidget({url:'https://calendly.com/228mooreelectric'});return false;}"
         >
           <div class="service-title">TV Mounting</div>
           <div class="service-desc">
@@ -433,9 +593,11 @@
           </div>
         </a>
         <a
-          href="#"
+          href="https://calendly.com/228mooreelectric"
+          target="_blank"
+          rel="noopener"
           class="service-link"
-          onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' }); return false;"
+          onclick="if(window.Calendly){Calendly.initPopupWidget({url:'https://calendly.com/228mooreelectric'});return false;}"
         >
           <div class="service-title">Surge Protection</div>
           <div class="service-desc">
@@ -443,19 +605,23 @@
           </div>
         </a>
         <a
-          href="#"
+          href="https://calendly.com/228mooreelectric"
+          target="_blank"
+          rel="noopener"
           class="service-link"
-          onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' }); return false;"
+          onclick="if(window.Calendly){Calendly.initPopupWidget({url:'https://calendly.com/228mooreelectric'});return false;}"
         >
           <div class="service-title">Tesla Charger Setup</div>
           <div class="service-desc">
-            Certified EV charging installations for safe, efficient home charging.
+            EV charger installations for safe, efficient home charging.
           </div>
         </a>
         <a
-          href="#"
+          href="https://calendly.com/228mooreelectric"
+          target="_blank"
+          rel="noopener"
           class="service-link"
-          onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/228mooreelectric' }); return false;"
+          onclick="if(window.Calendly){Calendly.initPopupWidget({url:'https://calendly.com/228mooreelectric'});return false;}"
         >
           <div class="service-title">Free Inspection</div>
           <div class="service-desc">
@@ -468,20 +634,20 @@
 
   <!-- FOOTER -->
   <footer>
+    <p class="footer-contact">Call or text <a href="tel:+12282249150">228-224-9150</a> &bull; <a href="mailto:228mooreelectric@gmail.com">228mooreelectric@gmail.com</a></p>
     &copy; 2025 Moore Electric LLC &bull;
     <a href="index.html">Home</a> |
     <a href="services.html">Services</a> |
+    <a href="reviews.html">Reviews</a> |
     <a href="team.html">Team</a> |
     <a href="contact.html">Contact</a>
   </footer>
 
   <!-- FLOATING MESSENGER ORB -->
-  <div
-    class="chat-float-btn"
-    title="Chat with Moore Electric"
-    onclick="window.open('https://m.me/228MooreElectric?ref=Facebook%20messenger','_blank')"
-  >
-    <i class="fab fa-facebook-messenger"></i>
-  </div>
+  <a class="chat-float-btn" href="https://m.me/228MooreElectric" target="_blank" rel="noopener" aria-label="Chat with Moore Electric on Messenger">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#000" aria-hidden="true" focusable="false"><path d="M12 2C6.48 2 2 6.14 2 11.25c0 2.9 1.44 5.49 3.7 7.19V22l3.4-1.87c.92.26 1.9.4 2.9.4 5.52 0 10-4.14 10-9.25S17.52 2 12 2zm1.07 12.43-2.55-2.72-4.97 2.72 5.47-5.8 2.6 2.72 4.92-2.72-5.47 5.8z"/></svg>
+  </a>
+  <!-- STICKY MOBILE CALL BAR (hidden at min-width: 768px) -->
+  <div class="call-bar" aria-label="Call or text Moore Electric"><a href="tel:+12282249150">Call 228-224-9150</a><a href="sms:+12282249150">Text us</a></div>
 </body>
 </html>

@@ -4,42 +4,19 @@
   <!-- BASIC SEO & META -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="canonical" href="https://dvnmr.github.io/mooreelectric.github.io/team.html">
+  <meta name="robots" content="noindex,follow">
+  <title>Moore Electric LLC – Page not found</title>
   <meta name="theme-color" content="#0e0e0e">
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" href="assets/images/favicon-64.png" type="image/png" sizes="64x64">
-  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Moore Electric LLC">
-  <meta property="og:title" content="Moore Electric LLC – Team">
-  <meta property="og:description" content="Meet Devin Moore of Moore Electric, your Gulfport-based electrician specializing in residential work, EV charging, and automation.">
-  <meta property="og:url" content="https://dvnmr.github.io/mooreelectric.github.io/team.html">
-  <meta property="og:image" content="https://dvnmr.github.io/mooreelectric.github.io/assets/images/og-logo.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="675">
-  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/mooreelectric.github.io/favicon.ico" sizes="any">
+  <link rel="icon" href="/mooreelectric.github.io/assets/images/favicon-64.png" type="image/png" sizes="64x64">
+  <link rel="apple-touch-icon" href="/mooreelectric.github.io/assets/images/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Electrician","name":"Moore Electric LLC","url":"https://dvnmr.github.io/mooreelectric.github.io/","telephone":"+1-228-224-9150","email":"228mooreelectric@gmail.com","sameAs":["https://www.facebook.com/228MooreElectric/","https://www.homeadvisor.com/rated.MooreElectric.119830835.html"]}
-  </script>
-  <title>Moore Electric LLC – Team</title>
-  <meta name="description" content="Meet Devin Moore of Moore Electric, your Gulfport-based electrician specializing in residential work, EV charging, and automation." />
-  <meta name="keywords" content="Moore Electric, Team, Devin Moore, Gulfport Electrician, Residential Electrical, Automation, Tesla Charger" />
 
   <!-- GOOGLE FONTS -->
   <link
     href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
     rel="stylesheet"
-  />
-
-  <!-- FONT AWESOME (for Messenger icon) -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    integrity="sha512-PcFZlg4zKnRAu3eOAhIM9nhpcSg93396XeIyMI7ENIbq9jcQ7q7OKFSFLaC0V2rOgfjRvX1s6O2thtGO6vWxQg=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
   />
 
   <style>
@@ -118,7 +95,6 @@
       align-items: center;
       gap: 0.5rem;
     }
-    /* MP4 or GIF for branding */
     .logo-video {
       height: 60px;
       width: auto;
@@ -152,34 +128,22 @@
      * MAIN & HERO
      *************************************************/
     main {
-      padding-top: 80px; 
+      padding-top: 80px;
       min-height: 100vh;
     }
-    /* HERO SECTION */
     .hero {
       position: relative;
       width: 100%;
-      min-height: 100vh;
-      background: #0e0e0e; 
+      min-height: 60vh;
+      background: var(--bg-color);
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 2rem;
-      overflow: hidden;
-    }
-    .hero-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.6);
-      z-index: 1;
     }
     .hero-content {
       position: relative;
-      z-index: 2;
       max-width: 700px;
       margin: 0 auto;
       color: var(--subtext-color);
@@ -195,79 +159,12 @@
       line-height: 1.5;
       margin-bottom: 1rem;
     }
-
-    /*************************************************
-     * TEAM SECTION
-     *************************************************/
-    .content-wrapper {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 4rem 2rem;
-    }
-    .content-wrapper h2 {
-      font-size: 2rem;
+    .hero-content a {
       color: var(--primary-color);
-      text-align: center;
-      margin-bottom: 3rem;
-      text-transform: uppercase;
+      transition: color var(--transition-speed);
     }
-
-    /* Only one card for Devin, but structured for possible expansion */
-    .team-container {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-    }
-    .member-card {
-      background: linear-gradient(145deg, rgba(0,0,0,0.8), rgba(20,20,20,0.6));
-      border-radius: 10px;
-      border-top: 3px solid var(--primary-color);
-      box-shadow: 0 0 10px rgba(0,0,0,0.4);
-      text-align: center;
-      padding: 2.5rem 2rem;
-      width: 100%;
-      max-width: 520px;
-      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-      /* Fade-in + slight upward motion */
-      opacity: 0;
-      transform: translateY(15px);
-      animation: fadeInUp 0.8s forwards;
-    }
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    .member-card:hover {
-      transform: translateY(-3px) scale(1.03);
-      box-shadow: 0 0 20px rgba(25, 200, 250, 0.3);
-    }
-    /* Remove circle shape => small corner rounding or none at all */
-    .member-card img {
-      width: 160px;
-      height: auto;
-      object-fit: cover;
-      margin-bottom: 1rem;
-      border: 2px solid var(--primary-color);
-      border-radius: 8px; /* e.g. 8px corners instead of 50% circle */
-    }
-    .member-card h3 {
-      font-size: 1.6rem;
-      color: var(--primary-color);
-      margin-bottom: 0.25rem;
-    }
-    .member-card h4 {
-      font-size: 1rem;
-      font-weight: 400;
-      margin-bottom: 0.75rem;
-      color: var(--text-color);
-    }
-    .member-card p {
-      font-weight: 300;
-      line-height: 1.4;
-      font-size: 0.95rem;
-      color: var(--subtext-color);
+    .hero-content a:hover {
+      color: var(--hover-color);
     }
 
     /*************************************************
@@ -331,10 +228,6 @@
       .hero-content p {
         font-size: 1rem;
       }
-      .member-card {
-        width: 80%;
-        margin: 0 auto;
-      }
     }
     @media (max-width: 480px) {
       .hero-content h1 {
@@ -351,15 +244,9 @@
      * keyboard-reachable menu checkbox, Messenger orb as an anchor,
      * footer contact line, scroll-container fix, reduced motion,
      * mobile offsets (footer padding + orb lift).
-     * Insert this block as the LAST block inside the page style element.
      *************************************************/
 
-    /* ---- SECTION A: NAV SHELL -------------------------------------------
-       Paste section A ONLY on pages that have no hamburger CSS yet:
-       contact.html, team.html, and shell.html (faq / Safety / 404).
-       index.html and services.html already define nav, #menu-toggle,
-       .menu-icon and the mobile nav ul rules: OMIT section A there
-       (their #menu-toggle rule is edited in place, see css-edits.md E2). */
+    /* ---- SECTION A: NAV SHELL ---- */
     nav {
       position: relative;
     }
@@ -403,15 +290,12 @@
     /* ---- END SECTION A ---- */
 
     /* ---- SECTION B: COMMON (every page, verbatim) ---------------------- */
-    /* Scroll container: body grows with content
-       (the html, body { height: 100% } line is removed in place, css-edits.md E1) */
     body {
       min-height: 100vh;
     }
     header {
       gap: 0.5rem;
     }
-    /* Menu icon: inline SVG, 44px tap target, no Font Awesome */
     .menu-icon {
       align-items: center;
       justify-content: center;
@@ -427,7 +311,6 @@
       outline: 2px solid var(--primary-color);
       outline-offset: 2px;
     }
-    /* Header phone pill (desktop / tablet; the sticky bar covers mobile) */
     .header-call {
       display: inline-flex;
       align-items: center;
@@ -445,11 +328,9 @@
       background: #fff;
       color: #0e0e0e;
     }
-    /* Hero buttons: breathing room when two sit side by side or wrap */
     .cta-button {
       margin: 0.25rem 0.35rem;
     }
-    /* Sticky mobile call bar */
     .call-bar {
       position: fixed;
       bottom: 0;
@@ -476,7 +357,6 @@
     .call-bar a:last-child {
       color: var(--primary-color);
     }
-    /* Messenger orb is now an anchor holding an inline SVG on the white circle */
     .chat-float-btn {
       text-decoration: none;
     }
@@ -494,12 +374,10 @@
       fill: var(--primary-color);
       background: #000;
     }
-    /* Footer contact line (above the copyright line) */
     .footer-contact {
       margin-bottom: 0.75rem;
       color: var(--subtext-color);
     }
-    /* Tablet: keep logo + nav + pill on one header row */
     @media (min-width: 769px) and (max-width: 960px) {
       nav ul {
         gap: 1.25rem;
@@ -512,13 +390,11 @@
         font-size: 0.95rem;
       }
     }
-    /* Desktop: sticky bar off */
     @media (min-width: 768px) {
       .call-bar {
         display: none;
       }
     }
-    /* Mobile */
     @media (max-width: 768px) {
       .menu-icon {
         display: flex;
@@ -551,7 +427,7 @@
   <!-- HEADER -->
   <header>
     <div class="logo">
-      <video class="logo-video" autoplay muted loop playsinline preload="metadata" width="214" height="120" poster="assets/images/logo-poster.png" aria-hidden="true"><source src="assets/videos/logo-120.webm" type="video/webm"><source src="assets/videos/logo-120.mp4" type="video/mp4"></video>
+      <video class="logo-video" autoplay muted loop playsinline preload="metadata" width="214" height="120" poster="/mooreelectric.github.io/assets/images/logo-poster.png" aria-hidden="true"><source src="/mooreelectric.github.io/assets/videos/logo-120.webm" type="video/webm"><source src="/mooreelectric.github.io/assets/videos/logo-120.mp4" type="video/mp4"></video>
       <div class="logo-text">Moore Electric</div>
     </div>
 
@@ -563,11 +439,11 @@
 
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="reviews.html">Reviews</a></li>
-        <li><a href="team.html" style="color: var(--primary-color);">Team</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="/mooreelectric.github.io/index.html">Home</a></li>
+        <li><a href="/mooreelectric.github.io/services.html">Services</a></li>
+        <li><a href="/mooreelectric.github.io/reviews.html">Reviews</a></li>
+        <li><a href="/mooreelectric.github.io/team.html">Team</a></li>
+        <li><a href="/mooreelectric.github.io/contact.html">Contact</a></li>
       </ul>
     </nav>
 
@@ -576,34 +452,10 @@
 
   <!-- MAIN CONTENT -->
   <main>
-    <!-- HERO SECTION -->
     <section class="hero">
-      <div class="hero-overlay"></div>
       <div class="hero-content">
-        <h1>Meet Devin Moore</h1>
-        <p>
-          Serving the Gulf Coast with integrity and innovation. Get to know the leader behind Moore Electric.
-        </p>
-      </div>
-    </section>
-
-    <!-- TEAM SECTION -->
-    <section class="content-wrapper">
-      <h2>Our Team</h2>
-      <div class="team-container">
-        <!-- Single Member: Devin Moore -->
-        <div class="member-card">
-          <!-- Adjust the path to Devin’s actual photo -->
-          <!-- TODO(Dev): add a real headshot at assets/images/devin-headshot.jpg (about 320px wide) and restore an <img> here -->
-          <h3>Devin Moore</h3>
-          <!-- Removed "licensed Master Electrician" text -->
-          <h4>Owner &amp; Automation Lead</h4>
-          <p>
-            Devin manages Moore Electric’s end-to-end operations — 
-            from Tesla charger installs to advanced home automation.
-            He’s passionate about modern electrical solutions for every home along the Gulf Coast.
-          </p>
-        </div>
+        <h1>Page not found</h1>
+        <p>That page does not exist. Go to the <a href="/mooreelectric.github.io/index.html">home page</a> or <a href="/mooreelectric.github.io/contact.html">contact us</a>.</p>
       </div>
     </section>
   </main>
@@ -612,11 +464,11 @@
   <footer>
     <p class="footer-contact">Call or text <a href="tel:+12282249150">228-224-9150</a> &bull; <a href="mailto:228mooreelectric@gmail.com">228mooreelectric@gmail.com</a></p>
     &copy; 2025 Moore Electric LLC &bull;
-    <a href="index.html">Home</a> |
-    <a href="services.html">Services</a> |
-    <a href="reviews.html">Reviews</a> |
-    <a href="team.html">Team</a> |
-    <a href="contact.html">Contact</a>
+    <a href="/mooreelectric.github.io/index.html">Home</a> |
+    <a href="/mooreelectric.github.io/services.html">Services</a> |
+    <a href="/mooreelectric.github.io/reviews.html">Reviews</a> |
+    <a href="/mooreelectric.github.io/team.html">Team</a> |
+    <a href="/mooreelectric.github.io/contact.html">Contact</a>
   </footer>
 
   <!-- FLOATING MESSENGER ORB -->

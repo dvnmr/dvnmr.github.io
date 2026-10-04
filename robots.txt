@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dvnmr.github.io/mooreelectric.github.io/sitemap.xml

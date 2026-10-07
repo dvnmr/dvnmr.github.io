@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Moore Electric LLC – Customer Reviews | Gulf Coast Electrician</title>
+  <meta name="description" content="Read what Mississippi Gulf Coast homeowners say about Moore Electric LLC — and leave your own review. Call (228) 224-9150." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-PcFZlg4zKnRAu3eOAhIM9nhpcSg93396XeIyMI7ENIbq9jcQ7q7OKFSFLaC0V2rOgfjRvX1s6O2thtGO6vWxQg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <style>
+    :root {
+      --bg-color: #0e0e0e;
+      --primary-color: #19c8fa;
+      --hover-color: #ff00c8;
+      --text-color: #ffffff;
+      --subtext-color: #cccccc;
+      --transition-speed: 0.3s;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%; height: 100%;
+      font-family: 'Roboto', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      overflow-x: hidden;
+    }
+    h1, h2, h3 { font-family: 'Orbitron', sans-serif; letter-spacing: 1px; }
+    a { text-decoration: none; color: inherit; cursor: pointer; }
+
+    header {
+      position: fixed; top: 0; left: 0; width: 100%;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.25rem 0.5rem;
+      background: rgba(15,15,15,0.9);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.7);
+      z-index: 999;
+    }
+    .logo { display: flex; align-items: center; gap: 0.5rem; }
+    .logo-video { height: 60px; width: auto; border: none; outline: none; }
+    .logo-text {
+      font-family: 'Orbitron', sans-serif; font-size: 1.5rem;
+      color: var(--primary-color); text-transform: uppercase;
+    }
+    nav { position: relative; }
+    #menu-toggle { display: none; }
+    .menu-icon {
+      display: none; font-size: 1.8rem; color: var(--primary-color);
+      padding: 0.5rem; cursor: pointer;
+    }
+    nav ul { display: flex; align-items: center; list-style: none; gap: 2rem; }
+    nav ul li a { color: var(--text-color); font-weight: 300; font-size: 1rem; transition: color var(--transition-speed); }
+    nav ul li a:hover { color: var(--primary-color); }
+    .call-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.6rem 1.1rem; background-color: var(--primary-color);
+      color: #0e0e0e !important; border-radius: 5px; font-weight: bold;
+      font-size: 0.95rem; white-space: nowrap;
+      transition: background-color var(--transition-speed), transform var(--transition-speed);
+    }
+    .call-btn:hover { background-color: #fff; transform: scale(1.03); }
+
+    main { padding-top: 80px; min-height: 100vh; }
+
+    .page-hero {
+      text-align: center; padding: 5rem 2rem 3rem; max-width: 720px; margin: 0 auto;
+    }
+    .page-hero h1 {
+      font-size: 2.6rem; color: var(--primary-color);
+      text-shadow: 0 0 10px rgba(25, 200, 250, 0.7); margin-bottom: 1rem;
+    }
+    .page-hero .stars { color: var(--primary-color); font-size: 1.5rem; letter-spacing: 0.3rem; margin-bottom: 1rem; }
+    .page-hero p { color: var(--subtext-color); font-size: 1.1rem; line-height: 1.7; font-weight: 300; }
+
+    .review-actions {
+      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+      padding: 1rem 1.5rem 4rem;
+    }
+    .cta-button {
+      display: inline-block; padding: 0.85rem 1.75rem;
+      background-color: var(--primary-color); color: #0e0e0e;
+      border-radius: 5px; font-weight: bold; font-size: 1.05rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .cta-button:hover { background-color: #0e0e0e; color: var(--primary-color); border: 2px solid var(--primary-color); }
+    .cta-button.secondary {
+      background-color: transparent; color: var(--primary-color);
+      border: 2px solid var(--primary-color);
+    }
+    .cta-button.secondary:hover { background-color: var(--primary-color); color: #0e0e0e; }
+
+    .reviews-grid {
+      max-width: 1100px; margin: 0 auto; padding: 0 2rem 4rem;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .review-card {
+      background: linear-gradient(145deg, rgba(0,0,0,0.8), rgba(20,20,20,0.6));
+      border: 1px solid rgba(25,200,250,0.18);
+      border-radius: 10px; padding: 1.75rem;
+    }
+    .review-card .stars { color: var(--primary-color); font-size: 1rem; letter-spacing: 0.2rem; margin-bottom: 0.75rem; }
+    .review-card blockquote {
+      font-weight: 300; line-height: 1.6; font-size: 0.95rem;
+      margin-bottom: 1rem; font-style: italic;
+    }
+    .review-card .reviewer { color: var(--primary-color); font-weight: bold; font-size: 0.9rem; }
+    .review-card .review-date { color: var(--subtext-color); font-size: 0.8rem; font-weight: 300; }
+
+    .reviews-note {
+      max-width: 720px; margin: 0 auto; padding: 0 2rem 4rem;
+      text-align: center; color: var(--subtext-color); font-weight: 300; line-height: 1.7;
+    }
+    .reviews-note a { color: var(--primary-color); font-weight: bold; }
+
+    footer {
+      background: rgba(15,15,15,0.9); backdrop-filter: blur(6px);
+      padding: 2.5rem 2rem; text-align: center; color: #888;
+    }
+    footer .footer-phone {
+      display: inline-block; font-family: 'Orbitron', sans-serif;
+      font-size: 1.4rem; color: var(--primary-color); margin-bottom: 1rem;
+    }
+    footer .footer-nav { margin: 1rem 0; }
+    footer a { color: var(--primary-color); transition: color var(--transition-speed); }
+    footer a:hover { color: #fff; }
+    footer .footer-fine { font-size: 0.85rem; margin-top: 1rem; }
+
+    .sticky-call-bar {
+      display: none; position: fixed; bottom: 0; left: 0; width: 100%;
+      z-index: 999998; background: rgba(15,15,15,0.96);
+      border-top: 2px solid var(--primary-color);
+      padding: 0.6rem 1rem calc(0.6rem + env(safe-area-inset-bottom));
+    }
+    .sticky-call-bar a {
+      display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+      background-color: var(--primary-color); color: #0e0e0e;
+      font-weight: bold; font-size: 1.1rem; padding: 0.8rem; border-radius: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .menu-icon { display: block; }
+      nav ul {
+        position: absolute; top: 100%; right: 0;
+        background: rgba(15,15,15,0.98); width: 200px;
+        flex-direction: column; align-items: flex-start; gap: 1.5rem;
+        padding: 1.5rem; box-shadow: -2px 0 10px rgba(0,0,0,0.7);
+        transform: translateX(100%); transition: transform 0.3s ease; z-index: 9999;
+      }
+      #menu-toggle:checked ~ nav ul { transform: translateX(0); }
+      .call-btn .call-btn-text { display: none; }
+      .call-btn { padding: 0.6rem 0.8rem; }
+      .page-hero h1 { font-size: 2rem; }
+      .logo-text { font-size: 1.2rem; }
+      .sticky-call-bar { display: block; }
+      body { padding-bottom: 76px; }
+    }
+  </style>
+
+  <!-- LOCAL BUSINESS STRUCTURED DATA (Siri / Maps / Google) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Electrician",
+    "name": "Moore Electric LLC",
+    "telephone": "+1-228-224-9150",
+    "email": "228mooreelectric@gmail.com",
+    "url": "https://dvnmr.github.io/mooreelectric.github.io/",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Biloxi",
+      "addressRegion": "MS",
+      "addressCountry": "US"
+    },
+    "areaServed": "Mississippi Gulf Coast",
+    "sameAs": ["https://www.facebook.com/228MooreElectric"]
+  }
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <video autoplay muted loop playsinline class="logo-video">
+        <source src="assets/videos/20250117_1849_Electric%20Quantum%20Logo_simple_compose_01jhve65zdfwr9mv836zk8dxw3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="logo-text">Moore Electric</div>
+    </div>
+
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon">
+      <i class="fa-solid fa-bars"></i>
+    </label>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="reviews.html" style="color: var(--primary-color);">Reviews</a></li>
+        <li><a href="index.html#gallery">Work</a></li>
+        <li><a href="index.html#quote">Free Quote</a></li>
+        <li><a href="tel:+12282249150" class="call-btn"><i class="fa-solid fa-phone"></i><span class="call-btn-text">(228) 224-9150</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="stars">★★★★★</div>
+      <h1>Customer Reviews</h1>
+      <p>
+        100% recommend — 5 out of 5 on Facebook. Our work speaks for itself,
+        but our customers say it better. If we've worked on your home,
+        leave us a review — it keeps a local business running strong.
+      </p>
+    </section>
+
+    <div class="review-actions">
+      <a class="cta-button" href="https://www.facebook.com/228MooreElectric" target="_blank" rel="noopener">
+        <i class="fab fa-facebook"></i> Review Us on Facebook
+      </a>
+      <a class="cta-button secondary" href="tel:+12282249150">
+        <i class="fa-solid fa-phone"></i> Call (228) 224-9150
+      </a>
+    </div>
+
+    <section class="reviews-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Devin and Jimmy did a great job installing a Mantelmount in our living room and adding an outlet in our kitchen. Professional, good communication, affordable, and showed up on time. Highly recommend Moore Electric!"</blockquote>
+        <div class="reviewer">Michael Phan</div>
+        <div class="review-date">April 2022 — Recommends</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"I'm very pleased to the job well done to my home. Devin is professional, knowledgeable and courteous. He is highly recommended!"</blockquote>
+        <div class="reviewer">Diana Grant</div>
+        <div class="review-date">November 2021 — Recommends</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Devan did an excellent job wiring decorative lights around my pool, adding an electrical box and three outdoor outlets. He was great to work with and a great value for the price charged."</blockquote>
+        <div class="reviewer">Pat Wylie</div>
+        <div class="review-date">October 2021 — Recommends</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Devin is a very knowledgeable hard working young man. He helps with many properties for me. You want honest dependability quality work. Call Devin."</blockquote>
+        <div class="reviewer">Brandon Eldridge</div>
+        <div class="review-date">Eldridge &amp; Son Investments, LLC — October 2021</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Absolutely stellar job on our restaurant! Great service reliable and highly recommended!"</blockquote>
+        <div class="reviewer">Henry Vanegas</div>
+        <div class="review-date">October 2021 — Recommends</div>
+      </div>
+    </section>
+
+    <section class="reviews-note">
+      <p>
+        Just had work done? The fastest way to help: tap the Facebook button above
+        and drop a few stars with a line about the job. Every review goes straight
+        to helping your neighbors find an electrician they can trust.
+        — <a href="tel:+12282249150">Devin Moore, Moore Electric LLC</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <a class="footer-phone" href="tel:+12282249150">(228) 224-9150</a>
+    <div class="footer-nav">
+      <a href="index.html">Home</a> |
+      <a href="services.html">Services</a> |
+      <a href="reviews.html">Reviews</a> |
+      <a href="team.html">Team</a> |
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-fine">
+      <a href="mailto:228mooreelectric@gmail.com">228mooreelectric@gmail.com</a><br/><br/>
+      &copy; 2026 Moore Electric LLC &bull; Biloxi, Mississippi
+    </div>
+  </footer>
+
+  <div class="sticky-call-bar">
+    <a href="tel:+12282249150"><i class="fa-solid fa-phone"></i> Tap to Call Now</a>
+  </div>
+</body>
+</html>

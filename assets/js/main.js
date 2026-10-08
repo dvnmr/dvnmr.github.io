@@ -86,12 +86,17 @@
     po.setAttribute("role", "button");
     po.setAttribute("tabindex", "0");
     po.setAttribute("aria-label", "Flip the breaker to power on the site");
+    po.removeAttribute("role");
+    po.removeAttribute("tabindex");
+    po.removeAttribute("aria-label");
     po.innerHTML =
       '<svg class="po-bolt" viewBox="0 0 72 110" aria-hidden="true"><path d="M40 4 L14 62 L32 62 L28 106 L58 44 L38 44 Z"/></svg>' +
-      '<div class="breaker" aria-hidden="true"><div class="slot"><div class="lever">OFF</div></div></div>' +
-      '<div class="po-label">Flip the breaker</div>';
+      '<button class="po-flip" type="button" aria-label="Flip the breaker to power on the site"><span class="breaker" aria-hidden="true"><span class="slot"><span class="lever">OFF</span></span></span></button>' +
+      '<div class="po-label" aria-hidden="true">Flip the breaker</div>' +
+      '<button class="po-skip" type="button">Skip &rarr;</button>';
     document.body.appendChild(po);
-    document.body.style.overflow = "hidden";
+    // non-blocking: overlay is click-through except its own controls;
+    // the visitor can tap call links behind it immediately. No scroll lock.
 
     var boltPath = po.querySelector(".po-bolt path");
     var len = boltPath.getTotalLength();
@@ -117,13 +122,13 @@
           gsap.to(veil, { opacity: 0, duration: 0.5, delay: 0.1 });
           gsap.to(po, {
             yPercent: -100, duration: 0.9, ease: "power4.inOut", delay: 0.12,
-            onComplete: function () { po.remove(); veil.remove(); document.body.style.overflow = ""; }
+            onComplete: function () { po.remove(); veil.remove(); }
           });
         } else {
           veil.style.transition = "opacity .1s"; veil.style.opacity = "1";
           setTimeout(function () { veil.style.transition = "opacity .5s"; veil.style.opacity = "0"; }, 120);
           po.style.transition = "transform .9s cubic-bezier(.7,0,.3,1)"; po.style.transform = "translateY(-100%)";
-          setTimeout(function () { po.remove(); veil.remove(); document.body.style.overflow = ""; }, 1100);
+          setTimeout(function () { po.remove(); veil.remove(); }, 1100);
         }
         // hero flicker-in then kinetic type
         var hero = document.querySelector(".hero");
@@ -133,14 +138,17 @@
       }, 620);
     }
 
-    po.addEventListener("click", ignite);
-    po.addEventListener("keydown", function (e) {
-      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); ignite(); }
-    });
-    // auto-ignite after 4s so nobody is stuck
-    setTimeout(function () { if (document.body.contains(po) && !po.classList.contains("lit")) ignite(); }, 4000);
+    function dismiss() {
+      if (document.body.contains(po)) { po.remove(); }
+      if (document.body.contains(veil)) { veil.remove(); }
+      playKinetic(document.querySelector(".hero") || document);
+    }
+    po.querySelector(".po-flip").addEventListener("click", ignite);
+    po.querySelector(".po-skip").addEventListener("click", dismiss);
+    // auto-ignite after 2.5s so nobody waits
+    setTimeout(function () { if (document.body.contains(po) && !po.classList.contains("lit")) ignite(); }, 2500);
     // escape hatch
-    setTimeout(function () { if (document.body.contains(po)) { po.remove(); veil.remove(); document.body.style.overflow = ""; playKinetic(document); } }, 9000);
+    setTimeout(dismiss, 9000);
   }
 
   /* ---------------- scroll reveals ---------------- */
@@ -244,33 +252,56 @@
       cap.textContent = fc ? fc.textContent : sImg.alt;
       count.textContent = (idx + 1) + " / " + shots.length;
     }
+    var pageRoots = [];
+    function setInert(on) {
+      if (on) {
+        pageRoots = Array.prototype.slice.call(document.querySelectorAll("header.nav, main, footer, .callbar, .poweron"));
+        pageRoots.forEach(function (el) { el.setAttribute("inert", ""); el.setAttribute("aria-hidden", "true"); });
+      } else {
+        pageRoots.forEach(function (el) { el.removeAttribute("inert"); el.removeAttribute("aria-hidden"); });
+        pageRoots = [];
+      }
+    }
+    function focusables() {
+      return Array.prototype.slice.call(lb.querySelectorAll("button, [href], [tabindex]:not([tabindex='-1'])"))
+        .filter(function (el) { return !el.disabled && el.offsetParent !== null; });
+    }
     function open(i) {
       lastFocus = document.activeElement;
       show(i); lb.classList.add("open");
       document.body.style.overflow = "hidden";
+      setInert(true);
       lb.querySelector(".lb-close").focus();
     }
     function close() {
       lb.classList.remove("open");
       document.body.style.overflow = "";
-      if (lastFocus) lastFocus.focus();
+      setInert(false);
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
     }
     shots.forEach(function (s, i) {
       s.addEventListener("click", function () { open(i); });
       s.setAttribute("tabindex", "0");
       s.setAttribute("role", "button");
       s.setAttribute("aria-label", "View photo: " + s.querySelector("img").alt);
-      s.addEventListener("keydown", function (e) { if (e.key === "Enter") open(i); });
+      s.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(i); }
+      });
     });
     lb.querySelector(".lb-close").addEventListener("click", close);
     lb.querySelector(".lb-prev").addEventListener("click", function (e) { e.stopPropagation(); show(idx - 1); });
     lb.querySelector(".lb-next").addEventListener("click", function (e) { e.stopPropagation(); show(idx + 1); });
     lb.addEventListener("click", function (e) { if (e.target === lb) close(); });
-    document.addEventListener("keydown", function (e) {
-      if (!lb.classList.contains("open")) return;
-      if (e.key === "Escape") close();
-      if (e.key === "ArrowLeft") show(idx - 1);
-      if (e.key === "ArrowRight") show(idx + 1);
+    lb.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") { close(); return; }
+      if (e.key === "ArrowLeft") { show(idx - 1); return; }
+      if (e.key === "ArrowRight") { show(idx + 1); return; }
+      if (e.key !== "Tab") return;
+      var f = focusables();
+      if (!f.length) return;
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     });
     // touch swipe
     var tx = 0;
@@ -283,44 +314,15 @@
 
   /* ---------------- FAQ accordion ---------------- */
   function initFaq() {
-    document.querySelectorAll(".faq-item").forEach(function (item) {
-      var q = item.querySelector(".faq-q"), a = item.querySelector(".faq-a");
-      q.addEventListener("click", function () {
-        var open = item.classList.contains("open");
-        document.querySelectorAll(".faq-item.open").forEach(function (o) {
-          o.classList.remove("open");
-          o.querySelector(".faq-a").style.maxHeight = "0px";
-          o.querySelector(".faq-q").setAttribute("aria-expanded", "false");
+    // native details/summary: accessible + no-JS readable by default.
+    // JS only adds accordion behavior (close others when one opens).
+    document.querySelectorAll("details.faq-item").forEach(function (item) {
+      item.addEventListener("toggle", function () {
+        if (!item.open) return;
+        document.querySelectorAll("details.faq-item[open]").forEach(function (o) {
+          if (o !== item) o.removeAttribute("open");
         });
-        if (!open) {
-          item.classList.add("open");
-          a.style.maxHeight = a.scrollHeight + "px";
-          q.setAttribute("aria-expanded", "true");
-        }
       });
-    });
-  }
-
-  /* ---------------- quote form -> mailto ---------------- */
-  function initForm() {
-    var form = document.getElementById("quote-form");
-    if (!form) return;
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var v = function (id) { return (document.getElementById(id) || {}).value || ""; };
-      var subject = "Estimate request — " + v("f-service") + " — " + v("f-name");
-      var body = [
-        "Name: " + v("f-name"),
-        "Phone: " + v("f-phone"),
-        "Service needed: " + v("f-service"),
-        "Best time to call: " + v("f-time"),
-        "",
-        "Details:",
-        v("f-details")
-      ].join("\n");
-      window.location.href = "mailto:228mooreelectric@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-      var note = document.getElementById("form-note");
-      if (note) note.textContent = "Opening your email app — or just call (228) 224-9150.";
     });
   }
 
@@ -337,7 +339,6 @@
   initCursor();
   initLightbox();
   initFaq();
-  initForm();
 
   // power-on runs after first paint; kinetic for subpages plays immediately
   if (document.querySelector(".hero[data-poweron]")) {

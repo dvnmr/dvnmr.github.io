@@ -1,365 +1,354 @@
 /* ============================================================
-   MOORE ELECTRIC — main.js
-   Motion budget: power-on + kinetic type + scroll reveals.
-   Everything else is CSS. Vanilla JS; GSAP only enhances.
-   - 60fps: transforms/opacity only, passive listeners, rAF cursor
-   - Accessible: reduced-motion disables all of it, keyboard BA slider
-   - Resilient: every GSAP block guards `window.gsap`; IO fallback
+   MOORE ELECTRIC — phoenix-oct7 interactions
+   Power-on sequence · kinetic type · scroll reveals · lightbox
+   Vanilla + optional GSAP. Respects prefers-reduced-motion.
    ============================================================ */
 (function () {
   "use strict";
+  document.documentElement.classList.add("js");
 
-  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var finePointer = window.matchMedia("(pointer: fine)").matches;
-  var hasGsap = typeof window.gsap !== "undefined";
-  var doc = document.documentElement;
-
-  if (reduceMotion) doc.classList.add("reduced-motion");
-  if (!hasGsap) doc.classList.add("no-gsap");
-  doc.classList.remove("no-js");
-
-  /* ---------- 1. POWER-ON SIGNATURE MOMENT ---------- */
-  var poweron = document.getElementById("poweron");
-  var boltPath = document.getElementById("boltPath");
-
-  function finishPowerOn() {
-    if (!poweron || poweron.classList.contains("done")) return;
-    poweron.classList.add("done");
-    poweron.setAttribute("aria-hidden", "true");
-    heroEntrance();
+  var REDUCED = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var FINE_POINTER = window.matchMedia("(pointer: fine)").matches;
+  var hasGSAP = typeof window.gsap !== "undefined";
+  if (hasGSAP && typeof window.ScrollTrigger !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger);
+  } else {
+    hasGSAP = false;
   }
 
-  if (poweron && !reduceMotion && hasGsap && boltPath) {
+  var PHONE_TEL = "tel:+12282249150";
+
+  /* ---------------- kinetic split ---------------- */
+  function splitWords(el) {
+    var fullText = el.textContent.trim().replace(/\s+/g, " ");
+    el.setAttribute("aria-label", fullText);
+    // walk child nodes so inner spans (e.g. .stroke) survive the split
+    var nodes = Array.prototype.slice.call(el.childNodes);
+    el.textContent = "";
+    function maskWord(word, parent) {
+      var mask = document.createElement("span");
+      mask.className = "k-mask";
+      mask.setAttribute("aria-hidden", "true");
+      var w = document.createElement("span");
+      w.className = "k-word";
+      w.textContent = word;
+      mask.appendChild(w);
+      parent.appendChild(mask);
+    }
+    nodes.forEach(function (node) {
+      if (node.nodeType === 3) {
+        node.textContent.trim().replace(/\s+/g, " ").split(" ").forEach(function (word, i, arr) {
+          if (!word) return;
+          maskWord(word, el);
+          el.appendChild(document.createTextNode(" "));
+        });
+      } else if (node.nodeType === 1) {
+        var clone = node.cloneNode(false);
+        clone.removeAttribute("data-kinetic");
+        node.textContent.trim().replace(/\s+/g, " ").split(" ").forEach(function (word) {
+          if (!word) return;
+          maskWord(word, clone);
+          clone.appendChild(document.createTextNode(" "));
+        });
+        el.appendChild(clone);
+        el.appendChild(document.createTextNode(" "));
+      }
+    });
+  }
+
+  function playKinetic(scope) {
+    var words = scope.querySelectorAll(".k-word");
+    if (!words.length || REDUCED) return;
+    if (hasGSAP) {
+      gsap.set(words, { yPercent: 110 });
+      gsap.to(words, { yPercent: 0, duration: 0.9, ease: "power4.out", stagger: 0.045, delay: 0.15 });
+    } else {
+      words.forEach(function (w, i) {
+        setTimeout(function () { w.style.transform = "translateY(0)"; w.style.transition = "transform .7s cubic-bezier(.2,.8,.2,1)"; }, 150 + i * 45);
+      });
+    }
+  }
+
+  /* ---------------- power-on sequence ---------------- */
+  var powerDone = false;
+  function buildPowerOn() {
+    if (REDUCED || powerDone) return;
+    // only run on the homepage hero
+    if (!document.querySelector(".hero[data-poweron]")) return;
+    powerDone = true;
+
+    var veil = document.createElement("div");
+    veil.className = "flash-veil";
+    document.body.appendChild(veil);
+
+    var po = document.createElement("div");
+    po.className = "poweron";
+    po.setAttribute("role", "button");
+    po.setAttribute("tabindex", "0");
+    po.setAttribute("aria-label", "Flip the breaker to power on the site");
+    po.innerHTML =
+      '<svg class="po-bolt" viewBox="0 0 72 110" aria-hidden="true"><path d="M40 4 L14 62 L32 62 L28 106 L58 44 L38 44 Z"/></svg>' +
+      '<div class="breaker" aria-hidden="true"><div class="slot"><div class="lever">OFF</div></div></div>' +
+      '<div class="po-label">Flip the breaker</div>';
+    document.body.appendChild(po);
+    document.body.style.overflow = "hidden";
+
+    var boltPath = po.querySelector(".po-bolt path");
     var len = boltPath.getTotalLength();
     boltPath.style.strokeDasharray = len;
     boltPath.style.strokeDashoffset = len;
-    // Bolt draws itself, then the hero "lights up"
-    gsap.to(boltPath, {
-      strokeDashoffset: 0, duration: 0.85, ease: "power2.inOut",
-      onComplete: function () {
-        gsap.to(poweron, {
-          opacity: 0, duration: 0.4, ease: "power2.out", delay: 0.15,
-          onComplete: finishPowerOn
-        });
-      }
-    });
-    // Skippable: tap anywhere to skip
-    poweron.addEventListener("click", finishPowerOn, { passive: true });
-    // Hard ceiling: never trap the visitor
-    setTimeout(finishPowerOn, 2200);
-  } else {
-    finishPowerOn();
-  }
 
-  /* ---------- 2. KINETIC TYPE HERO ---------- */
-  function splitChars(el) {
-    var text = el.textContent;
-    el.setAttribute("aria-hidden", "true");
-    el.textContent = "";
-    var frag = document.createDocumentFragment();
-    text.split("").forEach(function (c) {
-      var s = document.createElement("span");
-      s.className = "ch";
-      s.textContent = c === " " ? "\u00A0" : c;
-      frag.appendChild(s);
-    });
-    el.appendChild(frag);
-    return el.querySelectorAll(".ch");
-  }
-
-  function heroEntrance() {
-    var lines = document.querySelectorAll("#heroTitle .ht-line[data-split]");
-    var heroBits = document.querySelectorAll(".reveal-hero");
-    if (hasGsap && !reduceMotion && lines.length) {
-      var chars = [];
-      lines.forEach(function (line) { splitChars(line); });
-      document.querySelectorAll("#heroTitle .ch").forEach(function (c) { chars.push(c); });
-      gsap.set(chars, { yPercent: 110, opacity: 0 });
-      gsap.set(heroBits, { y: 18, opacity: 0 });
-      var tl = gsap.timeline({ defaults: { ease: "power4.out" } });
-      tl.to(chars, { yPercent: 0, opacity: 1, duration: 0.9, stagger: 0.028 })
-        .to(heroBits, { y: 0, opacity: 1, duration: 0.7, stagger: 0.1 }, "-=0.55");
-      // Subtle hero-bg settle (transform only, compositor-friendly)
-      var bg = document.querySelector(".hero-bg img");
-      if (bg) {
-        gsap.fromTo(bg, { scale: 1.12 }, { scale: 1.06, duration: 2.4, ease: "power2.out" });
+    function ignite() {
+      if (po.classList.contains("lit")) return;
+      po.classList.add("lit");
+      po.querySelector(".breaker").classList.add("on");
+      po.querySelector(".lever").textContent = "ON";
+      // bolt draws
+      if (hasGSAP) {
+        gsap.to(boltPath, { strokeDashoffset: 0, duration: 0.5, ease: "power2.in" });
+      } else {
+        boltPath.style.transition = "stroke-dashoffset .5s ease-in";
+        boltPath.style.strokeDashoffset = "0";
       }
-    } else {
-      // No-JS / no-GSAP / reduced-motion: content is simply visible (CSS classes handle it)
-      document.querySelectorAll(".reveal-hero").forEach(function (el) {
-        el.style.opacity = "1"; el.style.transform = "none";
-      });
+      setTimeout(function () {
+        // white flash + lift
+        if (hasGSAP) {
+          gsap.to(veil, { opacity: 1, duration: 0.08 });
+          gsap.to(veil, { opacity: 0, duration: 0.5, delay: 0.1 });
+          gsap.to(po, {
+            yPercent: -100, duration: 0.9, ease: "power4.inOut", delay: 0.12,
+            onComplete: function () { po.remove(); veil.remove(); document.body.style.overflow = ""; }
+          });
+        } else {
+          veil.style.transition = "opacity .1s"; veil.style.opacity = "1";
+          setTimeout(function () { veil.style.transition = "opacity .5s"; veil.style.opacity = "0"; }, 120);
+          po.style.transition = "transform .9s cubic-bezier(.7,0,.3,1)"; po.style.transform = "translateY(-100%)";
+          setTimeout(function () { po.remove(); veil.remove(); document.body.style.overflow = ""; }, 1100);
+        }
+        // hero flicker-in then kinetic type
+        var hero = document.querySelector(".hero");
+        hero.classList.add("power-flash");
+        setTimeout(function () { hero.classList.remove("power-flash"); }, 600);
+        playKinetic(hero);
+      }, 620);
     }
+
+    po.addEventListener("click", ignite);
+    po.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); ignite(); }
+    });
+    // auto-ignite after 4s so nobody is stuck
+    setTimeout(function () { if (document.body.contains(po) && !po.classList.contains("lit")) ignite(); }, 4000);
+    // escape hatch
+    setTimeout(function () { if (document.body.contains(po)) { po.remove(); veil.remove(); document.body.style.overflow = ""; playKinetic(document); } }, 9000);
   }
 
-  /* ---------- 3. SCROLL REVEALS ---------- */
-  var revealEls = document.querySelectorAll("[data-reveal], [data-reveal-group]");
-  if (hasGsap && !reduceMotion && typeof window.ScrollTrigger !== "undefined") {
-    gsap.registerPlugin(ScrollTrigger);
-    revealEls.forEach(function (el) {
-      ScrollTrigger.create({
-        trigger: el, start: "top 88%", once: true,
-        onEnter: function () { el.classList.add("in"); }
-      });
-    });
-    // Counters run when visible
-    document.querySelectorAll("[data-count]").forEach(setupCounter);
-  } else if ("IntersectionObserver" in window && !reduceMotion) {
+  /* ---------------- scroll reveals ---------------- */
+  function initReveals() {
+    var els = document.querySelectorAll(".rv");
+    if (!els.length) return;
+    if (REDUCED || !("IntersectionObserver" in window)) {
+      els.forEach(function (el) { el.classList.add("in"); });
+      return;
+    }
     var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
       });
     }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
-    revealEls.forEach(function (el) { io.observe(el); });
-    var cio = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { runCounter(e.target); cio.unobserve(e.target); }
+    els.forEach(function (el) { io.observe(el); });
+  }
+
+  function initParallax() {
+    if (REDUCED || !hasGSAP) return;
+    document.querySelectorAll("[data-parallax]").forEach(function (el) {
+      gsap.to(el, {
+        yPercent: parseFloat(el.getAttribute("data-parallax")) || -12,
+        ease: "none",
+        scrollTrigger: { trigger: el.closest("section") || el, scrub: true, start: "top bottom", end: "bottom top" }
       });
-    }, { threshold: 0.4 });
-    document.querySelectorAll("[data-count]").forEach(function (el) { cio.observe(el); });
-  } else {
-    // Everything visible; counters set to final values
-    revealEls.forEach(function (el) { el.classList.add("in"); });
-    document.querySelectorAll("[data-count]").forEach(function (el) { setCounterFinal(el); });
+    });
   }
 
-  function setCounterFinal(el) {
-    var target = parseFloat(el.getAttribute("data-count"));
-    var dec = parseInt(el.getAttribute("data-decimals") || "0", 10);
-    el.textContent = target.toFixed(dec);
-  }
-
-  function runCounter(el) {
-    if (el.dataset.done) return;
-    el.dataset.done = "1";
-    var target = parseFloat(el.getAttribute("data-count"));
-    var dec = parseInt(el.getAttribute("data-decimals") || "0", 10);
-    if (hasGsap && !reduceMotion) {
-      var obj = { v: 0 };
-      gsap.to(obj, {
-        v: target, duration: 1.6, ease: "power2.out",
-        onUpdate: function () { el.textContent = obj.v.toFixed(dec); }
-      });
-    } else {
-      setCounterFinal(el);
+  /* ---------------- nav + callbar ---------------- */
+  function initChrome() {
+    var nav = document.querySelector(".nav");
+    var bar = document.querySelector(".callbar");
+    var hero = document.querySelector(".hero, .subhero");
+    function onScroll() {
+      var y = window.scrollY;
+      if (nav) nav.classList.toggle("scrolled", y > 40);
+      if (bar) {
+        var past = hero ? y > hero.offsetHeight * 0.55 : y > 500;
+        bar.classList.toggle("show", past);
+      }
     }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
   }
 
-  function setupCounter(el) {
-    ScrollTrigger.create({
-      trigger: el, start: "top 90%", once: true,
-      onEnter: function () { runCounter(el); }
+  /* ---------------- custom cursor + magnetic ---------------- */
+  function initCursor() {
+    if (!FINE_POINTER || REDUCED) return;
+    var dot = document.createElement("div"); dot.className = "cursor-dot";
+    var ring = document.createElement("div"); ring.className = "cursor-ring";
+    document.body.appendChild(dot); document.body.appendChild(ring);
+    var mx = -100, my = -100, rx = -100, ry = -100;
+    document.addEventListener("mousemove", function (e) {
+      mx = e.clientX; my = e.clientY;
+      dot.style.left = mx + "px"; dot.style.top = my + "px";
     });
-  }
-
-  /* ---------- 4. BEFORE / AFTER SLIDER ---------- */
-  (function beforeAfter() {
-    var slider = document.getElementById("baSlider");
-    if (!slider) return;
-    var before = document.getElementById("baBefore");
-    var handle = document.getElementById("baHandle");
-    var dragging = false;
-
-    function setPos(clientX) {
-      var r = slider.getBoundingClientRect();
-      var pct = ((clientX - r.left) / r.width) * 100;
-      setFromPct(pct);
-    }
-    function setFromPct(pct) {
-      pct = Math.max(2, Math.min(98, pct));
-      // clip-path keeps the before image full-size; only the reveal changes
-      before.style.clipPath = "inset(0 " + (100 - pct) + "% 0 0)";
-      handle.style.left = pct + "%";
-      slider.setAttribute("aria-valuenow", Math.round(pct));
-    }
-
-    slider.addEventListener("pointerdown", function (e) {
-      dragging = true;
-      slider.setPointerCapture(e.pointerId);
-      setPos(e.clientX);
+    (function loop() {
+      rx += (mx - rx) * 0.16; ry += (my - ry) * 0.16;
+      ring.style.left = rx + "px"; ring.style.top = ry + "px";
+      requestAnimationFrame(loop);
+    })();
+    document.querySelectorAll("a, button, .shot, .faq-q").forEach(function (el) {
+      el.addEventListener("mouseenter", function () { ring.classList.add("hovering"); });
+      el.addEventListener("mouseleave", function () { ring.classList.remove("hovering"); });
     });
-    slider.addEventListener("pointermove", function (e) {
-      if (dragging) setPos(e.clientX);
-    });
-    ["pointerup", "pointercancel", "pointerleave"].forEach(function (ev) {
-      slider.addEventListener(ev, function () { dragging = false; });
-    });
-    slider.addEventListener("keydown", function (e) {
-      var cur = parseFloat(slider.getAttribute("aria-valuenow")) || 50;
-      if (e.key === "ArrowLeft") { setFromPct(cur - 5); e.preventDefault(); }
-      if (e.key === "ArrowRight") { setFromPct(cur + 5); e.preventDefault(); }
-    });
-    // Gentle intro nudge (respects reduced motion)
-    if (!reduceMotion && hasGsap && "IntersectionObserver" in window) {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) {
-            io.disconnect();
-            var o = { p: 50 };
-            gsap.to(o, {
-              p: 62, duration: 0.9, ease: "power2.inOut", yoyo: true, repeat: 1,
-              onUpdate: function () { setFromPct(o.p); }
-            });
-          }
+    // magnetic buttons
+    if (hasGSAP) {
+      document.querySelectorAll(".btn").forEach(function (btn) {
+        btn.addEventListener("mousemove", function (e) {
+          var r = btn.getBoundingClientRect();
+          gsap.to(btn, { x: (e.clientX - r.left - r.width / 2) * 0.22, y: (e.clientY - r.top - r.height / 2) * 0.28, duration: 0.3 });
         });
-      }, { threshold: 0.5 });
-      io.observe(slider);
+        btn.addEventListener("mouseleave", function () { gsap.to(btn, { x: 0, y: 0, duration: 0.5, ease: "elastic.out(1,.4)" }); });
+      });
     }
-  })();
+  }
 
-  /* ---------- 5. LIGHTBOX (gallery) ---------- */
-  (function lightbox() {
-    var items = Array.prototype.slice.call(document.querySelectorAll(".work-item"));
-    var lb = document.getElementById("lightbox");
-    if (!items.length || !lb) return;
-    var img = document.getElementById("lbImg");
-    var cap = document.getElementById("lbCaption");
+  /* ---------------- gallery lightbox ---------------- */
+  function initLightbox() {
+    var shots = Array.prototype.slice.call(document.querySelectorAll(".shot"));
+    if (!shots.length) return;
+    var lb = document.createElement("div");
+    lb.className = "lb"; lb.setAttribute("role", "dialog"); lb.setAttribute("aria-modal", "true"); lb.setAttribute("aria-label", "Photo viewer");
+    lb.innerHTML =
+      '<button class="lb-btn lb-close" aria-label="Close viewer">✕</button>' +
+      '<img alt="">' +
+      '<div class="lb-cap"></div>' +
+      '<div class="lb-nav"><button class="lb-btn lb-prev" aria-label="Previous photo">←</button>' +
+      '<span class="lb-count"></span>' +
+      '<button class="lb-btn lb-next" aria-label="Next photo">→</button></div>';
+    document.body.appendChild(lb);
+    var img = lb.querySelector("img"), cap = lb.querySelector(".lb-cap"), count = lb.querySelector(".lb-count");
     var idx = 0, lastFocus = null;
-    var touchX = null;
 
-    function open(i, opener) {
-      idx = (i + items.length) % items.length;
-      lastFocus = opener || document.activeElement;
-      var it = items[idx];
-      img.src = it.getAttribute("data-full");
-      img.alt = it.querySelector("img").alt || "";
-      cap.textContent = it.getAttribute("data-caption") || "";
-      lb.hidden = false;
-      requestAnimationFrame(function () { lb.classList.add("open"); });
+    function show(i) {
+      idx = (i + shots.length) % shots.length;
+      var sImg = shots[idx].querySelector("img");
+      img.src = sImg.src; img.alt = sImg.alt;
+      var fc = shots[idx].querySelector("figcaption");
+      cap.textContent = fc ? fc.textContent : sImg.alt;
+      count.textContent = (idx + 1) + " / " + shots.length;
+    }
+    function open(i) {
+      lastFocus = document.activeElement;
+      show(i); lb.classList.add("open");
       document.body.style.overflow = "hidden";
-      document.getElementById("lbClose").focus();
+      lb.querySelector(".lb-close").focus();
     }
     function close() {
       lb.classList.remove("open");
       document.body.style.overflow = "";
-      setTimeout(function () { lb.hidden = true; }, 300);
-      if (lastFocus && lastFocus.focus) lastFocus.focus();
+      if (lastFocus) lastFocus.focus();
     }
-    function nav(d) { open(idx + d); }
-
-    items.forEach(function (it, i) {
-      it.addEventListener("click", function () { open(i, it); });
+    shots.forEach(function (s, i) {
+      s.addEventListener("click", function () { open(i); });
+      s.setAttribute("tabindex", "0");
+      s.setAttribute("role", "button");
+      s.setAttribute("aria-label", "View photo: " + s.querySelector("img").alt);
+      s.addEventListener("keydown", function (e) { if (e.key === "Enter") open(i); });
     });
-    document.getElementById("lbClose").addEventListener("click", close);
-    document.getElementById("lbPrev").addEventListener("click", function (e) { e.stopPropagation(); nav(-1); });
-    document.getElementById("lbNext").addEventListener("click", function (e) { e.stopPropagation(); nav(1); });
+    lb.querySelector(".lb-close").addEventListener("click", close);
+    lb.querySelector(".lb-prev").addEventListener("click", function (e) { e.stopPropagation(); show(idx - 1); });
+    lb.querySelector(".lb-next").addEventListener("click", function (e) { e.stopPropagation(); show(idx + 1); });
     lb.addEventListener("click", function (e) { if (e.target === lb) close(); });
     document.addEventListener("keydown", function (e) {
-      if (lb.hidden) return;
+      if (!lb.classList.contains("open")) return;
       if (e.key === "Escape") close();
-      if (e.key === "ArrowLeft") nav(-1);
-      if (e.key === "ArrowRight") nav(1);
+      if (e.key === "ArrowLeft") show(idx - 1);
+      if (e.key === "ArrowRight") show(idx + 1);
     });
-    // Swipe
-    lb.addEventListener("touchstart", function (e) { touchX = e.touches[0].clientX; }, { passive: true });
+    // touch swipe
+    var tx = 0;
+    lb.addEventListener("touchstart", function (e) { tx = e.changedTouches[0].clientX; }, { passive: true });
     lb.addEventListener("touchend", function (e) {
-      if (touchX === null) return;
-      var dx = e.changedTouches[0].clientX - touchX;
-      if (Math.abs(dx) > 48) nav(dx < 0 ? 1 : -1);
-      touchX = null;
+      var dx = e.changedTouches[0].clientX - tx;
+      if (Math.abs(dx) > 50) show(idx + (dx < 0 ? 1 : -1));
     }, { passive: true });
-  })();
+  }
 
-  /* ---------- 6. STICKY CALL BAR + HEADER COMPRESS ---------- */
-  (function chrome() {
-    var bar = document.getElementById("stickyCall");
-    var header = document.getElementById("siteHeader");
-    var hero = document.querySelector(".hero");
-    var ticking = false;
-
-    function update() {
-      ticking = false;
-      var y = window.scrollY || window.pageYOffset;
-      if (header) header.classList.toggle("scrolled", y > 40);
-      if (bar && hero) {
-        var past = y > hero.offsetHeight * 0.55;
-        var nearQuote = false;
-        var qf = document.getElementById("quoteForm");
-        if (qf) {
-          var r = qf.getBoundingClientRect();
-          nearQuote = r.top < window.innerHeight && r.bottom > 0;
+  /* ---------------- FAQ accordion ---------------- */
+  function initFaq() {
+    document.querySelectorAll(".faq-item").forEach(function (item) {
+      var q = item.querySelector(".faq-q"), a = item.querySelector(".faq-a");
+      q.addEventListener("click", function () {
+        var open = item.classList.contains("open");
+        document.querySelectorAll(".faq-item.open").forEach(function (o) {
+          o.classList.remove("open");
+          o.querySelector(".faq-a").style.maxHeight = "0px";
+          o.querySelector(".faq-q").setAttribute("aria-expanded", "false");
+        });
+        if (!open) {
+          item.classList.add("open");
+          a.style.maxHeight = a.scrollHeight + "px";
+          q.setAttribute("aria-expanded", "true");
         }
-        // Hide while the quote form is on screen (don't cover the CTA)
-        bar.classList.toggle("visible", past && !nearQuote);
-      }
-    }
-    window.addEventListener("scroll", function () {
-      if (!ticking) { ticking = true; requestAnimationFrame(update); }
-    }, { passive: true });
-    update();
-  })();
-
-  /* ---------- 7. MOBILE NAV ---------- */
-  (function mobileNav() {
-    var btn = document.getElementById("navToggle");
-    var nav = document.getElementById("mobileNav");
-    if (!btn || !nav) return;
-    btn.addEventListener("click", function () {
-      var open = nav.classList.toggle("open");
-      btn.setAttribute("aria-expanded", open ? "true" : "false");
-      btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-    });
-    nav.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", function () {
-        nav.classList.remove("open");
-        btn.setAttribute("aria-expanded", "false");
       });
-    });
-  })();
-
-  /* ---------- 8. MAGNETIC BUTTONS (desktop, fine pointer only) ---------- */
-  if (finePointer && !reduceMotion && hasGsap) {
-    document.querySelectorAll(".magnetic").forEach(function (btn) {
-      var xTo = gsap.quickTo(btn, "x", { duration: 0.35, ease: "power3.out" });
-      var yTo = gsap.quickTo(btn, "y", { duration: 0.35, ease: "power3.out" });
-      btn.addEventListener("mousemove", function (e) {
-        var r = btn.getBoundingClientRect();
-        var dx = e.clientX - (r.left + r.width / 2);
-        var dy = e.clientY - (r.top + r.height / 2);
-        xTo(Math.max(-14, Math.min(14, dx * 0.22)));
-        yTo(Math.max(-10, Math.min(10, dy * 0.22)));
-      });
-      btn.addEventListener("mouseleave", function () { xTo(0); yTo(0); });
     });
   }
 
-  /* ---------- 9. CURSOR GLOW (desktop, fine pointer only) ---------- */
-  if (finePointer && !reduceMotion) {
-    var glow = document.getElementById("cursorGlow");
-    if (glow) {
-      var gx = -400, gy = -400, tx = -400, ty = -400, active = false;
-      document.addEventListener("mousemove", function (e) {
-        tx = e.clientX; ty = e.clientY;
-        if (!active) { active = true; glow.classList.add("on"); raf(); }
-      }, { passive: true });
-      document.addEventListener("mouseleave", function () {
-        active = false; glow.classList.remove("on");
-      });
-      function raf() {
-        if (!active) return;
-        gx += (tx - gx) * 0.12;
-        gy += (ty - gy) * 0.12;
-        glow.style.transform = "translate(" + (gx - 170) + "px," + (gy - 170) + "px)";
-        requestAnimationFrame(raf);
-      }
-    }
-  }
-
-  /* ---------- 10. TICKER: duplicate for seamless loop ---------- */
-  (function ticker() {
-    var track = document.getElementById("tickerTrack");
-    if (!track || reduceMotion) return;
-    track.innerHTML += track.innerHTML; // two copies => -50% loop is seamless
-  })();
-
-  /* ---------- 11. QUOTE FORM: mailto with structured body ---------- */
-  (function quoteForm() {
-    var form = document.getElementById("quoteForm");
+  /* ---------------- quote form -> mailto ---------------- */
+  function initForm() {
+    var form = document.getElementById("quote-form");
     if (!form) return;
-    form.addEventListener("submit", function () {
-      // Let the mailto proceed; the structured field names carry the data.
-      // (Static site — no backend. The mailto opens the visitor's mail app
-      // addressed to 228mooreelectric@gmail.com with labeled fields.)
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var v = function (id) { return (document.getElementById(id) || {}).value || ""; };
+      var subject = "Estimate request — " + v("f-service") + " — " + v("f-name");
+      var body = [
+        "Name: " + v("f-name"),
+        "Phone: " + v("f-phone"),
+        "Service needed: " + v("f-service"),
+        "Best time to call: " + v("f-time"),
+        "",
+        "Details:",
+        v("f-details")
+      ].join("\n");
+      window.location.href = "mailto:228mooreelectric@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+      var note = document.getElementById("form-note");
+      if (note) note.textContent = "Opening your email app — or just call (228) 224-9150.";
     });
-  })();
+  }
+
+  /* ---------------- boot ---------------- */
+  document.querySelectorAll("[data-kinetic]").forEach(splitWords);
+
+  if (REDUCED) {
+    document.querySelectorAll(".k-word").forEach(function (w) { w.style.transform = "none"; });
+  }
+
+  initReveals();
+  initParallax();
+  initChrome();
+  initCursor();
+  initLightbox();
+  initFaq();
+  initForm();
+
+  // power-on runs after first paint; kinetic for subpages plays immediately
+  if (document.querySelector(".hero[data-poweron]")) {
+    window.addEventListener("load", function () { setTimeout(buildPowerOn, 350); });
+    // fallback if load already fired
+    if (document.readyState === "complete") setTimeout(buildPowerOn, 350);
+  } else {
+    playKinetic(document);
+  }
+
+  // footer year
+  var yr = document.getElementById("yr");
+  if (yr) yr.textContent = new Date().getFullYear();
 })();

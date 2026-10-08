@@ -172,23 +172,78 @@
 
   <!-- LOCAL BUSINESS STRUCTURED DATA (Siri / Maps / Google) -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Electrician",
-    "name": "Moore Electric",
-    "telephone": "+1-228-224-9150",
-    "email": "228mooreelectric@gmail.com",
-    "url": "https://dvnmr.github.io/mooreelectric.github.io/",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Biloxi",
-      "addressRegion": "MS",
-      "addressCountry": "US"
+{
+  "@context": "https://schema.org",
+  "@type": "Electrician",
+  "name": "Moore Electric",
+  "url": "https://228mooreelectric.com/reviews.html",
+  "telephone": "+12282249150",
+  "email": "228mooreelectric@gmail.com",
+  "priceRange": "$75+",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Biloxi",
+    "addressRegion": "MS",
+    "postalCode": "39530",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 30.39438,
+    "longitude": -88.89639
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Biloxi"
     },
-    "areaServed": "Mississippi Gulf Coast",
-    "sameAs": ["https://www.facebook.com/228MooreElectric"]
-  }
-  </script>
+    {
+      "@type": "City",
+      "name": "Gulfport"
+    },
+    {
+      "@type": "City",
+      "name": "Ocean Springs"
+    },
+    {
+      "@type": "City",
+      "name": "D'Iberville"
+    },
+    {
+      "@type": "City",
+      "name": "Long Beach"
+    },
+    {
+      "@type": "City",
+      "name": "Bay St. Louis"
+    }
+  ],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "description": "Planned work Monday\u2013Friday. Emergencies: call now."
+  },
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "#voice-summary"
+    ]
+  },
+  "sameAs": [
+    "https://www.facebook.com/228MooreElectric"
+  ]
+}
+</script>
+<meta name="geo.region" content="US-MS">
+<meta name="geo.placename" content="Biloxi, Mississippi">
+<meta name="geo.position" content="30.39438;-88.89639">
+<meta name="ICBM" content="30.39438, -88.89639">
 </head>
 
 <body>
@@ -219,7 +274,7 @@
   </header>
 
   <main>
-    <section class="page-hero">
+    <section class="page-hero" id="voice-summary">
       <div class="stars">★★★★★</div>
       <h1>Customer Reviews</h1>
       <p>

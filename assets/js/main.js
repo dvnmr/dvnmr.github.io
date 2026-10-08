@@ -70,7 +70,7 @@
   }
 
   /* ---------------- power-on sequence ---------------- */
-  var powerDone = false;
+  var powerDone = false; var PO_STRINGS = { vi: { label: "Bật cầu dao", skip: "Bỏ qua &rarr;", aria: "Bật cầu dao để khởi động trang", off: "TẮT", on: "BẬT" }, es: { label: "Activa el interruptor", skip: "Omitir &rarr;", aria: "Activa el interruptor para encender el sitio", off: "APAGADO", on: "ENCENDIDO" } }; var PO_DEFAULT = { label: "Flip the breaker", skip: "Skip &rarr;", aria: "Flip the breaker to power on the site", off: "OFF", on: "ON" }; function poStrings() { var l = (document.documentElement.lang || "en").toLowerCase().slice(0, 2); return PO_STRINGS[l] || PO_DEFAULT; }
   function buildPowerOn() {
     if (REDUCED || powerDone) return;
     // only run on the homepage hero
@@ -82,7 +82,7 @@
     document.body.appendChild(veil);
 
     var po = document.createElement("div");
-    po.className = "poweron";
+    po.className = "poweron"; var T = poStrings();
     po.setAttribute("role", "button");
     po.setAttribute("tabindex", "0");
     po.setAttribute("aria-label", "Flip the breaker to power on the site");
@@ -91,9 +91,9 @@
     po.removeAttribute("aria-label");
     po.innerHTML =
       '<svg class="po-bolt" viewBox="0 0 72 110" aria-hidden="true"><path d="M40 4 L14 62 L32 62 L28 106 L58 44 L38 44 Z"/></svg>' +
-      '<button class="po-flip" type="button" aria-label="Flip the breaker to power on the site"><span class="breaker" aria-hidden="true"><span class="slot"><span class="lever">OFF</span></span></span></button>' +
-      '<div class="po-label" aria-hidden="true">Flip the breaker</div>' +
-      '<button class="po-skip" type="button">Skip &rarr;</button>';
+      '<button class="po-flip" type="button" aria-label="' + T.aria + '"><span class="breaker" aria-hidden="true"><span class="slot"><span class="lever">' + T.off + '</span></span></span></button>' +
+      '<div class="po-label" aria-hidden="true">' + T.label + '</div>' +
+      '<button class="po-skip" type="button">' + T.skip + '</button>';
     document.body.appendChild(po);
     // non-blocking: overlay is click-through except its own controls;
     // the visitor can tap call links behind it immediately. No scroll lock.
@@ -107,7 +107,7 @@
       if (po.classList.contains("lit")) return;
       po.classList.add("lit");
       po.querySelector(".breaker").classList.add("on");
-      po.querySelector(".lever").textContent = "ON";
+      po.querySelector(".lever").textContent = T.on;
       // bolt draws
       if (hasGSAP) {
         gsap.to(boltPath, { strokeDashoffset: 0, duration: 0.5, ease: "power2.in" });

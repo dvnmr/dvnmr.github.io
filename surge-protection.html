@@ -1,1 +1,293 @@
-PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KPGhlYWQ+CiAgPG1ldGEgY2hhcnNldD0iVVRGLTgiIC8+CiAgPGxpbmsgcmVsPSJjYW5vbmljYWwiIGhyZWY9Imh0dHBzOi8vMjI4bW9vcmVlbGVjdHJpYy5jb20vc3VyZ2UtcHJvdGVjdGlvbi5odG1sIiAvPgogIDxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50PSJ3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MS4wIi8+CiAgPHRpdGxlPldob2xlLUhvbWUgU3VyZ2UgUHJvdGVjdGlvbiBNaXNzaXNzaXBwaSB8IE1vb3JlIEVsZWN0cmljIExMQyDigJMgQ2FsbCAoMjI4KSAyMjQtOTE1MDwvdGl0bGU+CiAgPG1ldGEgbmFtZT0iZGVzY3JpcHRpb24iIGNvbnRlbnQ9Ildob2xlLWhvbWUgc3VyZ2UgcHJvdGVjdGlvbiBpbiBNaXNzaXNzaXBwaS4gR3VhcmQgZXZlcnkgb3V0bGV0LCBhcHBsaWFuY2UgJiBIVkFDIHN5c3RlbSBmcm9tIEd1bGYgQ29hc3QgbGlnaHRuaW5nIGFuZCBwb3dlciBzdXJnZXMuIENhbGwgKDIyOCkgMjI0LTkxNTAuIiAvPgogIDxtZXRhIG5hbWU9ImtleXdvcmRzIiBjb250ZW50PSJ3aG9sZSBob21lIHN1cmdlIHByb3RlY3Rpb24gQmlsb3hpLCBzdXJnZSBwcm90ZWN0b3IgaW5zdGFsbCBHdWxmcG9ydCwgbGlnaHRuaW5nIHByb3RlY3Rpb24gTWlzc2lzc2lwcGksIFNQRCBpbnN0YWxsIEd1bGYgQ29hc3QiIC8+CiAgPGxpbmsgaHJlZj0iaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3MyP2ZhbWlseT1PcmJpdHJvbjp3Z2h0QDQwMDs3MDAmZmFtaWx5PVJvYm90bzp3Z2h0QDMwMDs0MDA7NzAwJmRpc3BsYXk9c3dhcCIgcmVsPSJzdHlsZXNoZWV0IiAvPgogIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvZm9udC1hd2Vzb21lLzYuMC4wLWJldGEzL2Nzcy9hbGwubWluLmNzcyIgaW50ZWdyaXR5PSJzaGE1MTItUGNGWmxnNHpLblJBdTNlT0FoSU05bmhwY1NnOTMzOTZYZUl5TUk3RU5JYnE5amNRN3E3T0tGU0ZMYUMwVjJyT2dmalJ2WDFzNk8ydGh0R082dld4UWc9PSIgY3Jvc3NvcmlnaW49ImFub255bW91cyIgcmVmZXJyZXJwb2xpY3k9Im5vLXJlZmVycmVyIiAvPgogIDxsaW5rIHJlbD0icHJlY29ubmVjdCIgaHJlZj0iaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbSI+CiAgPGxpbmsgcmVsPSJwcmVjb25uZWN0IiBocmVmPSJodHRwczovL2ZvbnRzLmdzdGF0aWMuY29tIiBjcm9zc29yaWdpbj4KPHNjcmlwdCB0eXBlPSJhcHBsaWNhdGlvbi9sZCtqc29uIj4KICB7CiAgICAiQGNvbnRleHQiOiAiaHR0cHM6Ly9zY2hlbWEub3JnIiwKICAgICJAdHlwZSI6ICJFbGVjdHJpY2lhbiIsCiAgICAibmFtZSI6ICJNb29yZSBFbGVjdHJpYyBMTEMiLAogICAgInRlbGVwaG9uZSI6ICIrMS0yMjgtMjI0LTkxNTAiLAogICAgImVtYWlsIjogIjIyOG1vb3JlZWxlY3RyaWNAZ21haWwuY29tIiwKICAgICJ1cmwiOiAiaHR0cHM6Ly8yMjhtb29yZWVsZWN0cmljLmNvbS9zdXJnZS1wcm90ZWN0aW9uLmh0bWwiLAogICAgImFkZHJlc3MiOiB7ICJAdHlwZSI6ICJQb3N0YWxBZGRyZXNzIiwgImFkZHJlc3NMb2NhbGl0eSI6ICJCaWxveGkiLCAiYWRkcmVzc1JlZ2lvbiI6ICJNUyIsICJhZGRyZXNzQ291bnRyeSI6ICJVUyIgfSwKICAgICJhcmVhU2VydmVkIjogWyJCaWxveGkiLCAiR3VsZnBvcnQiLCAiT2NlYW4gU3ByaW5ncyIsICJEJ0liZXJ2aWxsZSIsICJCYXkgU3QuIExvdWlzIiwgIkxvbmcgQmVhY2giLCAiTWlzc2lzc2lwcGkgR3VsZiBDb2FzdCJdLAogICAgImhhc09mZmVyQ2F0YWxvZyI6IHsgIkB0eXBlIjogIk9mZmVyQ2F0YWxvZyIsICJuYW1lIjogIlN1cmdlIFByb3RlY3Rpb24iLCAiaXRlbUxpc3RFbGVtZW50IjogW3sgIkB0eXBlIjogIk9mZmVyIiwgIml0ZW1PZmZlcmVkIjogeyAiQHR5cGUiOiAiU2VydmljZSIsICJuYW1lIjogIlN1cmdlIFByb3RlY3Rpb24iIH0gfV0gfSwKICAgICJzYW1lQXMiOiBbImh0dHBzOi8vd3d3LmZhY2Vib29rLmNvbS8yMjhNb29yZUVsZWN0cmljIl0KICB9CiAgPC9zY3JpcHQ+CiAgPHN0eWxlPgo6cm9vdCB7CiAgLS1iZy1jb2xvcjogIzBlMGUwZTsKICAtLXByaW1hcnktY29sb3I6ICMxOWM4ZmE7CiAgLS1ob3Zlci1jb2xvcjogI2ZmMDBjODsKICAtLXRleHQtY29sb3I6ICNmZmZmZmY7CiAgLS1zdWJ0ZXh0LWNvbG9yOiAjY2NjY2NjOwogIC0tdHJhbnNpdGlvbi1zcGVlZDogMC4zczsKICAtLWdvbGQ6ICNkNGFmMzc7Cn0KKiB7IG1hcmdpbjogMDsgcGFkZGluZzogMDsgYm94LXNpemluZzogYm9yZGVyLWJveDsgfQpodG1sLCBib2R5IHsgd2lkdGg6IDEwMCU7IGhlaWdodDogMTAwJTsgZm9udC1mYW1pbHk6ICdSb2JvdG8nLCBzYW5zLXNlcmlmOyBiYWNrZ3JvdW5kOiB2YXIoLS1iZy1jb2xvcik7IGNvbG9yOiB2YXIoLS10ZXh0LWNvbG9yKTsgb3ZlcmZsb3cteDogaGlkZGVuOyB9CmltZyB7IG1heC13aWR0aDogMTAwJTsgaGVpZ2h0OiBhdXRvOyBkaXNwbGF5OiBibG9jazsgfQpoMSwgaDIsIGgzLCBoNCB7IGZvbnQtZmFtaWx5OiAnT3JiaXRyb24nLCBzYW5zLXNlcmlmOyBsZXR0ZXItc3BhY2luZzogMXB4OyB9CmEgeyB0ZXh0LWRlY29yYXRpb246IG5vbmU7IGNvbG9yOiBpbmhlcml0OyBjdXJzb3I6IHBvaW50ZXI7IH0KLyogSEVBREVSICovCmhlYWRlciB7IHBvc2l0aW9uOiBmaXhlZDsgdG9wOiAwOyBsZWZ0OiAwOyB3aWR0aDogMTAwJTsgZGlzcGxheTogZmxleDsgYWxpZ24taXRlbXM6IGNlbnRlcjsganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuOyBwYWRkaW5nOiAwLjI1cmVtIDAuNXJlbTsgYmFja2dyb3VuZDogcmdiYSgxNSwxNSwxNSwwLjkpOyBiYWNrZHJvcC1maWx0ZXI6IGJsdXIoNnB4KTsgYm94LXNoYWRvdzogMCAycHggMTBweCByZ2JhKDAsMCwwLDAuNyk7IHotaW5kZXg6IDk5OTsgfQoubG9nbyB7IGRpc3BsYXk6IGZsZXg7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IGdhcDogMC41cmVtOyB9Ci5sb2dvLXRleHQgeyBmb250LWZhbWlseTogJ09yYml0cm9uJywgc2Fucy1zZXJpZjsgZm9udC1zaXplOiAxLjVyZW07IGNvbG9yOiB2YXIoLS1wcmltYXJ5LWNvbG9yKTsgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTsgfQpuYXYgeyBwb3NpdGlvbjogcmVsYXRpdmU7IH0KI21lbnUtdG9nZ2xlIHsgZGlzcGxheTogbm9uZTsgfQoubWVudS1pY29uIHsgZGlzcGxheTogbm9uZTsgZm9udC1zaXplOiAxLjhyZW07IGNvbG9yOiB2YXIoLS1wcmltYXJ5LWNvbG9yKTsgcGFkZGluZzogMC41cmVtOyBjdXJzb3I6IHBvaW50ZXI7IH0KbmF2IHVsIHsgZGlzcGxheTogZmxleDsgYWxpZ24taXRlbXM6IGNlbnRlcjsgbGlzdC1zdHlsZTogbm9uZTsgZ2FwOiAycmVtOyB9Cm5hdiB1bCBsaSBhIHsgY29sb3I6IHZhcigtLXRleHQtY29sb3IpOyBmb250LXdlaWdodDogMzAwOyBmb250LXNpemU6IDFyZW07IH0KbmF2IHVsIGxpIGE6aG92ZXIgeyBjb2xvcjogdmFyKC0tcHJpbWFyeS1jb2xvcik7IH0KLmNhbGwtYnRuIHsgZGlzcGxheTogaW5saW5lLWZsZXg7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IGdhcDogMC41cmVtOyBwYWRkaW5nOiAwLjZyZW0gMS4xcmVtOyBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1wcmltYXJ5LWNvbG9yKTsgY29sb3I6ICMwZTBlMGUgIWltcG9ydGFudDsgYm9yZGVyLXJhZGl1czogNXB4OyBmb250LXdlaWdodDogYm9sZDsgZm9udC1zaXplOiAwLjk1cmVtOyB3aGl0ZS1zcGFjZTogbm93cmFwOyB9Ci5jYWxsLWJ0bjpob3ZlciB7IGJhY2tncm91bmQtY29sb3I6ICNmZmY7IH0KLyogTUFJTiArIFBBR0UgSEVSTyAqLwptYWluIHsgcGFkZGluZy10b3A6IDgwcHg7IG1pbi1oZWlnaHQ6IDEwMHZoOyB9Ci5wYWdlLWhlcm8geyBwb3NpdGlvbjogcmVsYXRpdmU7IHdpZHRoOiAxMDAlOyBtaW4taGVpZ2h0OiA1OHZoOyBiYWNrZ3JvdW5kOiAjMGUwZTBlOyBkaXNwbGF5OiBmbGV4OyBhbGlnbi1pdGVtczogY2VudGVyOyBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjsgdGV4dC1hbGlnbjogY2VudGVyOyBwYWRkaW5nOiAzcmVtIDJyZW07IG92ZXJmbG93OiBoaWRkZW47IH0KLnBhZ2UtaGVybzo6YmVmb3JlIHsgY29udGVudDogIiI7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgaW5zZXQ6IDA7IGJhY2tncm91bmQ6IHJhZGlhbC1ncmFkaWVudCg2MDBweCAzMDBweCBhdCAxNSUgMjAlLCByZ2JhKDI1LDIwMCwyNTAsMC4xNCksIHRyYW5zcGFyZW50IDcwJSksIHJhZGlhbC1ncmFkaWVudCg3MDBweCAzNTBweCBhdCA4NSUgNzUlLCByZ2JhKDI1NSwwLDIwMCwwLjEwKSwgdHJhbnNwYXJlbnQgNzAlKTsgcG9pbnRlci1ldmVudHM6IG5vbmU7IH0KLmhlcm8taW5uZXIgeyBwb3NpdGlvbjogcmVsYXRpdmU7IHotaW5kZXg6IDE7IG1heC13aWR0aDogNzIwcHg7IG1hcmdpbjogMCBhdXRvOyB9Ci5leWVicm93IHsgZm9udC1mYW1pbHk6ICdSb2JvdG8nLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDAuOHJlbTsgbGV0dGVyLXNwYWNpbmc6IDAuMzVlbTsgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTsgY29sb3I6IHZhcigtLWdvbGQpOyBtYXJnaW4tYm90dG9tOiAxcmVtOyB9Ci5wYWdlLWhlcm8gaDEgeyBmb250LXNpemU6IDIuNHJlbTsgY29sb3I6IHZhcigtLXByaW1hcnktY29sb3IpOyB0ZXh0LXNoYWRvdzogMCAwIDEwcHggcmdiYSgyNSwyMDAsMjUwLDAuNyk7IG1hcmdpbi1ib3R0b206IDFyZW07IH0KLnBhZ2UtaGVybyBwLmxlYWQgeyBmb250LXNpemU6IDEuMTVyZW07IGNvbG9yOiB2YXIoLS1zdWJ0ZXh0LWNvbG9yKTsgbWFyZ2luLWJvdHRvbTogMS41cmVtOyBsaW5lLWhlaWdodDogMS42OyB9Ci5oZXJvLWN0YXMgeyBkaXNwbGF5OiBmbGV4OyBnYXA6IDFyZW07IGp1c3RpZnktY29udGVudDogY2VudGVyOyBmbGV4LXdyYXA6IHdyYXA7IG1hcmdpbi1ib3R0b206IDEuMjVyZW07IH0KLmN0YS1idXR0b24geyBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IHBhZGRpbmc6IDAuODVyZW0gMS43NXJlbTsgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDEzNWRlZywgIzE5YzhmYSwgIzVmZGNmZik7IGNvbG9yOiAjMGUwZTBlOyBib3JkZXItcmFkaXVzOiA1cHg7IGZvbnQtd2VpZ2h0OiBib2xkOyBmb250LXNpemU6IDEuMDVyZW07IGJveC1zaGFkb3c6IDAgNHB4IDE4cHggcmdiYSgyNSwyMDAsMjUwLDAuMzUpOyB9Ci5jdGEtYnV0dG9uOmhvdmVyIHsgYmFja2dyb3VuZDogIzBlMGUwZTsgY29sb3I6IHZhcigtLXByaW1hcnktY29sb3IpOyBib3JkZXI6IDJweCBzb2xpZCB2YXIoLS1wcmltYXJ5LWNvbG9yKTsgfQouY3RhLWJ1dHRvbi5zZWNvbmRhcnkgeyBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDsgY29sb3I6IHZhcigtLXByaW1hcnktY29sb3IpOyBib3JkZXI6IDJweCBzb2xpZCB2YXIoLS1wcmltYXJ5LWNvbG9yKTsgYm94LXNoYWRvdzogbm9uZTsgfQouY3RhLWJ1dHRvbi5zZWNvbmRhcnk6aG92ZXIgeyBiYWNrZ3JvdW5kOiB2YXIoLS1wcmltYXJ5LWNvbG9yKTsgY29sb3I6ICMwZTBlMGU7IH0KLmN0YS1jYWxsIHsgYW5pbWF0aW9uOiBjYWxsUHVsc2UgMi4ycyBlYXNlLWluLW91dCBpbmZpbml0ZTsgfQpAa2V5ZnJhbWVzIGNhbGxQdWxzZSB7IDAlLDEwMCUgeyBib3gtc2hhZG93OiAwIDAgMCAwIHJnYmEoMjUsMjAwLDI1MCwwLjU1KTsgfSA1MCUgeyBib3gtc2hhZG93OiAwIDAgMCAxNHB4IHJnYmEoMjUsMjAwLDI1MCwwKTsgfSB9Ci8qIFRSVVNUIFNUUklQICovCi50cnVzdC1zdHJpcCB7IGJhY2tncm91bmQ6IHJnYmEoMjUsMjAwLDI1MCwwLjA2KTsgYm9yZGVyLXRvcDogMXB4IHNvbGlkIHJnYmEoMjUsMjAwLDI1MCwwLjI1KTsgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkIHJnYmEoMjUsMjAwLDI1MCwwLjI1KTsgcGFkZGluZzogMnJlbSAxcmVtOyB9Ci50cnVzdC1pdGVtcyB7IG1heC13aWR0aDogMTEwMHB4OyBtYXJnaW46IDAgYXV0bzsgZGlzcGxheTogZ3JpZDsgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiByZXBlYXQoYXV0by1maXQsIG1pbm1heCgyMjBweCwxZnIpKTsgZ2FwOiAxLjVyZW07IHRleHQtYWxpZ246IGNlbnRlcjsgfQoudHJ1c3QtaXRlbSBpIHsgZm9udC1zaXplOiAxLjhyZW07IGNvbG9yOiB2YXIoLS1wcmltYXJ5LWNvbG9yKTsgbWFyZ2luLWJvdHRvbTogMC42cmVtOyB9Ci50cnVzdC1pdGVtIGgzIHsgZm9udC1zaXplOiAxcmVtOyBtYXJnaW4tYm90dG9tOiAwLjRyZW07IHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7IH0KLnRydXN0LWl0ZW0gcCB7IGZvbnQtc2l6ZTogMC45cmVtOyBjb2xvcjogdmFyKC0tc3VidGV4dC1jb2xvcik7IGZvbnQtd2VpZ2h0OiAzMDA7IH0KLyogQVJUSUNMRSAqLwouYXJ0aWNsZSB7IG1heC13aWR0aDogODIwcHg7IG1hcmdpbjogMCBhdXRvOyBwYWRkaW5nOiAzLjVyZW0gMnJlbTsgfQouYXJ0aWNsZSBoMiB7IGZvbnQtc2l6ZTogMS41cmVtOyBjb2xvcjogdmFyKC0tcHJpbWFyeS1jb2xvcik7IHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7IG1hcmdpbjogMi41cmVtIDAgMXJlbTsgfQouYXJ0aWNsZSBoMjpmaXJzdC1jaGlsZCB7IG1hcmdpbi10b3A6IDA7IH0KLmFydGljbGUgcCB7IGNvbG9yOiB2YXIoLS1zdWJ0ZXh0LWNvbG9yKTsgZm9udC13ZWlnaHQ6IDMwMDsgbGluZS1oZWlnaHQ6IDEuNzU7IG1hcmdpbi1ib3R0b206IDEuMXJlbTsgZm9udC1zaXplOiAxLjAycmVtOyB9Ci5hcnRpY2xlIHAgc3Ryb25nIHsgY29sb3I6IHZhcigtLXRleHQtY29sb3IpOyBmb250LXdlaWdodDogNzAwOyB9Ci5hcnRpY2xlIHVsIHsgY29sb3I6IHZhcigtLXN1YnRleHQtY29sb3IpOyBmb250LXdlaWdodDogMzAwOyBsaW5lLWhlaWdodDogMS43NTsgbWFyZ2luOiAwIDAgMS4xcmVtIDEuMjVyZW07IH0KLmFydGljbGUgdWwgbGkgeyBtYXJnaW4tYm90dG9tOiAwLjVyZW07IH0KLmFydGljbGUgdWwgbGkgc3Ryb25nIHsgY29sb3I6IHZhcigtLXRleHQtY29sb3IpOyB9Ci5hcnRpY2xlIGEuaW5saW5lIHsgY29sb3I6IHZhcigtLXByaW1hcnktY29sb3IpOyBmb250LXdlaWdodDogYm9sZDsgfQovKiBSRUxBVEVEICovCi5yZWxhdGVkIHsgbWF4LXdpZHRoOiAxMTAwcHg7IG1hcmdpbjogMCBhdXRvOyBwYWRkaW5nOiAxcmVtIDJyZW0gMy41cmVtOyB9Ci5yZWxhdGVkIGgyIHsgZm9udC1zaXplOiAxLjZyZW07IGNvbG9yOiB2YXIoLS1wcmltYXJ5LWNvbG9yKTsgdGV4dC1hbGlnbjogY2VudGVyOyB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlOyBtYXJnaW4tYm90dG9tOiAxLjc1cmVtOyB9Ci5yZWxhdGVkLWdyaWQgeyBkaXNwbGF5OiBncmlkOyBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IHJlcGVhdChhdXRvLWZpdCwgbWlubWF4KDI0MHB4LDFmcikpOyBnYXA6IDEuNXJlbTsgfQoucmVsYXRlZC1jYXJkIHsgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDE0NWRlZywgcmdiYSgwLDAsMCwwLjgpLCByZ2JhKDIwLDIwLDIwLDAuNikpOyBib3JkZXI6IDFweCBzb2xpZCByZ2JhKDI1LDIwMCwyNTAsMC4xOCk7IGJvcmRlci1yYWRpdXM6IDEwcHg7IHBhZGRpbmc6IDEuNzVyZW07IGRpc3BsYXk6IGJsb2NrOyB9Ci5yZWxhdGVkLWNhcmQ6aG92ZXIgeyBib3JkZXItY29sb3I6IHJnYmEoMjUsMjAwLDI1MCwwLjU1KTsgYm94LXNoYWRvdzogMCAwIDIwcHggcmdiYSgyNSwyMDAsMjUwLDAuMyk7IH0KLnJlbGF0ZWQtY2FyZCBoMyB7IGNvbG9yOiB2YXIoLS1wcmltYXJ5LWNvbG9yKTsgZm9udC1zaXplOiAxLjA1cmVtOyB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlOyBtYXJnaW4tYm90dG9tOiAwLjZyZW07IH0KLnJlbGF0ZWQtY2FyZCBwIHsgY29sb3I6IHZhcigtLXN1YnRleHQtY29sb3IpOyBmb250LXdlaWdodDogMzAwOyBmb250LXNpemU6IDAuOTJyZW07IGxpbmUtaGVpZ2h0OiAxLjU7IH0KLyogUkVWSUVXIEJBTkQgKi8KLnJldmlldy1iYW5kIHsgdGV4dC1hbGlnbjogY2VudGVyOyBwYWRkaW5nOiAzcmVtIDEuNXJlbTsgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDE0NWRlZywgcmdiYSgyNSwyMDAsMjUwLDAuMTApLCByZ2JhKDAsMCwwLDAuNCkpOyBib3JkZXItdG9wOiAxcHggc29saWQgcmdiYSgyNSwyMDAsMjUwLDAuMjUpOyBib3JkZXItYm90dG9tOiAxcHggc29saWQgcmdiYSgyNSwyMDAsMjUwLDAuMjUpOyB9Ci5yZXZpZXctYmFuZCAuc3RhcnMgeyBjb2xvcjogdmFyKC0tcHJpbWFyeS1jb2xvcik7IGZvbnQtc2l6ZTogMS4zcmVtOyBsZXR0ZXItc3BhY2luZzogMC4zcmVtOyBtYXJnaW4tYm90dG9tOiAxcmVtOyB9Ci5yZXZpZXctYmFuZCBibG9ja3F1b3RlIHsgbWF4LXdpZHRoOiA2NDBweDsgbWFyZ2luOiAwIGF1dG8gMXJlbTsgZm9udC1zdHlsZTogaXRhbGljOyBmb250LXdlaWdodDogMzAwOyBsaW5lLWhlaWdodDogMS43OyBjb2xvcjogdmFyKC0tdGV4dC1jb2xvcik7IH0KLnJldmlldy1iYW5kIC5yZXZpZXdlciB7IGNvbG9yOiB2YXIoLS1wcmltYXJ5LWNvbG9yKTsgZm9udC13ZWlnaHQ6IGJvbGQ7IH0KLyogUVVPVEUgRk9STSAqLwoucXVvdGUtc2VjdGlvbiB7IG1heC13aWR0aDogNjQwcHg7IG1hcmdpbjogMCBhdXRvOyBwYWRkaW5nOiA0cmVtIDJyZW07IHRleHQtYWxpZ246IGNlbnRlcjsgfQoucXVvdGUtc2VjdGlvbiBoMiB7IGZvbnQtc2l6ZTogMnJlbTsgY29sb3I6IHZhcigtLXByaW1hcnktY29sb3IpOyBtYXJnaW4tYm90dG9tOiAwLjc1cmVtOyB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlOyB9Ci5xdW90ZS1zZWN0aW9uIC5zZWN0aW9uLXN1YiB7IGNvbG9yOiB2YXIoLS1zdWJ0ZXh0LWNvbG9yKTsgZm9udC13ZWlnaHQ6IDMwMDsgbWFyZ2luLWJvdHRvbTogMnJlbTsgfQoucXVvdGUtZm9ybSB7IGRpc3BsYXk6IGZsZXg7IGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47IGdhcDogMXJlbTsgdGV4dC1hbGlnbjogbGVmdDsgfQoucXVvdGUtZm9ybSBsYWJlbCB7IGZvbnQtc2l6ZTogMC44NXJlbTsgY29sb3I6IHZhcigtLXN1YnRleHQtY29sb3IpOyB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlOyBsZXR0ZXItc3BhY2luZzogMC4xZW07IH0KLnF1b3RlLWZvcm0gaW5wdXQsIC5xdW90ZS1mb3JtIHRleHRhcmVhIHsgd2lkdGg6IDEwMCU7IHBhZGRpbmc6IDAuODVyZW0gMXJlbTsgYm9yZGVyLXJhZGl1czogNnB4OyBib3JkZXI6IDFweCBzb2xpZCByZ2JhKDI1LDIwMCwyNTAsMC4zKTsgYmFja2dyb3VuZDogcmdiYSgwLDAsMCwwLjYpOyBjb2xvcjogI2ZmZjsgZm9udC1mYW1pbHk6ICdSb2JvdG8nLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDFyZW07IH0KLnF1b3RlLWZvcm0gaW5wdXQ6Zm9jdXMsIC5xdW90ZS1mb3JtIHRleHRhcmVhOmZvY3VzIHsgb3V0bGluZTogbm9uZTsgYm9yZGVyLWNvbG9yOiB2YXIoLS1wcmltYXJ5LWNvbG9yKTsgYm94LXNoYWRvdzogMCAwIDEycHggcmdiYSgyNSwyMDAsMjUwLDAuMzUpOyB9Ci5xdW90ZS1mb3JtIHRleHRhcmVhIHsgbWluLWhlaWdodDogMTIwcHg7IHJlc2l6ZTogdmVydGljYWw7IH0KLnF1b3RlLWZvcm0gYnV0dG9uIHsgcGFkZGluZzogMXJlbTsgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDEzNWRlZywgIzE5YzhmYSwgIzVmZGNmZik7IGNvbG9yOiAjMGUwZTBlOyBib3JkZXI6IG5vbmU7IGJvcmRlci1yYWRpdXM6IDZweDsgZm9udC13ZWlnaHQ6IGJvbGQ7IGZvbnQtc2l6ZTogMS4xcmVtOyBjdXJzb3I6IHBvaW50ZXI7IH0KLnF1b3RlLWZvcm0gYnV0dG9uOmhvdmVyIHsgdHJhbnNmb3JtOiBzY2FsZSgxLjAyKTsgfQoucXVvdGUtYWx0IHsgbWFyZ2luLXRvcDogMS4yNXJlbTsgY29sb3I6IHZhcigtLXN1YnRleHQtY29sb3IpOyBmb250LXdlaWdodDogMzAwOyB9Ci5xdW90ZS1hbHQgYSB7IGNvbG9yOiB2YXIoLS1wcmltYXJ5LWNvbG9yKTsgZm9udC13ZWlnaHQ6IGJvbGQ7IH0KLyogRk9PVEVSICovCmZvb3RlciB7IGJhY2tncm91bmQ6IHJnYmEoMTUsMTUsMTUsMC45KTsgcGFkZGluZzogMi41cmVtIDJyZW07IHRleHQtYWxpZ246IGNlbnRlcjsgY29sb3I6ICM4ODg7IH0KZm9vdGVyIC5mb290ZXItcGhvbmUgeyBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IGZvbnQtZmFtaWx5OiAnT3JiaXRyb24nLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDEuNHJlbTsgY29sb3I6IHZhcigtLXByaW1hcnktY29sb3IpOyBtYXJnaW4tYm90dG9tOiAxcmVtOyB9CmZvb3RlciAuZm9vdGVyLW5hdiB7IG1hcmdpbjogMXJlbSAwOyB9CmZvb3RlciBhIHsgY29sb3I6IHZhcigtLXByaW1hcnktY29sb3IpOyB9CmZvb3RlciBhOmhvdmVyIHsgY29sb3I6ICNmZmY7IH0KZm9vdGVyIC5mb290ZXItZmluZSB7IGZvbnQtc2l6ZTogMC44NXJlbTsgbWFyZ2luLXRvcDogMXJlbTsgfQovKiBTVElDS1kgTU9CSUxFIENBTEwgQkFSICovCi5zdGlja3ktY2FsbC1iYXIgeyBkaXNwbGF5OiBub25lOyBwb3NpdGlvbjogZml4ZWQ7IGJvdHRvbTogMDsgbGVmdDogMDsgd2lkdGg6IDEwMCU7IHotaW5kZXg6IDk5OTk5ODsgYmFja2dyb3VuZDogcmdiYSgxNSwxNSwxNSwwLjk2KTsgYm9yZGVyLXRvcDogMnB4IHNvbGlkIHZhcigtLXByaW1hcnktY29sb3IpOyBwYWRkaW5nOiAwLjZyZW0gMXJlbSBjYWxjKDAuNnJlbSArIGVudihzYWZlLWFyZWEtaW5zZXQtYm90dG9tKSk7IH0KLnN0aWNreS1jYWxsLWJhciBhIHsgZGlzcGxheTogZmxleDsgYWxpZ24taXRlbXM6IGNlbnRlcjsganVzdGlmeS1jb250ZW50OiBjZW50ZXI7IGdhcDogMC42cmVtOyBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1wcmltYXJ5LWNvbG9yKTsgY29sb3I6ICMwZTBlMGU7IGZvbnQtd2VpZ2h0OiBib2xkOyBmb250LXNpemU6IDEuMXJlbTsgcGFkZGluZzogMC44cmVtOyBib3JkZXItcmFkaXVzOiA4cHg7IH0KQG1lZGlhIChtYXgtd2lkdGg6IDc2OHB4KSB7CiAgLm1lbnUtaWNvbiB7IGRpc3BsYXk6IGJsb2NrOyB9CiAgbmF2IHVsIHsgcG9zaXRpb246IGFic29sdXRlOyB0b3A6IDEwMCU7IHJpZ2h0OiAwOyBiYWNrZ3JvdW5kOiByZ2JhKDE1LDE1LDE1LDAuOTgpOyB3aWR0aDogMjAwcHg7IGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47IGFsaWduLWl0ZW1zOiBmbGV4LXN0YXJ0OyBnYXA6IDEuNXJlbTsgcGFkZGluZzogMS41cmVtOyB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoMTAwJSk7IHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjNzIGVhc2U7IHotaW5kZXg6IDk5OTk7IH0KICAjbWVudS10b2dnbGU6Y2hlY2tlZCB+IG5hdiB1bCB7IHRyYW5zZm9ybTogdHJhbnNsYXRlWCgwKTsgfQogIC5jYWxsLWJ0biAuY2FsbC1idG4tdGV4dCB7IGRpc3BsYXk6IG5vbmU7IH0KICAucGFnZS1oZXJvIGgxIHsgZm9udC1zaXplOiAxLjhyZW07IH0KICAuc3RpY2t5LWNhbGwtYmFyIHsgZGlzcGxheTogYmxvY2s7IH0KICBib2R5IHsgcGFkZGluZy1ib3R0b206IDc2cHg7IH0KICAubG9nby10ZXh0IHsgZm9udC1zaXplOiAxLjJyZW07IH0KfQoKICA8L3N0eWxlPgo8L2hlYWQ+Cjxib2R5PgogIDxoZWFkZXI+CiAgICA8ZGl2IGNsYXNzPSJsb2dvIj4KICAgICAgPGRpdiBjbGFzcz0ibG9nby10ZXh0Ij5Nb29yZSBFbGVjdHJpYzwvZGl2PgogICAgPC9kaXY+CiAgICA8aW5wdXQgdHlwZT0iY2hlY2tib3giIGlkPSJtZW51LXRvZ2dsZSIgLz4KICAgIDxsYWJlbCBmb3I9Im1lbnUtdG9nZ2xlIiBjbGFzcz0ibWVudS1pY29uIj48aSBjbGFzcz0iZmEtc29saWQgZmEtYmFycyI+PC9pPjwvbGFiZWw+CiAgICA8bmF2PgogICAgICA8dWw+CiAgICAgICAgPGxpPjxhIGhyZWY9ImluZGV4Lmh0bWwiPkhvbWU8L2E+PC9saT4KICAgICAgICA8bGk+PGEgaHJlZj0iaW5kZXguaHRtbCNzZXJ2aWNlcyI+U2VydmljZXM8L2E+PC9saT4KICAgICAgICA8bGk+PGEgaHJlZj0iaW5kZXguaHRtbCNnYWxsZXJ5Ij5Xb3JrPC9hPjwvbGk+CiAgICAgICAgPGxpPjxhIGhyZWY9ImluZGV4Lmh0bWwjcmV2aWV3cyI+UmV2aWV3czwvYT48L2xpPgogICAgICAgIDxsaT48YSBocmVmPSIjcXVvdGUiPkZyZWUgUXVvdGU8L2E+PC9saT4KICAgICAgICA8bGk+PGEgaHJlZj0idGVsOisxMjI4MjI0OTE1MCIgY2xhc3M9ImNhbGwtYnRuIj48aSBjbGFzcz0iZmEtc29saWQgZmEtcGhvbmUiPjwvaT48c3BhbiBjbGFzcz0iY2FsbC1idG4tdGV4dCI+KDIyOCkgMjI0LTkxNTA8L3NwYW4+PC9hPjwvbGk+CiAgICAgIDwvdWw+CiAgICA8L25hdj4KICA8L2hlYWRlcj4KICA8bWFpbj4KICAgIDxzZWN0aW9uIGNsYXNzPSJwYWdlLWhlcm8iPgogICAgICA8ZGl2IGNsYXNzPSJoZXJvLWlubmVyIj4KICAgICAgICA8ZGl2IGNsYXNzPSJleWVicm93Ij5NaXNzaXNzaXBwaSBHdWxmIENvYXN0PC9kaXY+CiAgICAgICAgPGgxPldob2xlLUhvbWUgU3VyZ2UgUHJvdGVjdGlvbiBpbiBNaXNzaXNzaXBwaTwvaDE+CiAgICAgICAgPHAgY2xhc3M9ImxlYWQiPk9uZSBnb29kIGxpZ2h0bmluZyBzdHJpa2UgbmVhciB5b3VyIGhvdXNlIGNhbiBmcnkgeW91ciBIVkFDIGNvbnRyb2wgYm9hcmQsIHlvdXIgZnJpZGdlLCB5b3VyIFRWcywgYW5kIHlvdXIgZ2FyYWdlIGRvb3Igb3BlbmVyIOKAlCBhbGwgaW4gdGhlIHNhbWUgc2Vjb25kLiBBIHdob2xlLWhvbWUgc3VyZ2UgcHJvdGVjdG9yIG1vdW50ZWQgYXQgeW91ciBwYW5lbCBjbGFtcHMgdGhhdCBzcGlrZSBiZWZvcmUgaXQgZXZlciByZWFjaGVzIHlvdXIgb3V0bGV0cy4gT25lIGRldmljZSwgZXZlcnkgY2lyY3VpdCwgdG90YWwgcGVhY2Ugb2YgbWluZC48L3A+CiAgICAgICAgPGRpdiBjbGFzcz0iaGVyby1jdGFzIj4KICAgICAgICAgIDxhIGhyZWY9InRlbDorMTIyODIyNDkxNTAiIGNsYXNzPSJjdGEtYnV0dG9uIGN0YS1jYWxsIj48aSBjbGFzcz0iZmEtc29saWQgZmEtcGhvbmUiPjwvaT4gQ2FsbCAoMjI4KSAyMjQtOTE1MDwvYT4KICAgICAgICAgIDxhIGhyZWY9IiNxdW90ZSIgY2xhc3M9ImN0YS1idXR0b24gc2Vjb25kYXJ5Ij5GcmVlIFF1b3RlPC9hPgogICAgICAgIDwvZGl2PgogICAgICA8L2Rpdj4KICAgIDwvc2VjdGlvbj4KICAgIDxzZWN0aW9uIGNsYXNzPSJ0cnVzdC1zdHJpcCI+CiAgICAgIDxkaXYgY2xhc3M9InRydXN0LWl0ZW1zIj4KICAgICAgICA8ZGl2IGNsYXNzPSJ0cnVzdC1pdGVtIj48aSBjbGFzcz0iZmEtc29saWQgZmEtaG91c2UtY2hpbW5leSI+PC9pPjxoMz5SZXNpZGVudGlhbCBTcGVjaWFsaXN0PC9oMz48cD5Ib21lcyBhcmUgdGhlIHdob2xlIGJ1c2luZXNzIOKAlCBub3QgYSBzaWRlIGpvYi48L3A+PC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0idHJ1c3QtaXRlbSI+PGkgY2xhc3M9ImZhLXNvbGlkIGZhLWNsaXBib2FyZC1jaGVjayI+PC9pPjxoMz5GcmVlIEluc3BlY3Rpb25zPC9oMz48cD5Ob3Qgc3VyZSBhYm91dCB5b3VyIHdpcmluZz8gR2V0IGEgcHJvIGFzc2Vzc21lbnQgYXQgbm8gY29zdC48L3A+PC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0idHJ1c3QtaXRlbSI+PGkgY2xhc3M9ImZhLXNvbGlkIGZhLWxvY2F0aW9uLWRvdCI+PC9pPjxoMz5Mb2NhbGx5IE93bmVkPC9oMz48cD5CYXNlZCBpbiBCaWxveGksIE1TLiBZb3VyIG5laWdoYm9yLCBub3QgYSBjYWxsIGNlbnRlci48L3A+PC9kaXY+CiAgICAgIDwvZGl2PgogICAgPC9zZWN0aW9uPgogICAgPGFydGljbGUgY2xhc3M9ImFydGljbGUiPgo8aDI+TGlnaHRuaW5nIGxpdmVzIGhlcmU8L2gyPgo8cD5Tb3V0aCBNaXNzaXNzaXBwaSBpcyBvbmUgb2YgdGhlIG1vc3QgbGlnaHRuaW5nLWFjdGl2ZSByZWdpb25zIGluIHRoZSBjb3VudHJ5LCBhbmQgc3VtbWVyIHRodW5kZXJzdG9ybSBzZWFzb24gcnVucyBmb3IgbW9udGhzLiBCdXQgbGlnaHRuaW5nIGlzbid0IHRoZSBvbmx5IHRocmVhdCDigJQgdXRpbGl0eSBzd2l0Y2hpbmcsIGRvd25lZCBsaW5lcyBiZWluZyByZS1lbmVyZ2l6ZWQsIGFuZCBldmVuIHlvdXIgb3duIEFDIGNvbXByZXNzb3IgY3ljbGluZyBjYW4gc2VuZCBzcGlrZXMgdGhyb3VnaCB5b3VyIHdpcmluZy48L3A+CjxwPk1vc3QgaG9tZW93bmVycyBkb24ndCB0aGluayBhYm91dCBzdXJnZXMgdW50aWwgdGhlICQ0MDAgSFZBQyBib2FyZCBkaWVzIHRoZSB3ZWVrIGFmdGVyIGEgc3Rvcm0uIEJ5IHRoZW4gdGhlIGRhbWFnZSBpcyBkb25lIGFjcm9zcyBoYWxmIHRoZSBob3VzZS4gUHJvdGVjdGlvbiBpcyBjaGVhcC4gUmVwbGFjZW1lbnQgaXNuJ3QuPC9wPgo8aDI+SG93IHdob2xlLWhvbWUgcHJvdGVjdGlvbiB3b3JrczwvaDI+CjxwPkEgVHlwZSAxIG9yIFR5cGUgMiBzdXJnZSBwcm90ZWN0aXZlIGRldmljZSAoU1BEKSBtb3VudHMgcmlnaHQgYXQgeW91ciBlbGVjdHJpY2FsIHBhbmVsIOKAlCB0aGUgc2luZ2xlIGNob2tlIHBvaW50IGV2ZXJ5IGNpcmN1aXQgaW4geW91ciBob21lIHBhc3NlcyB0aHJvdWdoLiBXaGVuIHZvbHRhZ2Ugc3Bpa2VzIGFib3ZlIHNhZmUgbGV2ZWxzLCB0aGUgU1BEIHNodW50cyB0aGUgZXhjZXNzIHRvIGdyb3VuZCBpbiBuYW5vc2Vjb25kcywgY2xhbXBpbmcgdGhlIHN1cmdlIGJlZm9yZSBpdCByZWFjaGVzIHlvdXIgb3V0bGV0cy48L3A+CjxwPlRoaW5rIG9mIGl0IGxpa2UgYSBib3VuY2VyIGF0IHRoZSBmcm9udCBkb29yOiBub3JtYWwgcG93ZXIgd2Fsa3MgcmlnaHQgaW4sIGEgNiwwMDAtdm9sdCBzcGlrZSBnZXRzIHRocm93biB0byB0aGUgY3VyYi4gVGhlIGJlc3QgdW5pdHMgaGF2ZSBpbmRpY2F0b3IgbGlnaHRzIHNvIHlvdSBjYW4gc2VlIGF0IGEgZ2xhbmNlIHRoZXkncmUgc3RpbGwgcHJvdGVjdGluZyB5b3Ug4oCUIGFuZCB3ZSBjaGVjayB0aGVtIG9uIGV2ZXJ5IHNlcnZpY2UgdmlzaXQuPC9wPgo8aDI+V2hhdCBpdCBhY3R1YWxseSBwcm90ZWN0czwvaDI+CjxwPkV2ZXJ5dGhpbmcgd2l0aCBhIGNpcmN1aXQgYm9hcmQg4oCUIHdoaWNoIGluIGEgbW9kZXJuIGhvbWUgaXMgbmVhcmx5IGV2ZXJ5dGhpbmc6PC9wPgo8dWw+CjxsaT48c3Ryb25nPkhWQUMgc3lzdGVtczwvc3Ryb25nPiDigJQgY29udHJvbCBib2FyZHMgcnVuICQzMDDigJM2MDAgcGx1cyB0aGUgc2VydmljZSBjYWxsLjwvbGk+CjxsaT48c3Ryb25nPlJlZnJpZ2VyYXRvcnMsIHdhc2hlcnMsIGRyeWVyczwvc3Ryb25nPiDigJQgYXBwbGlhbmNlIGJvYXJkcyBhcmUgc3VyZ2UgY2FuZHkuPC9saT4KPGxpPjxzdHJvbmc+VFZzLCBjb21wdXRlcnMsIHJvdXRlcnM8L3N0cm9uZz4g4oCUIHRoZSBvYnZpb3VzIG9uZXMsIGFuZCB0aGUgZXhwZW5zaXZlIG9uZXMuPC9saT4KPGxpPjxzdHJvbmc+R2FyYWdlIGRvb3Igb3BlbmVycywgc21hcnQgdGhlcm1vc3RhdHMsIGRvb3JiZWxsczwvc3Ryb25nPiDigJQgdGhlIHN0dWZmIHlvdSBmb3JnZXQgdW50aWwgaXQgZGllcy48L2xpPgo8bGk+PHN0cm9uZz5FViBjaGFyZ2Vyczwvc3Ryb25nPiDigJQgYSAkNTAwKyB3YWxsIHVuaXQgeW91IHJlYWxseSBkb24ndCB3YW50IHRvIHJlcGxhY2UuPC9saT4KPC91bD4KPHA+QSBwbHVnLWluIHBvd2VyIHN0cmlwIHByb3RlY3RzIG9uZSBvdXRsZXQuIEEgd2hvbGUtaG9tZSBTUEQgcHJvdGVjdHMgPHN0cm9uZz5ldmVyeSBvdXRsZXQgaW4gdGhlIGhvdXNlPC9zdHJvbmc+IOKAlCBpbmNsdWRpbmcgdGhlIGhhcmR3aXJlZCBzdHVmZiBubyBzdHJpcCBjYW4gcmVhY2guPC9wPgo8aDI+T25lIGRldmljZSwgZXZlcnkgb3V0bGV0PC9oMj4KPHA+SW5zdGFsbCB0YWtlcyB1bmRlciB0d28gaG91cnM6IHdlIG1vdW50IHRoZSBTUEQgYXQgeW91ciBwYW5lbCwgd2lyZSBpdCB0byBhIGRlZGljYXRlZCBicmVha2VyLCB2ZXJpZnkgdGhlIGdyb3VuZCBwYXRoIChjcml0aWNhbCDigJQgYSBzdXJnZSBwcm90ZWN0b3IgaXMgb25seSBhcyBnb29kIGFzIGl0cyBncm91bmQpLCBhbmQgdGVzdCB0aGUgaW5kaWNhdG9ycy4gRm9yIGxheWVyZWQgZGVmZW5zZSB3ZSBjYW4gYWRkIHBvaW50LW9mLXVzZSBwcm90ZWN0aW9uIGF0IHlvdXIgbW9zdCBzZW5zaXRpdmUgZ2VhciB0b28uPC9wPgo8cD5JZiB5b3UncmUgZ2V0dGluZyBhIDxhIGNsYXNzPSJpbmxpbmUiIGhyZWY9InBhbmVsLXVwZ3JhZGVzLmh0bWwiPnBhbmVsIHVwZ3JhZGU8L2E+IG9yIGEgPGEgY2xhc3M9ImlubGluZSIgaHJlZj0iZ2VuZXJhdG9yLWluc3RhbGwuaHRtbCI+Z2VuZXJhdG9yPC9hPiwgYWRkaW5nIHN1cmdlIHByb3RlY3Rpb24gYXQgdGhlIHNhbWUgdGltZSBpcyB0aGUgc21hcnRlc3QgbW9uZXkgeW91J2xsIHNwZW5kIOKAlCB0aGUgcGFuZWwncyBhbHJlYWR5IG9wZW4uIDxhIGNsYXNzPSJpbmxpbmUiIGhyZWY9InRlbDorMTIyODIyNDkxNTAiPkNhbGwgKDIyOCkgMjI0LTkxNTA8L2E+IGZvciBhIGZyZWUgYXNzZXNzbWVudC48L3A+CgogICAgPC9hcnRpY2xlPgogICAgPHNlY3Rpb24gY2xhc3M9InJlbGF0ZWQiPgogICAgICA8aDI+UmVsYXRlZCBTZXJ2aWNlczwvaDI+CiAgICAgIDxkaXYgY2xhc3M9InJlbGF0ZWQtZ3JpZCI+CjxhIGNsYXNzPSJyZWxhdGVkLWNhcmQiIGhyZWY9InBhbmVsLXVwZ3JhZGVzLmh0bWwiPjxoMz5QYW5lbCBVcGdyYWRlczwvaDM+PHA+TmV3IHBhbmVsPyBBZGQgc3VyZ2UgcHJvdGVjdGlvbiB3aGlsZSB3ZSdyZSBpbiB0aGVyZS48L3A+PC9hPgo8YSBjbGFzcz0icmVsYXRlZC1jYXJkIiBocmVmPSJnZW5lcmF0b3ItaW5zdGFsbC5odG1sIj48aDM+R2VuZXJhdG9yIEluc3RhbGw8L2gzPjxwPlN0b3JtIGRlZmVuc2UgaXNuJ3QgY29tcGxldGUgd2l0aG91dCBzdXJnZSBwcm90ZWN0aW9uLjwvcD48L2E+CjxhIGNsYXNzPSJyZWxhdGVkLWNhcmQiIGhyZWY9ImV2LWNoYXJnZXItaW5zdGFsbC5odG1sIj48aDM+RVYgQ2hhcmdlciBJbnN0YWxsPC9oMz48cD5Zb3VyIEVWIGNoYXJnZXIgaXMgZXhwZW5zaXZlIOKAlCBwcm90ZWN0IGl0IGZyb20gc3VyZ2VzLjwvcD48L2E+CgogICAgICA8L2Rpdj4KICAgIDwvc2VjdGlvbj4KICAgIDxzZWN0aW9uIGNsYXNzPSJyZXZpZXctYmFuZCI+CiAgICAgIDxkaXYgY2xhc3M9InN0YXJzIj7imIXimIXimIXimIXimIU8L2Rpdj4KICAgICAgPGJsb2NrcXVvdGU+IkFic29sdXRlbHkgc3RlbGxhciBqb2Igb24gb3VyIHJlc3RhdXJhbnQhIEdyZWF0IHNlcnZpY2UgcmVsaWFibGUgYW5kIGhpZ2hseSByZWNvbW1lbmRlZCEiPC9ibG9ja3F1b3RlPgogICAgICA8ZGl2IGNsYXNzPSJyZXZpZXdlciI+SGVucnkgVmFuZWdhcyDigJQgT2N0b2JlciAyMDIxPC9kaXY+CiAgICA8L3NlY3Rpb24+CiAgICA8c2VjdGlvbiBjbGFzcz0icXVvdGUtc2VjdGlvbiIgaWQ9InF1b3RlIj4KICAgICAgPGgyPkdldCBhIEZyZWUgUXVvdGU8L2gyPgogICAgICA8cCBjbGFzcz0ic2VjdGlvbi1zdWIiPlRlbGwgdXMgYWJvdXQgdGhlIGpvYiDigJQgd2UgcmVwbHkgZmFzdCwgdXN1YWxseSBzYW1lIGRheS48L3A+CiAgICAgIDxmb3JtIGNsYXNzPSJxdW90ZS1mb3JtIiBhY3Rpb249Im1haWx0bzoyMjhtb29yZWVsZWN0cmljQGdtYWlsLmNvbSIgbWV0aG9kPSJwb3N0IiBlbmN0eXBlPSJ0ZXh0L3BsYWluIj4KICAgICAgICA8bGFiZWwgZm9yPSJxLW5hbWUiPllvdXIgbmFtZTwvbGFiZWw+CiAgICAgICAgPGlucHV0IHR5cGU9InRleHQiIGlkPSJxLW5hbWUiIG5hbWU9Ik5hbWUiIHJlcXVpcmVkIHBsYWNlaG9sZGVyPSJKYW5lIFNtaXRoIiAvPgogICAgICAgIDxsYWJlbCBmb3I9InEtcGhvbmUiPlBob25lIG51bWJlcjwvbGFiZWw+CiAgICAgICAgPGlucHV0IHR5cGU9InRlbCIgaWQ9InEtcGhvbmUiIG5hbWU9IlBob25lIiByZXF1aXJlZCBwbGFjZWhvbGRlcj0iKDIyOCkgNTU1LTAxMjMiIC8+CiAgICAgICAgPGxhYmVsIGZvcj0icS1tc2ciPldoYXQgZG8geW91IG5lZWQ/PC9sYWJlbD4KICAgICAgICA8dGV4dGFyZWEgaWQ9InEtbXNnIiBuYW1lPSJNZXNzYWdlIiByZXF1aXJlZCBwbGFjZWhvbGRlcj0iZS5nLiBXaG9sZS1ob21lIHN1cmdlIHByb3RlY3RvciBpbiBEJ0liZXJ2aWxsZSI+PC90ZXh0YXJlYT4KICAgICAgICA8YnV0dG9uIHR5cGU9InN1Ym1pdCI+PGkgY2xhc3M9ImZhLXNvbGlkIGZhLXBhcGVyLXBsYW5lIj48L2k+IFJlcXVlc3QgTXkgRnJlZSBRdW90ZTwvYnV0dG9uPgogICAgICA8L2Zvcm0+CiAgICAgIDxwIGNsYXNzPSJxdW90ZS1hbHQiPlByZWZlciB0byB0YWxrPyA8YSBocmVmPSJ0ZWw6KzEyMjgyMjQ5MTUwIj5DYWxsICgyMjgpIDIyNC05MTUwPC9hPjwvcD4KICAgIDwvc2VjdGlvbj4KICA8L21haW4+CiAgPGZvb3Rlcj4KICAgIDxhIGNsYXNzPSJmb290ZXItcGhvbmUiIGhyZWY9InRlbDorMTIyODIyNDkxNTAiPigyMjgpIDIyNC05MTUwPC9hPgogICAgPGRpdiBjbGFzcz0iZm9vdGVyLW5hdiI+CiAgICAgIDxhIGhyZWY9ImluZGV4Lmh0bWwiPkhvbWU8L2E+IHwKICAgICAgPGEgaHJlZj0iaW5kZXguaHRtbCNzZXJ2aWNlcyI+U2VydmljZXM8L2E+IHwKICAgICAgPGEgaHJlZj0iaW5kZXguaHRtbCNnYWxsZXJ5Ij5Xb3JrPC9hPiB8CiAgICAgIDxhIGhyZWY9ImluZGV4Lmh0bWwjcmV2aWV3cyI+UmV2aWV3czwvYT4gfAogICAgICA8YSBocmVmPSIjcXVvdGUiPkZyZWUgUXVvdGU8L2E+CiAgICA8L2Rpdj4KICAgIDxkaXYgY2xhc3M9ImZvb3Rlci1maW5lIj4KICAgICAgPGEgaHJlZj0ibWFpbHRvOjIyOG1vb3JlZWxlY3RyaWNAZ21haWwuY29tIj4yMjhtb29yZWVsZWN0cmljQGdtYWlsLmNvbTwvYT48YnIvPjxici8+CiAgICAgICZjb3B5OyAyMDI2IE1vb3JlIEVsZWN0cmljIExMQyAmYnVsbDsgQmlsb3hpLCBNaXNzaXNzaXBwaQogICAgPC9kaXY+CiAgPC9mb290ZXI+CiAgPGRpdiBjbGFzcz0ic3RpY2t5LWNhbGwtYmFyIj4KICAgIDxhIGhyZWY9InRlbDorMTIyODIyNDkxNTAiPjxpIGNsYXNzPSJmYS1zb2xpZCBmYS1waG9uZSI+PC9pPiBUYXAgdG8gQ2FsbCBOb3c8L2E+CiAgPC9kaXY+CjwvYm9keT4KPC9odG1sPgo=
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="canonical" href="https://228mooreelectric.com/surge-protection.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Whole Home Surge Protection Biloxi MS | Moore Electric</title>
+  <meta name="description" content="Whole home surge protection in Biloxi & Gulfport MS. Protect every outlet and appliance from power surges. Call Moore Electric (228) 224-9150." />
+  <meta name="keywords" content="whole home surge protection Biloxi, surge protector install Gulfport, lightning protection Mississippi, SPD install Gulf Coast" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-PcFZlg4zKnRAu3eOAhIM9nhpcSg93396XeIyMI7ENIbq9jcQ7q7OKFSFLaC0V2rOgfjRvX1s6O2thtGO6vWxQg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Electrician",
+  "name": "Moore Electric LLC",
+  "url": "https://228mooreelectric.com/surge-protection.html",
+  "telephone": "+1-228-224-9150",
+  "email": "228mooreelectric@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Biloxi",
+    "addressRegion": "MS",
+    "postalCode": "39530",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Biloxi"
+    },
+    {
+      "@type": "City",
+      "name": "Gulfport"
+    },
+    {
+      "@type": "City",
+      "name": "Ocean Springs"
+    },
+    {
+      "@type": "City",
+      "name": "D'Iberville"
+    },
+    {
+      "@type": "City",
+      "name": "Bay St. Louis"
+    },
+    {
+      "@type": "City",
+      "name": "Long Beach"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "8",
+    "bestRating": "5"
+  },
+  "sameAs": [
+    "https://www.facebook.com/228MooreElectric"
+  ],
+  "priceRange": "$$"
+}
+  </script>
+  <style>
+:root {
+  --bg-color: #0e0e0e;
+  --primary-color: #19c8fa;
+  --hover-color: #ff00c8;
+  --text-color: #ffffff;
+  --subtext-color: #cccccc;
+  --transition-speed: 0.3s;
+  --gold: #d4af37;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 100%; height: 100%; font-family: 'Roboto', sans-serif; background: var(--bg-color); color: var(--text-color); overflow-x: hidden; }
+img { max-width: 100%; height: auto; display: block; }
+h1, h2, h3, h4 { font-family: 'Orbitron', sans-serif; letter-spacing: 1px; }
+a { text-decoration: none; color: inherit; cursor: pointer; }
+/* HEADER */
+header { position: fixed; top: 0; left: 0; width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 0.25rem 0.5rem; background: rgba(15,15,15,0.9); backdrop-filter: blur(6px); box-shadow: 0 2px 10px rgba(0,0,0,0.7); z-index: 999; }
+.logo { display: flex; align-items: center; gap: 0.5rem; }
+.logo-text { font-family: 'Orbitron', sans-serif; font-size: 1.5rem; color: var(--primary-color); text-transform: uppercase; }
+nav { position: relative; }
+#menu-toggle { display: none; }
+.menu-icon { display: none; font-size: 1.8rem; color: var(--primary-color); padding: 0.5rem; cursor: pointer; }
+nav ul { display: flex; align-items: center; list-style: none; gap: 2rem; }
+nav ul li a { color: var(--text-color); font-weight: 300; font-size: 1rem; }
+nav ul li a:hover { color: var(--primary-color); }
+.call-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.1rem; background-color: var(--primary-color); color: #0e0e0e !important; border-radius: 5px; font-weight: bold; font-size: 0.95rem; white-space: nowrap; }
+.call-btn:hover { background-color: #fff; }
+/* MAIN + PAGE HERO */
+main { padding-top: 80px; min-height: 100vh; }
+.page-hero { position: relative; width: 100%; min-height: 58vh; background: #0e0e0e; display: flex; align-items: center; justify-content: center; text-align: center; padding: 3rem 2rem; overflow: hidden; }
+.page-hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(600px 300px at 15% 20%, rgba(25,200,250,0.14), transparent 70%), radial-gradient(700px 350px at 85% 75%, rgba(255,0,200,0.10), transparent 70%); pointer-events: none; }
+.hero-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+.eyebrow { font-family: 'Roboto', sans-serif; font-size: 0.8rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+.page-hero h1 { font-size: 2.4rem; color: var(--primary-color); text-shadow: 0 0 10px rgba(25,200,250,0.7); margin-bottom: 1rem; }
+.page-hero p.lead { font-size: 1.15rem; color: var(--subtext-color); margin-bottom: 1.5rem; line-height: 1.6; }
+.hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.25rem; }
+.cta-button { display: inline-block; padding: 0.85rem 1.75rem; background: linear-gradient(135deg, #19c8fa, #5fdcff); color: #0e0e0e; border-radius: 5px; font-weight: bold; font-size: 1.05rem; box-shadow: 0 4px 18px rgba(25,200,250,0.35); }
+.cta-button:hover { background: #0e0e0e; color: var(--primary-color); border: 2px solid var(--primary-color); }
+.cta-button.secondary { background: transparent; color: var(--primary-color); border: 2px solid var(--primary-color); box-shadow: none; }
+.cta-button.secondary:hover { background: var(--primary-color); color: #0e0e0e; }
+.cta-call { animation: callPulse 2.2s ease-in-out infinite; }
+@keyframes callPulse { 0%,100% { box-shadow: 0 0 0 0 rgba(25,200,250,0.55); } 50% { box-shadow: 0 0 0 14px rgba(25,200,250,0); } }
+/* TRUST STRIP */
+.trust-strip { background: rgba(25,200,250,0.06); border-top: 1px solid rgba(25,200,250,0.25); border-bottom: 1px solid rgba(25,200,250,0.25); padding: 2rem 1rem; }
+.trust-items { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1.5rem; text-align: center; }
+.trust-item i { font-size: 1.8rem; color: var(--primary-color); margin-bottom: 0.6rem; }
+.trust-item h3 { font-size: 1rem; margin-bottom: 0.4rem; text-transform: uppercase; }
+.trust-item p { font-size: 0.9rem; color: var(--subtext-color); font-weight: 300; }
+/* ARTICLE */
+.article { max-width: 820px; margin: 0 auto; padding: 3.5rem 2rem; }
+.article h2 { font-size: 1.5rem; color: var(--primary-color); text-transform: uppercase; margin: 2.5rem 0 1rem; }
+.article h2:first-child { margin-top: 0; }
+.article p { color: var(--subtext-color); font-weight: 300; line-height: 1.75; margin-bottom: 1.1rem; font-size: 1.02rem; }
+.article p strong { color: var(--text-color); font-weight: 700; }
+.article ul { color: var(--subtext-color); font-weight: 300; line-height: 1.75; margin: 0 0 1.1rem 1.25rem; }
+.article ul li { margin-bottom: 0.5rem; }
+.article ul li strong { color: var(--text-color); }
+.article a.inline { color: var(--primary-color); font-weight: bold; }
+/* RELATED */
+.related { max-width: 1100px; margin: 0 auto; padding: 1rem 2rem 3.5rem; }
+.related h2 { font-size: 1.6rem; color: var(--primary-color); text-align: center; text-transform: uppercase; margin-bottom: 1.75rem; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1.5rem; }
+.related-card { background: linear-gradient(145deg, rgba(0,0,0,0.8), rgba(20,20,20,0.6)); border: 1px solid rgba(25,200,250,0.18); border-radius: 10px; padding: 1.75rem; display: block; }
+.related-card:hover { border-color: rgba(25,200,250,0.55); box-shadow: 0 0 20px rgba(25,200,250,0.3); }
+.related-card h3 { color: var(--primary-color); font-size: 1.05rem; text-transform: uppercase; margin-bottom: 0.6rem; }
+.related-card p { color: var(--subtext-color); font-weight: 300; font-size: 0.92rem; line-height: 1.5; }
+/* REVIEW BAND */
+.review-band { text-align: center; padding: 3rem 1.5rem; background: linear-gradient(145deg, rgba(25,200,250,0.10), rgba(0,0,0,0.4)); border-top: 1px solid rgba(25,200,250,0.25); border-bottom: 1px solid rgba(25,200,250,0.25); }
+.review-band .stars { color: var(--primary-color); font-size: 1.3rem; letter-spacing: 0.3rem; margin-bottom: 1rem; }
+.review-band blockquote { max-width: 640px; margin: 0 auto 1rem; font-style: italic; font-weight: 300; line-height: 1.7; color: var(--text-color); }
+.review-band .reviewer { color: var(--primary-color); font-weight: bold; }
+/* QUOTE FORM */
+.quote-section { max-width: 640px; margin: 0 auto; padding: 4rem 2rem; text-align: center; }
+.quote-section h2 { font-size: 2rem; color: var(--primary-color); margin-bottom: 0.75rem; text-transform: uppercase; }
+.quote-section .section-sub { color: var(--subtext-color); font-weight: 300; margin-bottom: 2rem; }
+.quote-form { display: flex; flex-direction: column; gap: 1rem; text-align: left; }
+.quote-form label { font-size: 0.85rem; color: var(--subtext-color); text-transform: uppercase; letter-spacing: 0.1em; }
+.quote-form input, .quote-form textarea { width: 100%; padding: 0.85rem 1rem; border-radius: 6px; border: 1px solid rgba(25,200,250,0.3); background: rgba(0,0,0,0.6); color: #fff; font-family: 'Roboto', sans-serif; font-size: 1rem; }
+.quote-form input:focus, .quote-form textarea:focus { outline: none; border-color: var(--primary-color); box-shadow: 0 0 12px rgba(25,200,250,0.35); }
+.quote-form textarea { min-height: 120px; resize: vertical; }
+.quote-form button { padding: 1rem; background: linear-gradient(135deg, #19c8fa, #5fdcff); color: #0e0e0e; border: none; border-radius: 6px; font-weight: bold; font-size: 1.1rem; cursor: pointer; }
+.quote-form button:hover { transform: scale(1.02); }
+.quote-alt { margin-top: 1.25rem; color: var(--subtext-color); font-weight: 300; }
+.quote-alt a { color: var(--primary-color); font-weight: bold; }
+/* FOOTER */
+footer { background: rgba(15,15,15,0.9); padding: 2.5rem 2rem; text-align: center; color: #888; }
+footer .footer-phone { display: inline-block; font-family: 'Orbitron', sans-serif; font-size: 1.4rem; color: var(--primary-color); margin-bottom: 1rem; }
+footer .footer-nav { margin: 1rem 0; }
+footer a { color: var(--primary-color); }
+footer a:hover { color: #fff; }
+footer .footer-fine { font-size: 0.85rem; margin-top: 1rem; }
+/* STICKY MOBILE CALL BAR */
+.sticky-call-bar { display: none; position: fixed; bottom: 0; left: 0; width: 100%; z-index: 999998; background: rgba(15,15,15,0.96); border-top: 2px solid var(--primary-color); padding: 0.6rem 1rem calc(0.6rem + env(safe-area-inset-bottom)); }
+.sticky-call-bar a { display: flex; align-items: center; justify-content: center; gap: 0.6rem; background-color: var(--primary-color); color: #0e0e0e; font-weight: bold; font-size: 1.1rem; padding: 0.8rem; border-radius: 8px; }
+@media (max-width: 768px) {
+  .menu-icon { display: block; }
+  nav ul { position: absolute; top: 100%; right: 0; background: rgba(15,15,15,0.98); width: 200px; flex-direction: column; align-items: flex-start; gap: 1.5rem; padding: 1.5rem; transform: translateX(100%); transition: transform 0.3s ease; z-index: 9999; }
+  #menu-toggle:checked ~ nav ul { transform: translateX(0); }
+  .call-btn .call-btn-text { display: none; }
+  .page-hero h1 { font-size: 1.8rem; }
+  .sticky-call-bar { display: block; }
+  body { padding-bottom: 76px; }
+  .logo-text { font-size: 1.2rem; }
+}
+
+  </style>
+  <!-- OPEN GRAPH / SOCIAL -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Moore Electric LLC" />
+  <meta property="og:title" content="Whole Home Surge Protection Biloxi MS | Moore Electric" />
+  <meta property="og:description" content="Whole home surge protection in Biloxi & Gulfport MS. Protect every outlet and appliance from power surges. Call Moore Electric (228) 224-9150." />
+  <meta property="og:url" content="https://228mooreelectric.com/surge-protection.html" />
+  <meta property="og:image" content="https://228mooreelectric.com/assets/images/og-logo.png" />
+  <meta property="og:locale" content="en_US" />
+  <!-- TWITTER CARD -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Whole Home Surge Protection Biloxi MS | Moore Electric" />
+  <meta name="twitter:description" content="Whole home surge protection in Biloxi & Gulfport MS. Protect every outlet and appliance from power surges. Call Moore Electric (228) 224-9150." />
+  <meta name="twitter:image" content="https://228mooreelectric.com/assets/images/og-logo.png" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <div class="logo-text">Moore Electric</div>
+    </div>
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon"><i class="fa-solid fa-bars"></i></label>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#gallery">Work</a></li>
+        <li><a href="index.html#reviews">Reviews</a></li>
+        <li><a href="#quote">Free Quote</a></li>
+        <li><a href="tel:+12282249150" class="call-btn"><i class="fa-solid fa-phone"></i><span class="call-btn-text">(228) 224-9150</span></a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="page-hero">
+      <div class="hero-inner">
+        <div class="eyebrow">Mississippi Gulf Coast</div>
+        <h1>Whole-Home Surge Protection in Mississippi</h1>
+        <p class="lead">One good lightning strike near your house can fry your HVAC control board, your fridge, your TVs, and your garage door opener — all in the same second. A whole-home surge protector mounted at your panel clamps that spike before it ever reaches your outlets. One device, every circuit, total peace of mind.</p>
+        <div class="hero-ctas">
+          <a href="tel:+12282249150" class="cta-button cta-call"><i class="fa-solid fa-phone"></i> Call (228) 224-9150</a>
+          <a href="#quote" class="cta-button secondary">Free Quote</a>
+        </div>
+      </div>
+    </section>
+    <section class="trust-strip">
+      <div class="trust-items">
+        <div class="trust-item"><i class="fa-solid fa-house-chimney"></i><h3>Residential Specialist</h3><p>Homes are the whole business — not a side job.</p></div>
+        <div class="trust-item"><i class="fa-solid fa-clipboard-check"></i><h3>Free Inspections</h3><p>Not sure about your wiring? Get a pro assessment at no cost.</p></div>
+        <div class="trust-item"><i class="fa-solid fa-location-dot"></i><h3>Locally Owned</h3><p>Based in Biloxi, MS. Your neighbor, not a call center.</p></div>
+      </div>
+    </section>
+    <article class="article">
+<h2>Lightning lives here</h2>
+<p>South Mississippi is one of the most lightning-active regions in the country, and summer thunderstorm season runs for months. But lightning isn't the only threat — utility switching, downed lines being re-energized, and even your own AC compressor cycling can send spikes through your wiring.</p>
+<p>Most homeowners don't think about surges until the $400 HVAC board dies the week after a storm. By then the damage is done across half the house. Protection is cheap. Replacement isn't.</p>
+<h2>How whole-home protection works</h2>
+<p>A Type 1 or Type 2 surge protective device (SPD) mounts right at your electrical panel — the single choke point every circuit in your home passes through. When voltage spikes above safe levels, the SPD shunts the excess to ground in nanoseconds, clamping the surge before it reaches your outlets.</p>
+<p>Think of it like a bouncer at the front door: normal power walks right in, a 6,000-volt spike gets thrown to the curb. The best units have indicator lights so you can see at a glance they're still protecting you — and we check them on every service visit.</p>
+<h2>What it actually protects</h2>
+<p>Everything with a circuit board — which in a modern home is nearly everything:</p>
+<ul>
+<li><strong>HVAC systems</strong> — control boards run $300–600 plus the service call.</li>
+<li><strong>Refrigerators, washers, dryers</strong> — appliance boards are surge candy.</li>
+<li><strong>TVs, computers, routers</strong> — the obvious ones, and the expensive ones.</li>
+<li><strong>Garage door openers, smart thermostats, doorbells</strong> — the stuff you forget until it dies.</li>
+<li><strong>EV chargers</strong> — a $500+ wall unit you really don't want to replace.</li>
+</ul>
+<p>A plug-in power strip protects one outlet. A whole-home SPD protects <strong>every outlet in the house</strong> — including the hardwired stuff no strip can reach.</p>
+<h2>One device, every outlet</h2>
+<p>Install takes under two hours: we mount the SPD at your panel, wire it to a dedicated breaker, verify the ground path (critical — a surge protector is only as good as its ground), and test the indicators. For layered defense we can add point-of-use protection at your most sensitive gear too.</p>
+<p>If you're getting a <a class="inline" href="panel-upgrades.html">panel upgrade</a> or a <a class="inline" href="generator-install.html">generator</a>, adding surge protection at the same time is the smartest money you'll spend — the panel's already open. <a class="inline" href="tel:+12282249150">Call (228) 224-9150</a> for a free assessment.</p>
+
+    </article>
+    <section class="related">
+      <h2>Related Services</h2>
+      <div class="related-grid">
+<a class="related-card" href="panel-upgrades.html"><h3>Panel Upgrades</h3><p>New panel? Add surge protection while we're in there.</p></a>
+<a class="related-card" href="generator-install.html"><h3>Generator Install</h3><p>Storm defense isn't complete without surge protection.</p></a>
+<a class="related-card" href="ev-charger-install.html"><h3>EV Charger Install</h3><p>Your EV charger is expensive — protect it from surges.</p></a>
+
+      </div>
+    </section>
+    <section class="review-band">
+      <div class="stars">★★★★★</div>
+      <blockquote>"Absolutely stellar job on our restaurant! Great service reliable and highly recommended!"</blockquote>
+      <div class="reviewer">Henry Vanegas — October 2021</div>
+    </section>
+    <section class="quote-section" id="quote">
+      <h2>Get a Free Quote</h2>
+      <p class="section-sub">Tell us about the job — we reply fast, usually same day.</p>
+      <form class="quote-form" action="mailto:228mooreelectric@gmail.com" method="post" enctype="text/plain">
+        <label for="q-name">Your name</label>
+        <input type="text" id="q-name" name="Name" required placeholder="Jane Smith" />
+        <label for="q-phone">Phone number</label>
+        <input type="tel" id="q-phone" name="Phone" required placeholder="(228) 555-0123" />
+        <label for="q-msg">What do you need?</label>
+        <textarea id="q-msg" name="Message" required placeholder="e.g. Whole-home surge protector in D'Iberville"></textarea>
+        <button type="submit"><i class="fa-solid fa-paper-plane"></i> Request My Free Quote</button>
+      </form>
+      <p class="quote-alt">Prefer to talk? <a href="tel:+12282249150">Call (228) 224-9150</a></p>
+    </section>
+  </main>
+  <footer>
+    <a class="footer-phone" href="tel:+12282249150">(228) 224-9150</a>
+    <div class="footer-nav">
+      <a href="index.html">Home</a> |
+      <a href="index.html#services">Services</a> |
+      <a href="index.html#gallery">Work</a> |
+      <a href="index.html#reviews">Reviews</a> |
+      <a href="#quote">Free Quote</a>
+    </div>
+    <div class="footer-fine">
+      <a href="mailto:228mooreelectric@gmail.com">228mooreelectric@gmail.com</a><br/><br/>
+      &copy; 2026 Moore Electric LLC &bull; Biloxi, Mississippi
+    </div>
+  </footer>
+  <div class="sticky-call-bar">
+    <a href="tel:+12282249150"><i class="fa-solid fa-phone"></i> Tap to Call Now</a>
+  </div>
+</body>
+</html>

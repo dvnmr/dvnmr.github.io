@@ -4,28 +4,9 @@
   <!-- BASIC SEO & META -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="canonical" href="https://dvnmr.github.io/mooreelectric.github.io/">
-  <meta name="theme-color" content="#0e0e0e">
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" href="assets/images/favicon-64.png" type="image/png" sizes="64x64">
-  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Moore Electric LLC">
-  <meta property="og:title" content="Moore Electric LLC – Home">
-  <meta property="og:description" content="Moore Electric LLC: Top-tier residential electrical services along the Gulf Coast. Free inspections, Tesla charger installs, and more.">
-  <meta property="og:url" content="https://dvnmr.github.io/mooreelectric.github.io/">
-  <meta property="og:image" content="https://dvnmr.github.io/mooreelectric.github.io/assets/images/og-logo.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="675">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Electrician","name":"Moore Electric LLC","url":"https://dvnmr.github.io/mooreelectric.github.io/","telephone":"+1-228-224-9150","email":"228mooreelectric@gmail.com","sameAs":["https://www.facebook.com/228MooreElectric/","https://www.homeadvisor.com/rated.MooreElectric.119830835.html"]}
-  </script>
-  <title>Moore Electric LLC – Home</title>
-  <meta name="description" content="Moore Electric LLC: Top-tier residential electrical services along the Gulf Coast. Free inspections, Tesla charger installs, and more." />
-  <meta name="keywords" content="Moore Electric, Tesla Charger, TV Mounting, Residential Electrical, Surge Protection" />
+  <title>Gulf Coast Electrician | Moore Electric LLC – Biloxi, Gulfport, Ocean Springs – Call (228) 224-9150</title>
+  <meta name="description" content="Moore Electric LLC: electrician serving Biloxi, Gulfport, Ocean Springs, D'Iberville & the MS Gulf Coast. Panel upgrades, EV chargers, troubleshooting, ceiling fans, surge protection. Call (228) 224-9150." />
+  <meta name="keywords" content="Moore Electric, electrician Biloxi, electrician Gulfport, electrician Ocean Springs, electrician D'Iberville, Mississippi Gulf Coast electrician, panel upgrade, EV charger install, ceiling fan install" />
 
   <!-- GOOGLE FONTS -->
   <link
@@ -33,7 +14,7 @@
     rel="stylesheet"
   />
 
-  <!-- FONT AWESOME (for icons, e.g. Messenger orb) -->
+  <!-- FONT AWESOME -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -42,9 +23,33 @@
     referrerpolicy="no-referrer"
   />
 
+  <!-- PRECONNECT (speed: fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <!-- CALENDLY (Pop-up scheduling) -->
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" media="print" onload="this.media='all'"/>
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+  <!-- LOCAL BUSINESS STRUCTURED DATA (Siri / Maps / Google) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Electrician",
+    "name": "Moore Electric LLC",
+    "telephone": "+1-228-224-9150",
+    "email": "228mooreelectric@gmail.com",
+    "url": "https://dvnmr.github.io/mooreelectric.github.io/",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Biloxi",
+      "addressRegion": "MS",
+      "addressCountry": "US"
+    },
+    "areaServed": ["Biloxi", "Gulfport", "Ocean Springs", "D'Iberville", "Bay St. Louis", "Long Beach", "Mississippi Gulf Coast"],
+    "sameAs": ["https://www.facebook.com/228MooreElectric"]
+  }
+  </script>
 
   <style>
     /* COLOR THEME (#19c8fa as primary) */
@@ -55,6 +60,7 @@
       --text-color: #ffffff;
       --subtext-color: #cccccc;
       --transition-speed: 0.3s;
+      --gold: #d4af37;
     }
 
     /* RESET & GLOBAL */
@@ -65,6 +71,7 @@
     }
     html, body {
       width: 100%;
+      height: 100%;
       font-family: 'Roboto', sans-serif;
       background: var(--bg-color);
       color: var(--text-color);
@@ -75,7 +82,6 @@
       height: auto;
       display: block;
     }
-    /* SCROLLBAR */
     ::-webkit-scrollbar {
       width: 8px;
       background: #1a1a1a;
@@ -103,7 +109,7 @@
      *************************************************/
     header {
       position: fixed;
-      top: 0; 
+      top: 0;
       left: 0;
       width: 100%;
       display: flex;
@@ -115,13 +121,11 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.7);
       z-index: 999;
     }
-
     .logo {
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
-    /* Insert your new MP4 or GIF path to fix the logo display */
     .logo-video {
       height: 60px;
       width: auto;
@@ -134,21 +138,14 @@
       color: var(--primary-color);
       text-transform: uppercase;
     }
-
-    /* NAVIGATION */
     nav {
       position: relative;
     }
     #menu-toggle {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-      clip: rect(0 0 0 0);
-      white-space: nowrap;
+      display: none;
     }
     .menu-icon {
-      display: none; /* for mobile <768px */
+      display: none;
       font-size: 1.8rem;
       color: var(--primary-color);
       padding: 0.5rem;
@@ -158,10 +155,9 @@
     .menu-icon:hover {
       color: var(--hover-color);
     }
-
-    /* Desktop nav */
     nav ul {
       display: flex;
+      align-items: center;
       list-style: none;
       gap: 2rem;
     }
@@ -173,6 +169,24 @@
     }
     nav ul li a:hover {
       color: var(--primary-color);
+    }
+    /* Header call button */
+    .call-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.1rem;
+      background-color: var(--primary-color);
+      color: #0e0e0e !important;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 0.95rem;
+      transition: background-color var(--transition-speed), transform var(--transition-speed);
+      white-space: nowrap;
+    }
+    .call-btn:hover {
+      background-color: #fff;
+      transform: scale(1.03);
     }
 
     /*************************************************
@@ -187,7 +201,7 @@
     .home-commercial {
       position: relative;
       width: 100%;
-      height: 100vh;
+      min-height: 100vh;
       background: #0e0e0e;
       display: flex;
       align-items: center;
@@ -197,7 +211,7 @@
     }
     .video-overlay {
       position: relative;
-      max-width: 600px;
+      max-width: 680px;
       margin: 0 auto;
     }
     .video-overlay h1 {
@@ -212,21 +226,84 @@
       color: var(--subtext-color);
       margin-bottom: 1.5rem;
     }
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
     .cta-button {
       display: inline-block;
-      padding: 0.75rem 1.5rem;
+      padding: 0.85rem 1.75rem;
       background-color: var(--primary-color);
       color: #0e0e0e;
       text-decoration: none;
-      border: 2px solid transparent;
       border-radius: 5px;
       font-weight: bold;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      font-size: 1.05rem;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
     }
     .cta-button:hover {
       background-color: #0e0e0e;
       color: var(--primary-color);
       border: 2px solid var(--primary-color);
+    }
+    .cta-button.secondary {
+      background-color: transparent;
+      color: var(--primary-color);
+      border: 2px solid var(--primary-color);
+    }
+    .cta-button.secondary:hover {
+      background-color: var(--primary-color);
+      color: #0e0e0e;
+    }
+    /* Pulsing call button draws the eye */
+    .cta-call {
+      animation: callPulse 2.2s ease-in-out infinite;
+    }
+    @keyframes callPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(25, 200, 250, 0.55); }
+      50%      { box-shadow: 0 0 0 14px rgba(25, 200, 250, 0); }
+    }
+    .micro-trust {
+      font-size: 0.95rem;
+      color: var(--subtext-color);
+    }
+    .micro-trust i {
+      color: var(--primary-color);
+      margin: 0 0.35rem;
+    }
+
+    /* TRUST STRIP */
+    .trust-strip {
+      background: rgba(25, 200, 250, 0.06);
+      border-top: 1px solid rgba(25, 200, 250, 0.25);
+      border-bottom: 1px solid rgba(25, 200, 250, 0.25);
+      padding: 2rem 1rem;
+    }
+    .trust-items {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      text-align: center;
+    }
+    .trust-item i {
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      margin-bottom: 0.6rem;
+    }
+    .trust-item h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+    }
+    .trust-item p {
+      font-size: 0.9rem;
+      color: var(--subtext-color);
+      font-weight: 300;
     }
 
     /* FEATURED SERVICES */
@@ -239,8 +316,18 @@
       font-size: 2rem;
       color: var(--primary-color);
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 0.75rem;
       text-transform: uppercase;
+    }
+    .section-sub {
+      text-align: center;
+      color: var(--subtext-color);
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+    .section-sub a {
+      color: var(--primary-color);
+      font-weight: bold;
     }
     .services-grid {
       display: grid;
@@ -289,14 +376,70 @@
       color: var(--subtext-color);
     }
 
+    /* SERVICE AREA STRIP */
+    .area-strip {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      background: rgba(0,0,0,0.5);
+    }
+    .area-strip h2 {
+      font-size: 1.6rem;
+      color: var(--primary-color);
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .area-strip p {
+      color: var(--subtext-color);
+      font-weight: 300;
+      max-width: 640px;
+      margin: 0 auto 1.25rem;
+      line-height: 1.6;
+    }
+
+    /* REVIEWS CTA BAND */
+    .reviews-band {
+      text-align: center;
+      padding: 3.5rem 1.5rem;
+      background: linear-gradient(145deg, rgba(25,200,250,0.10), rgba(0,0,0,0.4));
+      border-top: 1px solid rgba(25, 200, 250, 0.25);
+      border-bottom: 1px solid rgba(25, 200, 250, 0.25);
+    }
+    .reviews-band h2 {
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .reviews-band p {
+      color: var(--subtext-color);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+    .stars {
+      color: var(--primary-color);
+      font-size: 1.4rem;
+      letter-spacing: 0.3rem;
+      margin-bottom: 1rem;
+    }
+
     /* FOOTER */
     footer {
       background: rgba(15,15,15,0.9);
       backdrop-filter: blur(6px);
-      padding: 2rem;
+      padding: 2.5rem 2rem;
       text-align: center;
       color: #888;
-      margin-top: 3rem;
+      margin-top: 0;
+    }
+    footer .footer-phone {
+      display: inline-block;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.4rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+    footer .footer-nav {
+      margin: 1rem 0;
     }
     footer a {
       color: var(--primary-color);
@@ -305,8 +448,37 @@
     footer a:hover {
       color: #fff;
     }
+    footer .footer-fine {
+      font-size: 0.85rem;
+      margin-top: 1rem;
+    }
 
-    /* ORB ANIMATION: swirl + bob or continuous rotate */
+    /* STICKY MOBILE CALL BAR */
+    .sticky-call-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999998;
+      background: rgba(15,15,15,0.96);
+      border-top: 2px solid var(--primary-color);
+      padding: 0.6rem 1rem calc(0.6rem + env(safe-area-inset-bottom));
+    }
+    .sticky-call-bar a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background-color: var(--primary-color);
+      color: #0e0e0e;
+      font-weight: bold;
+      font-size: 1.1rem;
+      padding: 0.8rem;
+      border-radius: 8px;
+    }
+
+    /* ORB ANIMATION */
     @keyframes swirlAndBob {
       0%   { transform: rotate(0deg)   translateY(0);   }
       25%  { transform: rotate(90deg)  translateY(-3px);}
@@ -314,8 +486,6 @@
       75%  { transform: rotate(270deg) translateY(-3px);}
       100% { transform: rotate(360deg) translateY(0);   }
     }
-
-    /* SWIRLING NEON ORB FOR MESSENGER */
     .chat-float-btn {
       position: fixed;
       bottom: 20px;
@@ -339,6 +509,285 @@
     .chat-float-btn:active {
       transform: scale(0.95);
     }
+    .chat-float-btn i {
+      color: #000;
+      font-size: 1.6rem;
+      background: #fff;
+      border-radius: 50%;
+      padding: 8px;
+      transition: 0.3s ease;
+    }
+    .chat-float-btn i:hover {
+      color: var(--primary-color);
+      background: #000;
+    }
+
+    /*************************************************
+     * VIBRANT: electric energy layer (CSS-only, zero JS)
+     *************************************************/
+    .home-commercial::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(600px 300px at 15% 20%, rgba(25,200,250,0.14), transparent 70%),
+        radial-gradient(700px 350px at 85% 75%, rgba(255,0,200,0.10), transparent 70%),
+        radial-gradient(500px 500px at 50% 50%, rgba(25,200,250,0.06), transparent 70%);
+      animation: energyDrift 14s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+    @keyframes energyDrift {
+      from { transform: translate3d(-2%, -1%, 0) scale(1); }
+      to   { transform: translate3d(2%, 2%, 0) scale(1.06); }
+    }
+    .video-overlay {
+      position: relative;
+      z-index: 1;
+    }
+    .video-overlay h1 {
+      background: linear-gradient(100deg, #19c8fa 20%, #8fe6ff 45%, #19c8fa 70%);
+      background-size: 220% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      text-shadow: none;
+      filter: drop-shadow(0 0 14px rgba(25,200,250,0.45));
+      animation: sheen 6s linear infinite;
+    }
+    @keyframes sheen {
+      to { background-position: 220% center; }
+    }
+    .cta-button {
+      background: linear-gradient(135deg, #19c8fa, #5fdcff);
+      box-shadow: 0 4px 18px rgba(25,200,250,0.35);
+    }
+    .cta-button:hover {
+      box-shadow: 0 4px 28px rgba(25,200,250,0.65);
+    }
+    .service-link {
+      border: 1px solid rgba(25,200,250,0.18);
+    }
+    .service-link:hover {
+      border-color: rgba(25,200,250,0.55);
+      box-shadow: 0 0 28px rgba(25,200,250,0.35);
+    }
+    .trust-item i {
+      filter: drop-shadow(0 0 8px rgba(25,200,250,0.7));
+    }
+    .stars {
+      filter: drop-shadow(0 0 10px rgba(25,200,250,0.8));
+    }
+
+    /* CLASSIC: heritage editorial touches over the futuristic base */
+    .eyebrow {
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .heritage-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.5rem auto 0;
+      max-width: 520px;
+      color: var(--gold);
+      font-size: 0.8rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+    .heritage-line::before,
+    .heritage-line::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.7;
+    }
+
+    /*************************************************
+     * GALLERY
+     *************************************************/
+    .gallery-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    .gallery-section h2 {
+      font-size: 2rem;
+      color: var(--primary-color);
+      text-align: center;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    .gallery-item {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(25,200,250,0.18);
+      background: #111;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+    .gallery-item figcaption {
+      padding: 0.75rem 1rem;
+      font-size: 0.85rem;
+      color: var(--subtext-color);
+      font-weight: 300;
+    }
+
+    /*************************************************
+     * REVIEWS
+     *************************************************/
+    .reviews-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    .reviews-section h2 {
+      font-size: 2rem;
+      color: var(--primary-color);
+      text-align: center;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+    }
+    .reviews-summary {
+      text-align: center;
+      color: var(--subtext-color);
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+    .reviews-summary .stars {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .review-card {
+      background: linear-gradient(145deg, rgba(0,0,0,0.8), rgba(20,20,20,0.6));
+      border: 1px solid rgba(25,200,250,0.18);
+      border-radius: 10px;
+      padding: 1.75rem;
+    }
+    .review-card .stars {
+      font-size: 1rem;
+      letter-spacing: 0.2rem;
+      margin-bottom: 0.75rem;
+    }
+    .review-card blockquote {
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--text-color);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+    .review-card .reviewer {
+      color: var(--primary-color);
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+    .review-card .review-date {
+      color: var(--subtext-color);
+      font-size: 0.8rem;
+      font-weight: 300;
+    }
+
+    /*************************************************
+     * QUOTE FORM
+     *************************************************/
+    .quote-section {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .quote-section h2 {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+    }
+    .quote-section .section-sub {
+      margin-bottom: 2rem;
+    }
+    .quote-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      text-align: left;
+    }
+    .quote-form label {
+      font-size: 0.85rem;
+      color: var(--subtext-color);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .quote-form input,
+    .quote-form textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border-radius: 6px;
+      border: 1px solid rgba(25,200,250,0.3);
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem;
+    }
+    .quote-form input:focus,
+    .quote-form textarea:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 12px rgba(25,200,250,0.35);
+    }
+    .quote-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    .quote-form button {
+      padding: 1rem;
+      background: linear-gradient(135deg, #19c8fa, #5fdcff);
+      color: #0e0e0e;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .quote-form button:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 28px rgba(25,200,250,0.65);
+    }
+    .quote-alt {
+      margin-top: 1.25rem;
+      color: var(--subtext-color);
+      font-weight: 300;
+    }
+    .quote-alt a {
+      color: var(--primary-color);
+      font-weight: bold;
+    }
 
     /*************************************************
      * RESPONSIVE ADJUSTMENTS
@@ -354,6 +803,7 @@
         background: rgba(15,15,15,0.98);
         width: 200px;
         flex-direction: column;
+        align-items: flex-start;
         gap: 1.5rem;
         padding: 1.5rem;
         box-shadow: -2px 0 10px rgba(0,0,0,0.7);
@@ -364,6 +814,12 @@
       #menu-toggle:checked ~ nav ul {
         transform: translateX(0);
       }
+      .call-btn .call-btn-text {
+        display: none;
+      }
+      .call-btn {
+        padding: 0.6rem 0.8rem;
+      }
       .video-overlay h1 {
         font-size: 2rem;
       }
@@ -372,6 +828,18 @@
       }
       .logo-text {
         font-size: 1.2rem;
+      }
+      /* Sticky call bar on mobile; lift the orb above it */
+      .sticky-call-bar {
+        display: block;
+      }
+      .chat-float-btn {
+        bottom: 92px;
+        width: 56px;
+        height: 56px;
+      }
+      body {
+        padding-bottom: 76px;
       }
     }
     @media (max-width: 480px) {
@@ -382,157 +850,6 @@
         font-size: 0.95rem;
       }
     }
-    /*************************************************
-     * SITE-SHELL ADDITIONS (2026-10 refresh) — one block, keep together.
-     * Header call pill, sticky mobile call bar, SVG menu icon,
-     * keyboard-reachable menu checkbox, Messenger orb as an anchor,
-     * footer contact line, scroll-container fix, reduced motion,
-     * mobile offsets (footer padding + orb lift).
-     * Insert this block as the LAST block inside the page style element.
-     *************************************************/
-
-    /* ---- SECTION B: COMMON (every page, verbatim) ---------------------- */
-    /* Scroll container: body grows with content
-       (the html, body { height: 100% } line is removed in place, css-edits.md E1) */
-    body {
-      min-height: 100vh;
-    }
-    header {
-      gap: 0.5rem;
-    }
-    /* Menu icon: inline SVG, 44px tap target, no Font Awesome */
-    .menu-icon {
-      align-items: center;
-      justify-content: center;
-      min-width: 44px;
-      min-height: 44px;
-    }
-    .menu-icon svg {
-      width: 24px;
-      height: 24px;
-      display: block;
-    }
-    #menu-toggle:focus-visible + .menu-icon {
-      outline: 2px solid var(--primary-color);
-      outline-offset: 2px;
-    }
-    /* Header phone pill (desktop / tablet; the sticky bar covers mobile) */
-    .header-call {
-      display: inline-flex;
-      align-items: center;
-      min-height: 44px;
-      padding: 0 1.1rem;
-      border-radius: 999px;
-      background: var(--primary-color);
-      color: #0e0e0e;
-      font-weight: 700;
-      white-space: nowrap;
-      transition: background var(--transition-speed), color var(--transition-speed);
-    }
-    .header-call:hover,
-    .header-call:focus-visible {
-      background: #fff;
-      color: #0e0e0e;
-    }
-    /* Hero buttons: breathing room when two sit side by side or wrap */
-    .cta-button {
-      margin: 0.25rem 0.35rem;
-    }
-    /* Sticky mobile call bar */
-    .call-bar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 56px;
-      display: flex;
-      background: var(--bg-color);
-      border-top: 2px solid var(--primary-color);
-      z-index: 1000;
-    }
-    .call-bar a {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 44px;
-      font-weight: 700;
-    }
-    .call-bar a:first-child {
-      background: var(--primary-color);
-      color: #0e0e0e;
-    }
-    .call-bar a:last-child {
-      color: var(--primary-color);
-    }
-    /* Messenger orb is now an anchor holding an inline SVG on the white circle */
-    .chat-float-btn {
-      text-decoration: none;
-    }
-    .chat-float-btn svg {
-      width: 28px;
-      height: 28px;
-      padding: 8px;
-      box-sizing: content-box;
-      fill: #000;
-      background: #fff;
-      border-radius: 50%;
-      transition: fill 0.3s ease, background 0.3s ease;
-    }
-    .chat-float-btn:hover svg {
-      fill: var(--primary-color);
-      background: #000;
-    }
-    /* Footer contact line (above the copyright line) */
-    .footer-contact {
-      margin-bottom: 0.75rem;
-      color: var(--subtext-color);
-    }
-    /* Tablet: keep logo + nav + pill on one header row */
-    @media (min-width: 769px) and (max-width: 960px) {
-      nav ul {
-        gap: 1.25rem;
-      }
-      .logo-text {
-        font-size: 1.1rem;
-      }
-      .header-call {
-        padding: 0 0.85rem;
-        font-size: 0.95rem;
-      }
-    }
-    /* Desktop: sticky bar off */
-    @media (min-width: 768px) {
-      .call-bar {
-        display: none;
-      }
-    }
-    /* Mobile */
-    @media (max-width: 768px) {
-      .menu-icon {
-        display: flex;
-        margin-left: auto;
-      }
-      .header-call {
-        display: none;
-      }
-      .logo-video {
-        height: 48px;
-      }
-      footer {
-        padding-bottom: calc(2rem + 64px);
-      }
-      .chat-float-btn {
-        bottom: 76px;
-        z-index: 999;
-      }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .chat-float-btn {
-        animation: none;
-      }
-    }
-    /* ---- END SECTION B / END SITE-SHELL ADDITIONS ---- */
   </style>
 </head>
 
@@ -540,27 +857,29 @@
   <!-- HEADER -->
   <header>
     <div class="logo">
-      <video class="logo-video" autoplay muted loop playsinline preload="metadata" width="214" height="120" poster="assets/images/logo-poster.png" aria-hidden="true"><source src="assets/videos/logo-120.webm" type="video/webm"><source src="assets/videos/logo-120.mp4" type="video/mp4"></video>
+      <video autoplay muted loop playsinline class="logo-video">
+        <source src="assets/videos/20250117_1849_Electric%20Quantum%20Logo_simple_compose_01jhve65zdfwr9mv836zk8dxw3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
       <div class="logo-text">Moore Electric</div>
     </div>
 
-    <!-- Mobile menu toggle: input, label, nav must stay siblings in this order -->
+    <!-- Mobile menu toggle -->
     <input type="checkbox" id="menu-toggle" />
-    <label for="menu-toggle" class="menu-icon" aria-label="Open menu">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    <label for="menu-toggle" class="menu-icon">
+      <i class="fa-solid fa-bars"></i>
     </label>
 
     <nav>
       <ul>
         <li><a href="index.html" style="color: var(--primary-color);">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="reviews.html">Reviews</a></li>
-        <li><a href="team.html">Team</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Work</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#quote">Free Quote</a></li>
+        <li><a href="tel:+12282249150" class="call-btn"><i class="fa-solid fa-phone"></i><span class="call-btn-text">(228) 224-9150</span></a></li>
       </ul>
     </nav>
-
-    <a class="header-call" href="tel:+12282249150" aria-label="Call Moore Electric at 228-224-9150">Call 228-224-9150</a>
   </header>
 
   <!-- MAIN CONTENT -->
@@ -568,86 +887,260 @@
     <!-- HERO SECTION -->
     <section class="home-commercial">
       <div class="video-overlay">
-        <h1>Powering the Gulf Coast, One Home at a Time.</h1>
-        <p>Discover our range of professional electrical services tailored for your home.</p>
-        <a href="services.html" class="cta-button">Explore Services</a>
-        <a class="cta-button" href="tel:+12282249150">Call 228-224-9150</a>
+        <div class="eyebrow">Biloxi, Mississippi — IBEW Electrician</div>
+        <h1>The Gulf Coast Calls Moore Electric.</h1>
+        <p>Panel upgrades, troubleshooting, EV chargers, ceiling fans, surge protection — done right the first time. Need it today? Call now.</p>
+        <div class="hero-ctas">
+          <a href="tel:+12282249150" class="cta-button cta-call"><i class="fa-solid fa-phone"></i> Call (228) 224-9150</a>
+          <a href="services.html" class="cta-button secondary">Explore Services</a>
+        </div>
+        <div class="micro-trust">
+          <i class="fa-solid fa-location-dot"></i> Locally owned in Biloxi, MS
+          <i class="fa-solid fa-clipboard-check"></i> Free inspections
+        </div>
+        <div class="heritage-line">Classic Craft &middot; Future Ready</div>
+      </div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <section class="trust-strip">
+      <div class="trust-items">
+        <div class="trust-item">
+          <i class="fa-solid fa-house-chimney"></i>
+          <h3>Residential Specialist</h3>
+          <p>Homes are the whole business — not a side job.</p>
+        </div>
+        <div class="trust-item">
+          <i class="fa-solid fa-clipboard-check"></i>
+          <h3>Free Inspections</h3>
+          <p>Not sure about your wiring? Get a pro assessment at no cost.</p>
+        </div>
+        <div class="trust-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <h3>Locally Owned</h3>
+          <p>Based in Biloxi, MS. Your neighbor, not a call center.</p>
+        </div>
+        <div class="trust-item">
+          <i class="fa-solid fa-handshake"></i>
+          <h3>Old-School Ethic</h3>
+          <p>Show up on time, do it right the first time, stand behind it.</p>
+        </div>
       </div>
     </section>
 
     <!-- FEATURED SERVICES -->
-    <section class="content-wrapper">
-      <h2>Featured Residential Services</h2>
+    <section class="content-wrapper" id="services">
+      <h2>Electrical Services</h2>
+      <p class="section-sub">Rather talk it through? <a href="tel:+12282249150">Call (228) 224-9150</a> — straight answers, no pressure.</p>
       <div class="services-grid">
-        <!-- TODO(Dev): confirm calendly.com/228mooreelectric is still active; if not, point these CTAs at contact.html -->
         <a
-          href="https://calendly.com/228mooreelectric"
-          target="_blank"
-          rel="noopener"
+          href="#quote"
           class="service-link"
-          onclick="if(window.Calendly){Calendly.initPopupWidget({url:'https://calendly.com/228mooreelectric'});return false;}"
         >
-          <div class="service-title">TV Mounting</div>
+          <div class="service-title">Panel Upgrades</div>
           <div class="service-desc">
-            Keep your living space looking clean and professional with hidden wiring.
+            Old, undersized, or burned-out panels replaced with safe, modern service. Free assessment.
           </div>
         </a>
         <a
-          href="https://calendly.com/228mooreelectric"
-          target="_blank"
-          rel="noopener"
+          href="#quote"
           class="service-link"
-          onclick="if(window.Calendly){Calendly.initPopupWidget({url:'https://calendly.com/228mooreelectric'});return false;}"
+        >
+          <div class="service-title">Troubleshooting &amp; Repair</div>
+          <div class="service-desc">
+            Dead outlets, flickering lights, breakers that won't stay on — found and fixed fast.
+          </div>
+        </a>
+        <a
+          href="#quote"
+          class="service-link"
+        >
+          <div class="service-title">EV Charger Install</div>
+          <div class="service-desc">
+            Home EV charging installed for safe, efficient overnight charging.
+          </div>
+        </a>
+        <a
+          href="#quote"
+          class="service-link"
+        >
+          <div class="service-title">Ceiling Fans &amp; Lighting</div>
+          <div class="service-desc">
+            Fans, can lights, chandeliers, soffit and landscape lighting — installed clean.
+          </div>
+        </a>
+        <a
+          href="#quote"
+          class="service-link"
         >
           <div class="service-title">Surge Protection</div>
           <div class="service-desc">
-            Safeguard your electronics from sudden voltage spikes and power surges.
+            Whole-home surge protection that guards every outlet and appliance you own.
           </div>
         </a>
         <a
-          href="https://calendly.com/228mooreelectric"
-          target="_blank"
-          rel="noopener"
+          href="#quote"
           class="service-link"
-          onclick="if(window.Calendly){Calendly.initPopupWidget({url:'https://calendly.com/228mooreelectric'});return false;}"
         >
-          <div class="service-title">Tesla Charger Setup</div>
+          <div class="service-title">TV Mounting &amp; More</div>
           <div class="service-desc">
-            EV charger installations for safe, efficient home charging.
-          </div>
-        </a>
-        <a
-          href="https://calendly.com/228mooreelectric"
-          target="_blank"
-          rel="noopener"
-          class="service-link"
-          onclick="if(window.Calendly){Calendly.initPopupWidget({url:'https://calendly.com/228mooreelectric'});return false;}"
-        >
-          <div class="service-title">Free Inspection</div>
-          <div class="service-desc">
-            Unsure about wiring? Book a no-cost inspection for a professional assessment.
+            Wall-mounted TVs with hidden wiring, cameras, and smart-home device installs.
           </div>
         </a>
       </div>
     </section>
+
+    <!-- WORK GALLERY -->
+    <section class="gallery-section" id="gallery">
+      <h2>Real Work, Real Homes</h2>
+      <p class="section-sub">Panels, chargers, lighting, and full installs — all from jobs across the Mississippi Gulf Coast.</p>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img src="assets/gallery/photo-046.jpg" alt="Service mast install with the Moore Electric van" loading="lazy" />
+          <figcaption>Service mast install — Moore Electric on the job</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/gallery/photo-035.jpg" alt="Electrical panel installation" loading="lazy" />
+          <figcaption>Panel install — clean, labeled, code-minded</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/gallery/photo-036.jpg" alt="Burned-out breaker panel before replacement" loading="lazy" />
+          <figcaption>This burned-out panel is why inspections matter</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/gallery/photo-001.jpg" alt="Sub-panel installed at a pool house" loading="lazy" />
+          <figcaption>Sub-panel — pool house</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/gallery/photo-006.jpg" alt="EV charger installation" loading="lazy" />
+          <figcaption>EV charger install</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/gallery/photo-040.jpg" alt="New electrical service in Bay St. Louis" loading="lazy" />
+          <figcaption>New service — Bay St. Louis</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/gallery/photo-009.jpg" alt="Wall-mounted TV with hidden wiring" loading="lazy" />
+          <figcaption>Wall-mounted TV, wiring hidden</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/gallery/photo-003.jpg" alt="Chandeliers, can lighting and cameras installed" loading="lazy" />
+          <figcaption>Chandeliers, can lights &amp; cameras</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/gallery/photo-042.jpg" alt="Recessed soffit lighting" loading="lazy" />
+          <figcaption>Recessed soffit lighting</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/gallery/photo-029.jpg" alt="Ceiling fan with can lights" loading="lazy" />
+          <figcaption>Ceiling fan + can lights</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/gallery/photo-023.jpg" alt="New exterior light fixture" loading="lazy" />
+          <figcaption>New exterior lighting</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/gallery/photo-017.jpg" alt="Outdoor outlet installed on stone wall" loading="lazy" />
+          <figcaption>Outdoor outlet — stone wall</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- CUSTOMER REVIEWS -->
+    <section class="reviews-section" id="reviews">
+      <h2>Neighbors Who'd Call Again</h2>
+      <div class="reviews-summary">
+        <span class="stars">★★★★★</span>
+        100% recommend — 5 out of 5 Facebook reviews
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Devin and Jimmy did a great job installing a Mantelmount in our living room and adding an outlet in our kitchen. Professional, good communication, affordable, and showed up on time. Highly recommend Moore Electric!"</blockquote>
+          <div class="reviewer">Michael Phan</div>
+          <div class="review-date">April 2022 — Recommends</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"I'm very pleased to the job well done to my home. Devin is professional, knowledgeable and courteous. He is highly recommended!"</blockquote>
+          <div class="reviewer">Diana Grant</div>
+          <div class="review-date">November 2021 — Recommends</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Devan did an excellent job wiring decorative lights around my pool, adding an electrical box and three outdoor outlets. He was great to work with and a great value for the price charged."</blockquote>
+          <div class="reviewer">Pat Wylie</div>
+          <div class="review-date">October 2021 — Recommends</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Devin is a very knowledgeable hard working young man. He helps with many properties for me. You want honest dependability quality work. Call Devin."</blockquote>
+          <div class="reviewer">Brandon Eldridge</div>
+          <div class="review-date">Eldridge &amp; Son Investments, LLC — October 2021</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Absolutely stellar job on our restaurant! Great service reliable and highly recommended!"</blockquote>
+          <div class="reviewer">Henry Vanegas</div>
+          <div class="review-date">October 2021 — Recommends</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTE REQUEST -->
+    <section class="quote-section" id="quote">
+      <h2>Get a Free Quote</h2>
+      <p class="section-sub">Tell us about the job — we reply fast, usually same day.</p>
+      <form class="quote-form" action="mailto:228mooreelectric@gmail.com" method="post" enctype="text/plain">
+        <label for="q-name">Your name</label>
+        <input type="text" id="q-name" name="Name" required placeholder="Jane Smith" />
+        <label for="q-phone">Phone number</label>
+        <input type="tel" id="q-phone" name="Phone" required placeholder="(228) 555-0123" />
+        <label for="q-msg">What do you need?</label>
+        <textarea id="q-msg" name="Message" required placeholder="e.g. Panel upgrade in Gulfport — breakers keep tripping"></textarea>
+        <button type="submit"><i class="fa-solid fa-paper-plane"></i> Request My Free Quote</button>
+      </form>
+      <p class="quote-alt">Prefer to talk? <a href="tel:+12282249150">Call (228) 224-9150</a></p>
+    </section>
+
+    <!-- SERVICE AREA -->
+    <section class="area-strip">
+      <h2>Proudly Serving the Mississippi Gulf Coast</h2>
+      <p>Biloxi &bull; Gulfport &bull; Ocean Springs &bull; D'Iberville &bull; Bay St. Louis &bull; Long Beach. Based in Biloxi, MS — if you're close enough to call, you're close enough for us to reach.</p>
+      <a href="tel:+12282249150" class="cta-button"><i class="fa-solid fa-phone"></i> Call (228) 224-9150</a>
+    </section>
+
   </main>
 
   <!-- FOOTER -->
   <footer>
-    <p class="footer-contact">Call or text <a href="tel:+12282249150">228-224-9150</a> &bull; <a href="mailto:228mooreelectric@gmail.com">228mooreelectric@gmail.com</a></p>
-    &copy; 2025 Moore Electric LLC &bull;
-    <a href="index.html">Home</a> |
-    <a href="services.html">Services</a> |
-    <a href="reviews.html">Reviews</a> |
-    <a href="team.html">Team</a> |
-    <a href="contact.html">Contact</a>
+    <a class="footer-phone" href="tel:+12282249150">(228) 224-9150</a>
+    <div class="footer-nav">
+      <a href="index.html">Home</a> |
+      <a href="#services">Services</a> |
+      <a href="#gallery">Work</a> |
+      <a href="#reviews">Reviews</a> |
+      <a href="#quote">Free Quote</a>
+    </div>
+    <div class="footer-fine">
+      <a href="mailto:228mooreelectric@gmail.com">228mooreelectric@gmail.com</a><br/><br/>
+      IBEW electrician &middot; Classic service. Future-ready craft.<br/><br/>
+      &copy; 2026 Moore Electric LLC &bull; Biloxi, Mississippi
+    </div>
   </footer>
 
+  <!-- STICKY MOBILE CALL BAR -->
+  <div class="sticky-call-bar">
+    <a href="tel:+12282249150"><i class="fa-solid fa-phone"></i> Tap to Call Now</a>
+  </div>
+
   <!-- FLOATING MESSENGER ORB -->
-  <a class="chat-float-btn" href="https://m.me/228MooreElectric" target="_blank" rel="noopener" aria-label="Chat with Moore Electric on Messenger">
-    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#000" aria-hidden="true" focusable="false"><path d="M12 2C6.48 2 2 6.14 2 11.25c0 2.9 1.44 5.49 3.7 7.19V22l3.4-1.87c.92.26 1.9.4 2.9.4 5.52 0 10-4.14 10-9.25S17.52 2 12 2zm1.07 12.43-2.55-2.72-4.97 2.72 5.47-5.8 2.6 2.72 4.92-2.72-5.47 5.8z"/></svg>
-  </a>
-  <!-- STICKY MOBILE CALL BAR (hidden at min-width: 768px) -->
-  <div class="call-bar" aria-label="Call or text Moore Electric"><a href="tel:+12282249150">Call 228-224-9150</a><a href="sms:+12282249150">Text us</a></div>
+  <div
+    class="chat-float-btn"
+    title="Chat with Moore Electric"
+    onclick="window.open('https://m.me/228MooreElectric?ref=Facebook%20messenger','_blank')"
+  >
+    <i class="fab fa-facebook-messenger"></i>
+  </div>
 </body>
 </html>

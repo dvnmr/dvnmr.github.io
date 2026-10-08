@@ -14,6 +14,9 @@
   --volt-deep: #e0b400;
   --blue: #00c2ff;
   --red: #ff453a;
+  --sunset: #ff7a3c;
+  --amber: #f0a22e;
+  --coral: #ff6b5e;
   --line: rgba(244, 241, 232, 0.1);
   --line-strong: rgba(244, 241, 232, 0.2);
   --font-display: "Anton", "Arial Narrow", Impact, sans-serif;
@@ -129,6 +132,7 @@ section { position: relative; }
   position: absolute; inset: 0; z-index: -1;
   background:
     linear-gradient(180deg, rgba(6,6,7,0.72) 0%, rgba(6,6,7,0.25) 40%, rgba(6,6,7,0.94) 100%),
+    radial-gradient(90% 45% at 78% 108%, rgba(255,122,60,0.20), transparent 65%),
     radial-gradient(120% 60% at 50% 110%, rgba(255,212,0,0.14), transparent 60%);
 }
 .hero-kicker { margin-bottom: 18px; }
@@ -158,6 +162,15 @@ section { position: relative; }
   100% { filter: brightness(1); }
 }
 .hero.power-flash .hero-bg img { animation: powerflicker 0.55s steps(2, end); }
+
+/* ---------- topo contour motif + coast accents ---------- */
+.topo { position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden;
+  background-image: url('../images/topo.svg'); background-size: cover; background-position: center; background-repeat: no-repeat;
+  -webkit-mask-image: radial-gradient(85% 85% at 50% 42%, #000 25%, transparent 78%);
+  mask-image: radial-gradient(85% 85% at 50% 42%, #000 25%, transparent 78%); }
+.em-sunset { font-style: normal; color: var(--sunset); }
+.stroke-sunset { color: transparent; -webkit-text-stroke: 2px var(--sunset); }
+#areas { position: relative; overflow: clip; }
 
 /* ---------- ticker ---------- */
 .ticker { border-block: 1px solid var(--line); background: var(--bg-2); overflow: hidden; padding: 16px 0; }

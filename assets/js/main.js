@@ -349,6 +349,18 @@
     playKinetic(document);
   }
 
+  // SAFETY NET: force kinetic words visible after 4s if animation never completed
+  // (protects against CDN failures, JS errors, or animation stalls)
+  setTimeout(function () {
+    document.querySelectorAll(".k-word").forEach(function (w) {
+      w.style.transform = "translateY(0)";
+      w.style.transition = "transform .5s ease-out";
+      if (typeof window.gsap !== "undefined") {
+        try { gsap.set(w, { yPercent: 0, clearProps: "transform" }); } catch (e) {}
+      }
+    });
+  }, 4000);
+
   // footer year
   var yr = document.getElementById("yr");
   if (yr) yr.textContent = new Date().getFullYear();

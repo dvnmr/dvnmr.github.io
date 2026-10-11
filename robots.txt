@@ -1,3 +1,7 @@
+# Preserve the existing crawl policy. Access does not guarantee indexing.
+# This wildcard already permits search crawlers, including Googlebot,
+# OAI-SearchBot, Claude-SearchBot, PerplexityBot, and Applebot.
+# Training and other data-use controls are separate; see docs/ai-discoverability-review.md.
 User-agent: *
 Allow: /
 

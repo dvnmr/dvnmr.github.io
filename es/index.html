@@ -7,8 +7,6 @@
 <meta name="description" content="Moore Electric — electricista en Biloxi, Gulfport y la costa del Golfo de Mississippi. Actualización de paneles eléctricos, instalación de cargadores para vehículos eléctricos, generadores, protección contra sobretensiones, diagnóstico eléctrico. 4.9/5 en HomeAdvisor, 100% recomendado en Facebook. Llame (228) 224-9150.">
 <meta name="geo.region" content="US-MS">
 <meta name="geo.placename" content="Biloxi, Mississippi">
-<meta name="geo.position" content="30.39438;-88.89639">
-<meta name="ICBM" content="30.39438, -88.89639">
 <link rel="canonical" href="https://228mooreelectric.com/es/">
 <link rel="alternate" hreflang="en" href="https://228mooreelectric.com/index.html">
 <link rel="alternate" hreflang="vi" href="https://228mooreelectric.com/vi/index.html">
@@ -34,76 +32,54 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Electrician",
-  "name": "Moore Electric",
-  "url": "https://228mooreelectric.com/index.html",
-  "telephone": "+12282249150",
-  "email": "228mooreelectric@gmail.com",
-  "priceRange": "$75+",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Biloxi",
-    "addressRegion": "MS",
-    "postalCode": "39530",
-    "addressCountry": "US"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 30.39438,
-    "longitude": -88.89639
-  },
-  "areaServed": [
+  "@graph": [
     {
-      "@type": "City",
-      "name": "Biloxi"
+      "@type": "Electrician",
+      "@id": "https://228mooreelectric.com/#business",
+      "name": "Moore Electric",
+      "url": "https://228mooreelectric.com/",
+      "telephone": "+12282249150",
+      "email": "228mooreelectric@gmail.com",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Biloxi, Mississippi"
+        },
+        {
+          "@type": "City",
+          "name": "Gulfport, Mississippi"
+        },
+        {
+          "@type": "City",
+          "name": "Ocean Springs, Mississippi"
+        },
+        {
+          "@type": "City",
+          "name": "D'Iberville, Mississippi"
+        },
+        {
+          "@type": "City",
+          "name": "Long Beach, Mississippi"
+        },
+        {
+          "@type": "City",
+          "name": "Bay St. Louis, Mississippi"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/228MooreElectric"
+      ]
     },
     {
-      "@type": "City",
-      "name": "Gulfport"
-    },
-    {
-      "@type": "City",
-      "name": "Ocean Springs"
-    },
-    {
-      "@type": "City",
-      "name": "D'Iberville"
-    },
-    {
-      "@type": "City",
-      "name": "Long Beach"
-    },
-    {
-      "@type": "City",
-      "name": "Bay St. Louis"
+      "@type": "WebSite",
+      "@id": "https://228mooreelectric.com/#website",
+      "url": "https://228mooreelectric.com/",
+      "name": "Moore Electric",
+      "publisher": {
+        "@id": "https://228mooreelectric.com/#business"
+      }
     }
-  ],
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday"
-    ],
-    "description": "Trabajo programado lun–vie. Emergencias: llame ahora."
-  },
-  "speakable": {
-    "@type": "SpeakableSpecification",
-    "cssSelector": [
-      "#voice-summary"
-    ]
-  },
-  "sameAs": [
-    "https://www.facebook.com/228MooreElectric"
-  ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "8",
-    "bestRating": "5"
-  }
+  ]
 }
 </script>
 <style>
@@ -487,6 +463,7 @@
   <div class="wrap">
     <p class="eyebrow">Moore Electric — Biloxi, MS</p>
     <h2 class="display mega rv" style="margin-top:18px">MANOS A LA<br><em>OBRA.</em></h2>
+    <p class="fine">Moore Electric realiza trabajos en las propiedades de sus clientes en la costa del Golfo de Mississippi. Llame para confirmar la disponibilidad en su zona.</p>
     <div class="foot-grid">
       <div class="rv">
         <h4>Llame o escríbame</h4>
@@ -521,7 +498,7 @@
       </div>
     </div>
     <div class="foot-base">
-      <span>© <span id="yr">2026</span> Moore Electric · Biloxi, MS 39530</span>
+      <span>© <span id="yr">2026</span> Moore Electric · Biloxi, MS</span>
       <span>Cotizaciones por escrito</span>
     </div>
     <p class="fine">Orgulloso de servir a las familias americanas en la Costa del Golfo de Mississippi.</p>

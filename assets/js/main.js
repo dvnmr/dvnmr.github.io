@@ -365,3 +365,29 @@
   var yr = document.getElementById("yr");
   if (yr) yr.textContent = new Date().getFullYear();
 })();
+
+/* ---- SHARE (2026-10): native sheet first, clipboard fallback ---- */
+(function () {
+  var SHARE = { title: 'Moore Electric', text: 'Moore Electric — electrician in Biloxi & Gulfport. Real work, real photos:', url: 'https://228mooreelectric.com/' };
+  function feedback(btn, msg) {
+    if (!btn) return;
+    var old = btn.textContent;
+    btn.textContent = msg;
+    setTimeout(function () { btn.textContent = old; }, 2200);
+  }
+  function copyLink(btn) {
+    function done() { feedback(btn, '✓ Link copied'); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(SHARE.url).then(done, function () { window.prompt('Copy this link:', SHARE.url); });
+    } else { window.prompt('Copy this link:', SHARE.url); }
+  }
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest('[data-share],[data-copy-link]');
+    if (!t) return;
+    if (t.hasAttribute('data-share') && navigator.share) {
+      navigator.share(SHARE).catch(function () {});
+    } else {
+      copyLink(t);
+    }
+  });
+})();

@@ -437,3 +437,19 @@ details.faq-item[open] .faq-a { grid-template-rows: 1fr; }
 .price-card p { margin-top: 8px; color: var(--ink-dim); font-size: 15px; }
 /* ---------- fine print ---------- */
 .fine { font-size: 11px; color: var(--ink-dim); opacity: 0.7; margin-top: 8px; }
+
+/* ---- SHARE + SOCIAL + BADGES (2026-10) ---- */
+.share-bar { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.share-bar + .foot-base { margin-top: 24px; padding-top: 24px; }
+.share-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-right: 4px; }
+.share-btn { display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border: 1px solid var(--volt); border-radius: 999px; background: transparent; color: var(--volt); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; text-decoration: none; transition: background .25s, color .25s; }
+.share-btn:hover, .share-btn:focus-visible { background: var(--volt); color: #060607; }
+.share-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.share-row .share-btn { min-height: 48px; padding: 0 22px; font-size: 13px; }
+.share-qr { margin-top: 28px; display: flex; align-items: center; gap: 18px; }
+.share-qr img { width: 132px; height: 132px; border-radius: 12px; background: #fff; }
+.share-qr p { color: var(--ink-dim); max-width: 34ch; line-height: 1.6; }
+.badge-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.badge { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border: 1px solid var(--line); border-radius: 999px; background: var(--bg-2); color: var(--ink); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; text-decoration: none; transition: border-color .25s; }
+.badge:hover, .badge:focus-visible { border-color: var(--volt); }
+.badge .stars { color: var(--volt); letter-spacing: 2px; }

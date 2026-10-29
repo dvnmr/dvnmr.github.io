@@ -453,3 +453,32 @@ details.faq-item[open] .faq-a { grid-template-rows: 1fr; }
 .badge { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border: 1px solid var(--line); border-radius: 999px; background: var(--bg-2); color: var(--ink); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; text-decoration: none; transition: border-color .25s; }
 .badge:hover, .badge:focus-visible { border-color: var(--volt); }
 .badge .stars { color: var(--volt); letter-spacing: 2px; }
+
+/* ---- CALCULATORS (2026-10) ---- */
+.calc-stack { display: grid; gap: 28px; max-width: 860px; }
+.calc-card { background: var(--bg-3); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
+.calc-card > h2 { font-family: var(--font-display); font-size: clamp(28px, 4.4vw, 44px); text-transform: uppercase; line-height: 1; margin-bottom: 10px; }
+.calc-card > h2 em { font-style: normal; color: var(--volt); }
+.calc-card > p { color: var(--ink-dim); font-size: 16px; margin-bottom: 22px; max-width: 62ch; }
+.calc-fields { display: grid; gap: 16px; }
+@media (min-width: 600px) { .calc-fields.row3 { grid-template-columns: 1fr 1fr 1fr; } }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.chip { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; padding: 10px 14px; border: 1px solid var(--line-strong); border-radius: 999px; color: var(--ink-dim); transition: border-color 0.2s, color 0.2s, background 0.2s; }
+.chip:hover { border-color: var(--volt); color: var(--volt); }
+.chip.active { background: var(--volt); border-color: var(--volt); color: #0a0a0a; font-weight: 700; }
+.calc-results { margin-top: 24px; padding-top: 22px; border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.calc-results .stat b { font-size: clamp(22px, 5.4vw, 38px); }
+.calc-kwh { margin-top: 14px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; color: var(--ink-faint); }
+.load-list { display: grid; border-top: 1px solid var(--line); margin-bottom: 20px; }
+.load-row { display: flex; align-items: center; gap: 14px; padding: 15px 2px; border-bottom: 1px solid var(--line); cursor: pointer; font-size: 16px; }
+.load-row input { width: 22px; height: 22px; accent-color: var(--volt); flex-shrink: 0; cursor: pointer; }
+.load-row .la { margin-left: auto; font-family: var(--font-mono); font-size: 13px; color: var(--ink-dim); white-space: nowrap; }
+.verdict { margin-top: 24px; border: 1px solid var(--line-strong); border-left: 5px solid var(--line-strong); border-radius: 10px; padding: 20px 22px; background: var(--bg-2); }
+.verdict.ok { border-left-color: var(--volt); }
+.verdict.warn { border-left-color: var(--red); }
+.verdict h3 { font-family: var(--font-display); font-size: clamp(20px, 3.6vw, 28px); text-transform: uppercase; line-height: 1.05; margin-bottom: 8px; }
+.verdict.ok h3 { color: var(--volt); }
+.verdict.warn h3 { color: var(--coral); }
+.verdict p { color: var(--ink-dim); font-size: 15px; }
+.calc-cta { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; }
+.calc-cta .fine { margin-top: 0; max-width: 52ch; }

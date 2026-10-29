@@ -117,6 +117,20 @@ section { position: relative; }
 .nav-links a:hover { color: var(--volt); }
 .nav-call { display: inline-flex; }
 @media (min-width: 900px) { .nav-links { display: flex; } }
+/* Mobile header fit (<=720px, the lang switcher's own breakpoint): the single
+   row's min-content (~555px) overflows phone viewports, pushing the language
+   bubbles off the right edge, and the stacked 3-line brand (~85px at the
+   inherited 1.6 line-height) overflows the fixed 64px nav height, clipping
+   the top of "MOORE". Let the header grow, wrap the switcher onto its own
+   right-aligned row, and tighten the brand so its block fits the bar. */
+@media (max-width: 720px) {
+  .nav { height: auto; min-height: var(--nav-h); padding-block: 8px; }
+  .nav-inner { flex-wrap: wrap; gap: 10px 16px; }
+  .brand { font-size: 19px; line-height: 1.1; }
+  .brand .bolt { font-size: 22px; }
+  .nav-call { padding: 10px 16px; }
+  .nav-inner .lang-switch { margin-left: auto; }
+}
 
 /* ---------- hero ---------- */
 .hero {

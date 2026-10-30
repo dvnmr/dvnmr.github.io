@@ -137,7 +137,7 @@
         verdictEl.classList.remove("warn");
         verdictEl.classList.add("ok");
         verdictTitle.textContent = "Likely room for a 60 A EV circuit";
-        verdictBody.textContent = "On these numbers your panel probably has the headroom. The real answer comes from a proper load calculation on site — that's the $75 visit, credited toward the job if you hire me.";
+        verdictBody.textContent = "On these numbers your panel probably has the headroom. This is educational screening only, not installation approval. A proper on-site load calculation is required. Moore Electric does not offer EV charger circuits or panel upgrades.";
       } else {
         verdictEl.classList.remove("ok");
         verdictEl.classList.add("warn");

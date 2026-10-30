@@ -104,6 +104,7 @@
     var verdictEl = document.getElementById("pc-verdict");
     var verdictTitle = document.getElementById("pc-verdict-title");
     var verdictBody = document.getElementById("pc-verdict-body");
+    var confirmEl = document.getElementById("pc-confirm");
 
     function runPanel() {
       var loads = [];
@@ -111,10 +112,28 @@
         if (el.checked) loads.push(parseFloat(el.value) || 0);
       });
       var r = panelCheck(parseFloat(panelEl.value) || 0, loads);
-      estEl.textContent = amps(r.estLoad);
-      usableEl.textContent = amps(r.usable);
-      remainEl.textContent = amps(r.remaining);
-      if (r.hasRoom) {
+      // Completeness gate: a screening verdict is only as good as its
+      // inputs. Until the visitor has picked a panel size AND confirmed
+      // the load list is complete, the estimate is incomplete and must
+      // not produce an affirmative verdict — an empty or partial list
+      // otherwise makes almost any panel look like it has room.
+      var panelChosen = panelEl.value !== "";
+      var complete = panelChosen && confirmEl && confirmEl.checked;
+      if (panelChosen) {
+        estEl.textContent = amps(r.estLoad);
+        usableEl.textContent = amps(r.usable);
+        remainEl.textContent = amps(r.remaining);
+      } else {
+        estEl.textContent = "—";
+        usableEl.textContent = "—";
+        remainEl.textContent = "—";
+      }
+      if (!complete) {
+        verdictEl.classList.remove("ok");
+        verdictEl.classList.add("warn");
+        verdictTitle.textContent = "Can't call it yet — more info needed";
+        verdictBody.textContent = "A screen is only as good as its inputs: pick your panel size and confirm the list covers every major load you've got. Anything big that's not listed (a second HVAC, pool gear, shop equipment) makes any verdict a guess. This is a rough screening estimate, not an NEC load calculation — the real answer comes from a proper load calculation on site.";
+      } else if (r.hasRoom) {
         verdictEl.classList.remove("warn");
         verdictEl.classList.add("ok");
         verdictTitle.textContent = "Likely room for a 60 A EV circuit";
@@ -128,6 +147,7 @@
     }
     panelEl.addEventListener("change", runPanel);
     loadEls.forEach(function (el) { el.addEventListener("change", runPanel); });
+    if (confirmEl) confirmEl.addEventListener("change", runPanel);
     runPanel();
   }
 })();

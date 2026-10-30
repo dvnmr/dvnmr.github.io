@@ -7,8 +7,6 @@
 <meta name="description" content="Free electrical calculators from Moore Electric: what it costs to run an EV charger, hot tub, space heater or window AC — and whether your panel has room for a 60A EV circuit. Biloxi & the MS Gulf Coast. Call (228) 224-9150.">
 <meta name="geo.region" content="US-MS">
 <meta name="geo.placename" content="Biloxi, Mississippi">
-<meta name="geo.position" content="30.39438;-88.89639">
-<meta name="ICBM" content="30.39438, -88.89639">
 <link rel="canonical" href="https://228mooreelectric.com/calculators.html">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
@@ -43,13 +41,8 @@
     "@type": "PostalAddress",
     "addressLocality": "Biloxi",
     "addressRegion": "MS",
-    "postalCode": "39530",
+    "postalCode": "39532",
     "addressCountry": "US"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 30.39438,
-    "longitude": -88.89639
   },
   "areaServed": [
     {
@@ -186,10 +179,11 @@
             <div class="field">
               <label for="pc-panel">Panel size</label>
               <select id="pc-panel">
+                <option value="" selected>Choose your panel size…</option>
                 <option value="100">100 A</option>
                 <option value="125">125 A</option>
                 <option value="150">150 A</option>
-                <option value="200" selected>200 A</option>
+                <option value="200">200 A</option>
               </select>
             </div>
           </div>
@@ -201,12 +195,15 @@
             <label class="load-row"><input type="checkbox" class="pc-load" value="50"> Hot tub / spa <span class="la">50 A</span></label>
             <label class="load-row"><input type="checkbox" class="pc-load" value="60"> Existing EV charger <span class="la">60 A</span></label>
           </div>
+          <div class="load-list" style="margin-top:10px">
+            <label class="load-row"><input type="checkbox" id="pc-confirm"> That's every major load in my house — if a big load isn't on the list above, I don't have it.</label>
+          </div>
           <div class="calc-results" aria-live="polite">
             <div class="stat"><b id="pc-est">0 A</b><span>Estimated load</span></div>
             <div class="stat"><b id="pc-usable">0 A</b><span>Usable (80% of panel)</span></div>
             <div class="stat"><b id="pc-remaining">0 A</b><span>Room left</span></div>
           </div>
-          <div class="verdict ok" id="pc-verdict" aria-live="polite">
+          <div class="verdict warn" id="pc-verdict" aria-live="polite">
             <h3 id="pc-verdict-title">Checking…</h3>
             <p id="pc-verdict-body"></p>
           </div>
@@ -270,7 +267,7 @@
       <a class="share-btn" href="https://m.me/228MooreElectric" target="_blank" rel="noopener">Messenger</a>
     </div>
     <div class="foot-base">
-      <span>© <span id="yr">2026</span> Moore Electric · Biloxi, MS 39530</span>
+      <span>© <span id="yr">2026</span> Moore Electric · Biloxi, MS 39532</span>
       <span>Written quotes</span>
       <span><a href="solicitors.html">Vendors &amp; Solicitors</a></span>
     </div>

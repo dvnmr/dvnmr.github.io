@@ -76,8 +76,13 @@ section { position: relative; }
 .eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--volt); display: inline-block; }
 .lede { color: var(--ink-dim); font-size: 17px; max-width: 56ch; }
 
-/* kinetic word-split: JS wraps words in masked spans; hidden until .js */
-.js .k-mask { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+/* kinetic word-split: JS wraps words in masked spans; hidden until .js.
+   Vertical mask padding (cancelled by equal negative margins, so layout is
+   unchanged) gives glyphs room the tight 0.92 line-height denies them:
+   without the top room the mask shaves stacked diacritics (VI) and acute
+   accents (ES) off animated headlines; without enough bottom room it
+   shaves below-baseline dots (e.g. VI Ệ). */
+.js .k-mask { display: inline-block; overflow: hidden; vertical-align: bottom; padding-top: 0.16em; margin-top: -0.16em; padding-bottom: 0.14em; margin-bottom: -0.14em; }
 .js .k-word { display: inline-block; transform: translateY(115%); will-change: transform; }
 
 /* ---------- buttons ---------- */

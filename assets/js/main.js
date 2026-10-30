@@ -350,14 +350,16 @@
   }
 
   // SAFETY NET: force kinetic words visible after 4s if animation never completed
-  // (protects against CDN failures, JS errors, or animation stalls)
+  // (protects against CDN failures, JS errors, or animation stalls).
+  // NOTE: never clearProps the transform here — the CSS base state of
+  // .k-word is translateY(115%) (hidden inside its mask), so stripping the
+  // inline transform after a completed GSAP reveal drops the word back
+  // into the mask and the headline vanishes again. The inline
+  // translateY(0) below is sufficient on its own.
   setTimeout(function () {
     document.querySelectorAll(".k-word").forEach(function (w) {
       w.style.transform = "translateY(0)";
       w.style.transition = "transform .5s ease-out";
-      if (typeof window.gsap !== "undefined") {
-        try { gsap.set(w, { yPercent: 0, clearProps: "transform" }); } catch (e) {}
-      }
     });
   }, 4000);
 

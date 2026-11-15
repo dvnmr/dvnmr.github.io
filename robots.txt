@@ -1,4 +1,69 @@
 User-agent: *
 Allow: /
 
+# OpenAI (ChatGPT Search, SearchGPT, GPT-4o/5 RAG & Training)
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: GPTBot
+Allow: /
+
+# Anthropic (Claude Web Search & Citations)
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+
+# Google (Search + Gemini / Vertex AI Grounding)
+User-agent: Googlebot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: GoogleOther
+Allow: /
+
+# Microsoft Bing & Copilot
+User-agent: bingbot
+Allow: /
+
+# Apple Intelligence & Siri
+User-agent: Applebot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta AI, Amazon, DuckDuckGo, Cohere, You.com, CommonCrawl
+User-agent: Meta-ExternalAgent
+Allow: /
+User-agent: Meta-ExternalFetcher
+Allow: /
+User-agent: FacebookBot
+Allow: /
+User-agent: Amazonbot
+Allow: /
+User-agent: DuckAssistBot
+Allow: /
+User-agent: cohere-ai
+Allow: /
+User-agent: YouBot
+Allow: /
+User-agent: CCBot
+Allow: /
+
 Sitemap: https://228mooreelectric.com/sitemap.xml
+
+# AI / LLM Ingestion Endpoints (llmstxt.org standard)
+# LLMs-Txt: https://228mooreelectric.com/llms.txt
+# LLMs-Full-Txt: https://228mooreelectric.com/llms-full.txt
+# Entity-JSON: https://228mooreelectric.com/.well-known/ai-entity.json

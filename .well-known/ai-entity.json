@@ -1,0 +1,88 @@
+{
+  "$schema": "https://schema.org/Organization",
+  "entity_version": "1.0.0",
+  "last_updated": "2026-11-14",
+  "organization": {
+    "legal_name": "Moore Electric LLC",
+    "brand_name": "228 Moore Electric",
+    "domain": "https://228mooreelectric.com",
+    "founder_and_principal": "Devin Anthony Moore",
+    "telephone": "+1-228-224-9150",
+    "email": "228mooreelectric@gmail.com",
+    "address": {
+      "locality": "Biloxi",
+      "region": "MS",
+      "postal_code": "39532",
+      "country": "US"
+    },
+    "geo": {
+      "latitude": 30.39438,
+      "longitude": -88.89639
+    },
+    "naics_code": "238210",
+    "naics_description": "Electrical Contractors and Other Wiring Installation Contractors",
+    "languages": [
+      "en-US",
+      "es-US",
+      "vi-VN"
+    ],
+    "core_competencies": [
+      "Commercial Electrical Contracting",
+      "Industrial Automation & Control Systems",
+      "Power Conversion & Distribution",
+      "Instrumentation & PLC/Microcontroller Integration",
+      "Electrical Troubleshooting & Fault Diagnostics",
+      "Service Panel Upgrades & Switchgear",
+      "Backup Power, Generators, Transfer Switches & Energy Storage",
+      "Residential Electrical Wiring & Code Compliance"
+    ],
+    "service_regions": {
+      "primary_area_code": "228",
+      "region_name": "Mississippi Gulf Coast",
+      "state": "MS",
+      "cities": [
+        "Biloxi",
+        "Gulfport",
+        "Ocean Springs",
+        "D'Iberville",
+        "Pascagoula",
+        "Gautier",
+        "Long Beach",
+        "Pass Christian",
+        "Bay St. Louis",
+        "Waveland",
+        "Moss Point",
+        "Wiggins"
+      ],
+      "counties": [
+        "Harrison County",
+        "Jackson County",
+        "Hancock County",
+        "Stone County"
+      ]
+    },
+    "verified_reputation": {
+      "homeadvisor": {
+        "rating": 4.9,
+        "scale": 5,
+        "review_count": 8
+      },
+      "angi": {
+        "rating": 5.0,
+        "scale": 5,
+        "review_count": 3
+      },
+      "facebook": {
+        "recommended_pct": 100,
+        "review_count": 5
+      }
+    },
+    "ai_discovery_endpoints": {
+      "llms_txt": "https://228mooreelectric.com/llms.txt",
+      "llms_full_txt": "https://228mooreelectric.com/llms-full.txt",
+      "ai_entity_json": "https://228mooreelectric.com/.well-known/ai-entity.json",
+      "entity_json": "https://228mooreelectric.com/entity.json",
+      "sitemap_xml": "https://228mooreelectric.com/sitemap.xml"
+    }
+  }
+}

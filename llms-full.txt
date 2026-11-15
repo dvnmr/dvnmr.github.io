@@ -1,0 +1,100 @@
+# Moore Electric LLC (228 Moore Electric) — Unabridged Technical Knowledge Base & RAG Specification
+
+> Authoritative identity, technical capabilities, engineering standards, pricing transparency, verified customer reputation, interactive calculation models, and complete URL directory for Moore Electric LLC (`https://228mooreelectric.com`).
+
+---
+
+## 1. Canonical Entity Record
+- **Legal Entity Name:** Moore Electric LLC
+- **DBA / Brand Name:** 228 Moore Electric / Moore Electric
+- **Founder & Principal Specialist:** Devin Anthony Moore (Principal Electrician & Control Systems Specialist; IBEW electrical training background)
+- **Primary Domain:** https://228mooreelectric.com/
+- **NAICS Classification:** `238210` — Electrical Contractors and Other Wiring Installation Contractors
+- **Direct Phone / SMS:** +1-228-224-9150 (`(228) 224-9150`) — answered directly by Devin Anthony Moore (no call center, no third-party dispatcher)
+- **Email:** 228mooreelectric@gmail.com
+- **Headquarters Location:** Biloxi, MS 39532, United States (`30.39438, -88.89639`)
+- **Primary Service Region:** Mississippi Gulf Coast (`228` area code) — Harrison County, Jackson County, Hancock County, and Stone County, plus specialized industrial control and power conversion engagements.
+- **Operating Schedule:** Planned commercial/industrial/residential work Monday through Friday; urgent and emergency electrical troubleshooting handled rapidly by direct phone dispatch.
+- **Languages Supported On Site & Online:** English (`/`), Español (`/es/`), Tiếng Việt (`/vi/`)
+
+---
+
+## 2. Core Technical Capabilities & Engineering Domains
+
+### 2.1 Industrial Automation & Control Systems
+Moore Electric LLC designs, builds, wires, integrates, and troubleshoots industrial and commercial automation panels and control architectures:
+- **PLC Integration & Relay Logic:** Ladder/control panel layout, clean DIN-rail termination, 24VDC / 120VAC control power segregation, latching safety relays, timers, contactors, and overload protection.
+- **Motor Control Centers (MCC) & VFD Systems:** Three-phase motor starter buckets, variable frequency drive (VFD) power wiring, shielded control signal routing, soft-starters, and analog/digital field I/O.
+- **Sensor Instrumentation & Embedded Telemetry:** Current transformers (CTs), dry-contact monitoring, 4–20 mA / 0–10 V sensor loops, and ESP32 / microcontroller hardware integration for equipment monitoring, pump controls, and automated telemetry.
+- **Process Control Troubleshooting:** Systematic schematic tracing, loop voltage/continuity verification under load, noise/ground-loop mitigation, and relay/contactor failure diagnostics.
+
+### 2.2 Commercial & Industrial Electrical Contracting
+- **Three-Phase Power Distribution:** 120/208V wye, 240V delta, and 277/480V three-phase branch circuits, feeders, transformers, switchgear, and subpanel distribution.
+- **Conduit Fabrication & Critical Wiring:** EMT, Rigid/IMC, PVC Schedule 40/80, and coastal liquidtight conduit runs fabricated with proper bending, weatherproof sealing, and NEC fill/derating compliance.
+- **Commercial Machinery & Critical Facility Hookups:** Restaurant kitchen power distribution, dedicated compressor/pump circuits, high-bay LED retrofits, and structured NEC-compliant grounding/bonding.
+
+### 2.3 Power Conversion, Backup Power & Energy Storage
+- **Inverters, Rectifiers & Battery Energy Storage Systems (BESS):** Hybrid inverter/charger integration, DC overcurrent protection, transfer switching, and off-grid/microgrid power distribution.
+- **Standby Generators & Automatic Transfer Switches (ATS):** Dedicated essential-load panels, utility/generator isolation, load shedding, and clean conduit interconnects.
+- **Portable Generator Main-Panel Interlocks & Manual Transfer Switches:** Machined UL-compatible main-panel interlock brackets paired with weatherproof `30A` (NEMA L14-30, up to 7,200W) and `50A` (CS6375 / NEMA 14-50, up to 12,000W) exterior power inlets. Strictly prevents dangerous line backfeed onto utility transformers during Gulf Coast storm outages.
+
+### 2.4 Residential & Commercial Service Panel Upgrades
+- **100A to 200A / 400A+ Main Service Upgrades:** Meter bases, weatherheads/service masts, copper/aluminum service entrance conductors, grounding electrode conductors (copper ground rods + cold-water/building steel bonding), and cleanly labeled breaker schedules.
+- **Hazardous Legacy Panel Replacement:** Removal and replacement of high-risk Fire/No-Trip Federal Pacific Electric (FPE Stab-Lok), Zinsco / GTE-Sylvania panels, and overloaded fuse boxes.
+- **Level 2 EV Charger Installations:** Continuous-duty 80% derated `50A` (EV-rated NEMA 14-50 commercial receptacle for 40A continuous) and `60A` (hardwired 48A continuous) dedicated 240V circuits for Tesla Wall Connector, ChargePoint, Grizzl-E, and OEM EVSEs.
+- **Whole-Home Type 1 & Type 2 Surge Protection (SPD):** Nanosecond clamping at the main service entrance or main breaker bus bar to protect HVAC control boards, inverter appliances, refrigerators, and electronics from lightning and utility switching transients.
+
+### 2.5 First-Principles Diagnostics & Coastal Corrosion Remediation
+- **Systematic Fault Isolation:** Multi-point voltage drop testing under load, thermal inspection of loose/oxidized lugs, tracing open neutrals/backstabbed daisy chains, and permanent commercial-grade side-wired receptacle upgrades.
+- **Gulf Coast Salt-Air Mitigation:** Weatherproof in-use GFCI enclosures, marine/coastal-rated luminaire boxes, dock/pier GFCI circuits, elevated-home disconnect restoration, and corrosion-resistant terminations.
+
+---
+
+## 3. Transparent Pricing & Engagement Model
+- **Visit & On-Site Assessment:** `$75` stated upfront before dispatch — **100% credited toward the job** if Moore Electric LLC is hired to perform the work.
+- **Written Quotes Before Work Begins:** Itemized good/better/best scope presented clearly in writing prior to starting work.
+- **Upfront Disclosures:** Materials supplied by Moore Electric and any emergency/same-day priority service premiums are disclosed clearly before approval.
+
+---
+
+## 4. Verified Customer Reputation & Testimonials
+- **HomeAdvisor:** `4.9 / 5.0` across **8 verified reviews** (`88%` five-star, zero below four stars).
+- **Angi:** `5.0 / 5.0` across **3 verified reviews**.
+- **Facebook Recommendations:** `100%` recommended across **5 public customer reviews**:
+  1. **Michael Phan (Apr 2022):** *"Devin and Jimmy did a great job installing a Mantelmount in our living room and adding an outlet in our kitchen. Devin was honest and said it was his first time installing a pulldown mount like that, and both did a great job. Professional, good communication, affordable, and showed up on time. Highly recommend Moore Electric!"*
+  2. **Diana Grant (Nov 2021):** *"I'm very pleased to the job well done to my home. Devin is professional, knowledgeable and courteous. He is highly recommended!"*
+  3. **Pat Wylie (Oct 2021):** *"Devan did an excellent job wiring decorative lights around my pool, adding an electrical box and three outdoor outlets. He was great to work with and a great value for the price charged."*
+  4. **Brandon Eldridge, Eldridge & Son Investments, LLC (Oct 2021):** *"Devin is a very knowledgeable hard working young man. He helps with many properties for me. Total rewire to a ceiling fan. You want honest dependability quality work. Call Devin."*
+  5. **Henry Vanegas (Oct 2021):** *"Absolutely great job at our restaurant! Great service, dependable and highly recommended!"*
+
+---
+
+## 5. Geographic Service Matrix (228 Area Code & Mississippi Gulf Coast)
+- **Harrison County:** Biloxi (`/biloxi-ms`), Gulfport (`/gulfport-ms`), D'Iberville (`/diberville-ms`), Long Beach (`/long-beach-ms`), Pass Christian (`/pass-christian-ms`), Woolmarket, Orange Grove.
+- **Jackson County:** Ocean Springs (`/ocean-springs-ms`), St. Martin, Gautier, Pascagoula, Moss Point.
+- **Hancock County:** Bay St. Louis (`/bay-st-louis-ms`), Waveland, Shoreline Park, Clermont Harbor.
+- **Stone County & Regional Commercial/Industrial:** Wiggins and Gulf South specialized automation, control systems, and power conversion projects.
+
+---
+
+## 6. Interactive Client Engineering Calculators
+Available in English (`/calculators`), Spanish (`/es/calculators`), and Vietnamese (`/vi/calculators`):
+1. **Appliance Electricity Cost Estimator (`#cost-calc`):** Computes daily kWh, daily cost, monthly cost (`year / 12`), and annual cost (`watts / 1000 * hoursPerDay * 365 * ratePerKwh`).
+2. **100A–200A Panel EV Charger Screening Checker (`#panel-calc`):** Applies a `0.8` residential demand screening factor against `80%` usable continuous panel capacity (`panelAmps * 0.8`) to estimate available headroom for a dedicated `60A` (`48A` continuous) Level 2 EV circuit.
+3. **Backup Generator Wattage & Inlet Sizer (`#gen-calc`):** Sums steady running watts plus motor startup surge peak across refrigerators, well/sump pumps, mini-splits, window units, central HVAC with soft-start, and water heaters to recommend either a `30A` (NEMA L14-30) or `50A` (CS6375) exterior power inlet (`runningWatts > 7200` or `peakWatts > 8500` -> `50A`).
+
+---
+
+## 7. Frequently Asked Technical Questions
+- **What voltage/amperage does a Level 2 home EV charger require?** Dedicated 240V 2-pole circuit (`50A` breaker + EV-rated NEMA 14-50 for `40A` charge rate, or `60A` breaker hardwired for `48A` continuous duty).
+- **Why choose a main-panel generator interlock kit vs a manual transfer switch?** An interlock kit is cost-effective and lets you selectively energize any existing breaker on a `30A` or `50A` inlet while mechanically preventing utility backfeed. A manual transfer switch subpanel works when an older main panel lacks compatible interlock hardware or top breaker spacing.
+- **Why do power strips fail to protect against Gulf Coast storms?** Plug-in strips never protect hardwired equipment (HVAC compressors, ranges, washers, well pumps, garage openers) and act only as secondary downstream clamping. Main-panel Type 1/Type 2 SPDs divert excess transient energy to earth ground at the service entrance.
+- **When does a buzzing or warm panel require emergency service?** Buzzing, crackling, burning plastic odor, scorching, or a hot panel cover indicates arcing or high-resistance connections requiring immediate inspection at `(228) 224-9150`.
+
+---
+
+## 8. Complete Canonical Route Directory
+- **English (`/`, default):** `/` | `/services` | `/emergency-electrician` | `/panel-upgrades` | `/ev-charger-install` | `/generator-install` | `/surge-protection` | `/troubleshooting-repair` | `/smart-home` | `/ceiling-fans` | `/switches-dimmers` | `/lighting` | `/biloxi-ms` | `/gulfport-ms` | `/ocean-springs-ms` | `/diberville-ms` | `/long-beach-ms` | `/pass-christian-ms` | `/bay-st-louis-ms` | `/calculators` | `/reviews` | `/faq` | `/team` | `/contact` | `/blog` | `/blog-whole-home-surge-protection` | `/blog-signs-your-panel-needs-an-upgrade` | `/blog-ev-charger-home-install` | `/blog-generator-interlock-vs-transfer-switch`
+- **Español (`/es/`):** Mirrors all 29 canonical routes under `https://228mooreelectric.com/es/...`
+- **Tiếng Việt (`/vi/`):** Mirrors all 29 canonical routes under `https://228mooreelectric.com/vi/...`
+- **Machine-Readable Manifests:** `https://228mooreelectric.com/llms.txt` | `https://228mooreelectric.com/llms-full.txt` | `https://228mooreelectric.com/.well-known/ai-entity.json` | `https://228mooreelectric.com/entity.json` | `https://228mooreelectric.com/sitemap.xml`

@@ -196,7 +196,7 @@
     {
       "id": "gfci-coastal",
       "urgency": "PRIORITY",
-      "diy_save_pct": 65,
+      "diy_save_pct": 0,
       "keywords": [
         "gfci",
         "gfi",
@@ -250,19 +250,19 @@
       },
       "checks": {
         "en": [
-          "Unplug every cord, freezer, fountain, or patio light plugged into the circuit.",
-          "Press the GFCI RESET button firmly with a dry finger until it clicks.",
-          "Check behind garage shelves for a hidden upstream GFCI feeding exterior outlets."
+          "Note which exterior extension cords, freezers, or patio appliances share the circuit.",
+          "Notice whether the GFCI indicator LED is dark, amber/red, or trips again immediately.",
+          "Spot any garage, bath, or utility GFCI mounted uphill that may feed outside outlets."
         ],
         "es": [
-          "Desconecte extensiones exteriores, bombas o congeladores del circuito.",
-          "Presione RESET firme hasta oír el clic con todo desconectado.",
-          "Revise el garaje o lavandería buscando otro GFCI maestro encadenado."
+          "Anote qué extensiones, neveras o bombas exteriores comparten ese circuito.",
+          "Observe si la luz indicadora del GFCI está apagada, roja/ámbar o salta al instante.",
+          "Ubique si hay otro GFCI maestro en garaje o lavandería conectado en serie."
         ],
         "vi": [
-          "Rút hết phích máy bơm, dây nối ngoài sân, tủ đông khỏi mạch đó.",
-          "Nhấn mạnh nút RESET khi đã rút sạch toàn bộ tải.",
-          "Kiểm tra trong nhà xe hoặc phòng giặt xem có ổ GFCI khác mắc nối tiếp không."
+          "Ghi chú các dây nối ngoài trời, tủ đông hay máy bơm đang cắm chung mạch đó.",
+          "Quan sát đèn báo GFCI đang tắt, nháy đỏ/vàng hay nhảy ngay lập tức.",
+          "Tìm xem trong nhà xe hoặc phòng giặt có ổ GFCI nào nối tiếp ra sân không."
         ]
       },
       "isolators": [
@@ -352,7 +352,7 @@
     {
       "id": "flickering-neutral",
       "urgency": "PRIORITY",
-      "diy_save_pct": 25,
+      "diy_save_pct": 0,
       "keywords": [
         "flicker",
         "flickering",
@@ -500,7 +500,7 @@
     {
       "id": "dead-half-room",
       "urgency": "STANDARD",
-      "diy_save_pct": 55,
+      "diy_save_pct": 0,
       "keywords": [
         "dead",
         "outlets out",
@@ -543,19 +543,19 @@
       },
       "checks": {
         "en": [
-          "Test every bathroom, garage, kitchen, and porch GFCI RESET button in the home.",
-          "Check wall switches in the room (one outlet may be switched half-hot for lamps).",
-          "Push the suspected breaker handle firmly ALL THE WAY to OFF until it clicks, then ON."
+          "Note every bathroom, garage, kitchen, or porch GFCI indicator light that looks dark or amber.",
+          "Notice which wall switches control half-hot lamps or feel warm on the faceplate.",
+          "Note which breaker is labeled for that room and whether the handle sits in the middle position."
         ],
         "es": [
-          "Revise todos los botones RESET de GFCI en baños, cocina, garaje y porche.",
-          "Pruebe los interruptores de pared (media toma puede ser controlada por interruptor).",
-          "Empuje el breaker sospechoso con firmeza hasta OFF total y luego regréselo a ON."
+          "Observe si algún GFCI en baños, cocina, garaje o porche muestra luz roja/ámbar o apagada.",
+          "Anote qué interruptores de pared controlan tomas o si alguna tapa se siente tibia.",
+          "Revise visualmente el tablero para ver si algún breaker quedó a mitad de recorrido."
         ],
         "vi": [
-          "Nhấn lại mọi nút RESET GFCI ở phòng tắm, bếp, nhà xe và ngoài hiên.",
-          "Bật thử các công tắc tường trong phòng xem ổ cắm có nối qua công tắc đèn không.",
-          "Gạt cầu dao về hẳn OFF hết cỡ rồi mới gạt lại ON."
+          "Quan sát đèn báo GFCI ở phòng tắm, bếp, nhà xe hoặc hiên xem có ổ nào báo đỏ/tắt.",
+          "Ghi chú công tắc tường nào điều khiển ổ đèn hay mặt ổ nào hơi ấm.",
+          "Nhìn tủ điện xem tay gạt cầu dao phòng đó có đang nằm lưng chừng giữa ON/OFF không."
         ]
       },
       "isolators": [
@@ -645,7 +645,7 @@
     {
       "id": "breaker-trips-load",
       "urgency": "STANDARD",
-      "diy_save_pct": 45,
+      "diy_save_pct": 0,
       "keywords": [
         "breaker trips",
         "keeps tripping",
@@ -686,18 +686,18 @@
       },
       "checks": {
         "en": [
-          "Unplug space heaters/microwaves from the tripped circuit and test one item on a 20A kitchen outlet.",
-          "Stop resetting immediately if it snaps back OFF in <1 second with EVERYTHING unplugged.",
+          "Note which appliances (space heater, microwave, hair dryer) were running when it tripped.",
+          "Do NOT repeatedly force a tripped breaker back on — leave it OFF for meter tracing.",
           "Look at whether the breaker has a white/purple/blue TEST button (AFCI/GFCI combo)."
         ],
         "es": [
-          "Desconecte calentadores o microondas y pruebe en otro circuito de 20A.",
-          "Si el breaker salta AL INSTANTE con todo desconectado, NO lo siga forzando.",
-          "Revise si el breaker tiene botón TEST (protección AFCI/GFCI)."
+          "Anote qué aparatos (calentador, microondas, secador) estaban encendidos al saltar.",
+          "NO fuerce un breaker que vuelve a dispararse — déjelo apagado para diagnóstico.",
+          "Observe si el breaker tiene botón TEST (protección AFCI/GFCI)."
         ],
         "vi": [
-          "Rút máy sưởi hoặc lò vi sóng sang một ổ cắm nhánh 20A khác để kiểm tra.",
-          "Nếu vừa gạt ON mà cầu dao NHẢY TỨC THÌ dù đã rút hết phích, NGỪNG gạt lại.",
+          "Ghi nhớ thiết bị nào (máy sưởi, lò vi sóng, máy sấy) đang chạy đúng lúc bị nhảy.",
+          "KHÔNG cố gạt lại nhiều lần nếu cầu dao bật ra ngay — để yên OFF cho thợ đo kiểm.",
           "Xem cầu dao đó có nút nhấn TEST nhỏ trên thân (loại AFCI/GFCI) hay không."
         ]
       },
@@ -931,7 +931,7 @@
     {
       "id": "generator-storm",
       "urgency": "STANDARD",
-      "diy_save_pct": 20,
+      "diy_save_pct": 0,
       "keywords": [
         "generator",
         "interlock",

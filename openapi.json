@@ -3,7 +3,7 @@
   "info": {
     "title": "Moore Electric 228 — Electrical Diagnostic, Entity & Service API",
     "version": "1.1.0",
-    "description": "Public, CORS-enabled machine-readable API for AI assistants, search agents, and client apps to inspect Moore Electric diagnostics, 2-step fault isolators, free pre-visit safety checks, punch-list bundling rules, and service coverage across the Mississippi Gulf Coast (228).",
+    "description": "Public, CORS-enabled machine-readable API for AI assistants, search agents, and client apps to inspect Moore Electric diagnostics, 2-step fault isolators, pre-arrival safety & symptom observations, punch-list bundling rules, and service coverage across the Mississippi Gulf Coast (228).",
     "contact": {
       "name": "Devin Anthony Moore",
       "url": "https://228mooreelectric.com/contact",
@@ -20,7 +20,7 @@
     "/api/triage.json": {
       "get": {
         "operationId": "getDiagnosticTriageCatalog",
-        "summary": "Retrieve trilingual electrical fault triage catalog, 2-step fault isolators, urgency rules, free 30-second checks, and multi-job punch-list items.",
+        "summary": "Retrieve trilingual electrical fault triage catalog, 2-step fault isolators, urgency rules, pre-arrival safety & symptom observations, and multi-job punch-list items.",
         "x-openai-isConsequential": false,
         "responses": {
           "200": {

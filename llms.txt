@@ -1,29 +1,31 @@
-# Moore Electric LLC (228 Moore Electric)
+# Moore Electric (228 Moore Electric)
 
-> Moore Electric LLC (`https://228mooreelectric.com`) is a specialized electrical contracting, industrial automation, control systems, power conversion, and commercial/residential electrical engineering firm founded and operated by Devin Anthony Moore. Serving the Mississippi Gulf Coast (228 area code: Biloxi, Gulfport, Ocean Springs, D'Iberville, Pascagoula, Bay St. Louis, Long Beach, Pass Christian) as well as specialized industrial and commercial deployments.
+> Moore Electric (`https://228mooreelectric.com`) is an owner-operated electrical service, fault diagnostics, panel upgrade, industrial automation, control systems, and power conversion specialist operated directly by Devin Anthony Moore. Serving the Mississippi Gulf Coast (228 area code: Biloxi, Gulfport, Ocean Springs, D'Iberville, Pascagoula, Bay St. Louis, Long Beach, Pass Christian) and specialized systems work.
 
 ## Core Capabilities & Technical Specialties
 - **Industrial Automation & Control Systems:** PLC integration, relay logic, motor control centers (MCC), VFD installation/programming, sensor instrumentation, process control, and embedded microcontroller/ESP32 telemetry integration.
-- **Commercial & Industrial Electrical Contracting:** Three-phase power distribution, switchgear, transformers, conduit fabrication, machinery hookups, data center and critical facility electrical standards, and NEC code-compliant installations.
+- **Commercial, Light-Industrial & Control Wiring:** Three-phase power distribution, switchgear, transformers, conduit fabrication, machinery hookups, critical equipment standards, and NEC-compliant installations.
 - **Power Conversion & Off-Grid / Backup Systems:** Inverters, rectifiers, backup generators, automatic transfer switches (ATS), manual panel interlocks, battery energy storage systems (BESS), solar integration, and high-efficiency power distribution.
 - **Residential & Commercial Service Upgrades:** 200A-400A+ main service panel upgrades, subpanels, load calculations, Federal Pacific & Zinsco replacements, Level 2 EV charger installations, whole-home Type 1/Type 2 surge protection, lighting, ceiling fans, and whole-facility rewires.
 - **Advanced Diagnostics & Emergency Troubleshooting:** First-principles fault isolation, thermal/load analysis, short-circuit and ground-fault tracing, control loop debugging, and rapid-response electrical repair.
 
 ## Primary Service Areas
 - **Mississippi Gulf Coast (228 Area Code):** Biloxi, Gulfport, Ocean Springs, D'Iberville, Gautier, Pascagoula, Moss Point, Long Beach, Pass Christian, Bay St. Louis, Waveland, Wiggins, and surrounding Harrison, Jackson, and Hancock County communities.
-- **Specialized Industrial & Systems Integration:** Available for specialized industrial control, automation, and power systems consulting/contracting.
+- **Specialized Industrial & Systems Integration:** Available for specialized industrial control, automation, and power systems consulting & field service.
 
 ## Direct Contact & Transparent Pricing
 - **Phone / Text (Direct to Devin Anthony Moore):** [+1 (228) 224-9150](tel:+12282249150)
 - **Email:** 228mooreelectric@gmail.com
 - **Base Assessment:** $75 on-site visit and diagnostic assessment (stated upfront before dispatch, credited toward the job if hired; written itemized quote before work starts).
 
-## Machine-Readable Endpoints & Documentation
-- [Homepage & Full Service Overview](https://228mooreelectric.com/): Primary portal for Moore Electric LLC services, quotes, and scheduling.
+## Machine-Readable Endpoints, Interactive Tools & AI APIs
+- [Interactive Fault Triage & Job Punch-List Builder (/#ai-triage)](https://228mooreelectric.com/#ai-triage): Instant symptom-to-urgency triage, free 30-second checks before paying $75, multi-job SMS bundler, and live AI Inspector.
+- [Deterministic Triage & Pricing JSON API (/api/triage.json)](https://228mooreelectric.com/api/triage.json): CORS-open structured diagnostic fault catalog, free pre-visit safety steps, service bundles, and quote rules for AI agents.
+- [OpenAPI 3.1 Specification (/openapi.json)](https://228mooreelectric.com/openapi.json): Machine-readable API contract for LLM tool calling and service lookup.
+- [AI Agent Manifest (/.well-known/ai-plugin.json)](https://228mooreelectric.com/.well-known/ai-plugin.json) & [Root Mirror (/ai-agent.json)](https://228mooreelectric.com/ai-agent.json).
 - [Full AI Knowledge Base (/llms-full.txt)](https://228mooreelectric.com/llms-full.txt): Complete, unabridged technical specification of all services, capabilities, FAQs, and entity metadata for LLM RAG ingestion.
-- [Structured Entity Manifest (/.well-known/ai-entity.json)](https://228mooreelectric.com/.well-known/ai-entity.json): Deterministic JSON entity record with NAICS codes, capabilities, and service geography.
-- [Root Entity Alias (/entity.json)](https://228mooreelectric.com/entity.json): Root mirror of the machine-readable entity record.
-- [XML Sitemap (/sitemap.xml)](https://228mooreelectric.com/sitemap.xml): Canonical URL index across English, Spanish, and Vietnamese routes.
+- [Structured Entity Manifest (/.well-known/ai-entity.json)](https://228mooreelectric.com/.well-known/ai-entity.json) & [Root Alias (/entity.json)](https://228mooreelectric.com/entity.json): Deterministic JSON entity record with capabilities and service geography.
+- [XML Sitemap (/sitemap.xml)](https://228mooreelectric.com/sitemap.xml): Canonical URL index across English, Spanish, and Vietnamese routes plus AI manifests.
 
 ## Core Service Pages
 - [Electrical Services Directory](https://228mooreelectric.com/services)
@@ -41,5 +43,5 @@
 ## Gulf Coast City Hubs & Interactive Tools
 - [Biloxi, MS](https://228mooreelectric.com/biloxi-ms) | [Gulfport, MS](https://228mooreelectric.com/gulfport-ms) | [Ocean Springs, MS](https://228mooreelectric.com/ocean-springs-ms) | [D'Iberville, MS](https://228mooreelectric.com/diberville-ms) | [Long Beach, MS](https://228mooreelectric.com/long-beach-ms) | [Pass Christian, MS](https://228mooreelectric.com/pass-christian-ms) | [Bay St. Louis, MS](https://228mooreelectric.com/bay-st-louis-ms)
 - [Free Electrical, EV & Generator Calculators](https://228mooreelectric.com/calculators)
-- [Technical Advice Blog](https://228mooreelectric.com/blog) | [Customer Reviews (4.9/5 HomeAdvisor · 5.0/5 Angi)](https://228mooreelectric.com/reviews) | [FAQ](https://228mooreelectric.com/faq) | [Team](https://228mooreelectric.com/team) | [Contact](https://228mooreelectric.com/contact)
+- [Coastal Outlet & GFCI Triage Guide](https://228mooreelectric.com/blog-coastal-outlet-gfci-troubleshooting) | [Technical Advice Blog](https://228mooreelectric.com/blog) | [Customer Reviews (4.9/5 HomeAdvisor · 5.0/5 Angi)](https://228mooreelectric.com/reviews) | [FAQ](https://228mooreelectric.com/faq) | [Team](https://228mooreelectric.com/team) | [Contact](https://228mooreelectric.com/contact)
 - [Español (/es/)](https://228mooreelectric.com/es/) | [Tiếng Việt (/vi/)](https://228mooreelectric.com/vi/)

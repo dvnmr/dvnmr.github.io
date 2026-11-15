@@ -1,10 +1,11 @@
 {
   "$schema": "https://schema.org/Organization",
-  "entity_version": "1.0.0",
-  "last_updated": "2026-11-14",
+  "entity_version": "1.1.0",
+  "last_updated": "2026-11-15",
   "organization": {
-    "legal_name": "Moore Electric LLC",
+    "business_name": "Moore Electric",
     "brand_name": "228 Moore Electric",
+    "operating_model": "Owner-Operated Electrical Troubleshooting, Repair, Installations & Control Systems (Direct Service by Devin Anthony Moore)",
     "domain": "https://228mooreelectric.com",
     "founder_and_principal": "Devin Anthony Moore",
     "telephone": "+1-228-224-9150",
@@ -19,22 +20,20 @@
       "latitude": 30.39438,
       "longitude": -88.89639
     },
-    "naics_code": "238210",
-    "naics_description": "Electrical Contractors and Other Wiring Installation Contractors",
     "languages": [
       "en-US",
       "es-US",
       "vi-VN"
     ],
     "core_competencies": [
-      "Commercial Electrical Contracting",
+      "Electrical Troubleshooting, Repair & Installations",
       "Industrial Automation & Control Systems",
       "Power Conversion & Distribution",
       "Instrumentation & PLC/Microcontroller Integration",
-      "Electrical Troubleshooting & Fault Diagnostics",
+      "Electrical Fault Diagnostics",
       "Service Panel Upgrades & Switchgear",
       "Backup Power, Generators, Transfer Switches & Energy Storage",
-      "Residential Electrical Wiring & Code Compliance"
+      "Residential & Light-Commercial Electrical Wiring"
     ],
     "service_regions": {
       "primary_area_code": "228",
@@ -82,6 +81,10 @@
       "llms_full_txt": "https://228mooreelectric.com/llms-full.txt",
       "ai_entity_json": "https://228mooreelectric.com/.well-known/ai-entity.json",
       "entity_json": "https://228mooreelectric.com/entity.json",
+      "triage_api": "https://228mooreelectric.com/api/triage.json",
+      "openapi_spec": "https://228mooreelectric.com/openapi.json",
+      "ai_plugin_manifest": "https://228mooreelectric.com/.well-known/ai-plugin.json",
+      "ai_agent_json": "https://228mooreelectric.com/ai-agent.json",
       "sitemap_xml": "https://228mooreelectric.com/sitemap.xml"
     }
   }

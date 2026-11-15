@@ -15,8 +15,10 @@
 <link rel="alternate" type="text/markdown" href="https://228mooreelectric.com/llms.txt" title="LLM Summary">
 <link rel="alternate" type="text/markdown" href="https://228mooreelectric.com/llms-full.txt" title="LLM Full Knowledge Base">
 <link rel="alternate" type="application/json" href="https://228mooreelectric.com/.well-known/ai-entity.json" title="AI Entity Graph">
+<link rel="alternate" type="application/json" href="https://228mooreelectric.com/api/triage.json" title="AI Diagnostic & Triage API">
+<link rel="service-desc" type="application/vnd.oai.openapi+json" href="https://228mooreelectric.com/openapi.json" title="OpenAPI 3.1 Specification">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Moore Electric LLC (228 Moore Electric)">
+<meta property="og:site_name" content="Moore Electric (228 Moore Electric)">
 <meta property="og:title" content="Electricista Biloxi MS | Moore Electric – Gulfport – (228) 224-9150">
 <meta property="og:description" content="Moore Electric — electricista local en Biloxi, Gulfport y la Costa del Golfo de MS. Paneles eléctricos, cargadores EV, generadores y reparaciones. (228) 224-9150.">
 <meta property="og:url" content="https://228mooreelectric.com/es/">
@@ -56,18 +58,17 @@
     {
       "@type": [
         "Electrician",
-        "GeneralContractor",
         "LocalBusiness",
+        "HomeAndConstructionBusiness",
         "ProfessionalService"
       ],
       "@id": "https://228mooreelectric.com/#organization",
-      "name": "Moore Electric LLC",
+      "name": "Moore Electric",
       "alternateName": [
         "228 Moore Electric",
-        "Moore Electric"
+        "Moore Electric Biloxi"
       ],
       "url": "https://228mooreelectric.com/",
-      "naics": "238210",
       "telephone": "+12282249150",
       "email": "228mooreelectric@gmail.com",
       "priceRange": "$75+",
@@ -88,15 +89,15 @@
       "founder": {
         "@type": "Person",
         "name": "Devin Anthony Moore",
-        "jobTitle": "Principal Electrician & Control Systems Specialist"
+        "jobTitle": "Owner & Principal Electrician / Control Systems Specialist"
       },
-      "description": "Full-service electrical contracting firm specializing in commercial and industrial electrical systems, control systems, industrial automation, power conversion, instrumentation, and high-reliability residential electrical upgrades across the Mississippi Gulf Coast (228).",
+      "description": "Owner-operated electrical service specializing in troubleshooting, panel upgrades, EV chargers, control systems, industrial automation, power conversion, and backup power across the Mississippi Gulf Coast (228).",
       "knowsAbout": [
-        "Electrical Contracting",
+        "Residential and Light-Commercial Electrical Service",
         "Industrial Automation",
         "Control Systems Engineering",
         "Power Conversion Systems",
-        "Commercial Three-Phase Power Distribution",
+        "Three-Phase Power Distribution",
         "Electrical Troubleshooting and Diagnostics",
         "Service Panel Upgrades and Switchgear",
         "Instrumentation and Microcontroller Integration",
@@ -222,8 +223,8 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Commercial & Industrial Electrical Contracting",
-              "description": "Three-phase power distribution, conduit installations, switchgear, commercial build-outs, lighting retrofits, and critical facility wiring.",
+              "name": "Commercial, Light-Industrial & Critical Wiring",
+              "description": "Three-phase power distribution, conduit installations, switchgear, commercial build-outs, lighting retrofits, and critical equipment wiring.",
               "url": "https://228mooreelectric.com/services"
             }
           },
@@ -332,7 +333,7 @@
       "@type": "WebSite",
       "@id": "https://228mooreelectric.com/#website",
       "url": "https://228mooreelectric.com/",
-      "name": "Moore Electric LLC (228 Moore Electric)",
+      "name": "Moore Electric (228 Moore Electric)",
       "publisher": {
         "@id": "https://228mooreelectric.com/#organization"
       },
@@ -363,8 +364,8 @@
     {
       "@type": "Service",
       "@id": "https://228mooreelectric.com/es/#service",
-      "name": "Contratación Eléctrica, Sistemas de Control y Automatización",
-      "serviceType": "Commercial, Industrial & Residential Electrical Contracting",
+      "name": "Servicios Eléctricos, Sistemas de Control y Automatización",
+      "serviceType": "Electrical Troubleshooting, Repair, Installations & Control Systems",
       "url": "https://228mooreelectric.com/es/",
       "provider": {
         "@id": "https://228mooreelectric.com/#organization"
@@ -531,18 +532,18 @@
         },
         {
           "@type": "Question",
-          "name": "¿Qué áreas atiende Moore Electric LLC (228 Moore Electric)?",
+          "name": "¿Qué áreas atiende Moore Electric (228 Moore Electric)?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Moore Electric LLC atiende toda la Costa del Golfo de Mississippi (código 228), incluyendo Biloxi, Gulfport, Ocean Springs, D'Iberville, Pascagoula, Gautier, Long Beach, Pass Christian, Bay St. Louis y Waveland, además de proyectos especializados de automatización y sistemas de control."
+            "text": "Moore Electric atiende toda la Costa del Golfo de Mississippi (código 228), incluyendo Biloxi, Gulfport, Ocean Springs, D'Iberville, Pascagoula, Gautier, Long Beach, Pass Christian, Bay St. Louis y Waveland, además de proyectos especializados de automatización y sistemas de control."
           }
         },
         {
           "@type": "Question",
-          "name": "¿En qué tipos de trabajos eléctricos se especializa Moore Electric LLC?",
+          "name": "¿En qué tipos de trabajos eléctricos se especializa Moore Electric?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Moore Electric LLC se especializa en contratación eléctrica comercial e industrial, sistemas de control, automatización industrial, conversión de energía, instrumentación, diagnóstico de fallas, energía de respaldo y actualizaciones de paneles residenciales."
+            "text": "Moore Electric se especializa en servicios eléctricos comercial e industrial, sistemas de control, automatización industrial, conversión de energía, instrumentación, diagnóstico de fallas, energía de respaldo y actualizaciones de paneles residenciales."
           }
         },
         {
@@ -596,7 +597,9 @@
       <div class="hero-ctas">
         <a class="btn btn-red" href="tel:+12282249150">⚡ Llame (228) 224-9150</a>
         <a class="btn btn-ghost" href="#pricing">Ver precios</a>
-      </div>
+      
+      <a class="btn ghost" href="#ai-triage">⚡ Diagnóstico Rápido</a>
+    </div>
       <p class="hero-micro">¿Sin electricidad? ¿Chispas? ¿Olor a quemado? No espere — llame ahora.</p>
       <p class="hero-pride">Orgulloso de mantener encendidos los hogares americanos — aquí mismo, en la Costa del Golfo.</p>
       <div class="hero-stats">
@@ -724,6 +727,14 @@
 
 
   <!-- ================= PRICING ================= -->
+  <section class="section-pad" id="ai-triage" aria-label="Interactive Fault Triage">
+    <div class="wrap">
+      <span class="eyebrow rv">Diagnóstico Interactivo y Triaje</span>
+      <h2 class="rv">REVISE SU FALLA O <span class="stroke">AGRUPE SU VISITA.</span></h2>
+      <p class="lede rv">Pruebe revisiones gratis de 30 segundos antes de pagar $75, combine varios trabajos en un solo viaje o inspeccione la API pública para agentes IA.</p>
+      <div data-ai-triage data-lang="es"></div>
+    </div>
+  </section>
   <section class="section-pad" id="pricing" aria-label="Precios">
     <div class="wrap">
       <p class="eyebrow">Números claros</p>
@@ -991,7 +1002,7 @@
       <span><a href="/es/blog">Blog</a></span>
       <span><a href="/es/solicitors">Proveedores y Vendedores</a></span>
     </div>
-    <p class="fine">Formación eléctrica: programa eléctrico de la IBEW.</p>
+    <p class="fine">Atendido directamente por su dueño en la Costa del Golfo — presupuesto claro.</p>
   </div>
 </footer>
 <div class="callbar" role="navigation" aria-label="Quick contact">
@@ -1003,5 +1014,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <script src="../assets/js/main.js" defer></script>
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "54bc788c43754cd296e5faec7128c4c8"}'></script>
+<script src="../assets/js/ai-triage.js" defer></script>
 </body>
 </html>

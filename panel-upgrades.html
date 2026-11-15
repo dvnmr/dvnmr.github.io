@@ -185,7 +185,7 @@
     "@type": "Offer",
     "price": "75",
     "priceCurrency": "USD",
-    "description": "Visit and assessment — credited toward the job if hired. Service calls from $150."
+    "description": "Visit and assessment — credited toward the job if hired."
   }
 }
 </script>
@@ -215,24 +215,64 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does a 200-amp electrical panel upgrade take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most straight 100A-to-200A panel swaps take one working day, with power shut off only during the active panel cutover so your household is back up the same evening."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does an electrical panel upgrade cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every upgrade starts with an on-site $75 assessment (credited toward the job if hired) to inspect your meter base, service mast, grounding, and existing branch circuits, followed by an itemized written quote before work begins."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should Federal Pacific or Zinsco panels be replaced?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Both legacy brands have well-documented breaker trip failures where a breaker can stay closed during an overload. We replace them with modern UL-listed panels and new grounding."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a 200A panel for an EV charger, hot tub, or home addition?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Often yes if your existing 100A or 125A panel is nearly full. You can test your own headroom with our free Panel Load Checker calculator, and we verify exact loads in person."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="nav">
   <div class="nav-inner">
-    <a class="brand" href="index.html" aria-label="Moore Electric — home">
+    <a class="brand" href="/" aria-label="Moore Electric — home">
       <span class="bolt" aria-hidden="true">⚡</span>
       <span>MOORE ELECTRIC<small>BILOXI · MS</small></span>
     </a>
     <nav class="nav-links" aria-label="Primary">
-      <a href="index.html#services">Services</a>
-      <a href="index.html#work">Work</a>
-      <a href="index.html#reviews">Reviews</a>
-      <a href="index.html#areas">Areas</a>
-      <a href="index.html#faq">FAQ</a>
+      <a href="/#services">Services</a>
+      <a href="/#work">Work</a>
+      <a href="/#reviews">Reviews</a>
+      <a href="/#areas">Areas</a>
+      <a href="/#faq">FAQ</a>
     </nav>
     <a class="btn btn-volt btn-sm nav-call" href="tel:+12282249150">Call (228) 224-9150</a>
-    <nav class="lang-switch" aria-label="Language"><span class="lang current" aria-current="true" title="English">🇺🇸<span>EN</span></span><a class="lang" href="vi/panel-upgrades.html" title="Tiếng Việt">🇻🇳<span>VI</span></a><a class="lang" href="es/panel-upgrades.html" title="Español">🇪🇸<span>ES</span></a></nav>
+    <nav class="lang-switch" aria-label="Language"><span class="lang current" aria-current="true" title="English">🇺🇸<span>EN</span></span><a class="lang" href="/vi/panel-upgrades" title="Tiếng Việt">🇻🇳<span>VI</span></a><a class="lang" href="/es/panel-upgrades" title="Español">🇪🇸<span>ES</span></a></nav>
   </div>
 </header>
 <main id="main">
@@ -242,12 +282,12 @@
     </div>
     <div class="hero-veil" aria-hidden="true"></div>
     <div class="wrap">
-      <p class="crumbs"><a href="index.html">Home</a> / Electrical panel upgrades</p>
+      <p class="crumbs"><a href="/">Home</a> / Electrical panel upgrades</p>
       <p class="eyebrow hero-kicker">Electrical panel upgrades</p>
       <h1 class="display" data-kinetic>YOUR PANEL IS THE <span class="stroke">HEART.</span></h1>
       <div class="hero-ctas">
         <a class="btn btn-volt" href="tel:+12282249150">⚡ Call (228) 224-9150</a>
-        <a class="btn btn-ghost" href="index.html#pricing">See Pricing</a>
+        <a class="btn btn-ghost" href="/#pricing">See Pricing</a>
       </div>
     </div>
   </section>
@@ -273,15 +313,37 @@
         <div class="step rv"><div><h3>Clean install</h3><p>New panel, labeled breakers, torqued to spec, surge protection recommended.</p></div></div>
         <div class="step rv"><div><h3>Walkthrough</h3><p>I walk you through every breaker before I leave. You'll know your panel by name.</p></div></div>
       </div>
+
+      <div class="service-faq rv">
+        <h2 class="rv">Common <em>questions</em></h2>
+        <div class="faq-list">
+        <details class="faq-item rv">
+          <summary class="faq-q">How long does a 200-amp electrical panel upgrade take?<span class="pm" aria-hidden="true">+</span></summary>
+          <div class="faq-a"><div class="faq-a-inner">Most straight 100A-to-200A panel swaps take one working day, with power shut off only during the active panel cutover so your household is back up the same evening.</div></div>
+        </details>
+        <details class="faq-item rv">
+          <summary class="faq-q">How much does an electrical panel upgrade cost?<span class="pm" aria-hidden="true">+</span></summary>
+          <div class="faq-a"><div class="faq-a-inner">Every upgrade starts with an on-site $75 assessment (credited toward the job if hired) to inspect your meter base, service mast, grounding, and existing branch circuits, followed by an itemized written quote before work begins.</div></div>
+        </details>
+        <details class="faq-item rv">
+          <summary class="faq-q">Should Federal Pacific or Zinsco panels be replaced?<span class="pm" aria-hidden="true">+</span></summary>
+          <div class="faq-a"><div class="faq-a-inner">Yes. Both legacy brands have well-documented breaker trip failures where a breaker can stay closed during an overload. We replace them with modern UL-listed panels and new grounding.</div></div>
+        </details>
+        <details class="faq-item rv">
+          <summary class="faq-q">Do I need a 200A panel for an EV charger, hot tub, or home addition?<span class="pm" aria-hidden="true">+</span></summary>
+          <div class="faq-a"><div class="faq-a-inner">Often yes if your existing 100A or 125A panel is nearly full. You can test your own headroom with our free Panel Load Checker calculator, and we verify exact loads in person.</div></div>
+        </details>
+        </div>
+      </div>
 <div class="emergency-strip rv" style="background:var(--bg-3);border:1px solid var(--line-strong)">
-          <div><h2>Let's get it done.</h2><p>Written quotes. I answer my own phone.</p><p style="margin-top:8px;color:var(--ink-dim)">$75 visit &amp; assessment · Service calls from $150 · <a href="index.html#pricing" style="color:var(--volt)">Full pricing</a></p></div>
+          <div><h2>Let's get it done.</h2><p>Written quotes. I answer my own phone.</p><p style="margin-top:8px;color:var(--ink-dim)">$75 visit &amp; assessment · <a href="/#pricing" style="color:var(--volt)">Full pricing</a></p></div>
           <a class="btn btn-volt" href="tel:+12282249150" style="font-size:16px">CALL (228) 224-9150</a>
         </div>
       <h2 class="rv">Keep <em>looking</em></h2>
       <div class="related">
-        <a class="rel-card rv" href="ev-charger-install.html"><h3>EV Charger Install</h3><p>New charger? Your panel might need to grow first.</p></a>
-        <a class="rel-card rv" href="surge-protection.html"><h3>Surge Protection</h3><p>Protect the new panel from day one.</p></a>
-        <a class="rel-card rv" href="emergency-electrician.html"><h3>Emergency Service</h3><p>Smell burning? Don't wait — call now.</p></a>
+        <a class="rel-card rv" href="/ev-charger-install"><h3>EV Charger Install</h3><p>New charger? Your panel might need to grow first.</p></a>
+        <a class="rel-card rv" href="/surge-protection"><h3>Surge Protection</h3><p>Protect the new panel from day one.</p></a>
+        <a class="rel-card rv" href="/emergency-electrician"><h3>Emergency Service</h3><p>Smell burning? Don't wait — call now.</p></a>
       </div>
     </div>
   </section>
@@ -300,21 +362,28 @@
       <div class="rv">
         <h4>Services</h4>
         <ul>
-          <li><a href="emergency-electrician.html">Emergency Electrician</a></li>
-          <li><a href="panel-upgrades.html">Panel Upgrades</a></li>
-          <li><a href="ev-charger-install.html">EV Charger Install</a></li>
-          <li><a href="generator-install.html">Generator Install</a></li>
-          <li><a href="surge-protection.html">Surge Protection</a></li>
-          <li><a href="troubleshooting-repair.html">Troubleshooting &amp; Repair</a></li>
+          <li><a href="/emergency-electrician">Emergency Electrician</a></li>
+          <li><a href="/smart-home">Smart Home</a></li>
+          <li><a href="/ceiling-fans">Ceiling Fans</a></li>
+          <li><a href="/switches-dimmers">Switches &amp; Dimmers</a></li>
+          <li><a href="/lighting">Lighting</a></li>
+          <li><a href="/panel-upgrades">Panel Upgrades</a></li>
+          <li><a href="/ev-charger-install">EV Charger Install</a></li>
+          <li><a href="/generator-install">Generator Install</a></li>
+          <li><a href="/surge-protection">Surge Protection</a></li>
+          <li><a href="/troubleshooting-repair">Troubleshooting &amp; Repair</a></li>
         </ul>
       </div>
       <div class="rv">
         <h4>Service area</h4>
         <ul>
-          <li><a href="biloxi-ms.html">Biloxi, MS</a></li>
-          <li><a href="gulfport-ms.html">Gulfport, MS</a></li>
-          <li>Ocean Springs · D'Iberville</li>
-          <li>Long Beach · Bay St. Louis</li>
+          <li><a href="/biloxi-ms">Biloxi, MS</a></li>
+          <li><a href="/gulfport-ms">Gulfport, MS</a></li>
+          <li><a href="/ocean-springs-ms">Ocean Springs, MS</a></li>
+          <li><a href="/diberville-ms">D'Iberville, MS</a></li>
+          <li><a href="/long-beach-ms">Long Beach, MS</a></li>
+          <li><a href="/pass-christian-ms">Pass Christian, MS</a></li>
+          <li><a href="/bay-st-louis-ms">Bay St. Louis, MS</a></li>
         </ul>
         <p style="margin-top:12px">Emergencies: call now.<br>Planned work: Mon–Fri.</p>
       </div>
@@ -329,14 +398,18 @@
     <div class="foot-base">
       <span>© <span id="yr">2026</span> Moore Electric · Biloxi, MS 39532</span>
       <span>Written quotes</span>
-      <span><a href="blog.html">Blog</a></span>
-      <span><a href="solicitors.html">Vendors &amp; Solicitors</a></span>
+      <span><a href="/services">Services</a></span>
+      <span><a href="/reviews">Reviews</a></span>
+      <span><a href="/calculators">Calculators</a></span>
+      <span><a href="/blog">Blog</a></span>
+      <span><a href="/solicitors">Vendors &amp; Solicitors</a></span>
     </div>
+    <p class="fine">Training background: IBEW electrical program.</p>
   </div>
 </footer>
 <div class="callbar" role="navigation" aria-label="Quick contact">
   <a class="cb-call" href="tel:+12282249150">📞 Tap to Call</a>
-  <a class="cb-est" href="index.html#pricing">See Pricing</a>
+  <a class="cb-est" href="/#pricing">See Pricing</a>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>

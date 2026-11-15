@@ -462,7 +462,8 @@ details.faq-item[open] .faq-a { grid-template-rows: 1fr; }
 .share-bar + .foot-base { margin-top: 24px; padding-top: 24px; }
 .share-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-right: 4px; }
 .share-btn { display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border: 1px solid var(--volt); border-radius: 999px; background: transparent; color: var(--volt); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; text-decoration: none; transition: background .25s, color .25s; }
-.share-btn:hover, .share-btn:focus-visible { background: var(--volt); color: #060607; }
+.share-btn:focus-visible { background: var(--volt); color: #060607; }
+@media (hover: hover) { .share-btn:hover { background: var(--volt); color: #060607; } }
 .share-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 .share-row .share-btn { min-height: 48px; padding: 0 22px; font-size: 13px; }
 .share-qr { margin-top: 28px; display: flex; align-items: center; gap: 18px; }

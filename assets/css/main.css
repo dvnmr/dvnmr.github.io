@@ -139,6 +139,7 @@ section { position: relative; }
 
 /* ---------- hero ---------- */
 .hero {
+  min-height: 100vh;
   min-height: 100svh;
   display: flex; align-items: flex-end;
   padding: calc(var(--nav-h) + 24px) 0 48px;
@@ -258,9 +259,9 @@ section { position: relative; }
 .shot figcaption small { display: block; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em; color: var(--volt); text-transform: uppercase; margin-bottom: 4px; }
 
 /* lightbox */
-.lb { position: fixed; inset: 0; z-index: 9900; background: rgba(4,4,5,0.96); display: none; align-items: center; justify-content: center; flex-direction: column; gap: 14px; padding: 20px; }
+.lb { position: fixed; inset: 0; z-index: 9900; background: rgba(4,4,5,0.96); display: none; align-items: center; justify-content: center; flex-direction: column; gap: 14px; padding: 20px; max-height: 100vh; max-height: 100dvh; overflow-y: auto; }
 .lb.open { display: flex; }
-.lb img { max-width: min(92vw, 1100px); max-height: 76vh; border-radius: 10px; border: 1px solid var(--line-strong); object-fit: contain; }
+.lb img { max-width: min(92vw, 1100px); max-height: 76vh; max-height: 76dvh; border-radius: 10px; border: 1px solid var(--line-strong); object-fit: contain; }
 .lb-cap { font-family: var(--font-mono); font-size: 13px; color: var(--ink-dim); text-align: center; max-width: 60ch; }
 .lb-nav { display: flex; gap: 12px; align-items: center; }
 .lb-btn { width: 52px; height: 52px; border-radius: 50%; border: 1px solid var(--line-strong); display: inline-flex; align-items: center; justify-content: center; font-size: 20px; transition: border-color 0.2s, color 0.2s; }
@@ -397,7 +398,7 @@ details.faq-item[open] .faq-a { grid-template-rows: 1fr; }
 }
 
 /* ---------- subpage hero ---------- */
-.subhero { min-height: 82svh; display: flex; align-items: flex-end; padding: calc(var(--nav-h) + 40px) 0 56px; position: relative; overflow: clip; isolation: isolate; }
+.subhero { min-height: 82vh; min-height: 82svh; display: flex; align-items: flex-end; padding: calc(var(--nav-h) + 40px) 0 56px; position: relative; overflow: clip; isolation: isolate; }
 .subhero .hero-bg img { opacity: 0.42; }
 .subhero h1 { font-size: clamp(52px, 11vw, 140px); }
 .crumbs { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 16px; }
@@ -718,4 +719,220 @@ details.faq-item[open] .faq-a { grid-template-rows: 1fr; }
   color: #d6f5d6;
   overflow-x: auto;
   max-height: 360px;
+}
+/* ============================================================
+   WORKS EVERYWHERE — screen-morphing modes + glass + hardening
+   Ported from the Paw Time preview session (Nov 24, 2026).
+   The site detects the screen and switches modes:
+     phone (base) → tablet → laptop/desktop → TV / big-screen.
+   The light-switch power-on entrance is untouched. No floating
+   layers anywhere: glass is a surface treatment only, and text
+   always sits on top of it at full opacity.
+   ============================================================ */
+
+/* ---------- glass tokens ---------- */
+:root {
+  --glass-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.02));
+  --glass-border: rgba(244, 241, 232, 0.16);
+  --glass-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.20), inset 0 -1px 0 rgba(0, 0, 0, 0.25), 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- iPhone-style glass gloss (subtle, on surfaces only) ---------- */
+.btn-ghost, .plat, .triage-shell, .form, .price-card, .calc-card, .rev, .step, .rel-card, .badge {
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  backdrop-filter: blur(18px) saturate(1.4);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+/* verdict keeps its 5px accent bar: glass without touching border-left */
+.verdict {
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  backdrop-filter: blur(18px) saturate(1.4);
+  border: 1px solid var(--glass-border);
+  border-left-width: 5px;
+  box-shadow: var(--glass-shadow);
+}
+/* breaker panel (the power-on switch): rim light + sheen only.
+   Lever, timing and behaviour are untouched. */
+.breaker {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 0 0 1px rgba(244, 241, 232, 0.06), 0 18px 40px rgba(0, 0, 0, 0.5);
+}
+.po-skip {
+  background: rgba(6, 6, 7, 0.55);
+  -webkit-backdrop-filter: blur(12px) saturate(1.3);
+  backdrop-filter: blur(12px) saturate(1.3);
+}
+/* button sheen: a light sweep on hover/focus + a permanent top gloss line.
+   Works on volt, ghost and red alike; no layout change. */
+.btn { overflow: hidden; }
+.btn::before {
+  content: ""; position: absolute; top: 0; left: 8%; right: 8%; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  pointer-events: none;
+}
+.btn::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(115deg, transparent 32%, rgba(255, 255, 255, 0.38) 50%, transparent 68%);
+  transform: translateX(-130%);
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.btn:hover::after, .btn:focus-visible::after { transform: translateX(130%); }
+/* call bar keeps its blur; add the same glass depth */
+.callbar { box-shadow: var(--glass-shadow); }
+
+/* ---------- TABLET MODE (700–1023px): its own layout, not a squeeze ---------- */
+@media (min-width: 700px) and (max-width: 1023px) {
+  .hero h1 { font-size: clamp(56px, 11vw, 120px); }
+  .hero-stats { grid-template-columns: repeat(4, 1fr); }
+  .about-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .quote-grid { grid-template-columns: 1fr 1.1fr; gap: 48px; }
+  .foot-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ---------- LAPTOP / DESKTOP MODE (≥1024px): genuinely different layout,
+   not the phone layout scaled up ---------- */
+.hero-side { display: none; }
+@media (min-width: 1024px) {
+  /* hero becomes a two-column composition: story left, quick-action rail right */
+  .hero { display: grid; grid-template-columns: minmax(0, 1fr) 330px; align-items: end; column-gap: 56px; }
+  .hero-side { display: flex; flex-direction: column; gap: 14px; align-self: end; }
+  .hero-side .hs-card {
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: blur(18px) saturate(1.4);
+    backdrop-filter: blur(18px) saturate(1.4);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+    box-shadow: var(--glass-shadow);
+    padding: 20px 22px;
+  }
+  .hero-side .hs-card h3 { font-family: var(--font-display); font-size: 24px; text-transform: uppercase; line-height: 1; letter-spacing: 0.02em; }
+  .hero-side .hs-card p { color: var(--ink-dim); font-size: 14px; margin-top: 8px; }
+  .hero-side .hs-card .btn { margin-top: 14px; width: 100%; }
+  .hero-side .hs-num { font-family: var(--font-display); font-size: 34px; color: var(--volt); line-height: 1; }
+  .hero-side .hs-lbl { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-dim); }
+  .hero-side .hs-hours { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; color: var(--ink-faint); margin-top: 10px; }
+  /* homepage bento becomes a 12-column asymmetric mosaic (scoped to
+     #services: services/blog bentos tile perfectly on the 6-col grid) */
+  #services .bento { grid-template-columns: repeat(12, 1fr); }
+  #services .card.tall { grid-column: span 5; grid-row: span 2; }
+  #services .card.wide { grid-column: span 7; }
+  #services .card.std { grid-column: span 4; }
+  #services .card.sq { grid-column: span 4; }
+  #services .card.std:last-child { grid-column: span 5; }
+  /* areas open up to three across; sections breathe more */
+  .area-grid { grid-template-columns: repeat(3, 1fr); }
+  .section-pad { padding: 160px 0; }
+}
+
+/* ---------- TV / BIG-SCREEN MODE (≥1600px, then ≥1800px): a whole other animal ---------- */
+@media (min-width: 1600px) {
+  :root { --max: 1440px; }
+  .section-pad { padding: 170px 0; }
+  .hero h1 { font-size: clamp(120px, 12vw, 240px); }
+  .hero { grid-template-columns: minmax(0, 1fr) 360px; }
+  .rail { grid-auto-columns: 440px; }
+}
+@media (min-width: 1800px) {
+  :root { --max: 1600px; }
+  body { font-size: 18px; }
+  .section-pad { padding: 190px 0; }
+  .hero h1 { font-size: clamp(130px, 12vw, 280px); }
+  .footer .mega { font-size: clamp(120px, 14vw, 260px); }
+  .hero-side { gap: 18px; }
+}
+
+/* ---------- works-everywhere hardening ---------- */
+html { overflow-x: clip; }
+/* safe-area insets (notched devices) */
+.nav { padding-top: env(safe-area-inset-top, 0px); }
+.callbar {
+  bottom: max(12px, env(safe-area-inset-bottom, 12px));
+  left: max(12px, env(safe-area-inset-left, 12px));
+  right: max(12px, env(safe-area-inset-right, 12px));
+}
+.footer { padding-bottom: calc(130px + env(safe-area-inset-bottom, 0px)); }
+/* tiny phones (≤360px) */
+@media (max-width: 360px) {
+  .hero h1 { font-size: clamp(48px, 14vw, 64px); }
+  .section-pad { padding: 64px 0; }
+  .btn { padding: 14px 20px; font-size: 13px; }
+  .form { padding: 18px; }
+  .hero-stats { gap: 12px; }
+  .stat b { font-size: 24px; }
+  .callbar a { font-size: 13px; padding: 13px 6px; }
+  .plat { padding: 10px 14px; }
+  .share-qr { flex-direction: column; align-items: flex-start; }
+}
+/* landscape phones / short screens: let content define the height */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero, .subhero { min-height: auto; padding-top: calc(var(--nav-h) + 16px); padding-bottom: 32px; }
+  .hero h1 { font-size: clamp(48px, 9vw, 84px); }
+  .poweron { gap: 18px; }
+  .breaker { transform: scale(0.82); }
+  .section-pad { padding: 56px 0; }
+}
+/* glass / grid fallbacks for older browsers */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .btn-ghost, .plat, .triage-shell, .form, .price-card, .calc-card, .rev, .step, .rel-card, .verdict, .badge, .hero-side .hs-card, .callbar, .po-skip, .nav.scrolled {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: var(--bg-2);
+  }
+  .btn-ghost { background: rgba(255, 255, 255, 0.06); }
+}
+@supports not (display: grid) {
+  .bento, .rev-grid, .area-grid, .area-grid--more, .price-grid, .related, .quote-grid, .about-grid, .foot-grid, .calc-results, .triage-grid, .hero-stats, .steps, .load-list, .calc-fields, .form .row2, .triage-fields { display: block; }
+  .bento > *, .rev-grid > *, .area-grid > *, .area-grid--more > *, .price-grid > *, .related > *, .quote-grid > *, .about-grid > *, .foot-grid > *, .calc-results > *, .triage-grid > *, .hero-stats > *, .steps > *, .load-list > *, .calc-fields > *, .form .row2 > *, .triage-fields > * { margin-bottom: 14px; }
+}
+/* focus rings for cards clipped by overflow (outline would be cut off) */
+.card:focus-visible, .area-card:focus-visible, .rel-card:focus-visible, .shot:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--volt), 0 0 0 6px rgba(6, 6, 7, 0.9);
+}
+/* higher contrast preference: strengthen lines and dim text */
+@media (prefers-contrast: more) {
+  :root {
+    --line: rgba(244, 241, 232, 0.35);
+    --line-strong: rgba(244, 241, 232, 0.55);
+    --ink-dim: rgba(244, 241, 232, 0.85);
+    --ink-faint: rgba(244, 241, 232, 0.6);
+  }
+}
+/* Windows forced-colors: system colors, no glass, no decoration over text */
+@media (forced-colors: active) {
+  body::after { display: none; }
+  .ticker-track { animation: none; }
+  .btn-ghost, .card, .area-card, .rev, .plat, .form, .price-card, .calc-card, .step, .rel-card, .verdict, .badge, .triage-shell, .hero-side .hs-card, .callbar, .triage-pill, .chip {
+    border-color: ButtonText;
+    background: Canvas;
+    color: CanvasText;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    box-shadow: none;
+  }
+  .btn-volt, .btn-red { background: ButtonText; color: ButtonFace; border-color: ButtonText; }
+  .stroke, .stroke-sunset, .g-head h2 em, .footer .mega em { color: CanvasText; -webkit-text-stroke: 0; }
+  a { color: LinkText; }
+  .card img, .area-card img, .hero-bg img, .about-photo img, .shot img { display: none; }
+  .card::after, .area-card::after, .hero-veil { display: none; }
+  .btn::before, .btn::after { display: none; }
+}
+/* print: light paper, no chrome, no decoration */
+@media print {
+  .poweron, .flash-veil, .callbar, .nav, .ticker, .lb, .cursor-dot, .cursor-ring, .scroll-hint, .share-bar, .share-row, .share-qr, .hero-bg, .topo, .hero-veil { display: none !important; }
+  body { background: #fff !important; color: #111 !important; }
+  .hero, .subhero { min-height: auto; padding: 24px 0; }
+  .section-pad { padding: 24px 0; }
+  .statement, .reviews, .quote, .footer { background: #fff !important; }
+  .card, .area-card, .rev, .price-card, .calc-card, .form, .step, .rel-card, .triage-shell { background: #fff !important; border: 1px solid #999 !important; box-shadow: none !important; }
+  .card img, .area-card img, .about-photo img, .shot img { display: none !important; }
+  .hero h1, .sec-head h2, .statement .big, .quote h2, .prose h2, .footer .mega { color: #111 !important; }
+  .stroke, .stroke-sunset, .g-head h2 em, .footer .mega em { color: #111 !important; -webkit-text-stroke: 0 !important; }
+  .eyebrow, .card-tag, .stat b, .price-num, .sec-head h2 em, .quote h2 em, .prose h2 em { color: #111 !important; }
+  a { color: #111 !important; text-decoration: underline; }
+  .btn { border: 1px solid #111 !important; color: #111 !important; background: none !important; }
+  .rev, .card, .area-card, .price-card { break-inside: avoid; }
+  .foot-base, .foot-grid p, .foot-grid li { color: #333 !important; }
 }

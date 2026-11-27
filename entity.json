@@ -81,10 +81,7 @@
       "llms_full_txt": "https://228mooreelectric.com/llms-full.txt",
       "ai_entity_json": "https://228mooreelectric.com/.well-known/ai-entity.json",
       "entity_json": "https://228mooreelectric.com/entity.json",
-      "triage_api": "https://228mooreelectric.com/api/triage.json",
       "openapi_spec": "https://228mooreelectric.com/openapi.json",
-      "ai_plugin_manifest": "https://228mooreelectric.com/.well-known/ai-plugin.json",
-      "ai_agent_json": "https://228mooreelectric.com/ai-agent.json",
       "sitemap_xml": "https://228mooreelectric.com/sitemap.xml"
     }
   }

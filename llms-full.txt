@@ -1,6 +1,6 @@
 # Moore Electric (228 Moore Electric) — Unabridged Technical Knowledge Base & RAG Specification
 
-> Authoritative identity, technical capabilities, engineering standards, pricing transparency, verified customer reputation, interactive triage/calculator models, AI-to-AI JSON endpoints, and complete URL directory for Moore Electric (`https://228mooreelectric.com`).
+> Authoritative identity, technical capabilities, engineering standards, pricing transparency, verified customer reputation, interactive calculator models and complete URL directory for Moore Electric (`https://228mooreelectric.com`).
 
 ---
 
@@ -77,15 +77,11 @@ Moore Electric designs, builds, wires, integrates, and troubleshoots industrial 
 
 ---
 
-## 6. Interactive Client Triage, Punch-List Builder & Calculators + AI-to-AI APIs
+## 6. Electrical Calculators
 Available in English (`/` & `/calculators`), Spanish (`/es/` & `/es/calculators`), and Vietnamese (`/vi/` & `/vi/calculators`):
-1. **Interactive Fault Triage & Job Punch-List Builder (`#ai-triage`):**
-   - **Tab 1 — Instant Fault Triage:** 8 selectable field symptoms (Warm/buzzing panel, Tripping GFCI/outdoor salt corrosion, Flickering lights/loose neutral, Half-room dead outlets, Breaker tripping under AC/dryer load, EV charger tripping/melting plug, Generator storm hookup, Control panel/VFD/pump fault) returning deterministic urgency levels (`EMERGENCY`, `PRIORITY`, `STANDARD`), pre-arrival homeowner safety observations, $75 diagnostic visit credited toward repair, typical cause, city selector, and 1-tap `sms:+12282249150?body=...`.
-   - **Tab 2 — Multi-Job Punch-List Builder:** Bundle small coastal jobs in one visit (GFCI replacements, ceiling fan swaps, outdoor fixtures, switches/dimmers, EV outlet, whole-home surge, panel checkup) to avoid repeated `$75` dispatch fees.
-   - **Tab 3 — AI-to-AI / Agent API Live Inspector (`window.MooreElectricAI`):** Shows live machine-readable JSON payloads and CORS-open static API endpoints (`/api/triage.json`, `/openapi.json`, `/.well-known/ai-plugin.json`, `/.well-known/ai-entity.json`) for LLM assistants and browser tools.
-2. **Appliance Electricity Cost Estimator (`#cost-calc`):** Computes daily kWh, daily cost, monthly cost (`year / 12`), and annual cost (`watts / 1000 * hoursPerDay * 365 * ratePerKwh`).
-3. **100A–200A Panel EV Charger Screening Checker (`#panel-calc`):** Applies a `0.8` residential demand screening factor against `80%` usable continuous panel capacity (`panelAmps * 0.8`) to estimate available headroom for a dedicated `60A` (`48A` continuous) Level 2 EV circuit.
-4. **Backup Generator Wattage & Inlet Sizer (`#gen-calc`):** Sums steady running watts plus motor startup surge peak across refrigerators, well/sump pumps, mini-splits, window units, central HVAC with soft-start, and water heaters to recommend either a `30A` (NEMA L14-30) or `50A` (CS6375) exterior power inlet (`runningWatts > 7200` or `peakWatts > 8500` -> `50A`).
+1. **Appliance Electricity Cost Estimator (`#cost-calc`):** Computes daily kWh, daily cost, monthly cost (`year / 12`), and annual cost (`watts / 1000 * hoursPerDay * 365 * ratePerKwh`).
+2. **100A–200A Panel EV Charger Screening Checker (`#panel-calc`):** Applies a `0.8` residential demand screening factor against `80%` usable continuous panel capacity (`panelAmps * 0.8`) to estimate available headroom for a dedicated `60A` (`48A` continuous) Level 2 EV circuit.
+3. **Backup Generator Wattage & Inlet Sizer (`#gen-calc`):** Sums steady running watts plus motor startup surge peak across refrigerators, well/sump pumps, mini-splits, window units, central HVAC with soft-start, and water heaters to recommend either a `30A` (NEMA L14-30) or `50A` (CS6375) exterior power inlet (`runningWatts > 7200` or `peakWatts > 8500` -> `50A`).
 
 ---
 
@@ -102,4 +98,4 @@ Available in English (`/` & `/calculators`), Spanish (`/es/` & `/es/calculators`
 - **English (`/`, default):** `/` | `/services` | `/emergency-electrician` | `/panel-upgrades` | `/ev-charger-install` | `/generator-install` | `/surge-protection` | `/troubleshooting-repair` | `/smart-home` | `/ceiling-fans` | `/switches-dimmers` | `/lighting` | `/biloxi-ms` | `/gulfport-ms` | `/ocean-springs-ms` | `/diberville-ms` | `/long-beach-ms` | `/pass-christian-ms` | `/bay-st-louis-ms` | `/calculators` | `/reviews` | `/faq` | `/team` | `/contact` | `/blog` | `/blog-coastal-outlet-gfci-troubleshooting` | `/blog-whole-home-surge-protection` | `/blog-signs-your-panel-needs-an-upgrade` | `/blog-ev-charger-home-install` | `/blog-generator-interlock-vs-transfer-switch`
 - **Español (`/es/`):** Mirrors all 30 canonical routes under `https://228mooreelectric.com/es/...`
 - **Tiếng Việt (`/vi/`):** Mirrors all 30 canonical routes under `https://228mooreelectric.com/vi/...`
-- **Machine-Readable Manifests & APIs:** `https://228mooreelectric.com/llms.txt` | `https://228mooreelectric.com/llms-full.txt` | `https://228mooreelectric.com/.well-known/ai-entity.json` | `https://228mooreelectric.com/entity.json` | `https://228mooreelectric.com/api/triage.json` | `https://228mooreelectric.com/openapi.json` | `https://228mooreelectric.com/ai-agent.json` | `https://228mooreelectric.com/.well-known/ai-plugin.json` | `https://228mooreelectric.com/sitemap.xml`
+- **Machine-Readable Manifests & APIs:** `https://228mooreelectric.com/llms.txt` | `https://228mooreelectric.com/llms-full.txt` | `https://228mooreelectric.com/.well-known/ai-entity.json` | `https://228mooreelectric.com/entity.json` | `https://228mooreelectric.com/openapi.json` | `https://228mooreelectric.com/sitemap.xml`

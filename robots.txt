@@ -67,6 +67,4 @@ Sitemap: https://228mooreelectric.com/sitemap.xml
 # LLMs-Txt: https://228mooreelectric.com/llms.txt
 # LLMs-Full-Txt: https://228mooreelectric.com/llms-full.txt
 # Entity-JSON: https://228mooreelectric.com/.well-known/ai-entity.json
-# AI-Triage-API: https://228mooreelectric.com/api/triage.json
 # OpenAPI-Spec: https://228mooreelectric.com/openapi.json
-# AI-Agent-Manifest: https://228mooreelectric.com/.well-known/ai-plugin.json

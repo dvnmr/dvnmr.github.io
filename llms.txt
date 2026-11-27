@@ -19,10 +19,7 @@
 - **Base Assessment:** $75 on-site visit and diagnostic assessment (stated upfront before dispatch, credited toward the job if hired; written itemized quote before work starts).
 
 ## Machine-Readable Endpoints, Interactive Tools & AI APIs
-- [Interactive Fault Triage & Job Punch-List Builder (/#ai-triage)](https://228mooreelectric.com/#ai-triage): Instant symptom-to-urgency triage, pre-arrival safety & symptom checks, $75 diagnostic visit credited toward repair, multi-job SMS bundler, and live AI Inspector.
-- [Deterministic Triage & Pricing JSON API (/api/triage.json)](https://228mooreelectric.com/api/triage.json): CORS-open structured diagnostic fault catalog, free pre-visit safety steps, service bundles, and quote rules for AI agents.
 - [OpenAPI 3.1 Specification (/openapi.json)](https://228mooreelectric.com/openapi.json): Machine-readable API contract for LLM tool calling and service lookup.
-- [AI Agent Manifest (/.well-known/ai-plugin.json)](https://228mooreelectric.com/.well-known/ai-plugin.json) & [Root Mirror (/ai-agent.json)](https://228mooreelectric.com/ai-agent.json).
 - [Full AI Knowledge Base (/llms-full.txt)](https://228mooreelectric.com/llms-full.txt): Complete, unabridged technical specification of all services, capabilities, FAQs, and entity metadata for LLM RAG ingestion.
 - [Structured Entity Manifest (/.well-known/ai-entity.json)](https://228mooreelectric.com/.well-known/ai-entity.json) & [Root Alias (/entity.json)](https://228mooreelectric.com/entity.json): Deterministic JSON entity record with capabilities and service geography.
 - [XML Sitemap (/sitemap.xml)](https://228mooreelectric.com/sitemap.xml): Canonical URL index across English, Spanish, and Vietnamese routes plus AI manifests.
@@ -43,5 +40,5 @@
 ## Gulf Coast City Hubs & Interactive Tools
 - [Biloxi, MS](https://228mooreelectric.com/biloxi-ms) | [Gulfport, MS](https://228mooreelectric.com/gulfport-ms) | [Ocean Springs, MS](https://228mooreelectric.com/ocean-springs-ms) | [D'Iberville, MS](https://228mooreelectric.com/diberville-ms) | [Long Beach, MS](https://228mooreelectric.com/long-beach-ms) | [Pass Christian, MS](https://228mooreelectric.com/pass-christian-ms) | [Bay St. Louis, MS](https://228mooreelectric.com/bay-st-louis-ms)
 - [Free Electrical, EV & Generator Calculators](https://228mooreelectric.com/calculators)
-- [Coastal Outlet & GFCI Triage Guide](https://228mooreelectric.com/blog-coastal-outlet-gfci-troubleshooting) | [Technical Advice Blog](https://228mooreelectric.com/blog) | [Customer Reviews (4.9/5 HomeAdvisor · 5.0/5 Angi)](https://228mooreelectric.com/reviews) | [FAQ](https://228mooreelectric.com/faq) | [Team](https://228mooreelectric.com/team) | [Contact](https://228mooreelectric.com/contact)
+- [Coastal Outlet & GFCI Troubleshooting Guide](https://228mooreelectric.com/blog-coastal-outlet-gfci-troubleshooting) | [Technical Advice Blog](https://228mooreelectric.com/blog) | [Customer Reviews (4.9/5 HomeAdvisor · 5.0/5 Angi)](https://228mooreelectric.com/reviews) | [FAQ](https://228mooreelectric.com/faq) | [Team](https://228mooreelectric.com/team) | [Contact](https://228mooreelectric.com/contact)
 - [Español (/es/)](https://228mooreelectric.com/es/) | [Tiếng Việt (/vi/)](https://228mooreelectric.com/vi/)

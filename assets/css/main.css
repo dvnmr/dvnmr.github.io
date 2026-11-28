@@ -161,6 +161,14 @@ section { position: relative; }
 .hero-sub strong { color: var(--ink); }
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
 .hero-micro { margin-top: 14px; font-family: var(--font-mono); font-size: 12px; color: var(--ink-faint); letter-spacing: 0.06em; }
+.moore-more { font-family: var(--font-display); font-size: clamp(22px, 4vw, 34px); color: var(--volt); letter-spacing: 0.05em; margin-top: 14px; }
+.emergency-alert { color: var(--red); font-size: clamp(15px, 2.6vw, 19px); font-weight: 700; letter-spacing: 0.03em; }
+.emergency-red { color: var(--red); font-weight: 700; }
+.faq-a-inner .mini-cta.emergency-red { color: var(--red); border-bottom-color: var(--red); font-weight: 700; }
+.card.flash .go { color: var(--red); font-weight: 700; }
+.coast-map { margin-top: 40px; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: #0d2836; }
+.coast-map svg { display: block; width: 100%; height: auto; }
+.coast-map .map-cap { margin: 0; padding: 14px 18px; font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.04em; color: var(--ink-dim); background: #0a0e14; }
 .hero-stats {
   margin-top: 40px; padding-top: 26px; border-top: 1px solid var(--line);
   display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px;
